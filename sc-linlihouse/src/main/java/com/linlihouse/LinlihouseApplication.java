@@ -1,12 +1,12 @@
-package com.smartcommunity.sclinlihouse;
+package com.linlihouse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScLinlihouseApplication {
+public class LinlihouseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScLinlihouseApplication.class, args);
+		SpringApplication.run(LinlihouseApplication.class, args);
 	}
 }
