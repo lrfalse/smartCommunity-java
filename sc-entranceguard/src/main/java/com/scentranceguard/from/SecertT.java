@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Secert implements Serializable{
+public class SecertT implements Serializable{
 
     private String m;
 
@@ -21,4 +21,6 @@ public class Secert implements Serializable{
      * 密钥有效天数
      */
     private String effective_days;
+
+
 }

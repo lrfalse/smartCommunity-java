@@ -40,7 +40,7 @@ public class ControllerOpen {
     @ApiOperation(value="获图书细信息", notes="根据url的id来获取详细信息")
     @ApiImplicitParam(name = "passwordOpenDoor", value = "入参", required = true, dataType = "PasswordOpenDoor")
     @PostMapping("code/open")
-    public Object codeOpen(PasswordOpenDoor passwordOpenDoor){
+    public Object codeOpen(@RequestBody PasswordOpenDoor passwordOpenDoor){
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -70,7 +70,7 @@ public class ControllerOpen {
      * 密码开门
      */
     @PostMapping("password/open")
-    public Object passwordOpen(PasswordOpenDoor passwordOpenDoor){
+    public Object passwordOpen(@RequestBody PasswordOpenDoor passwordOpenDoor){
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -100,7 +100,7 @@ public class ControllerOpen {
      * 获取远程access_token
      */
     @PostMapping("remote/secret")
-    public Object getRemoteSecert(PasswordOpenDoor passwordOpenDoor){
+    public Object getRemoteSecert(@RequestBody PasswordOpenDoor passwordOpenDoor){
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -129,7 +129,7 @@ public class ControllerOpen {
      * 获取access_token
      */
     @PostMapping("secert")
-    public Object getSecert( Secert secert) {
+    public Object getSecertt(@RequestBody SecertT secert) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -156,7 +156,7 @@ public class ControllerOpen {
         return null;
     }
 
-    public List bulidGetSecert(Secert secert){
+    public List bulidGetSecert(SecertT secert){
         List list = new ArrayList();
         list.add(new BasicNameValuePair("a", secert.getA()));
         list.add(new BasicNameValuePair("m", secert.getM()));
