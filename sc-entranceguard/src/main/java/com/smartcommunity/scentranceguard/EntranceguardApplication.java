@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScEntranceguardApplication {
+public class EntranceguardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScEntranceguardApplication.class, args);
+		SpringApplication.run(EntranceguardApplication.class, args);
 	}
 }
