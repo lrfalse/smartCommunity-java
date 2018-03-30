@@ -1,4 +1,4 @@
-package com.smartcommunity.scentranceguard;
+package com.scentranceguard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

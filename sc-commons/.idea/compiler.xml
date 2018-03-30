@@ -6,17 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sc-commons" />
-        <module name="sc-entranceguard" />
-        <module name="sc-linlihouse" />
-        <module name="smartCommunity" />
+        <module name="andapay-commons" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="sc-commons" target="1.8" />
-      <module name="sc-entranceguard" target="1.8" />
-      <module name="sc-linlihouse" target="1.8" />
-      <module name="smartCommunity" target="1.8" />
+      <module name="andapay-commons" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

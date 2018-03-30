@@ -8,6 +8,7 @@
   <name>smartCommunity</name>
   <url>http://maven.apache.org</url>
     <modules>
+        <module>sc-commons</module>		    <!-- 工具包-->
         <module>sc-linlihouse</module>		<!-- 官网-->
         <module>sc-entranceguard</module>	<!-- 门禁对接系统 -->
     </modules>
@@ -22,4 +23,19 @@
   <build>
     <finalName>smartCommunity</finalName>
   </build>
+    <profiles>
+        <profile>
+            <id>jdk18</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_161</JAVA_HOME>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
 </project>
