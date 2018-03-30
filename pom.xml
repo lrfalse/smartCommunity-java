@@ -8,8 +8,8 @@
   <name>smartCommunity</name>
   <url>http://maven.apache.org</url>
     <modules>
-        <module>sc-commons</module>		    <!-- 工具包-->
-        <module>sc-linlihouse</module>		<!-- 官网-->
+        <module>sc-commons</module>		    <!-- 工具包 -->
+        <module>sc-linlihouse</module>		<!-- 官网 -->
         <module>sc-entranceguard</module>	<!-- 门禁对接系统 -->
     </modules>
   <dependencies>
