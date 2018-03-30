@@ -9,7 +9,6 @@
         <module name="sc-commons" />
         <module name="sc-entranceguard" />
         <module name="sc-linlihouse" />
-        <module name="smartCommunity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
