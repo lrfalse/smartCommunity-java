@@ -1,4 +1,4 @@
-package com.smartcommunity.scentranceguard;
+package com.scentranceguard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
