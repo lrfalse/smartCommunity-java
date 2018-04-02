@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class PasswordOpenDoor implements Serializable {
+
     private String m;
 
     private String f;

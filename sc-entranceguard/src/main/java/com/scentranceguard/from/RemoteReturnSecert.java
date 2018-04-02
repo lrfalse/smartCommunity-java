@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class RemoteReturnSecert extends RemoteSecret implements Serializable{
+
     private String state;
 
     private String ico;

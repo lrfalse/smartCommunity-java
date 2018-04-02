@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -31,16 +32,55 @@ public class ControllerOpen {
     private static final Logger LOGGER = LoggerFactory.getLogger(ControllerOpen.class);
 
     /**
-     *远程开门
-     */
-        
+     * @Description人脸注册
+     * @Param form
+     * @Return Object
+     **/
+    @PostMapping("faceregister")
+    public Object faceRegister(MultipartFile file) {
+
+        return "人脸注册失败";
+    }
+
+    /**
+     * @Description 远程开门
+     * @Param
+     * @Return 1:开门成功 ,0:开门失败
+     **/
+    @PostMapping("remoteropendoor")
+    public Object remoteOpenDoor(@RequestBody RemoteOpenDoor remoteOpenDoor) {
+        // 创建默认的httpClient实例.
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        // 创建httppost
+        HttpPost httppost = new HttpPost("http://open.meilinapi.com/");
+        // 创建参数队列
+        UrlEncodedFormEntity uefEntity;
+        try {
+            uefEntity = new UrlEncodedFormEntity(bulidRemoteOpenDoor(remoteOpenDoor), "UTF-8");
+            httppost.setEntity(uefEntity);
+            CloseableHttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
+            String s = EntityUtils.toString(entity);
+            RemoteReturn remoteReturn = JSON.parseObject(s, RemoteReturn.class);
+            System.out.println("s" + s);
+            httpclient.close();
+            response.close();
+            return remoteReturn;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        return "开门失败";
+    }
+
     /**
      * 二维码开门
      */
-    @ApiOperation(value="获图书细信息", notes="根据url的id来获取详细信息")
+    @ApiOperation(value = "获图书细信息", notes = "根据url的id来获取详细信息")
     @ApiImplicitParam(name = "passwordOpenDoor", value = "入参", required = true, dataType = "PasswordOpenDoor")
     @PostMapping("code/open")
-    public Object codeOpen(@RequestBody PasswordOpenDoor passwordOpenDoor){
+    public Object codeOpen(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -60,17 +100,17 @@ public class ControllerOpen {
             return codeOpenDoor;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        }catch (IOException e1){
+        } catch (IOException e1) {
             e1.printStackTrace();
         }
-        return null;
+        return "二维码获取失败";
     }
 
     /**
      * 密码开门
      */
     @PostMapping("password/open")
-    public Object passwordOpen(@RequestBody PasswordOpenDoor passwordOpenDoor){
+    public Object passwordOpen(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -90,17 +130,17 @@ public class ControllerOpen {
             return passwordReturnData;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        }catch (IOException e1){
+        } catch (IOException e1) {
             e1.printStackTrace();
         }
-        return null;
+        return "密码获取失败";
     }
 
     /**
      * 获取远程access_token
      */
     @PostMapping("remote/secret")
-    public Object getRemoteSecert(@RequestBody PasswordOpenDoor passwordOpenDoor){
+    public Object getRemoteSecert(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -113,23 +153,24 @@ public class ControllerOpen {
             CloseableHttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
-           RemoteReturnSecert remoteReturnSecert = JSON.parseObject(s, RemoteReturnSecert.class);
+            RemoteReturnSecert remoteReturnSecert = JSON.parseObject(s, RemoteReturnSecert.class);
             System.out.println("s" + s);
             httpclient.close();
             response.close();
             return remoteReturnSecert;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        }catch (IOException e1){
+        } catch (IOException e1) {
             e1.printStackTrace();
         }
-        return null;
+        return "远程密钥获取失败";
     }
+
     /**
      * 获取access_token
      */
     @PostMapping("secert")
-    public Object getSecertt(@RequestBody SecertT secert) {
+    public Object getSecertt(@RequestBody Secert secert) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -153,10 +194,10 @@ public class ControllerOpen {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        return null;
+        return "密钥获取失败";
     }
 
-    public List bulidGetSecert(SecertT secert){
+    public List bulidGetSecert(Secert secert) {
         List list = new ArrayList();
         list.add(new BasicNameValuePair("a", secert.getA()));
         list.add(new BasicNameValuePair("m", secert.getM()));
@@ -167,7 +208,7 @@ public class ControllerOpen {
         return list;
     }
 
-    public List bulidPasswordOpen(PasswordOpenDoor passwordOpenDoor){
+    public List bulidPasswordOpen(PasswordOpenDoor passwordOpenDoor) {
         List list = new ArrayList();
         list.add(new BasicNameValuePair("a", passwordOpenDoor.getA()));
         list.add(new BasicNameValuePair("m", passwordOpenDoor.getM()));
@@ -176,6 +217,19 @@ public class ControllerOpen {
         list.add(new BasicNameValuePair("app_id", passwordOpenDoor.getApp_id()));
         list.add(new BasicNameValuePair("app_secret", passwordOpenDoor.getApp_secret()));
         list.add(new BasicNameValuePair("device_sncode", passwordOpenDoor.getDevice_sncode()));
+        return list;
+    }
+
+    public List bulidRemoteOpenDoor(RemoteOpenDoor remoteOpenDoor) {
+        List list = new ArrayList();
+        list.add(new BasicNameValuePair("a", remoteOpenDoor.getA()));
+        list.add(new BasicNameValuePair("m", remoteOpenDoor.getM()));
+        list.add(new BasicNameValuePair("f", remoteOpenDoor.getF()));
+        list.add(new BasicNameValuePair("access_token", remoteOpenDoor.getAccess_token()));
+        list.add(new BasicNameValuePair("app_id", remoteOpenDoor.getApp_id()));
+        list.add(new BasicNameValuePair("app_secret", remoteOpenDoor.getApp_secret()));
+        list.add(new BasicNameValuePair("device_sncode", remoteOpenDoor.getDevice_sncode()));
+        list.add(new BasicNameValuePair("net_open_key", remoteOpenDoor.getNet_open_key()));
         return list;
     }
 
