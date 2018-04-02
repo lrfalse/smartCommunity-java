@@ -17,8 +17,8 @@ public class ExceptionUtils {
 	  **/
 	public static HttpResults retSuccess(String data){
 		HttpResults resultVo=new HttpResults();
-		resultVo.setStatusCode(AppServiceEnums.SUCCESS.getCode());
-		resultVo.setErrorMsg(AppServiceEnums.SUCCESS.getMsg());
+		resultVo.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
+		resultVo.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
 		resultVo.setBody(data);
 		return resultVo;
 	}
@@ -39,14 +39,14 @@ public class ExceptionUtils {
 	public  static HttpResults retException(String retCode,String retMsg){
 		HttpResults resultVo=new HttpResults();
 		resultVo.setStatusCode(retCode);
-		resultVo.setErrorMsg(retMsg);
+		resultVo.setStatusMsg(retMsg);
 		return resultVo;
 	}
 
 	public  static HttpResults retException(){
 		HttpResults resultVo=new HttpResults();
-		resultVo.setStatusCode(AppServiceEnums.EXCEPTION.getCode());
-		resultVo.setErrorMsg(AppServiceEnums.EXCEPTION.getMsg());
+		resultVo.setStatusCode(AppServiceEnums.SYS_EXCEPTION.getCode());
+		resultVo.setStatusMsg(AppServiceEnums.SYS_EXCEPTION.getMsg());
 		return resultVo;
 	}
 
