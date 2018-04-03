@@ -1,5 +1,8 @@
 package com.commons.dto;
 
+import com.commons.enums.AppServiceEnums;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +10,7 @@ import java.io.Serializable;
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/3/30 14:40
   **/
+@Data
 public class HttpResults implements Serializable {
 	private static final long serialVersionUID = 5090902096348098928L;
 	private String statusCode ;	//状态码为
@@ -14,35 +18,13 @@ public class HttpResults implements Serializable {
 	private String key;			//加密数据
 	private String body;		//主体内容
 
-	public String getKey() {
-		return key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-	}
-
-	public String getStatusCode() {
-		return statusCode;
-	}
-
-	public void setStatusCode(String statusCode) {
-		this.statusCode = statusCode;
-	}
-
-	public String getStatusMsg() {
-		return statusMsg;
-	}
-
-	public void setStatusMsg(String statusMsg) {
-		this.statusMsg = statusMsg;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
+	/**
+	  * @Description(功能描述): 数据请求成功
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/3 16:56
+	  **/
+	public HttpResults(){
+		this.statusCode= AppServiceEnums.SYS_SUCCESS.getCode();
+		this.statusMsg=AppServiceEnums.SYS_SUCCESS.getMsg();
 	}
 }

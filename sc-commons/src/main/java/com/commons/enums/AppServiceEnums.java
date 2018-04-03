@@ -11,8 +11,8 @@ public enum AppServiceEnums {
 	 * 系统错误
 	 */
 	SYS_SUCCESS("000","数据请求成功"),
-	SYS_DATA_ERROR("001","数据错误"),
-	SYS_EXCEPTION("005","系统内部异常"),
+	SYS_DATA_ERROR("100","数据错误"),
+	SYS_EXCEPTION("500","系统内部异常"),
 	/**
 	 * 业务逻辑错误
 	 */

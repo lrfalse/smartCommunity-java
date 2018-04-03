@@ -1,7 +1,11 @@
 package com.linlihouse.interceptor;
 
+import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
+import com.commons.dto.IsJsonDTO;
 import com.commons.enums.AppServiceEnums;
+import com.commons.exception.ScException;
+import com.commons.utils.JsonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,18 +31,20 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  **/
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
-		//TODO redis登陆信息验证
-		if(1==2){
-			HttpResults commObject=new HttpResults();
-			commObject.setStatusCode(AppServiceEnums.NO_REQUEST_DATA.getCode());
-			commObject.setStatusMsg(AppServiceEnums.NO_REQUEST_DATA.getMsg());
-			returnJson(response,commObject);
-			return false;
+		IsJsonDTO isJson=BaseApi.receiveMsg(request);
+		if(isJson.isIsjson()){
+			request.setAttribute("preHandleJsonDto", isJson);
+		}else{
+			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
 		}
 		return true;
 	}
 
-	@Override
+	/**
+	  * @Description(功能描述): 处理返回数据
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/3 16:40
+	  **/
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
 	}

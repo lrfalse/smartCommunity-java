@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/sc-commons/sc-commons.iml" filepath="$PROJECT_DIR$/sc-commons/sc-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" filepath="$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" filepath="$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-linlihouse/sc-linlihouse.iml" filepath="$PROJECT_DIR$/sc-linlihouse/sc-linlihouse.iml" />
       <module fileurl="file://$PROJECT_DIR$/smartCommunity.iml" filepath="$PROJECT_DIR$/smartCommunity.iml" />
     </modules>
