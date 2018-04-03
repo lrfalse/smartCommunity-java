@@ -2,9 +2,6 @@ package com.scentranceguard.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.scentranceguard.from.*;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -25,11 +22,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Api("开门")
 @RestController
-public class ControllerOpen {
+public class OpenController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ControllerOpen.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OpenController.class);
 
     /**
      * @Description人脸注册
@@ -77,8 +73,6 @@ public class ControllerOpen {
     /**
      * 二维码开门
      */
-    @ApiOperation(value = "获图书细信息", notes = "根据url的id来获取详细信息")
-    @ApiImplicitParam(name = "passwordOpenDoor", value = "入参", required = true, dataType = "PasswordOpenDoor")
     @PostMapping("code/open")
     public Object codeOpen(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
