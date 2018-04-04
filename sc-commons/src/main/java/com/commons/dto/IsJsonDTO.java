@@ -11,5 +11,5 @@ import lombok.Data;
 public class IsJsonDTO {
 	private String tag;        			//终端类型(I:苹果,A:安卓)
 	private boolean isjson = false;		//是否json
-	private String bodyJson;			//json字符串
+	private String bodyJson;			//明文json字符串
 }

@@ -6,17 +6,17 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
-  * @Description(功能描述): 返回http请求结果
+  * @Description(功能描述): 返回请求结果
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/3/30 14:40
   **/
 @Data
 public class HttpResults implements Serializable {
 	private static final long serialVersionUID = 5090902096348098928L;
-	private String statusCode ;	//状态码为
-	private String statusMsg;	//返回消息
-	private String key;			//加密数据
-	private String body;		//主体内容
+	private String statusCode ;	//状态码
+	private String statusMsg;	//状态消息
+	private String key;			//md5值
+	private String body;		//加密报文
 
 	/**
 	  * @Description(功能描述): 数据请求成功

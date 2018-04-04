@@ -32,7 +32,7 @@ public class BaseApi {
 		logger.debug("----------------body:" + body+"--------------");
 		logger.debug("----------------key:" + key+"--------------");
 		IsJsonDTO json = new IsJsonDTO();
-		if (CommonUtils.isNotEmpty(tag)||CommonUtils.isNotEmpty(key)) {
+		if (CommonUtils.isNotEmpty(tag)&& CommonUtils.isNotEmpty(key)) {
 			if ("A".equals(tag) || "I".equals(tag)) {
 				if(CommonUtils.isNotEmpty(body)){
 					String decryptText=AESEncryptUtils.decrypt(body);
