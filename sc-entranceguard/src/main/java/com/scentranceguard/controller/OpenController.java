@@ -2,6 +2,7 @@ package com.scentranceguard.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.scentranceguard.from.*;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -12,28 +13,58 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-@RestController
+@Controller
 public class OpenController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OpenController.class);
 
+    @RequestMapping(value = "indexTest")
+    public String indexTest(){
+            return "index";
+    }
     /**
      * @Description人脸注册
      * @Param form
      * @Return Object
      **/
-    @PostMapping("faceregister")
-    public Object faceRegister(MultipartFile file) {
+    @RequestMapping("/index")
+    public Object faceRegister(FaceRegister faceRegister, @RequestParam("headimg")MultipartFile files, HttpServletRequest request) {
+        //可以从页面传参数过来
+        System.out.println("name====="+request.getParameter("name"));
+        //这里可以支持多文件上传
+            BufferedOutputStream bw = null;
+            try {
+                String fileName = files.getOriginalFilename();
+                //判断是否有文件且是否为图片文件
+                if(fileName!=null && !"".equalsIgnoreCase(fileName.trim()) && isImageFile(fileName)) {
+                    //创建输出文件对象
+                    File outFile = new File("D:\\CloudMusic" + "/" + UUID.randomUUID().toString()+ getFileType(fileName));
+                    System.out.println(outFile.toURI());
+                    //拷贝文件到输出文件对象
+                    FileUtils.copyInputStreamToFile(files.getInputStream(), outFile);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if(bw!=null) {bw.close();}
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
         return "人脸注册失败";
     }
@@ -58,7 +89,6 @@ public class OpenController {
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
             RemoteReturn remoteReturn = JSON.parseObject(s, RemoteReturn.class);
-            System.out.println("s" + s);
             httpclient.close();
             response.close();
             return remoteReturn;
@@ -88,7 +118,6 @@ public class OpenController {
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
             CodeOpenDoor codeOpenDoor = JSON.parseObject(s, CodeOpenDoor.class);
-            System.out.println("s" + s);
             httpclient.close();
             response.close();
             return codeOpenDoor;
@@ -104,7 +133,7 @@ public class OpenController {
      * 密码开门
      */
     @PostMapping("password/open")
-    public Object passwordOpen(@RequestBody PasswordOpenDoor passwordOpenDoor) {
+    public Object passwordOpen( PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 创建httppost
@@ -117,11 +146,18 @@ public class OpenController {
             CloseableHttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
-            PasswordReturnData passwordReturnData = JSON.parseObject(s, PasswordReturnData.class);
-            System.out.println("s" + s);
-            httpclient.close();
-            response.close();
-            return passwordReturnData;
+            //A:为get_smdpwd表示密码开门,否则为蓝牙开门
+            if(passwordOpenDoor.getA().equals("get_smdpwd")){
+                PasswordReturnData passwordReturnData = JSON.parseObject(s, PasswordReturnData.class);
+                httpclient.close();
+                response.close();
+                return passwordReturnData;
+            }else {
+                BluetoothData bluetoothData = JSON.parseObject(s, BluetoothData.class);
+                httpclient.close();
+                response.close();
+                return bluetoothData;
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e1) {
@@ -148,7 +184,6 @@ public class OpenController {
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
             RemoteReturnSecert remoteReturnSecert = JSON.parseObject(s, RemoteReturnSecert.class);
-            System.out.println("s" + s);
             httpclient.close();
             response.close();
             return remoteReturnSecert;
@@ -173,13 +208,11 @@ public class OpenController {
         UrlEncodedFormEntity uefEntity;
         try {
             uefEntity = new UrlEncodedFormEntity(bulidGetSecert(secert), "UTF-8");
-            System.out.println("executing request " + httppost.getURI());
             httppost.setEntity(uefEntity);
             CloseableHttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity);
             SecertReturnData passwordReturnData = JSON.parseObject(s, SecertReturnData.class);
-            System.out.println("s" + s);
             httpclient.close();
             response.close();
             return passwordReturnData;
@@ -227,5 +260,29 @@ public class OpenController {
         return list;
     }
 
-
+    /**
+     * 判断文件是否为图片文件
+     * @param fileName
+     * @return
+     */
+    private Boolean isImageFile(String fileName) {
+        String [] img_type = new String[]{".jpg", ".jpeg", ".png", ".gif", ".bmp"};
+        if(fileName==null) {return false;}
+        fileName = fileName.toLowerCase();
+        for(String type : img_type) {
+            if(fileName.endsWith(type)) {return true;}
+        }
+        return false;
+    }
+    /**
+     * 获取文件后缀名
+     * @param fileName
+     * @return
+     */
+    private String getFileType(String fileName) {
+        if(fileName!=null && fileName.indexOf(".")>=0) {
+            return fileName.substring(fileName.lastIndexOf("."), fileName.length());
+        }
+        return "";
+    }
 }

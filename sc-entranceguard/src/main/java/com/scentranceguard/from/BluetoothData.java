@@ -2,16 +2,14 @@ package com.scentranceguard.from;
 
 import lombok.Data;
 
-import java.io.Serializable;
 /**
- * @Description:获取密码返回javabean
+ * @Description:蓝牙开门返回值
  * @Author:feihong
  * @Vsesion:v.10
- * @Create:2018-04-03 10:10:04
+ * @Create:2018-04-04 15:15:29
  */
 @Data
-public class PasswordReturnData extends PasswordData implements Serializable {
-
+public class BluetoothData {
     /**
      *状态 1:成功, 0:失败
      */
@@ -26,4 +24,9 @@ public class PasswordReturnData extends PasswordData implements Serializable {
      *
      */
     private String data_ver;
+
+    /**
+     *蓝牙mac信息
+     */
+    private Bluetooth return_data;
 }
