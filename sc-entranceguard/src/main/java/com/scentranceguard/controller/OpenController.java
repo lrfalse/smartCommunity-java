@@ -2,6 +2,7 @@ package com.scentranceguard.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.scentranceguard.from.*;
+import com.scentranceguard.service.EntraceGuardService;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -13,6 +14,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,13 +24,17 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 @Controller
 public class OpenController {
 
+    @Autowired
+    EntraceGuardService entraceGuardService;
     private static final Logger LOGGER = LoggerFactory.getLogger(OpenController.class);
 
     @RequestMapping(value = "indexTest")
@@ -41,32 +47,34 @@ public class OpenController {
      * @Return Object
      **/
     @RequestMapping("/index")
-    public Object faceRegister(FaceRegister faceRegister, @RequestParam("headimg")MultipartFile files, HttpServletRequest request) {
-        //可以从页面传参数过来
-        System.out.println("name====="+request.getParameter("name"));
-        //这里可以支持多文件上传
-            BufferedOutputStream bw = null;
-            try {
-                String fileName = files.getOriginalFilename();
-                //判断是否有文件且是否为图片文件
-                if(fileName!=null && !"".equalsIgnoreCase(fileName.trim()) && isImageFile(fileName)) {
-                    //创建输出文件对象
-                    File outFile = new File("D:\\CloudMusic" + "/" + UUID.randomUUID().toString()+ getFileType(fileName));
-                    System.out.println(outFile.toURI());
-                    //拷贝文件到输出文件对象
-                    FileUtils.copyInputStreamToFile(files.getInputStream(), outFile);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if(bw!=null) {bw.close();}
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        return "人脸注册失败";
+    @ResponseBody
+    public Object faceRegister(FaceCheck faceCheck, @RequestParam("face")MultipartFile file, HttpServletRequest request) {
+        //获取文件名称
+        String fileName = file.getOriginalFilename();
+        LOGGER.info("上传的文件名为：" + fileName);
+        // 获取文件的后缀名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        LOGGER.info("上传的后缀名为：" + suffixName);
+        // 文件上传后的路径
+        String filePath = "E:\\"+System.currentTimeMillis()/1000+"\\"+"face"+"\\";
+        // 解决中文问题，liunx下中文路径，图片显示问题
+        // fileName = UUID.randomUUID() + suffixName;
+        File dest = new File(filePath + fileName);
+        // 检测是否存在目录
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            file.transferTo(dest);
+            faceCheck.setImageurl(filePath + fileName);
+            entraceGuardService.saveImage(faceCheck);
+            return "上传成功";
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "上传失败";
     }
 
     /**
@@ -75,6 +83,7 @@ public class OpenController {
      * @Return 1:开门成功 ,0:开门失败
      **/
     @PostMapping("remoteropendoor")
+    @ResponseBody
     public Object remoteOpenDoor(@RequestBody RemoteOpenDoor remoteOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -104,6 +113,7 @@ public class OpenController {
      * 二维码开门
      */
     @PostMapping("code/open")
+    @ResponseBody
     public Object codeOpen(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -133,6 +143,7 @@ public class OpenController {
      * 密码开门
      */
     @PostMapping("password/open")
+    @ResponseBody
     public Object passwordOpen( PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -170,6 +181,7 @@ public class OpenController {
      * 获取远程access_token
      */
     @PostMapping("remote/secret")
+    @ResponseBody
     public Object getRemoteSecert(@RequestBody PasswordOpenDoor passwordOpenDoor) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -199,6 +211,7 @@ public class OpenController {
      * 获取access_token
      */
     @PostMapping("secert")
+    @ResponseBody
     public Object getSecertt(@RequestBody Secert secert) {
         // 创建默认的httpClient实例.
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -284,5 +297,29 @@ public class OpenController {
             return fileName.substring(fileName.lastIndexOf("."), fileName.length());
         }
         return "";
+    }
+    /**
+      *@Description:创建目录
+      *@Param:
+      *@create:${YEAR}-${MONTH}-${DAY} ${HOUR}:${TIME}
+      *@Return:
+      **/
+    public static boolean createDir(String destDirName) {
+        File dir = new File(destDirName);
+        if (dir.exists()) {
+            System.out.println("创建目录" + destDirName + "失败，目标目录已经存在");
+            return false;
+        }
+        if (!destDirName.endsWith(File.separator)) {
+            destDirName = destDirName + File.separator;
+        }
+        //创建目录
+        if (dir.mkdirs()) {
+            System.out.println("创建目录" + destDirName + "成功！");
+            return true;
+        } else {
+            System.out.println("创建目录" + destDirName + "失败！");
+            return false;
+        }
     }
 }

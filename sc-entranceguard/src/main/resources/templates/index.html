@@ -12,9 +12,17 @@
 
 <hr/>
 <form th:action="@{/index}" method="post" enctype="multipart/form-data">
-    昵称：<input name="name" type="text"/>
+    用户名：<input name="username" type="text"/>
     <br/>
-    头像：<input name="headimg" type="file"/>
+    电话号码：<input name="phonenumber" type="text"/>
+    <br/>
+    小区：<input name="community" type="text"/>
+    <br/>
+    房号：<input name="housenumber" type="text"/>
+    <br/>
+    门类型：<input name="doortype" type="text"/>
+    <br/>
+    头像：<input name="face" type="file"/>
     <br/>
     <button type="submit">确定上传</button>
 </form>
