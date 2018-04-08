@@ -46,9 +46,9 @@ public class OpenController {
      * @Param form
      * @Return Object
      **/
-    @RequestMapping("/index")
+    @PostMapping("/index")
     @ResponseBody
-    public Object faceRegister(FaceCheck faceCheck, @RequestParam("face")MultipartFile file, HttpServletRequest request) {
+    public Object faceCheck(@RequestBody FaceCheck faceCheck, @RequestParam("face")MultipartFile file, HttpServletRequest request) {
         //获取文件名称
         String fileName = file.getOriginalFilename();
         LOGGER.info("上传的文件名为：" + fileName);
