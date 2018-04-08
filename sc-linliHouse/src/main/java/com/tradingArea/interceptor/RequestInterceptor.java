@@ -1,11 +1,9 @@
-package com.linlihouse.interceptor;
+package com.tradingArea.interceptor;
 
 import com.commons.controller.BaseApi;
-import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
-import com.commons.utils.JsonUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

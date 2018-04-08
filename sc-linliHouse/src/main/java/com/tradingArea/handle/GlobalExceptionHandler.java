@@ -1,4 +1,4 @@
-package com.linlihouse.handle;
+package com.tradingArea.handle;
 
 import com.commons.dto.HttpResults;
 import com.commons.exception.ScException;

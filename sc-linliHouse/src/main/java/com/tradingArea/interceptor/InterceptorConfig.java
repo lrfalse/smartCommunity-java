@@ -1,5 +1,5 @@
 
-package com.linlihouse.interceptor;
+package com.tradingArea.interceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;

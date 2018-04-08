@@ -1,4 +1,4 @@
-package com.linlihouse;
+package com.tradingArea;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
