@@ -10,10 +10,9 @@
     <modules>
         <module>sc-commons</module>		    <!-- 工具包 -->
         <module>sc-linliHouse</module>		<!-- 官网 -->
-        <module>sc-linli</module>		    <!-- 官网 -->
         <module>sc-entranceguard</module>	<!-- 门禁对接系统 -->
         <module>sc-personalCenter</module>	<!-- 个人中心 -->
-        <module>sc-tradingArea</module>	    <!-- 个人中心 -->
+        <module>sc-tradingArea</module>	    <!-- 超级商圈 -->
     </modules>
   <dependencies>
     <dependency>
