@@ -17,12 +17,12 @@ public class FaceCheck implements Serializable{
     /**
      *姓名
      */
-    private String username;
+    private String user_name;
 
     /**
      *电话号码
      */
-    private String phonenumber;
+    private String phone_number;
 
     /**
      *小区
@@ -32,15 +32,15 @@ public class FaceCheck implements Serializable{
     /**
      *房号
      */
-    private String housenumber;
+    private String house_number;
 
     /**
      *门类型,单元门,公共门
      */
-    private String doortype;
+    private String door_type;
 
     /**
      *人脸照片地址
      */
-    private String imageurl;
+    private String image_url;
 }

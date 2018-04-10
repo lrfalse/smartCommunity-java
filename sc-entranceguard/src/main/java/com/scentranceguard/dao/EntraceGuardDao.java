@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EntraceGuardDao {
 
-    @Insert("INSERT INTO linlihouse.face_check(username,phonenumber,community,housenumber,doortype,imageurl,createDate) VALUES (#{username},#{phonenumber},#{community},#{housenumber},#{doortype},#{imageurl},now())")
+    @Insert("INSERT INTO linlihouse.face_check(user_name,phone_number,community,house_number,door_type,image_url,create_Date) VALUES (#{user_name},#{phone_number},#{community},#{house_number},#{door_type},#{image_url},now())")
     void saveimage(FaceCheck faceCheck);
 }

@@ -3,7 +3,6 @@ package com.scentranceguard.controller;
 import com.alibaba.fastjson.JSON;
 import com.scentranceguard.from.*;
 import com.scentranceguard.service.EntraceGuardService;
-import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -18,17 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 public class OpenController {
@@ -48,7 +42,7 @@ public class OpenController {
      **/
     @PostMapping("/index")
     @ResponseBody
-    public Object faceCheck(@RequestBody FaceCheck faceCheck, @RequestParam("face")MultipartFile file, HttpServletRequest request) {
+    public Object faceCheck(FaceCheck faceCheck, @RequestParam("face")MultipartFile file) {
         //获取文件名称
         String fileName = file.getOriginalFilename();
         LOGGER.info("上传的文件名为：" + fileName);
@@ -66,7 +60,7 @@ public class OpenController {
         }
         try {
             file.transferTo(dest);
-            faceCheck.setImageurl(filePath + fileName);
+            faceCheck.setImage_url(filePath + fileName);
             entraceGuardService.saveImage(faceCheck);
             return "上传成功";
         } catch (IllegalStateException e) {

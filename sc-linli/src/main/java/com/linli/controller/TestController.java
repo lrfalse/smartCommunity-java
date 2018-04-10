@@ -1,4 +1,4 @@
-package com.linliHouse.controller;
+package com.linli.controller;
 
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
