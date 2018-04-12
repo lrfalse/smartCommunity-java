@@ -16,7 +16,7 @@ public class CoordinatesConvert {
       *@create:2018-04-11 16:16:30
       *@Return:
       **/
-    private static double retain6(double num){
+    public static double retain6(double num){
         String result = String .format("%.6f", num);
         return Double.valueOf(result);
     }
