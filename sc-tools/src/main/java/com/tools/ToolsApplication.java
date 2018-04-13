@@ -1,4 +1,4 @@
-package com.linliHouse;
+package com.tools;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +12,11 @@ import tk.mybatis.spring.annotation.MapperScan;
 @Controller
 @EnableWebMvc
 @SpringBootApplication
-@MapperScan(basePackages = "com.linliHouse.mapper")
-public class LinlihouseApplication  implements CommandLineRunner {
-	private Logger logger = LoggerFactory.getLogger(LinlihouseApplication.class);
+@MapperScan(basePackages = "com.tools.mapper")
+public class ToolsApplication  implements CommandLineRunner {
+	private Logger logger = LoggerFactory.getLogger(ToolsApplication.class);
 	public static void main(String[] args) {
-		SpringApplication.run(LinlihouseApplication.class, args);
+		SpringApplication.run(ToolsApplication.class, args);
 	}
 
 	@Override

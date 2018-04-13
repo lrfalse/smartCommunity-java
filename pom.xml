@@ -14,6 +14,7 @@
         <module>sc-entranceguard</module>	<!-- 门禁对接系统 -->
         <module>sc-personalCenter</module>	<!-- 个人中心 -->
         <module>sc-tradingArea</module>	    <!-- 超级商圈 -->
+        <module>sc-tools</module>	        <!-- 外接工具 -->
     </modules>
   <dependencies>
     <dependency>
