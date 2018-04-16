@@ -28,8 +28,7 @@ public class BaseApi {
 		String tag = request.getParameter("tag");
 		String body = request.getParameter("body");
 		String key = request.getParameter("key");
-		System.out.println("tagtagtagtagtagtagtagtagtag"+tag);
-		logger.debug("----------------id:" + tag+"--------------");
+		logger.debug("----------------tag:" + tag+"--------------");
 		logger.debug("----------------body:" + body+"--------------");
 		logger.debug("----------------key:" + key+"--------------");
 		IsJsonDTO json = new IsJsonDTO();
