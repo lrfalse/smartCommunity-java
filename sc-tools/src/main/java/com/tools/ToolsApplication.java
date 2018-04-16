@@ -6,11 +6,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import tk.mybatis.spring.annotation.MapperScan;
 
+/**
+  * @Description(功能描述):新增工具包
+  * @author(作者): lrfalse<wangliyou>
+  * @date (开发日期): 2018/4/16 11:24
+  **/
 @Controller
-@EnableWebMvc
 @SpringBootApplication
 @MapperScan(basePackages = "com.tools.mapper")
 public class ToolsApplication  implements CommandLineRunner {
@@ -20,7 +23,7 @@ public class ToolsApplication  implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args)  {
 		logger.info("服务启动完成!");
 	}
 }
