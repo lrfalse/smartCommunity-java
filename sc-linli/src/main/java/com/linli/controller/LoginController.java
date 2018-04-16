@@ -42,12 +42,12 @@ public class LoginController {
      * @Return:
      */
    OkHttpClient client = new OkHttpClient();
-   String url = "http://restapi.amap.com/v3/place/text?key=264d80231fd6ab84d409310b74b6ad98&keywords=桓大·泰晤士清晨&city=永川区&citylimit=true&children=5&offset=24&page=1&extensions=all";
+   String url = "http://restapi.amap.com/v3/place/text?key=264d80231fd6ab84d409310b74b6ad98&keywords=学府花园1幢&city=永川区&citylimit=true&children=5&offset=24&page=1&extensions=all";
     @GetMapping("/XXOO")
     @ResponseBody
     public String run() {
         //String[] arr={"渝中区","大渡口区","江北区","沙坪坝区","九龙坡区","南岸区","北碚区","渝北区","巴南区","涪陵区","綦江区","大足区","长寿区","江津区","合川区","永川区","南川区","璧山区","铜梁区","潼南区","荣昌区","万州区","梁平县","城口县","丰都县","垫江县","忠县","开县","云阳县","奉节县","巫山县","巫溪县","黔江区","武隆县","石柱土家族自治县","秀山土家族苗族自治县","酉阳土家族苗族自治县","彭水苗族土家族自治县"};
-            for (int i = 1; i <=70; i++) {
+            for (int i = 1; i <=4; i++) {
                 String s = "page=" + i;
                 String replace = url.replace("page=1", s);
                 Request request = new Request.Builder().url(replace).build();
