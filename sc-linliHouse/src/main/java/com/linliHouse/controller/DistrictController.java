@@ -31,13 +31,6 @@ public class DistrictController extends BaseApi{
 	@ResponseBody
 	@RequestMapping(value = "/addDistrict")
 	public HttpResults addDistrict() throws Exception {
-		District district=new District();
-		district.setAdcode(Integer.parseInt(RandomUtil.getRandomNum()));
-		district.setLevel("aa");
-		district.setLocation(Integer.parseInt(RandomUtil.getRandomNum(4))+","+Integer.parseInt(RandomUtil.getRandomNum(4)));
-		district.setName("重庆"+Integer.parseInt(RandomUtil.getRandomNum()));
-		district.setPcode("000");
-		districtService.add(district);
 		HttpResults test=getHttpResult(new TestDto());
 		return test;
 	}

@@ -14,8 +14,9 @@ import javax.persistence.Table;
 public class District extends BaseEntity {
 	private Integer adcode;		//主键code(区域code)
 	private String name;		//名称
-	private String pcode;		//上级code
-	private String location;	//'经纬度'
+	private Integer pcode;		//上级code
+	private String gLocation;	//高德'经纬度'
+	private String bLocation;	//百度'经纬度'
 	private String level;		//级别（country：国家、province：省、city：市、district：县、street：街道）
 
 }

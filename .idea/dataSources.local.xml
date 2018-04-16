@@ -3,7 +3,6 @@
   <component name="dataSourceStorageLocal">
     <data-source name="120.79.222.9" uuid="68ba7c99-8b87-46c6-8944-debb81496883">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <introspection-schemas>*:confluence</introspection-schemas>
     </data-source>
   </component>
 </project>

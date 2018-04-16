@@ -8,12 +8,9 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/sc-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/sc-tradingArea/pom.xml" />
+        <option value="$PROJECT_DIR$/sc-tools/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/sc-linLi/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="jdk1.8.0_161" project-jdk-type="JavaSDK">
