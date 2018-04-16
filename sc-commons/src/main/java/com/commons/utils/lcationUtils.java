@@ -1,15 +1,12 @@
 package com.commons.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @Description:高德坐标转百度坐标
  * @Author:feihong
  * @Vsesion:v.10
  * @Create:2018-04-11 16:16:30
  */
-public class CoordinatesConvert {
+public class lcationUtils {
 
   public static double x_pi = 3.14159265358979324 * 3000.0 / 180.0 ;
 
@@ -60,9 +57,9 @@ public class CoordinatesConvert {
 	public static String convert(String lcation) {
 		StringBuffer sb=new StringBuffer("");
 		double[] gbLcation = gcj02tobd09(lcation);
-		sb.append(CoordinatesConvert.retain6(gbLcation[0]));
+		sb.append(lcationUtils.retain6(gbLcation[0]));
 		sb.append(",");
-		sb.append(CoordinatesConvert.retain6(gbLcation[1]));
+		sb.append(lcationUtils.retain6(gbLcation[1]));
 		return sb.toString();
 	}
 	public static void main(String[] args){

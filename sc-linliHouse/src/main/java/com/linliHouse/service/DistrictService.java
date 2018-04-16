@@ -1,6 +1,6 @@
 package com.linliHouse.service;
 
-import com.commons.entity.District;
+import com.commons.entity.DistrictEntity;
 import com.linliHouse.mapper.DistrictMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class DistrictService {
 	@Autowired
 	private DistrictMapper districtMapper;
 
-	public int add(District district){
+	public int add(DistrictEntity district){
 		return districtMapper.insert(district);
 	}
 }

@@ -9,7 +9,7 @@
 				adcode,	name,	pcode,	location,	level
 	</sql>
 
-    <insert id="add1" parameterType="com.commons.entity.District" >
+    <insert id="add1" parameterType="com.commons.entity.DistrictEntity" >
         INSERT INTO
         t_district
         (adcode,name,	pcode,	location,	level)

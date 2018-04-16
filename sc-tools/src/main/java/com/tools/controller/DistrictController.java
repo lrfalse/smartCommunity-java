@@ -5,10 +5,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.TestDto;
-import com.commons.entity.District;
-import com.commons.utils.CoordinatesConvert;
+import com.commons.entity.DistrictEntity;
+import com.commons.utils.lcationUtils;
 import com.commons.utils.HttpClientUtil;
-import com.commons.utils.RandomUtil;
 import com.tools.service.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,7 @@ import java.util.List;
 
 
 /**
- * @Description(功能描述) :测试
+ * @Description(功能描述) :省市操作
  * @author(作者) :lrfalse<wangliyou>
  * @date (开发日期) :2018/4/2 22:06
  **/
@@ -41,23 +40,20 @@ public class DistrictController extends BaseApi{
 	@ResponseBody
 	@RequestMapping(value = "/addDistrict")
 	public HttpResults addDistrict() throws Exception {
-		String result= HttpClientUtil.getInstance().sendHttpGet(districtUrl);
-		JSONObject jsonObject =JSONObject.parseObject(result);
-		JSONObject jsonCountry=jsonObject.getJSONArray("districts").getJSONObject(0);	//国家
-		JSONArray jsonProvince= jsonCountry.getJSONArray("districts");						//省
-		List<District> provinces=new ArrayList<>();
+		JSONArray jsonProvince= getJSONArray(districtUrl);
+		List<DistrictEntity> provinces=new ArrayList<>();										//省
 		for(int i=0;i<jsonProvince.size();i++){
-			District district=getDistrict(jsonProvince.getJSONObject(i));
+			DistrictEntity district=getDistrict(jsonProvince.getJSONObject(i));
 			district.setPcode(0);
 			provinces.add(district);
 		}
 		districtService.addBatch(provinces);					//保存省份信息
-		List<District> citys=new ArrayList<>();					//市
-		for(District province:provinces){
+		List<DistrictEntity> citys=new ArrayList<>();					//市
+		for(DistrictEntity province:provinces){
 			String provinceUrl=districtUrl+"&keywords="+province.getName()+"&subdistrict=1&filter"+province.getAdcode();//获取省市信息
 			JSONArray jsonCity= getJSONArray(provinceUrl);
 			for(int i=0;i<jsonCity.size();i++){
-				District city=getDistrict(jsonCity.getJSONObject(i));
+				DistrictEntity city=getDistrict(jsonCity.getJSONObject(i));
 				if(isOk(city.getAdcode())){
 					city.setPcode(province.getAdcode());
 					citys.add(city);
@@ -65,12 +61,12 @@ public class DistrictController extends BaseApi{
 			}
 		}
 		districtService.addBatch(citys);					//保存城市信息
-		List<District> districts=new ArrayList<>();			//县
-		for(District city:citys){
+		List<DistrictEntity> districts=new ArrayList<>();			//县
+		for(DistrictEntity city:citys){
 			String cityUrl=districtUrl+"&keywords="+city.getName()+"&subdistrict=1&filter="+city.getAdcode();
 			JSONArray jsonCity= getJSONArray(cityUrl);
 			for(int i=0;i<jsonCity.size();i++){
-				District district=getDistrict(jsonCity.getJSONObject(i));
+				DistrictEntity district=getDistrict(jsonCity.getJSONObject(i));
 				if(isOk(district.getAdcode())){
 					city.setPcode(city.getAdcode());
 					districts.add(district);
@@ -78,12 +74,12 @@ public class DistrictController extends BaseApi{
 			}
 		}
 		districtService.addBatch(districts);					//保存县信息
-		List<District> streets=new ArrayList<>();				//街道
-		for(District district:districts){
+		List<DistrictEntity> streets=new ArrayList<>();				//街道
+		for(DistrictEntity district:districts){
 			String distUrl=districtUrl+"&keywords="+district.getName()+"&subdistrict=1&filter="+district.getAdcode()+"&offset="+99999;
 			JSONArray jsonCity=getJSONArray(distUrl);
 			for(int i=0;i<jsonCity.size();i++){
-				District street=getDistrict(jsonCity.getJSONObject(i));
+				DistrictEntity street=getDistrict(jsonCity.getJSONObject(i));
 				if(isOk(street.getAdcode())){
 					street.setPcode(district.getAdcode());
 					streets.add(street);
@@ -113,12 +109,12 @@ public class DistrictController extends BaseApi{
 	  * @date (开发日期): 2018/4/16 15:55
 	 * @param object : 具体省市对象
 	  **/
-	public District getDistrict(JSONObject object){
-		District district=new District();
+	public DistrictEntity getDistrict(JSONObject object){
+		DistrictEntity district=new DistrictEntity();
 		district.setAdcode(object.getInteger("adcode"));
 		district.setLevel(object.getString("level"));
 		district.setGLocation(object.getString("center"));
-		district.setBLocation(CoordinatesConvert.convert(object.getString("center")));
+		district.setBLocation(lcationUtils.convert(object.getString("center")));
 		district.setName(object.getString("name"));
 		return district;
 	}

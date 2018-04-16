@@ -3,8 +3,6 @@ package com.linliHouse.controller;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.TestDto;
-import com.commons.entity.District;
-import com.commons.utils.RandomUtil;
 import com.linliHouse.service.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

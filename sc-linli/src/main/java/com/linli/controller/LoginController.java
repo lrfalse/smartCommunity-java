@@ -1,7 +1,7 @@
 package com.linli.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.commons.utils.CoordinatesConvert;
+import com.commons.utils.lcationUtils;
 import com.linli.dao.DataImport;
 import com.linli.form.Demo;
 import com.linli.form.Pois;
@@ -11,17 +11,11 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import static com.commons.utils.CoordinatesConvert.*;
 
 /**
  * @Description:登录注册
@@ -120,9 +114,9 @@ public class LoginController {
         String[] split = dou.split(",");
         Double aDouble = Double.valueOf(split[0]);
         Double bDouble = Double.valueOf(split[1]);
-        double[] doubles = CoordinatesConvert.gcj02tobd09(aDouble, bDouble);
+        double[] doubles = lcationUtils.gcj02tobd09(aDouble, bDouble);
         for (double d : doubles) {
-            double v = CoordinatesConvert.retain6(d);
+            double v = lcationUtils.retain6(d);
             list.add(v);
         }
         return list.toString().replace("[", "").replace("]", "");

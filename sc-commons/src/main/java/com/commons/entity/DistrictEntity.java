@@ -11,7 +11,7 @@ import javax.persistence.Table;
  **/
 @Data
 @Table( name = "t_district")
-public class District extends BaseEntity {
+public class DistrictEntity extends BaseEntity {
 	private Integer adcode;		//主键code(区域code)
 	private String name;		//名称
 	private Integer pcode;		//上级code
