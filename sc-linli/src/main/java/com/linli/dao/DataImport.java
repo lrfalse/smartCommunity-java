@@ -21,7 +21,7 @@ public interface DataImport {
     @InsertProvider(type = SqlProvider.class,method ="insetData" )
     void batchSave(@Param("list")List<T_community_info> list);
 
-    @Select("SELECT l.name FROM linlihouse.t_community_info l")
+    @Select("SELECT t.g_location FROM linlihouse.t_community_info t")
     List<String> query();
 
     /*@Insert("INSERT INTO linlihouse.t_community_info(name, address, g_location, b_location, postcode, pcode, " +
