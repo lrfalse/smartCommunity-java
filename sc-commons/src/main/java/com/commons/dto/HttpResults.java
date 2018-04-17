@@ -27,4 +27,5 @@ public class HttpResults implements Serializable {
 		this.statusCode= AppServiceEnums.SYS_SUCCESS.getCode();
 		this.statusMsg=AppServiceEnums.SYS_SUCCESS.getMsg();
 	}
+
 }

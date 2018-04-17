@@ -29,12 +29,14 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  **/
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
-//		IsJsonDTO isJson=BaseApi.receiveMsg(request);
-//		if(isJson.isIsjson()){
-//			request.setAttribute("preHandleJsonDto", isJson);
-//		}else{
-//			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
-//		}
+		/*IsJsonDTO isJson=BaseApi.receiveMsg(request);
+		if(isJson.isIsjson()){
+			request.setAttribute("preHandleJsonDto", isJson);
+		}else{
+			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
+
+		}
+		*/
 		return true;
 	}
 
@@ -43,6 +45,7 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/3 16:40
 	  **/
+	@Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
 	}

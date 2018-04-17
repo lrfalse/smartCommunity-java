@@ -1,7 +1,6 @@
-package com.linli.form;
+package com.tools.from;
 
 import lombok.Data;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 import java.io.Serializable;
 import java.util.List;
