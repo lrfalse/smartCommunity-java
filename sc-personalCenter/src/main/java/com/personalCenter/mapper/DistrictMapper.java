@@ -1,7 +1,7 @@
-package com.linliHouse.mapper;
+package com.personalCenter.mapper;
 
-import com.commons.entity.DistrictEntity;
 import com.commons.config.MyMapper;
+import com.commons.entity.DistrictEntity;
 
 /**
  * @Description(功能描述) :省市区
