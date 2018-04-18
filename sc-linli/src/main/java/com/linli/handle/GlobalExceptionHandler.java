@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
   * @date (开发日期): 2018/4/2 22:32
   **/
 @ControllerAdvice
-public class GlobalExceptionHandler {
+	public class GlobalExceptionHandler {
 
 	private final  static Logger logger= LoggerFactory.getLogger(GlobalExceptionHandler.class);
 

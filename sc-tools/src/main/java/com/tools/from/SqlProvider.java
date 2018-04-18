@@ -1,11 +1,11 @@
-package com.linli.form;
+package com.tools.from;
 
 import java.text.MessageFormat;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @Description:sql
+ * @Description:sql批量插入
  * @Author:feihong
  * @Vsesion:v.10
  * @Create:2018-04-12 14:14:14

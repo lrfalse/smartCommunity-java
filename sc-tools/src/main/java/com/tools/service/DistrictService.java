@@ -33,6 +33,7 @@ public class DistrictService {
 	  **/
 	public int addBatch(List<DistrictEntity> districts){
 		return districtMapper.insertList(districts);
+
 	}
 
 }
