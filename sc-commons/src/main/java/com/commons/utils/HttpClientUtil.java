@@ -50,19 +50,20 @@ public class HttpClientUtil {
 		private static final HttpClientUtil instance = new HttpClientUtil();
 	}
 	/**
-	 * 发送 post请求
-	 * @param httpUrl 地址
-	 */
+	  * @Description(功能描述): post请求
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/18 9:15
+	  **/
 	public String sendHttpPost(String httpUrl) {
 		// 创建httpPost
 		HttpPost httpPost = new HttpPost(httpUrl);
 		return sendHttpPost(httpPost);
 	}
 	/**
-	 * 发送Post请求
-	 * @param httpPost
-	 * @return
-	 */
+	  * @Description(功能描述): 发送Post请求
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/18 9:15
+	  **/
 	private String sendHttpPost(HttpPost httpPost) {
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse response = null;
