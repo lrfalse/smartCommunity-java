@@ -1,4 +1,6 @@
 package com.tools.mapper;
+import com.commons.config.MyMapper;
+import com.commons.entity.CommunityEntity;
 import com.tools.from.SqlProvider;
 import com.tools.from.T_community_info;
 import org.apache.ibatis.annotations.InsertProvider;
@@ -12,19 +14,13 @@ import java.util.List;
  * @Author:feihong Vsersion:v.10
  * @Create:2018-04-12 11:11:05
  */
-@Mapper
-public interface CommunityMapper {
+public interface CommunityMapper extends MyMapper<CommunityEntity>{
 
-
+   /*
     @InsertProvider(type = SqlProvider.class,method ="insetData" )
-    void batchSave(@Param("list") List<T_community_info> list);
+    void batchSave(@Param("list") List<T_community_info> list);*/
 
-    @Select("SELECT t.g_location FROM linlihouse.t_community_info t")
-    List<String> query();
+   // @Select("SELECT t.g_location FROM linlihouse.t_community_info t")
+    List<String> queryLocation();
 
-    /*@Insert("INSERT INTO linlihouse.t_community_info(name, address, g_location, b_location, postcode, pcode, " +
-            "pname, citycode, cityname, adcode, adname, entr_location, photos_url, status, remark)VALUES (#{name},#{address}," +
-            "#{g_location},#{b_location},#{postcode},#{pcode},#{pname},#{citycode},#{cityname},#{adcode},#{adname}," +
-            "#{entr_location},#{photos_url},#{status},#{remark})")
-    void batchSave1(T_community_info t);*/
 }

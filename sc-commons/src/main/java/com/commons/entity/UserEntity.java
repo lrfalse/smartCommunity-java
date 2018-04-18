@@ -1,4 +1,4 @@
-package com.linli.form;
+package com.commons.entity;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @Create:2018-04-09 19:19:02
  */
 @Data
-public class User implements Serializable{
+public class UserEntity implements Serializable{
 
     /**
      *真实姓名
@@ -79,7 +79,7 @@ public class User implements Serializable{
     private String seq_no;
 
     /**
-     *创建人
+         *创建人
      */
     private String create_id;
 
@@ -97,6 +97,16 @@ public class User implements Serializable{
      *失效时间
      */
     private String effect_end_date;
+
+    /**
+     *第三方登录唯一id
+     */
+    private String open_id;
+
+    /**
+     *用户所在小区
+     */
+    private String community;
 
     /**
      *是否可用

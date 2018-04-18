@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Create:2018-04-10 09:9:44
  */
 @RestController
-public class LoginController {
-
+public class LoginRegisterController {
 
 }

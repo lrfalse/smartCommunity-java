@@ -5,4 +5,6 @@
 	<sql id="Base_Column_List">
 				adcode,	name,	pcode,	location,	level
 	</sql>
+
+
 </mapper>
