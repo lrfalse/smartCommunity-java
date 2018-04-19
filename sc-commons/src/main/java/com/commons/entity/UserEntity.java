@@ -2,6 +2,7 @@ package com.commons.entity;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -11,13 +12,20 @@ import java.io.Serializable;
  * @Create:2018-04-09 19:19:02
  */
 @Data
+@Table(name = "t_user")
 public class UserEntity implements Serializable{
 
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     /**
      *真实姓名
      */
     private String name;
-
+    /**
+     *头像地址
+     */
+    private String image_url;
     /**
      *用户代码
      */
@@ -33,6 +41,10 @@ public class UserEntity implements Serializable{
      */
     private String sex;
 
+    /**
+     *城市
+     */
+    private String city;
     /**
      *密码
      */
@@ -79,7 +91,7 @@ public class UserEntity implements Serializable{
     private String seq_no;
 
     /**
-         *创建人
+     *创建人
      */
     private String create_id;
 
