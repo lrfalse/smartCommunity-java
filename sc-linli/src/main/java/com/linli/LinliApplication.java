@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LinLiApplication {
+public class LinliApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LinLiApplication.class, args);
+		SpringApplication.run(LinliApplication.class, args);
 	}
 }
