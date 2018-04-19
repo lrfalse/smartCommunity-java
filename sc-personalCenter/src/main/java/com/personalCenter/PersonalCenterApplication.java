@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
@@ -12,6 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/4/8 10:20
   **/
+@Controller
 @MapperScan(basePackages = "com.personalCenter.mapper")
 @SpringBootApplication
 public class PersonalCenterApplication implements CommandLineRunner {

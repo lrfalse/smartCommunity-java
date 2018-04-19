@@ -16,11 +16,14 @@ import java.util.List;
  */
 public interface CommunityMapper extends MyMapper<CommunityEntity>{
 
-   /*
+
     @InsertProvider(type = SqlProvider.class,method ="insetData" )
-    void batchSave(@Param("list") List<T_community_info> list);*/
+    void batchSave(@Param("list") List<CommunityEntity> list);
 
    // @Select("SELECT t.g_location FROM linlihouse.t_community_info t")
     List<String> queryLocation();
+
+    @Select("SELECT * FROM linlihouse.t_community_info WHERE adname=#{str}")
+    List<CommunityEntity> query(String str);
 
 }

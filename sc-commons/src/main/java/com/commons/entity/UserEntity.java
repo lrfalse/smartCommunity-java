@@ -17,6 +17,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
 
 
     private String name; //真实姓名
+
     private String imageUrl; //头像地址
 
 
@@ -33,7 +34,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *城市
      */
-    private String city;
+    private String cityId;
     /**
      *密码
      */
@@ -91,7 +92,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *第三方登录唯一id
      */
-    private String opend;
+    private String openId;
 
     /**
      *用户所在小区
