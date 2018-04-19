@@ -34,7 +34,7 @@ public class RegisterController extends BaseApi {
 	 * @date (开发日期): 2018/4/19 10:03
 	 **/
 	@PostMapping(value = "/register")
-	public HttpResults httpResultstest(HttpServletRequest request) throws Exception {
+	public HttpResults register(HttpServletRequest request) throws Exception {
 		IsJsonDTO isJson=(IsJsonDTO)request.getAttribute("preHandleJsonDto");
 		UserReDto registerReDto= JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
 		UserEntity user=new UserEntity();
