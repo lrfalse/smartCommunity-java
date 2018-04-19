@@ -13,19 +13,11 @@ import java.io.Serializable;
  */
 @Data
 @Table(name = "t_user")
-public class UserEntity implements Serializable{
+public class UserEntity extends BaseIdEntity implements Serializable{
 
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    /**
-     *真实姓名
-     */
-    private String name;
-    /**
-     *头像地址
-     */
-    private String image_url;
+
+    private String name; //真实姓名
+    private String image_url; //头像地址
     /**
      *用户代码
      */

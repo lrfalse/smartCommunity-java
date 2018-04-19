@@ -11,4 +11,6 @@ import lombok.Data;
 public class TestDto {
 	private String name;
 	private String age;
+	private String status;
+	private String msg;
 }
