@@ -10,6 +10,7 @@ package com.commons.utils.encrypt;
 
 import com.commons.utils.CommonUtils;
 import com.commons.utils.JsonUtils;
+import com.commons.utils.MD5Utils;
 import com.thoughtworks.xstream.core.util.Base64Encoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,16 +78,48 @@ public class AESEncryptUtils {
           return originalString;
       } catch (Exception ex) {
           logger.error("---------------加密数据被窜改----------------");
-          return null;
+          return "";
       }
   }
 
+	@SuppressWarnings("Duplicates")
+	public static String encrypt(String data) throws Exception {
+		Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
+		byte[] raw = KEY.getBytes();
+		SecretKeySpec skeySpec = new SecretKeySpec(raw, KEY_ALGORITHM);
+		IvParameterSpec iv = new IvParameterSpec(IV_PARAMETER.getBytes());
+		cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
+		byte[] encrypted = cipher.doFinal(data.getBytes(CHSR_SET));
+		return new Base64Encoder().encode(encrypted);
+	}
+	@SuppressWarnings("Duplicates")
+	public static String decrypt(String data) throws Exception {
+		try {
+			byte[] raw = KEY.getBytes(CHSR_SET);
+			SecretKeySpec skeySpec = new SecretKeySpec(raw, KEY_ALGORITHM);
+			Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
+			IvParameterSpec iv = new IvParameterSpec(IV_PARAMETER.getBytes());
+			cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
+			byte[] encrypted1 = new Base64Encoder().decode(data);		// 先用base64解密
+			if(!CommonUtils.isNotEmpty(encrypted1)){
+			}
+			byte[] original = cipher.doFinal(encrypted1);
+			if(!CommonUtils.isNotEmpty(original)){
+			}
+			String originalString = new String(original, CHSR_SET);
+			return originalString;
+		} catch (Exception ex) {
+			return "";
+		}
+	}
 
   public static void main(String[] args) throws Exception {
-      String cSrc ="{\"tag\": \"A\",\"body\": \"测试数据\"}";           // 需要加密的字串
+      String cSrc ="{\"phone\":\"18716393365\",\"pwd\":\"\",\"authCode\":\"652978\"}";           // 需要加密的字串
       String enString = AESEncryptUtils.getInstance().encrypt(cSrc);  // 加密
-      System.out.println("加密后的字串是：" + enString);
-      String DeString = AESEncryptUtils.getInstance().decrypt("Dutc9MRUN9Z610/8liOgZg/38w+s+Vf66VYKx42KzFg=");
-      System.out.println("解密后的字串是：" + DeString);
+      System.out.println("加密后的字串值：" + enString);
+	  String md5Str = MD5Utils.md5(cSrc);  // 加密
+      System.out.println("加密后的md5值：" + md5Str);
+      String DeString = AESEncryptUtils.getInstance().decrypt(enString);
+      System.out.println("解密后的字串值：" + DeString);
   }
 }

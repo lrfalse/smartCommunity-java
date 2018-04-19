@@ -17,7 +17,7 @@ public enum AppServiceEnums {
 	/**
 	 * 业务逻辑错误
 	 */
-	NO_REQUEST_DATA("901","没有上送信息"),
+	ERROR_CODE("901","验证码错误"),
 	ERROR("902","用户登录失败，用户名或密码错误"),
 
 	;

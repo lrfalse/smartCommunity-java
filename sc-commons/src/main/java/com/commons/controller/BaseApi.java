@@ -2,6 +2,7 @@ package com.commons.controller;
 
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.enums.AppServiceEnums;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
@@ -18,6 +19,14 @@ import javax.servlet.http.HttpServletRequest;
  **/
 public class BaseApi {
 	private static final Logger logger = LoggerFactory.getLogger(BaseApi.class);
+
+	public static HttpResults httpResults;
+
+	static {
+		if(CommonUtils.isEmpty(httpResults)){
+			httpResults=new HttpResults();
+		}
+	}
 
 	/**
 	  * @Description(功能描述): 解析正文数据
@@ -51,14 +60,63 @@ public class BaseApi {
 	}
 
 	/**
-	  * @Description(功能描述): 返回加密报文信息
+	  * @Description(功能描述): 返回加密报文信息 默认成功
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/3 17:38
 	  **/
 	public static HttpResults getHttpResult(Object data) throws Exception {
-		HttpResults httpResult=new HttpResults();
-		httpResult.setBody(AESEncryptUtils.encrypt(data));				//加密
-		httpResult.setKey(MD5Utils.md5(JsonUtils.toJson(data)));		//添加签名
-		return httpResult;
+		httpResults.setBody(AESEncryptUtils.encrypt(data));				//加密
+		httpResults.setKey(MD5Utils.md5(JsonUtils.toJson(data)));		//添加签名
+		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
+		httpResults.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
+		return httpResults;
 	}
+	/**
+	  * @Description(功能描述): 只返回状态结果
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/19 10:50
+	  **/
+	public static HttpResults getHttpResultOk() throws Exception {
+		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
+		httpResults.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
+		return httpResults;
+	}
+	/**
+	  * @Description(功能描述): 只返回错误结果
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/19 10:50
+	  **/
+	public static HttpResults getHttpResultError() throws Exception {
+		httpResults.setStatusCode(AppServiceEnums.SYS_DATA_ERROR.getCode());
+		httpResults.setStatusMsg(AppServiceEnums.SYS_DATA_ERROR.getMsg());
+		return httpResults;
+	}
+	/**
+	  * @Description(功能描述): int状态封装
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/19 11:21
+	 * @param result  : 大于0 成功状态  or  失败状态
+	  **/
+	public static HttpResults getHttpResult(int result) throws Exception {
+		if(result>0){
+			return getHttpResultOk();
+		}else{
+			return getHttpResultError();
+		}
+	}
+
+	/**
+	  * @Description(功能描述): boolean 状态封装
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/19 11:22
+	 * @param result : true 成功状态   false  失败状态
+	  **/
+	public static HttpResults getHttpResult(boolean result) throws Exception {
+		if(result){
+			return getHttpResultOk();
+		}else{
+			return getHttpResultError();
+		}
+	}
+
 }

@@ -5,12 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
   * @Description(功能描述): 个人体系
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/4/8 10:20
   **/
+@MapperScan(basePackages = "com.personalCenter.mapper")
 @SpringBootApplication
 public class PersonalCenterApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(PersonalCenterApplication.class);

@@ -17,11 +17,8 @@ public class UserEntity extends BaseIdEntity implements Serializable{
 
 
     private String name; //真实姓名
-    private String image_url; //头像地址
-    /**
-     *用户代码
-     */
-    private String code;
+    private String imageUrl; //头像地址
+
 
     /**
      *用户生日
@@ -45,17 +42,17 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *身份证号码
      */
-    private String identity_code;
+    private String identityCode;
 
     /**
      *移动电话
      */
-    private String mob_phone;
+    private String mobPhone;
 
     /**
      *家庭电话
      */
-    private String home_phone;
+    private String homePhone;
 
     /**
      *家庭地址
@@ -65,7 +62,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *邮编
      */
-    private String ost_code;
+    private String ostCode;
 
     /**
      *QQ号码
@@ -80,42 +77,28 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *排序号
      */
-    private String seq_no;
+    private String seqNo;
 
-    /**
-     *创建人
-     */
-    private String create_id;
+
 
     /**
      *创建时间
      */
-    private String create_time;
+    private String createTime;
 
-    /**
-     *生效时间
-     */
-    private String effect_start_date;
 
-    /**
-     *失效时间
-     */
-    private String effect_end_date;
 
     /**
      *第三方登录唯一id
      */
-    private String open_id;
+    private String opend;
 
     /**
      *用户所在小区
      */
-    private String community;
+    private int communityId;
 
-    /**
-     *是否可用
-     */
-    private String disabled;
+
 
     /**
      *状态 0:正常,1:非正常
