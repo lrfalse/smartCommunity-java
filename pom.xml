@@ -15,6 +15,7 @@
         <module>sc-personalCenter</module>	<!-- 个人中心 -->
         <module>sc-tradingArea</module>	    <!-- 超级商圈 -->
         <module>sc-tools</module>	        <!-- 外接工具 -->
+        <module>sc-service</module>	        <!-- dubbo服务 -->
     </modules>
   <dependencies>
     <dependency>
