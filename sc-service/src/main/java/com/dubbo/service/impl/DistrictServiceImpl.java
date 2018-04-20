@@ -1,10 +1,10 @@
 package com.dubbo.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.commons.entity.DistrictEntity;
+import com.commons.service.DistrictService;
 import com.dubbo.mapper.DistrictMapper;
-import com.dubbo.service.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 
 /**

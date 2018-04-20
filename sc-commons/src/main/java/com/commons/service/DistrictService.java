@@ -1,4 +1,4 @@
-package com.dubbo.service;
+package com.commons.service;
 
 import com.commons.entity.DistrictEntity;
 

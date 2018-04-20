@@ -5,24 +5,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.ImportResource;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
-  * @Description(功能描述): 个人体系
-  * @author(作者): lrfalse<wangliyou>
-  * @date (开发日期): 2018/4/8 10:20
-  **/
-@Controller
-@MapperScan(basePackages = "com.personalCenter.mapper")
+ * @Description(功能描述): 个人体系
+ * @author(作者): lrfalse<wangliyou>
+ * @date (开发日期): 2018/4/8 10:20
+ **/
 @SpringBootApplication
+@MapperScan(basePackages = "com.personalCenter.mapper")
+@ImportResource(value = "classpath:dubbo-consumer.xml")
 public class PersonalCenterApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(PersonalCenterApplication.class);
-	/**
-	  * @Description(功能描述): 个人体系启动项
-	  * @author(作者): lrfalse<wangliyou>
-	  * @date (开发日期): 2018/4/8 10:20
-	  **/
+
 	public static void main(String[] args) {
 		SpringApplication.run(PersonalCenterApplication.class, args);
 	}

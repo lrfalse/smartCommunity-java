@@ -27,6 +27,7 @@ package com.commons.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
   * @Description(功能描述): 基础信息
@@ -34,7 +35,7 @@ import javax.persistence.*;
   * @date (开发日期): 2018/4/12 14:31
   **/
 @Data
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     @Transient
     private Integer page = 1;
 

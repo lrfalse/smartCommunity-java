@@ -1,17 +1,16 @@
 package com.personalCenter.controller.user;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
+import com.commons.service.UserService;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
 import com.commons.utils.SmsUtils;
-import com.personalCenter.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,7 +40,7 @@ public class RegisterController extends BaseApi {
 		user.setMobPhone(registerReDto.getPhone());
 		user.setPwd(MD5Utils.md5(registerReDto.getPwd()));
 		int result=userService.addUser(user);
-		//TODO 返回小区信息
+		//TODO 返回小区信息 判断手机号是否已经登录
 		return getHttpResult(result);
 	}
 

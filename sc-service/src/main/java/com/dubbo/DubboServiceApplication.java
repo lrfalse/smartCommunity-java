@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Controller;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -16,6 +17,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @Controller
 @SpringBootApplication
 @MapperScan(basePackages = "com.dubbo.mapper")
+@ImportResource(locations={"classpath:dubbo/dubbo-provider.xml"})
 public class DubboServiceApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(DubboServiceApplication.class);
 	public static void main(String[] args) {

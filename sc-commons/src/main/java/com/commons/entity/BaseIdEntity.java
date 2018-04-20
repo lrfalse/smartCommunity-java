@@ -27,6 +27,7 @@ package com.commons.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
   * @Description(功能描述): 基础信息
@@ -34,7 +35,7 @@ import javax.persistence.*;
   * @date (开发日期): 2018/4/12 14:31
   **/
 @Data
-public class BaseIdEntity {
+public class BaseIdEntity implements Serializable{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +46,4 @@ public class BaseIdEntity {
 
     @Transient
     private Integer rows = 10;
-
-
 }

@@ -114,7 +114,7 @@ public class AESEncryptUtils {
 	}
 
   public static void main(String[] args) throws Exception {
-      String cSrc ="{\"name\":\"梅西\", \"sex\":\"男\",\"openid\":\"vfrevnuiwfewobvgfn\"}";           // 需要加密的字串
+      String cSrc ="{\"phone\":\"18716393365\",\"pwd\":\"123456\",\"authCode\":\"652978\"}";           // 需要加密的字串
       String enString = AESEncryptUtils.getInstance().encrypt(cSrc);  // 加密
       System.out.println("加密后的字串值：" + enString);
 	  String md5Str = MD5Utils.md5(cSrc);  // 加密

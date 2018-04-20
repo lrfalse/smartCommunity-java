@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="sc-service-dubbo-provider" owner="sc-service-dubbo-provider" />
+    <dubbo:registry protocol="zookeeper" address="${zookeeper.register.address}" client="zkclient" />
+    <dubbo:protocol name="dubbo" port="-1" />
+
+    <!-- 声明暴露的服务接口 -->
+    <dubbo:service interface="com.commons.service.DistrictService"  ref="districtService" timeout="10000" />
+    <dubbo:service interface="com.commons.service.UserService"  ref="userService" timeout="10000" />
+
+    <!-- 声明暴露的服务接口的实现类 -->
+    <bean id="districtService" class="com.dubbo.service.impl.DistrictServiceImpl" />
+    <bean id="userService" class="com.dubbo.service.impl.UserServiceImpl" />
+
+</beans>
