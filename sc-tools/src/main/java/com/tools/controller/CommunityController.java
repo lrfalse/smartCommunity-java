@@ -45,7 +45,7 @@ public class CommunityController {
 
    @GetMapping("/community")
     public String addCommunity() {
-        String[] arr={"拉萨市","日喀则市","昌都市","林芝市","山南市","那曲地区","阿里地区","临沧市","乌鲁木齐市","克拉玛依市","哈密市","阿勒泰地区","塔城地区","喀什地区","阿克苏地区","和田地区","伊犁哈萨克自治州","博尔塔拉蒙古自治州","昌吉回族自治州","克孜勒苏柯尔克孜自治州","巴音郭楞蒙古自治州","石河子市","五家渠市","图木舒克市","阿拉尔市","北屯市","铁门关市","双河市","可克达拉市","昆玉市",""};
+        String[] arr={"杭州市","宁波市","湖州市","嘉兴市","金华市","丽水市","衢州市","绍兴市","台州市","温州市","舟山市","武汉市","鄂州市","黄冈市","黄石市","荆门市","荆州市","十堰市","随州市","襄阳市","咸宁市","孝感市","宜昌市","恩施土家族苗族自治州","天门市","潜江市","仙桃市","神农架林区"};
         for (int j=0;j<arr.length;j++) {
             String s1 = url.replace("重庆市", arr[j]);
             for (int i = 1; i <=100; i++) {
@@ -58,6 +58,7 @@ public class CommunityController {
                     String str = response.body().string();
                     Demo demo = JSON.parseObject(str, Demo.class);
                     List<CommunityEntity> list = getList(demo.getPois());
+                    //int i1 = list.size() / 24;
                    /* List<String> query = communityMapper.queryLocation();
                     Iterator<CommunityEntity> t_Iterator = list.iterator();
                     Iterator<String> iterator = query.iterator();

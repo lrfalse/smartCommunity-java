@@ -32,7 +32,8 @@ import tk.mybatis.mapper.common.MySqlMapper;
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/4/12 14:25
   **/
-public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
+public interface
+MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
     //TODO
     //FIXME 特别注意，该接口不能被扫描到，否则会出错
 }

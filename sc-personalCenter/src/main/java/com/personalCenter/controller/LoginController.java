@@ -32,22 +32,12 @@ public class LoginController extends BaseApi {
       **/
     @PostMapping("/login")
     public HttpResults login(HttpServletRequest req) throws Exception {
-        Object obj= loginRegisterService.login((IsJsonDTO) req.getAttribute("preHandleJsonDto"));
+        Object obj = loginRegisterService.login((IsJsonDTO) req.getAttribute("preHandleJsonDto"));
         if (obj.equals(AppServiceEnums.SYS_EXCEPTION.getCode()) || obj.equals(AppServiceEnums.SYS_DATA_ERROR.getCode())){
             return getHttpResultError();
         }
         return  getHttpResult(obj);
-
     }
 
-    /**
-      * @Description(功能描述): 小区选择
-      * @author(作者): feihong
-      * @date (开发日期):2018-4-19 18:23:33
-      **/
-/*
-    @GetMapping("/chooseCommunity")
-    public HttpResults chooseCommunity(String ad){
 
-    }*/
 }

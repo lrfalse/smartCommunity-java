@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="sc-tools:Web exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java" description="List&lt;CommunityEntity&gt; communityEntityList = Commun..." line="45" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b63d2c5b-1b1f-453a-951a-06d821c08263" name="Default" comment="">
+    <list default="true" id="b63d2c5b-1b1f-453a-951a-06d821c08263" name="Default" comment="登录">
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/BindPhoneDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginErrorDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/BindPhoneVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/mapper/package-info.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/CommunityMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java" />
-      <change beforePath="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/RequestInterceptor.java" afterPath="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/RequestInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginDTO.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginDTO.java" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommunityEntity.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommunityEntity.java" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java" />
+      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java" />
+      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" />
+      <change beforePath="$PROJECT_DIR$/sc-service/sc-service.iml" afterPath="$PROJECT_DIR$/sc-service/sc-service.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" afterPath="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/sc-linlihouse/target/" />
     <ignored path="$PROJECT_DIR$/sc-commons/target/" />
@@ -19,6 +44,7 @@
     <ignored path="$PROJECT_DIR$/sc-personalCenter/target/" />
     <ignored path="$PROJECT_DIR$/sc-linLi/target/" />
     <ignored path="$PROJECT_DIR$/sc-tools/target/" />
+    <ignored path="$PROJECT_DIR$/sc-service/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +56,7 @@
     <SUITE FILE_PATH="coverage/smartCommunity$ToolsApplication.coverage" NAME="ToolsApplication Coverage Results" MODIFIED="1523848200981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.tools.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/smartCommunity_java$PersonalCenterApplication.coverage" NAME="PersonalCenterApplication Coverage Results" MODIFIED="1524318668837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -45,44 +72,130 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RequestInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/RequestInterceptor.java">
+      <file leaf-file-name="AESEncryptUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DistrictController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/DistrictController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="-217">
+              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
-                <marker date="1523874451540" expanded="true" signature="954:957" ph="{...}" />
+                <element signature="e#3956#3987#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/TestController.java">
+      <file leaf-file-name="LoginDTO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="418">
+              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsJsonDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/IsJsonDTO.java">
+      <file leaf-file-name="LoginRegisterService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="875">
+              <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommunityController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="779">
+              <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IvParameterSpec.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/spec/IvParameterSpec.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <marker date="1523173536578" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1523173536578" expanded="false" signature="313:324" ph=" { " />
+                <marker date="1523173536578" expanded="false" signature="351:357" ph=" }" />
+                <marker date="1523173536578" expanded="true" signature="419:900" ph="{...}" />
+                <marker date="1523173536578" expanded="false" signature="927:938" ph=" { " />
+                <marker date="1523173536578" expanded="false" signature="969:975" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecretKeySpec.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/spec/SecretKeySpec.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-132">
+              <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <marker date="1523173536578" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1523173536578" expanded="false" signature="141:260" ph="..." />
+                <marker date="1523173536578" expanded="true" signature="498:868" ph="{...}" />
+                <marker date="1523173536578" expanded="true" signature="941:1623" ph="{...}" />
+                <marker date="1523173536578" expanded="false" signature="1657:1668" ph=" { " />
+                <marker date="1523173536578" expanded="false" signature="1690:1696" ph=" }" />
+                <marker date="1523173536578" expanded="false" signature="1727:1738" ph=" { " />
+                <marker date="1523173536578" expanded="false" signature="1751:1757" ph=" }" />
+                <marker date="1523173536578" expanded="false" signature="1789:1800" ph=" { " />
+                <marker date="1523173536578" expanded="false" signature="1832:1838" ph=" }" />
+                <marker date="1523173536578" expanded="true" signature="1866:2163" ph="{...}" />
+                <marker date="1523173536578" expanded="true" signature="2204:2840" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvocableHandlerMethod.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/workTools/local/repo/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-589">
+              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommunityService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="107" column="51" lean-forward="false" selection-start-line="107" selection-start-column="51" selection-end-line="107" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginRegisterMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding>
+                <marker date="1524373736733" expanded="true" signature="357:416" ph="SELECT * FRO... t_user" />
+                <marker date="1524373736733" expanded="true" signature="534:610" ph="UPDATE linlihouse.t_user... " />
+                <marker date="1524373736733" expanded="true" signature="726:802" ph="UPDATE linlihouse.t_user... " />
+                <marker date="1524373736733" expanded="true" signature="894:970" ph="UPDATE linlihouse.t_user... " />
+                <marker date="1524373736733" expanded="true" signature="1060:1136" ph="UPDATE linlihouse.t_user... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,33 +206,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="package-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>spring.datasource.password</find>
-      <find>alibaba</find>
-      <find>tool</find>
-      <find>sc-</find>
-      <find>spring-boot-starter</find>
-      <find>gradle</find>
-      <find>tk.mybatis.springboot.mapper</find>
-      <find>linlihouse.district</find>
-      <find>spring-boot-starter-parent</find>
-      <find>dur</find>
-      <find>druid</find>
-      <find>common</find>
-      <find>DruidDataSourceAutoConfigure</find>
-      <find>springframework</find>
-      <find>pring-boot-maven-plu</find>
-      <find>sc</find>
-      <find>fa</find>
-      <find>DruidDataSource</find>
-      <find>spring.datasource</find>
-      <find>linliHouse</find>
-      <find>li</find>
       <find>tools</find>
       <find>sc-tools</find>
       <find>sc-c</find>
@@ -129,9 +223,34 @@
       <find>httpget</find>
       <find>gcj02tobd09</find>
       <find>test</find>
+      <find>HttpResults</find>
+      <find>dataMapper</find>
+      <find>t_community_info</find>
+      <find>CommunityController</find>
+      <find>No qualifying bean of type 'com.app.mapper.UserMapper' available:</find>
+      <find>weinxinLogin</find>
+      <find>index</find>
+      <find>verifyMd5</find>
+      <find>翠苑</find>
+      <find>永青花园</find>
+      <find>getHttpResult</find>
+      <find>distinct</find>
+      <find>cit</find>
+      <find>openid</find>
+      <find>city</find>
+      <find>chooseCommunityService</find>
+      <find>chooseCommunityMapper</find>
+      <find>i</find>
+      <find>userEntity1</find>
+      <find>updatewphone</find>
+      <find>SecretKeySpec</find>
     </findStrings>
     <replaceStrings>
       <replace>tools</replace>
+      <replace>communityEntity</replace>
+      <replace>CommunityControllerxx</replace>
+      <replace>CommunityService</replace>
+      <replace>CommunityMapper</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -145,57 +264,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/handle/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/linliApplication.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/LinliApplication.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/interceptor/InterceptorConfig.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/interceptor/RequestInterceptor.java" />
-        <option value="$PROJECT_DIR$/sc-linli/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/resources/application-common.properties" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/MyMapper.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/BaseMapper.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseEntity.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseNoIdEntity.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/service/DistrictService.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/resources/META-INF/spring-devtools.properties" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseIdEntity.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/resources/generator/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/mapper/DistrictMapper.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/mapper/xml/Districtmapper.xml" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/pom.xml" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/MybatisConfig.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MybatisConfig.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/sc-commons/pom.xml" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/config/MybatisConfig.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/LinlihouseApplication.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/handle/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/interceptor/InterceptorConfig.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/interceptor/RequestInterceptor.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/resources/generator/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/sc-tools/pom.xml" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/ToolsApplication.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/CoordinatesConvert.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/DistrictController.java" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/lcationUtils.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/District.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/DistrictEntity.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapperImpl.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/service/DistrictService.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/DistrictMapper.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/User.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/T_Community_info.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/T_CommunityEntity.java" />
         <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/xml/Districtmapper.xml" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/service/CommunityService.java" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/xml/Communitymapper.xml" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/config/CustomMVCConfiguration.java" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityControllerxx.java" />
+        <option value="$PROJECT_DIR$/sc-linli/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/sc-linli/src/main/java/com/linli/controller/LoginRegisterController.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/impl/LoginRegisterService.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/DistrictController.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/impl/DistrictService.java" />
         <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/DistrictController.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/RequestInterceptor.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/interceptor/RequestInterceptor.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/interceptor/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/TestDto.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/impl/LoginRegisterServiceimpl.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterServiceimpl.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/DistrictService.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/HttpResult.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/XXO.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginRegisterController.java" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java" />
-        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/CommunityMapper.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/pom.xml" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/CityCode.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/ChooseCommunity.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/ChooseCommunity.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/ChooseCommunityService.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/ChooseCommunityController.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommunityEntity.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/BindPhone.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/BindPhoneVo.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/BindPhoneDto.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginDTO.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginErrorDto.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java" />
+        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java" />
       </list>
     </option>
   </component>
@@ -209,8 +328,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\workTools\local\repo" />
-        <option name="mavenHome" value="D:/workTools/apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="D:\workTools\apache-maven-3.5.2\conf\settings.xml" />
+        <option name="mavenHome" value="D:/JavaTool/maven/apache-maven-3.1.1" />
+        <option name="userSettingsFile" value="D:\JavaTool\maven\apache-maven-3.1.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -232,30 +351,12 @@
           <item name="smartCommunity" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="smartCommunity" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Modules" type="87271259:MavenProjectsStructure$ModulesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="smartCommunity" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Modules" type="87271259:MavenProjectsStructure$ModulesNode" />
-          <item name="sc-tools" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="smartCommunity" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Modules" type="87271259:MavenProjectsStructure$ModulesNode" />
-          <item name="sc-tools" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="MavenRunner">
-    <option name="jreName" value="jdk1.8.0_161" />
+    <option name="jreName" value="1.8.0_161" />
     <option name="vmOptions" value="-Dfile.encoding=GB2312" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -263,6 +364,28 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring BootSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringBootApplicationProperties</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -282,180 +405,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="handle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-linliHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="smartCommunity-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity-java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4531722" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jeesite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -465,20 +439,149 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.commons.config" />
-      <recent name="com.linliHouse.config" />
-      <recent name="com.linliHouse" />
-      <recent name="com.commons.entity" />
-      <recent name="com.commons.utils" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\smartCommunity-java\sc-personalCenter\src\main\java\com\personalCenter\mapper\xml" />
+      <recent name="D:\work\smartCommunity-java\sc-linli\src\main\java\com\linli\mapper\xml" />
+      <recent name="D:\work\smartCommunity-java\sc-tools\src\main\java\com\tools\mapper\xml" />
+      <recent name="D:\work\smartCommunity-java\sc-tools\src\main\java\com\tools\from" />
       <recent name="D:\workspace\codebase\smartCommunity\sc-tools\src\main\resources" />
-      <recent name="D:\workspace\codebase\smartCommunity" />
-      <recent name="D:\workspace\codebase\smartCommunity\sc-linliHouse\src\main\resources" />
-      <recent name="D:\workspace\codebase\smartCommunity\sc-tradingArea" />
-      <recent name="D:\workspace\codebase\smartCommunity\sc-commons\src\main\java\com\commons\utils\encrypt" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.personalCenter.controller" />
+      <recent name="com.commons.entity" />
+      <recent name="com.tools.config" />
+      <recent name="com.tools.mapper" />
+      <recent name="com.linli" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\smartCommunity-java\sc-linli\src\main\java\com\linli\mapper\xml" />
+      <recent name="D:\work\smartCommunity-java\sc-tools\src\main\java\com\tools\mapper\xml" />
+      <recent name="D:\work\smartCommunity-java\sc-tools\src\main\java\com\tools\mapper" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/smartCommunity.iml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/sc-service.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/DubboServiceApplication.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/controller/DistrictController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/DistrictMapper.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/DistrictMapper.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/DistrictService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/DistrictServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/resources/META-INF/spring-devtools.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/resources/application-dev.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/resources/application-prod.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/resources/application.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sc-service/src/main/resources/templates/test.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -492,13 +595,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PersonalCenterApplication">
+  <component name="RunManager" selected="Application.AESEncryptUtils">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="AESEncryptUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.commons.utils.encrypt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.commons.utils.encrypt.AESEncryptUtils" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sc-commons" />
+      <envs />
     </configuration>
     <configuration name="DistrictController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -519,6 +641,44 @@
       <module name="sc-tools" />
       <envs />
     </configuration>
+    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.commons.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.commons.utils.MD5Utils" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sc-commons" />
+      <envs />
+    </configuration>
+    <configuration name="PersonalCenterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.personalCenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.personalCenter.PersonalCenterApplication" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sc-personalCenter" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -531,25 +691,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="lcationUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.commons.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.commons.utils.lcationUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="sc-commons" />
       <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -591,10 +732,28 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration name="DubboServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dubbo.DubboServiceApplication" />
+      <module name="sc-service" />
+      <envs />
+    </configuration>
     <configuration name="EntranceguardApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.scentranceguard.EntranceguardApplication" />
       <module name="sc-entranceguard" />
+      <envs />
+    </configuration>
+    <configuration name="LinLiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.linli.LinLiApplication" />
+      <module name="sc-linli" />
+      <envs />
+    </configuration>
+    <configuration name="LinliApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.linli.LinliApplication" />
+      <module name="sc-linli" />
       <envs />
     </configuration>
     <configuration name="LinlihouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -609,13 +768,8 @@
       <module name="sc-personalCenter" />
       <envs />
     </configuration>
-    <configuration name="ToolsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="ToolsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tools.ToolsApplication" />
       <module name="sc-tools" />
       <envs />
@@ -659,20 +813,26 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Spring Boot.LinlihouseApplication" />
-      <item index="1" class="java.lang.String" itemvalue="Spring Boot.EntranceguardApplication" />
-      <item index="2" class="java.lang.String" itemvalue="Spring Boot.TradingAreaApplication" />
-      <item index="3" class="java.lang.String" itemvalue="Spring Boot.PersonalCenterApplication" />
-      <item index="4" class="java.lang.String" itemvalue="Spring Boot.ToolsApplication" />
-      <item index="5" class="java.lang.String" itemvalue="Application.lcationUtils" />
-      <item index="6" class="java.lang.String" itemvalue="Application.DistrictController" />
+    <list size="12">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.TradingAreaApplication" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.LinLiApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.LinlihouseApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.ToolsApplication" />
+      <item index="4" class="java.lang.String" itemvalue="Spring Boot.PersonalCenterApplication" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.EntranceguardApplication" />
+      <item index="6" class="java.lang.String" itemvalue="Spring Boot.LinliApplication" />
+      <item index="7" class="java.lang.String" itemvalue="Application.DistrictController" />
+      <item index="8" class="java.lang.String" itemvalue="Application.MD5Utils" />
+      <item index="9" class="java.lang.String" itemvalue="Application.PersonalCenterApplication" />
+      <item index="10" class="java.lang.String" itemvalue="Application.AESEncryptUtils" />
+      <item index="11" class="java.lang.String" itemvalue="Spring Boot.DubboServiceApplication" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.DistrictController" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.ToolsApplication" />
-        <item index="2" class="java.lang.String" itemvalue="Application.lcationUtils" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.AESEncryptUtils" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PersonalCenterApplication" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DistrictController" />
+        <item index="3" class="java.lang.String" itemvalue="Application.MD5Utils" />
       </list>
     </recent_temporary>
   </component>
@@ -699,6 +859,8 @@
       <workItem from="1523605227914" duration="9627000" />
       <workItem from="1523844504336" duration="4449000" />
       <workItem from="1523848972752" duration="14580000" />
+      <workItem from="1523876440860" duration="49259000" />
+      <workItem from="1524032045529" duration="132795000" />
     </task>
     <task id="LOCAL-00001" summary="新增加解密流程。">
       <created>1522751558614</created>
@@ -812,73 +974,93 @@
       <option name="project" value="LOCAL" />
       <updated>1523875028488</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="数据抓取移动">
+      <created>1523960305963</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523960305963</updated>
+    </task>
+    <task id="LOCAL-00018" summary="项目移动">
+      <created>1524032967160</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1524032967160</updated>
+    </task>
+    <task id="LOCAL-00019" summary="实体类">
+      <created>1524106847208</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1524106847208</updated>
+    </task>
+    <task id="LOCAL-00020" summary="实体类">
+      <created>1524107441764</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1524107441765</updated>
+    </task>
+    <task id="LOCAL-00021" summary="登录">
+      <created>1524147760503</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1524147760503</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102437000" />
+    <option name="totallyTimeSpent" value="284491000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21452513" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.493578" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2793296" sideWeight="0.5074627" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1098081" sideWeight="0.493578" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29385474" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22569832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.49307036" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19888268" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22681564" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2301676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1945629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.49253732" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0022346368" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13539445" sideWeight="0.50642204" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.49573562" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.4936508" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1988273" sideWeight="0.5063492" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6044693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21452513" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.493578" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29385474" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22569832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14748603" sideWeight="0.4968017" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13539445" sideWeight="0.50642204" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3877095" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2301676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1945629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -919,6 +1101,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -935,422 +1143,719 @@
     <MESSAGE value="优化工具项目" />
     <MESSAGE value="新增省市区数据拉取" />
     <MESSAGE value="优化省市区数据拉取" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化省市区数据拉取" />
+    <MESSAGE value="数据抓取移动" />
+    <MESSAGE value="项目移动" />
+    <MESSAGE value="实体类" />
+    <MESSAGE value="登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/MD5Utils.java</url>
-          <line>38</line>
+          <url>file://$PROJECT_DIR$/sc-linli/src/main/java/com/linli/controller/TestController.java</url>
+          <line>40</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java</url>
-          <line>82</line>
+          <line>121</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java</url>
+          <line>97</line>
+          <properties />
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/CommunityMapper.java</url>
+          <line>23</line>
+          <properties class="com.tools.mapper.CommunityMapper" method="queryLocation" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="167" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/service/DistrictService.java">
+    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="-2161">
+          <caret line="47" column="197" lean-forward="false" selection-start-line="47" selection-start-column="197" selection-end-line="47" selection-end-column="197" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/config/MybatisConfig.java" />
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="87" column="19" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="87" selection-end-column="19" />
-          <folding>
-            <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/workTools/local/repo/org/springframework/boot/spring-boot-autoconfigure/2.0.0.RELEASE/spring-boot-autoconfigure-2.0.0.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/jdbc/DataSourceBeanCreationFailureAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="67" column="38" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/resources/application-dev.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/Test.java" />
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/resources/mapper/Districtmapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/resources/generator/generatorConfig.xml" />
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/resources/generatorConfig.xml" />
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/StringBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="416" column="37" lean-forward="false" selection-start-line="416" selection-start-column="37" selection-end-line="416" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/workTools/local/repo/com/alibaba/fastjson/1.2.14/fastjson-1.2.14.jar!/com/alibaba/fastjson/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/workTools/local/repo/com/alibaba/fastjson/1.2.14/fastjson-1.2.14.jar!/com/alibaba/fastjson/JSONArray.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="1501" column="15" lean-forward="false" selection-start-line="1501" selection-start-column="15" selection-end-line="1501" selection-end-column="15" />
-          <folding>
-            <element signature="e#58481#58482#0" expanded="false" />
-            <element signature="e#58518#58519#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/sc-tools.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/ToolsApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/handle/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/interceptor/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/interceptor/RequestInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#698#699#0" expanded="false" />
-            <element signature="e#765#766#0" expanded="false" />
-            <element signature="e#812#813#0" expanded="false" />
-            <element signature="e#845#846#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/resources/application-dev.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/DistrictEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="198">
+          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapperImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/workTools/local/repo/tk/mybatis/mapper-base/1.0.0/mapper-base-1.0.0.jar!/tk/mybatis/mapper/common/special/InsertListMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/mapper/DistrictMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/DistrictMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="11" column="66" lean-forward="true" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/xml/Districtmapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/service/DistrictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="286">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#600#601#0" expanded="false" />
-            <element signature="e#645#646#0" expanded="false" />
-            <element signature="e#816#817#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/DistrictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/TestDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/BaseIdEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/DistrictEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/HttpClientUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="30" />
-          <folding>
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="e#1593#1594#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/lcationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="325">
+          <caret line="122" column="18" lean-forward="false" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/DistrictController.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/SmsUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linli/src/main/java/com/linli/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/handle/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/LinlihouseApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="361">
+          <caret line="35" column="64" lean-forward="false" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/HttpResults.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="220">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/HttpRequest.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommunityEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="139">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/JsonUtils.java">
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/DistrictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="42" column="26" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="249">
+          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/MD5Utils.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/reDto/UserReDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+        <state relative-caret-position="220">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java">
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state relative-caret-position="286">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/interceptor/RequestInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/resources/application-dev.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/DistrictController.java">
+    <entry file="jar://D:/workTools/local/repo/tk/mybatis/mapper-base/1.0.0/mapper-base-1.0.0-sources.jar!/tk/mybatis/mapper/common/base/select/SelectOneMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="484">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/BindPhoneVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding>
-            <marker date="1523874451540" expanded="true" signature="954:957" ph="{...}" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/IsJsonDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="220">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/TestController.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="198">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/enums/AppServiceEnums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/tk/mybatis/mapper-base/1.0.0/mapper-base-1.0.0-sources.jar!/tk/mybatis/mapper/common/base/select/SelectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/user/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/BindPhoneDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/interceptor/InterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginErrorDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-webmvc/5.0.4.RELEASE/spring-webmvc-5.0.4.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <marker date="1522821462451" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522821462451" expanded="false" signature="177:1388" ph="..." />
+            <marker date="1522821462451" expanded="false" signature="1736:1747" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="1770:1776" ph=" }" />
+            <marker date="1522821462451" expanded="false" signature="1847:1858" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="1879:1885" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="2001:2064" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="2205:3295" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="3381:3970" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="4042:4053" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="4087:4093" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="4195:4513" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="4585:4755" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="4838:6528" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5017:5341" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5462:5642" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5687:5965" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="6012:6027" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="6060:6070" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="6163:6327" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6414:6522" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6616:8127" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6803:7488" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6829:7176" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="7527:7542" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="7598:7608" ph=" }" />
+            <marker date="1522821462451" expanded="false" signature="7689:7704" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="7727:7737" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="7824:7926" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="8019:8121" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-webmvc/5.0.4.RELEASE/spring-webmvc-5.0.4.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="55" column="28" lean-forward="false" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-webmvc/5.0.4.RELEASE/spring-webmvc-5.0.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="496" column="0" lean-forward="false" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+          <folding>
+            <marker date="1522821462451" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522821462451" expanded="false" signature="155:2025" ph="..." />
+            <marker date="1522821462451" expanded="false" signature="5135:5146" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="5183:5189" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="5265:5356" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5436:5509" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5589:5662" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5762:5855" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="5931:6000" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6092:6177" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="6246:6257" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="6304:6310" ph=" }" />
+            <marker date="1522821462451" expanded="false" signature="6368:6379" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="6408:6414" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="6478:6891" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="6960:7571" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="7637:8292" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="8357:9000" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="9067:10162" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10229:11324" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="11401:12648" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="12727:13484" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="13549:14614" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="14681:15348" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="15410:15542" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="15615:15626" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="15656:15662" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="15737:15849" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="15946:16289" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="16394:17737" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="17826:17907" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="18013:20216" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="20323:23482" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="23594:23832" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="24053:25319" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="25396:25665" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="25566:25658" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="25769:26835" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="26907:27184" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="27250:27606" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="27714:28348" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="28459:28967" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="29056:29716" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="29898:31241" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="31361:32851" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="32952:33061" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="33226:33651" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="33829:33975" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="34082:35216" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="35286:35482" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="35495:35880" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-webmvc/5.0.4.RELEASE/spring-webmvc-5.0.4.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="569" column="0" lean-forward="false" selection-start-line="569" selection-start-column="0" selection-end-line="569" selection-end-column="0" />
+          <folding>
+            <marker date="1522821462451" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522821462451" expanded="false" signature="177:5071" ph="..." />
+            <marker date="1522821462451" expanded="true" signature="7493:7581" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="7658:7822" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="7867:8378" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="8488:8553" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="8644:8655" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="8691:8697" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="8801:9071" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="9157:9258" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="9372:9672" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="9768:9889" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10005:10074" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10170:10224" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10334:10615" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10705:10809" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="10912:10979" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="11059:11070" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="11104:11110" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="11210:11285" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="11373:11432" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="11497:11508" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="11538:11544" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="11636:11765" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="11863:11994" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="12092:12159" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="12234:12245" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="12279:12285" ph=" }" />
+            <marker date="1522821462451" expanded="false" signature="12350:12361" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="12394:12400" ph=" }" />
+            <marker date="1522821462451" expanded="false" signature="12454:12465" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="12500:12506" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="12598:12845" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="12949:13220" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="13300:13438" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="13503:13514" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="13543:13549" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="13637:13718" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="13806:13873" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="13979:14082" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="14154:14219" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="14313:14384" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="14442:14591" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="14661:14672" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="14696:14702" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="14741:15522" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="15569:18168" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="18248:20494" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="20584:21708" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="21792:23465" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="23534:23545" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="23557:23563" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="23711:24705" ph="{...}" />
+            <marker date="1522821462451" expanded="false" signature="24806:24817" ph=" { " />
+            <marker date="1522821462451" expanded="false" signature="24828:24834" ph=" }" />
+            <marker date="1522821462451" expanded="true" signature="24930:25743" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="25910:28661" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="28765:28837" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="28945:30300" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="29525:29932" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="30422:30808" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="30910:32109" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="31377:31771" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="32197:32662" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="32791:32898" ph="{...}" />
+            <marker date="1522821462451" expanded="true" signature="33064:33981" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/interceptor/RequestInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/CommunityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/workTools/local/repo/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589">
+          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/spec/IvParameterSpec.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1523173536578" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1523173536578" expanded="false" signature="313:324" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="351:357" ph=" }" />
+            <marker date="1523173536578" expanded="true" signature="419:900" ph="{...}" />
+            <marker date="1523173536578" expanded="false" signature="927:938" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="969:975" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/spec/SecretKeySpec.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <marker date="1523173536578" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1523173536578" expanded="false" signature="141:260" ph="..." />
+            <marker date="1523173536578" expanded="true" signature="498:868" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="941:1623" ph="{...}" />
+            <marker date="1523173536578" expanded="false" signature="1657:1668" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="1690:1696" ph=" }" />
+            <marker date="1523173536578" expanded="false" signature="1727:1738" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="1751:1757" ph=" }" />
+            <marker date="1523173536578" expanded="false" signature="1789:1800" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="1832:1838" ph=" }" />
+            <marker date="1523173536578" expanded="true" signature="1866:2163" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="2204:2840" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <marker date="1524373736733" expanded="true" signature="357:416" ph="SELECT * FRO... t_user" />
+            <marker date="1524373736733" expanded="true" signature="534:610" ph="UPDATE linlihouse.t_user... " />
+            <marker date="1524373736733" expanded="true" signature="726:802" ph="UPDATE linlihouse.t_user... " />
+            <marker date="1524373736733" expanded="true" signature="894:970" ph="UPDATE linlihouse.t_user... " />
+            <marker date="1524373736733" expanded="true" signature="1060:1136" ph="UPDATE linlihouse.t_user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/CipherSpi.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="53" column="30" lean-forward="false" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/jce.jar!/javax/crypto/Cipher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="831" column="34" lean-forward="false" selection-start-line="831" selection-start-column="34" selection-end-line="831" selection-end-column="34" />
+          <folding>
+            <marker date="1523173536578" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1523173536578" expanded="false" signature="136:1529" ph="..." />
+            <marker date="1523173536578" expanded="true" signature="3143:3478" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="3520:3670" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="3787:3997" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="4095:5103" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="5206:6157" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="6251:6612" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="6726:8261" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="8413:8816" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="8945:11427" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="11501:11928" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="11961:15300" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="15511:16177" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="16378:19679" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="19721:19794" ph="{...}" />
+            <marker date="1523173536578" expanded="false" signature="19834:19845" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="19872:19878" ph=" }" />
+            <marker date="1523173536578" expanded="true" signature="19916:20005" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="20052:20449" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="20483:20565" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="20620:20710" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="20772:20843" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="20931:21484" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="21637:22055" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="22205:22649" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="22773:24236" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="24284:24412" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="24466:24748" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="24824:24882" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="24977:25725" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="25866:25930" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="26090:26673" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="26811:26875" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="27032:27618" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="27702:27760" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="27863:29213" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="29251:29612" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="29658:29952" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="30018:30353" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="30457:30798" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="30912:31269" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="31361:31957" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="32047:32182" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="32312:32600" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="32701:32970" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="33091:33408" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="33561:33887" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="34050:34392" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="34533:35130" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="35225:35636" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="35755:36337" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="36463:37123" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="37252:37495" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="37593:37700" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="37821:37940" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="37987:38169" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="38236:38595" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="38646:38958" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="38995:41073" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="39282:39454" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="39556:39766" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="39814:40066" ph="{...}" />
+            <marker date="1523173536578" expanded="false" signature="40106:40121" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="40172:40182" ph=" }" />
+            <marker date="1523173536578" expanded="false" signature="40225:40240" ph=" { " />
+            <marker date="1523173536578" expanded="false" signature="40293:40303" ph=" }" />
+            <marker date="1523173536578" expanded="true" signature="40381:40705" ph="{...}" />
+            <marker date="1523173536578" expanded="true" signature="40772:41067" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="89" column="20" lean-forward="false" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="107" column="51" lean-forward="false" selection-start-line="107" selection-start-column="51" selection-end-line="107" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#3956#3987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/LoginDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1397,7 +1902,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>jdk1.8.0_161</last-edited>
+          <last-edited>1.8.0_161</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1414,7 +1919,6 @@
             <option name="proportions">
               <list>
                 <option value="0.4531722" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

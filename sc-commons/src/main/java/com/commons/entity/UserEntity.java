@@ -68,7 +68,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *QQ号码
      */
-    private String qq;
+    private String qopenId;
 
     /**
      *电子邮件
@@ -92,7 +92,7 @@ public class UserEntity extends BaseIdEntity implements Serializable{
     /**
      *第三方登录唯一id
      */
-    private String openId;
+    private String wopenId;
 
     /**
      *用户所在小区
@@ -110,4 +110,10 @@ public class UserEntity extends BaseIdEntity implements Serializable{
      *备注
      */
     private String remark;
+
+    /**
+     * W:微信 Q:qq P:微信登录
+     */
+    @Transient
+    private String token;
 }

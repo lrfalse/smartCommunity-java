@@ -12,6 +12,7 @@
         <module name="sc-linliHouse" />
         <module name="sc-linlihouse" />
         <module name="sc-personalCenter" />
+        <module name="sc-service" />
         <module name="sc-tools" />
         <module name="sc-tradingArea" />
       </profile>
@@ -25,6 +26,7 @@
       <module name="sc-linliHouse" target="1.8" />
       <module name="sc-linliHouse (1)" target="1.8" />
       <module name="sc-personalCenter" target="1.8" />
+      <module name="sc-service" target="1.8" />
       <module name="sc-tools" target="1.8" />
       <module name="sc-tradingArea" target="1.8" />
       <module name="smartCommunity" target="1.8" />

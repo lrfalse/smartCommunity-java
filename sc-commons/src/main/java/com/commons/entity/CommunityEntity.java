@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Table( name = "t_community_info")
 public class CommunityEntity implements Serializable {
 
-    private String name;
+    private String name; //小区名字
 
     private String address;
 
@@ -27,13 +27,13 @@ public class CommunityEntity implements Serializable {
 
     private Integer pcode;
 
-    private String pname;
+    private String pname;//重庆市
 
     private Integer citycode;
 
     private String cityname;
 
-    private Integer adcode;
+    private Integer adcode;//区域编码
 
     private String adname;
 
