@@ -4,7 +4,10 @@
     <dubbo:application  name="dubbo-consumer" owner="dubbo-consumer"/>
     <dubbo:registry protocol="zookeeper" address="${zookeeper.register.address}" client="zkclient" />
 
+
     <dubbo:reference id="districtService" interface="com.commons.service.DistrictService" />
     <dubbo:reference id="userService" interface="com.commons.service.UserService" />
+
+    <!--<dubbo:annotation package="com.commons.service"/>-->
 
 </beans>

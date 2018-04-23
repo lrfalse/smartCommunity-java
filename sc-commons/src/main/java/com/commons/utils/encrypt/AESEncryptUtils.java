@@ -119,7 +119,7 @@ public class AESEncryptUtils {
       System.out.println("加密后的字串值：" + enString);
 	  String md5Str = MD5Utils.md5(cSrc);  // 加密
       System.out.println("加密后的md5值：" + md5Str);
-      String DeString = AESEncryptUtils.getInstance().decrypt("WvyTyuSr2KuXl91fL1sZcI/vYDz9u9Gf6vYvFAy+Em3Ql0Mye2DyeyUCCGI/Ejnl");
+      String DeString = AESEncryptUtils.getInstance().decrypt("7nx3FwWIh9ZGrn+NCGRDO7TQw1gkxvF3IAi+AIFOlqQlxqEXWhV+yWqzxPeQe/+ldyheuGWcQYjjHa34U34YtQ==");
       System.out.println("解密后的字串值：" + DeString);
   }
 }

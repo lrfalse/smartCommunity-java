@@ -10,6 +10,7 @@ import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.MD5Utils;
+import com.personalCenter.mapper.CommunityMapper;
 import com.personalCenter.mapper.LoginRegisterMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +31,10 @@ public class LoginRegisterService {
     private static final Logger logger = LoggerFactory.getLogger(LoginRegisterService.class);
 
 
-    @Autowired
-    private LoginRegisterMapper loginRegisterMapper;
+	@Autowired
+	private LoginRegisterMapper loginRegisterMapper;
+	@Autowired
+	private CommunityMapper communityMapper;
 
     /**
      * @Description(功能描述): 登录

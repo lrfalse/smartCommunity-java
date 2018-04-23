@@ -41,19 +41,20 @@ public class BaseApi {
 		logger.debug("----------------body:" + body+"--------------");
 		logger.debug("----------------key:" + key+"--------------");
 		IsJsonDTO json = new IsJsonDTO();
-		if (CommonUtils.isNotEmpty(tag)&& CommonUtils.isNotEmpty(key)) {
+		if (CommonUtils.isNotEmpty(tag)&& CommonUtils.isNotEmpty(key)&& CommonUtils.isNotEmpty(body)) {
 			if ("A".equals(tag) || "I".equals(tag)) {
-				if(CommonUtils.isNotEmpty(body)){
+//				if(CommonUtils.isNotEmpty(body)){
 					String decryptText=AESEncryptUtils.decrypt(body);
 					boolean isJson= JsonUtils.isJson(decryptText);
 					boolean isKey= MD5Utils.verifyMd5(key,decryptText) ;
 					if(isJson&&isKey){
 						json.setBodyJson(decryptText);
 						json.setIsjson(true);
+						json.setTag(tag);
 					}
-				}else{
-					logger.error("----------------密文为空----------------");
-				}
+//				}else{
+//					logger.error("----------------密文为空----------------");
+//				}
 			}
 		}
 		return json;

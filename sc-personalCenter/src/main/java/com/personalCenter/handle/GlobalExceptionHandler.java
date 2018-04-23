@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
 	  * @date (开发日期): 2018/4/2 22:32
 	  **/
 	@ResponseBody
+	@SuppressWarnings("Duplicates")
 	@ExceptionHandler(RuntimeException.class)
 	public HttpResults handle(Exception e){
 		if(e instanceof ScException){

@@ -14,5 +14,5 @@ public interface UserService {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/20 16:39
 	  **/
-	 int addUser(UserEntity user);
+	int addUser(UserEntity user);
 }

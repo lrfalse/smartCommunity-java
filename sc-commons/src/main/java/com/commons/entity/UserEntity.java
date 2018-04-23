@@ -3,7 +3,6 @@ package com.commons.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * @Description:用户信息表
@@ -13,7 +12,7 @@ import java.io.Serializable;
  */
 @Data
 @Table(name = "t_user")
-public class UserEntity extends BaseIdEntity implements Serializable{
+public class UserEntity extends BaseIdEntity{
 
 
     private String name; //真实姓名
