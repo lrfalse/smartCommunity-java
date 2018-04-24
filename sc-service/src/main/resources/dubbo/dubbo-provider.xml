@@ -2,8 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="sc-service-dubbo-provider" owner="sc-service-dubbo-provider" />
-    <dubbo:registry protocol="zookeeper" address="120.79.222.9:2181" client="zkclient" />
+    <dubbo:application name="${dubbo.provider.name}" />
+    <dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.register.address}" client="zkclient" />
     <dubbo:protocol name="dubbo" port="-1" />
 
 
