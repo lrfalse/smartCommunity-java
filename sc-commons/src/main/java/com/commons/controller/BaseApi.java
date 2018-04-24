@@ -61,6 +61,15 @@ public class BaseApi {
 	}
 
 	/**
+	  * @Description(功能描述): 获取isJsonDto对象
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/24 13:45
+	  **/
+	public IsJsonDTO getIsJson(HttpServletRequest request){
+		return (IsJsonDTO)request.getAttribute("preHandleJsonDto");
+	}
+
+	/**
 	  * @Description(功能描述): 返回加密报文信息 默认成功
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/3 17:38

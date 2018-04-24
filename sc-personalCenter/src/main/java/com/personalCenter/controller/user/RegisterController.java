@@ -7,7 +7,9 @@ import com.commons.dto.IsJsonDTO;
 import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
+import com.commons.service.RedisService;
 import com.commons.service.UserService;
+import com.commons.utils.CommonUtils;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
 import com.commons.utils.SmsUtils;
@@ -26,7 +28,9 @@ import javax.servlet.http.HttpServletRequest;
 public class RegisterController extends BaseApi {
 
 	@Autowired
-	private UserService userService;
+	private UserService userService;		//用户
+	@Autowired
+	private RedisService redisService;		//redis缓存
 	/**
 	 * @Description(功能描述): 注册
 	 * @author(作者): lrfalse<wangliyou>
@@ -34,14 +38,26 @@ public class RegisterController extends BaseApi {
 	 **/
 	@PostMapping(value = "/register")
 	public HttpResults register(HttpServletRequest request) throws Exception {
-		IsJsonDTO isJson=(IsJsonDTO)request.getAttribute("preHandleJsonDto");
+		IsJsonDTO isJson=getIsJson(request);
 		UserReDto registerReDto= JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
-		UserEntity user=new UserEntity();
-		user.setMobPhone(registerReDto.getPhone());
-		user.setPwd(MD5Utils.md5(registerReDto.getPwd()));
-		int result=userService.addUser(user);
+		String phone=registerReDto.getPhone();
+		String pwd=registerReDto.getPwd();
+		String authCode=redisService.get(phone+"checkCode");		//取出缓存中的数据
+		if(CommonUtils.isNotEmpty(phone,pwd)){
+			if(CommonUtils.isNotEmpty(authCode)){					//验证码不存在或者过期
+				UserEntity user=new UserEntity();
+				user.setMobPhone(phone);
+				user.setPwd(MD5Utils.md5(pwd));
+				user=userService.saveUser(user);
+				int result=userService.addUser(user);
+			}else{
+				httpResults.setStatusCode(AppServiceEnums.AUTHCODE_TIMEOUT);
+			}
+		}else{
+			httpResults=getHttpResultError();
+		}
 		//TODO 返回小区信息 判断手机号是否已经登录
-		return getHttpResult(result);
+		return httpResults;
 	}
 
 	/**
@@ -51,13 +67,42 @@ public class RegisterController extends BaseApi {
 	  **/
 	@PostMapping(value = "/checkCode")
 	public HttpResults checkCode(HttpServletRequest request) throws Exception {
-		IsJsonDTO isJson=(IsJsonDTO)request.getAttribute("preHandleJsonDto");
+		IsJsonDTO isJson=getIsJson(request);
 		UserReDto registerReDto=JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
-		boolean result=SmsUtils.checkCode(registerReDto.getPhone(),registerReDto.getAuthCode());
-		HttpResults httpResults=getHttpResult(result);
-		if(!result){
-			httpResults.setStatusCode(AppServiceEnums.ERROR_CODE.getCode());
-			httpResults.setStatusMsg(AppServiceEnums.ERROR_CODE.getMsg());
+		String phone=registerReDto.getPhone();
+		String authCode=registerReDto.getAuthCode();
+		if(CommonUtils.isNotEmpty(phone)&&CommonUtils.isNotEmpty(authCode)){
+			boolean result=SmsUtils.checkCode(phone,authCode);
+			if(result){
+				redisService.set(phone+"checkCode",authCode,3L);		//放入缓存
+			}
+			httpResults=getHttpResult(result);
+		}else{
+			httpResults=getHttpResultError();
+		}
+		return httpResults;
+	}
+
+	/**
+	  * @Description(功能描述): 检验电话号码是否
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/24 10:31
+	  **/
+	@PostMapping(value = "/checkPhone")
+	public HttpResults checkPhone(HttpServletRequest request) throws Exception {
+		IsJsonDTO isJson=getIsJson(request);
+		UserReDto registerReDto=JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
+		if(CommonUtils.isNotEmpty(registerReDto.getPhone())){
+			UserEntity user=new UserEntity();
+			user.setMobPhone(registerReDto.getPhone());
+			user=userService.getUser(user);
+			if(CommonUtils.isNotEmpty(user)){
+				httpResults=getHttpResultOk();				//电话号码存在
+			}else{
+				httpResults=getHttpResultError();			//电话号码不存在
+			}
+		}else{
+			httpResults=getHttpResultError();
 		}
 		return httpResults;
 	}

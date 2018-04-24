@@ -19,6 +19,8 @@ public enum AppServiceEnums {
 	 */
 	ERROR_CODE("901","验证码错误"),
 	ERROR("902","用户登录失败，用户名或密码错误"),
+	AUTHCODE_TIMEOUT("903","短信验证码过期，请重新验证手机号"),
+	USER_EXIST("904","用户信息已经存在"),
 
 	;
 	private String code;
