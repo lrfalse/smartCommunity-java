@@ -13,7 +13,6 @@ import tk.mybatis.spring.annotation.MapperScan;
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/4/16 11:24
   **/
-@Controller
 @SpringBootApplication
 @MapperScan(basePackages = "com.tools.mapper")
 public class ToolsApplication  implements CommandLineRunner {

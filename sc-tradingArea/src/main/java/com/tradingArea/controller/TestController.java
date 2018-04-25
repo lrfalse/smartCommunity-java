@@ -3,7 +3,7 @@ package com.tradingArea.controller;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
-import com.commons.dto.TestDto;
+import com.commons.dto.anDto.TestDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

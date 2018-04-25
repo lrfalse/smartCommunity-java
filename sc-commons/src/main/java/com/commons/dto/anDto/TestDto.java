@@ -1,4 +1,4 @@
-package com.commons.dto;
+package com.commons.dto.anDto;
 
 import lombok.Data;
 

@@ -1,8 +1,9 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.commons.dto.BindPhoneDto;
-import com.commons.dto.LoginDTO;
+import com.commons.dto.anDto.BindPhoneDto;
+import com.commons.dto.anDto.LoginDTO;
+import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
@@ -10,8 +11,9 @@ import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.UserMapper;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashMap;
 
 /**
   * @Description(功能描述): 用户
@@ -48,8 +50,10 @@ public class UserServiceImpl implements UserService{
 	  * @date (开发日期): 2018/4/25 9:41
 	  **/
 	public int saveUser(UserEntity user) {
-		int isExtis=userMapper.selectCountByExample(user.getMobPhone());	//判断用户手机号码是否存在
-		if(isExtis==0){
+		ParamDto dto=new ParamDto();
+		dto.put("mobPhone",user.getMobPhone());
+		UserEntity isExtis=userMapper.selectUser(dto);						//判断用户手机号码是否存在
+		if(CommonUtils.isEmpty(isExtis)){
 			if(userMapper.insert(user)<0){
 				throw new ScException(AppServiceEnums.SYS_EXCEPTION);		//系统异常
 			}

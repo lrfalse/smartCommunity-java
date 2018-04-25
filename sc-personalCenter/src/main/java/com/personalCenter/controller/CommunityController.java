@@ -8,6 +8,7 @@ import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
+import com.commons.service.CommunityService;
 import com.commons.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ import java.util.List;
 public class CommunityController extends BaseApi{
 
     @Autowired
-    private com.commons.service.CommunityService communityService;
+    private CommunityService communityService;
     /**
      * @Description(功能描述): 小区定位选择
      * @author(作者): feihong

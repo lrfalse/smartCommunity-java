@@ -3,10 +3,10 @@ package com.personalCenter.controller.user;
 
 import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
-import com.commons.dto.BindPhoneDto;
+import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
-import com.commons.dto.LoginDTO;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.entity.UserEntity;
 
 import com.commons.service.UserService;

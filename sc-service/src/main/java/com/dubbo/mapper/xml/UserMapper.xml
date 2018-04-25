@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.UserMapper">
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+        id, name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address,
+        ost_code, qopen_id, email, seq_no, create_time, status, remark, wopen_id, community_id,
+        image_url, city_id
+    </sql>
     <!--查询手机号码是否绑定-->
     <select id="selectPhone" resultType="com.commons.entity.UserEntity">
         SELECT * FROM linlihouse.t_user WHERE mob_phone=#{mobphone}
@@ -17,4 +23,72 @@
     <update id="updatePwd">
         UPDATE linlihouse.t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
     </update>
+
+    <!--查询用户信息-->
+    <select id="selectUser" resultType="UserEntity" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where 1=1
+        <if test="name != null" >
+            AND name = #{name}
+        </if>
+        <if test="code != null" >
+            AND code = #{code}
+        </if>
+        <if test="birthday != null" >
+            AND  birthday = #{birthday}
+        </if>
+        <if test="sex != null" >
+            AND sex = #{sex}
+        </if>
+        <if test="pwd != null" >
+            AND  pwd = #{pwd}
+        </if>
+        <if test="identityCode != null" >
+            AND  identity_code = #{identityCode}
+        </if>
+        <if test="mobPhone != null" >
+            AND mob_phone = #{mobPhone}
+        </if>
+        <if test="homePhone != null" >
+            AND home_phone = #{homePhone}
+        </if>
+        <if test="address != null" >
+            AND address = #{address}
+        </if>
+        <if test="ostCode != null" >
+            AND  ost_code = #{ostCode}
+        </if>
+        <if test="qopenId != null" >
+            AND qopen_id = #{qopenId}
+        </if>
+        <if test="email != null" >
+            AND  email = #{email}
+        </if>
+        <if test="seqNo != null" >
+            AND  seq_no = #{seqNo}
+        </if>
+        <if test="createTime != null" >
+            AND  create_time = #{createTime,jdbcType=TIMESTAMP}
+        </if>
+        <if test="status != null" >
+            AND  status = #{status,jdbcType=BIT}
+        </if>
+        <if test="remark != null" >
+            AND  remark = #{remark}
+        </if>
+        <if test="wopenId != null" >
+            AND wopen_id = #{wopenId}
+        </if>
+        <if test="communityId != null" >
+            AND community_id = #{communityId,jdbcType=BIGINT}
+        </if>
+        <if test="imageUrl != null" >
+            AND image_url = #{imageUrl}
+        </if>
+        <if test="cityId != null" >
+            AND city_id = #{cityId,jdbcType=BIGINT}
+        </if>
+    </select>
 </mapper>

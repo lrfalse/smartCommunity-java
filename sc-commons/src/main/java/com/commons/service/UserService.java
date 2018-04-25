@@ -1,7 +1,7 @@
 package com.commons.service;
 
-import com.commons.dto.BindPhoneDto;
-import com.commons.dto.LoginDTO;
+import com.commons.dto.anDto.BindPhoneDto;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.entity.UserEntity;
 
 /**
