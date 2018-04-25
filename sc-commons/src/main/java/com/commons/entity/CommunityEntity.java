@@ -3,7 +3,6 @@ package com.commons.entity;
 import lombok.Data;
 
 import javax.persistence.Table;
-import java.io.Serializable;
 
 /**
  * @Description:小区信息
@@ -13,7 +12,7 @@ import java.io.Serializable;
  */
 @Data
 @Table( name = "t_community_info")
-public class CommunityEntity implements Serializable {
+public class CommunityEntity extends BaseIdEntity  {
 
     private String name; //小区名字
 

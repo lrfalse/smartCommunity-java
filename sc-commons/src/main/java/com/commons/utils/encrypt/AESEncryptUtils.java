@@ -114,14 +114,14 @@ public class AESEncryptUtils {
 	}
 
   public static void main(String[] args) throws Exception {
-      String cSrc ="{\"pname\":\"重庆市\",\"adcode\":\"500118\",\"name\":\"萱花苑住宅小区\"}";           // 需要加密的字串
+      String cSrc ="{\"a\":\"net_open\",\"m\":\"do\",\"f\":\"smd\",\"app_id\":\"demo001\",\"app_secret\":\"demo001\",\"device_sncode\":\"M1E8HV61GQR8\",\"access_token\":\"215104e6ad7011cb338618023178550a\",\"net_open_key\":\"43qpDnTNrknxkJ6HzmHMDQ==\"}";           // 需要加密的字串
       String enString = AESEncryptUtils.getInstance().encrypt(cSrc);  // 加密
       System.out.println("加密后的字串值：" + enString);
 	  String md5Str = MD5Utils.md5(cSrc);  // 加密
-      String str="IJTQgOjaditK0ZKKNvpcLXr2ufdvrWIh8G6KI6HsQzSLAixDGiobQwbHw51M8h1dlNVN0qvDHy0k\\nmL8M3K0HNLq6kyLTSD3XizxLn31+2HI8BNdbJhU3HlDLM6q50uNlHNiR1k/vWJYgeR5MCmR+wRuT\\n8I2M2Q5jb1hq4p5ZYT9CYxdzhMPgpJQYT1yUB2nkktrXBPHLlGzM77n9oEMqIx45VZmIjfYijv03\\npqwBm4+MHaC55xqIuVtPsH7Jhwy7dCYCKSPnLRUasSztuuGEUSKiAqrWx49U75kW2SWPJK+MAPdp\\nmipd/PjcSkTqXzHZRACC2MgyaQ/2938Pmwy6bBWzb6CD+S4CacrDtpPOw/RIt8VOQJ1EIzW+6OeL\\nTh5M5h2SSscQLGRvFk2K7x3qygM7fMjUlSAtR01QCb18p8cbJlmGLhYaemaIVkdGgBXq3Y97kaKt\\nmB/d6RoA8jVtUQ==\n";
+      String str="O7MNnw24T8CUwznVcvw+7VD7f1VORAzA+9izepnaWNorgjh2LhyyCE+PO6Amh8p4i9cN4dIcSi6y\\ngqnOpocQx0JapCc0mjowKiVQxXFXDrAK0tfugqjY56pQk5LBzf9djI6DX4ujTIvkM/w0/s7l3tjr\\nH+nzAGUHQKbw3FKJ3EgG/wMjMhlz7gEprn4exv0SrHJcjKV63kzPZ90GS4FJeXc/um0hzAbYerRvJl1c7l0qW8AOzps9SVR4DIj5LIcw+PYCf35Oz8sOtf6DV++Z3vqqmarSDlq9Y2PQeUyuMZACrGHZ6F/lNVwIi3wpx0yqKIACOgg6XOOTzGUPuMWclxvs8VfbBrMVw4HTxbrRN430Zj5Po++ieeZNyzZ85DQtHUkxuly4IC08y9GV4sVc0YGX/5kTtmrbHJi01BxfvSjrIT1YCXAE5/e2CgvTL67hQv8Pdc4JHrMY3JARaQw5fREt8GNCsmWE7goShrycwLtYxAdVjwV1mG4DScpwscP/";
       String replace = str.replace("\\n", "");
       System.out.println("加密后的md5值：" + md5Str);
-      String DeString = AESEncryptUtils.getInstance().decrypt(replace);
+      String DeString = AESEncryptUtils.getInstance().decrypt("JmhECASN2+WByQbNnkpg43mVUo235xd9Yky6xkGc40sS6SMdfG3F5uqdVbU+COOEcBshMCjB1bv7A+X1qhxfNWwqKJu61cadSklo8fw1DkfPGUmyG3WmBK0QcMd5R8GmtDB+78iEGaaLfDyR6uBaZA==");
       System.out.println("解密后的字串值：" + DeString);
   }
 }
