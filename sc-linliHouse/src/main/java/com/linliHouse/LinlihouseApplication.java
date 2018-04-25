@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -15,7 +16,7 @@ import tk.mybatis.spring.annotation.MapperScan;
   * @author(作者): lrfalse<wangliyou>
   * @date (开发日期): 2018/4/24 10:14
   **/
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @ImportResource(locations={"classpath:dubbo/dubbo-service.xml"})
 public class LinlihouseApplication  implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(LinlihouseApplication.class);
@@ -25,6 +26,6 @@ public class LinlihouseApplication  implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("服务启动完成!");
+		logger.info("首页服务启动完成!");
 	}
 }

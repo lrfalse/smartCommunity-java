@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>sc-commons</module>		    <!-- 工具包 -->
-        <module>sc-linliHouse</module>		<!-- 官网 -->
+        <module>sc-linliHouse</module>		<!-- 首页 -->
         <module>sc-linli</module>		    <!-- 邻里聊天室 -->
         <module>sc-entranceguard</module>	<!-- 门禁对接系统 -->
         <module>sc-personalCenter</module>	<!-- 个人中心 -->

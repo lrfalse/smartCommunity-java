@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.NoticeMapper">
+
+    <!-- 查询首页小区公告信息(标题显示)-->
+    <select id="queryNoticeTitle" resultType="java.lang.String">
+        SELECT
+            titile
+        FROM
+            linlihouse.t_notice
+        WHERE
+            STATUS = '0'
+            AND community_id = #{communityId}
+            and (SYSDATE() between start_time and end_time)
+        ORDER BY type ASC,publish_time DESC
+    </select>
+
+</mapper>
