@@ -114,12 +114,14 @@ public class AESEncryptUtils {
 	}
 
   public static void main(String[] args) throws Exception {
-      String cSrc ="{\"phone\":\"18716393365\",\"pwd\":\"123456\",\"authCode\":\"652978\"}";           // 需要加密的字串
+      String cSrc ="{\"pname\":\"重庆市\",\"adcode\":\"500118\",\"name\":\"萱花苑住宅小区\"}";           // 需要加密的字串
       String enString = AESEncryptUtils.getInstance().encrypt(cSrc);  // 加密
       System.out.println("加密后的字串值：" + enString);
 	  String md5Str = MD5Utils.md5(cSrc);  // 加密
+      String str="IJTQgOjaditK0ZKKNvpcLXr2ufdvrWIh8G6KI6HsQzSLAixDGiobQwbHw51M8h1dlNVN0qvDHy0k\\nmL8M3K0HNLq6kyLTSD3XizxLn31+2HI8BNdbJhU3HlDLM6q50uNlHNiR1k/vWJYgeR5MCmR+wRuT\\n8I2M2Q5jb1hq4p5ZYT9CYxdzhMPgpJQYT1yUB2nkktrXBPHLlGzM77n9oEMqIx45VZmIjfYijv03\\npqwBm4+MHaC55xqIuVtPsH7Jhwy7dCYCKSPnLRUasSztuuGEUSKiAqrWx49U75kW2SWPJK+MAPdp\\nmipd/PjcSkTqXzHZRACC2MgyaQ/2938Pmwy6bBWzb6CD+S4CacrDtpPOw/RIt8VOQJ1EIzW+6OeL\\nTh5M5h2SSscQLGRvFk2K7x3qygM7fMjUlSAtR01QCb18p8cbJlmGLhYaemaIVkdGgBXq3Y97kaKt\\nmB/d6RoA8jVtUQ==\n";
+      String replace = str.replace("\\n", "");
       System.out.println("加密后的md5值：" + md5Str);
-      String DeString = AESEncryptUtils.getInstance().decrypt("7nx3FwWIh9ZGrn+NCGRDO7TQw1gkxvF3IAi+AIFOlqQlxqEXWhV+yWqzxPeQe/+ldyheuGWcQYjjHa34U34YtQ==");
+      String DeString = AESEncryptUtils.getInstance().decrypt(replace);
       System.out.println("解密后的字串值：" + DeString);
   }
 }

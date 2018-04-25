@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.UserMapper">
+    <!--查询手机号码是否绑定-->
+    <select id="selectPhone" resultType="com.commons.entity.UserEntity">
+        SELECT * FROM linlihouse.t_user WHERE mob_phone=#{mobphone}
+    </select>
+    <!--根据qqid绑定手机号码-->
+    <update id="updateqqPhone">
+        UPDATE linlihouse.t_user SET mob_phone=#{mobphone} WHERE qopen_id=#{qopenid}
+    </update>
+    <!--根据微信id绑定手机号码-->
+    <update id="updatewxPhone">
+        UPDATE linlihouse.t_user SET mob_phone=#{mobphone} WHERE wopen_id=#{wopenid}
+    </update>
+    <!--找回密码-->
+    <update id="updatePwd">
+        UPDATE linlihouse.t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
+    </update>
 </mapper>

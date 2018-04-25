@@ -1,5 +1,7 @@
 package com.commons.service;
 
+import com.commons.dto.BindPhoneDto;
+import com.commons.dto.LoginDTO;
 import com.commons.entity.UserEntity;
 
 /**
@@ -28,4 +30,25 @@ public interface UserService {
 	  * @date (开发日期): 2018/4/24 21:04
 	  **/
 	int saveUser(UserEntity user);
+
+	/**
+	 * @Description(功能描述): 登录
+	 * @author(作者): feihong
+	 * @date (开发日期):2018-4-24 10:33:21
+	 **/
+	LoginDTO login(UserEntity userEntity);
+
+	/**
+	 * @Description(功能描述): 绑定手机号码
+	 * @author(作者): feihong
+	 * @date (开发日期):2018-4-24 14:45:33
+	 **/
+	BindPhoneDto bindPhone(UserEntity userEntity);
+
+	/**
+	 * @Description(功能描述): 找回密码
+	 * @author(作者): feihong
+	 * @date (开发日期):2018-4-24 19:55:34
+	 **/
+	int updateUserByKey(UserEntity userEntity);
 }

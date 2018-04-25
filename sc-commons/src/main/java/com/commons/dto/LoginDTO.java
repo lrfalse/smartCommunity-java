@@ -35,4 +35,9 @@ public class LoginDTO {
      *手机号码
      */
     private String mobphone;
+
+    /**
+     *登录失败
+     */
+    private String status;
 }
