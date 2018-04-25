@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Description(功能描述) :
+ * @Description(功能描述) :注册
  * @author(作者) :lrfalse<wangliyou>
  * @date (开发日期) :2018/4/19 10:11
  **/
@@ -48,15 +48,15 @@ public class RegisterController extends BaseApi {
 				UserEntity user=new UserEntity();
 				user.setMobPhone(phone);
 				user.setPwd(MD5Utils.md5(pwd));
-				user=userService.saveUser(user);
-				int result=userService.addUser(user);
+				if(userService.saveUser(user)>0){
+					httpResults=getHttpResultOk();
+				}
 			}else{
 				httpResults.setStatusCode(AppServiceEnums.AUTHCODE_TIMEOUT);
 			}
 		}else{
 			httpResults=getHttpResultError();
 		}
-		//TODO 返回小区信息 判断手机号是否已经登录
 		return httpResults;
 	}
 

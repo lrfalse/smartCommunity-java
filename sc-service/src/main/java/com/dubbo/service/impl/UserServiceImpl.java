@@ -7,6 +7,7 @@ import com.commons.exception.ScException;
 import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.UserMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -38,13 +39,21 @@ public class UserServiceImpl implements UserService{
 		return userMapper.selectOne(user);
 	}
 
-	public UserEntity saveUser(UserEntity user) {
-		if(CommonUtils.isEmpty(user)){
-			//TODO 判断用户信息
+	/**
+	  * @Description(功能描述): 保存用户信息
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/25 9:41
+	  **/
+	public int saveUser(UserEntity user) {
+		int isExtis=userMapper.selectCountByExample(user.getMobPhone());	//判断用户手机号码是否存在
+		if(isExtis==0){
+			if(userMapper.insert(user)<0){
+				throw new ScException(AppServiceEnums.SYS_EXCEPTION);		//系统异常
+			}
 		}else{
-			throw new ScException(AppServiceEnums.USER_EXIST);		//用户信息已存在
+			throw new ScException(AppServiceEnums.USER_EXIST);
 		}
-		return null;
+		return 1;
 	}
 
 
