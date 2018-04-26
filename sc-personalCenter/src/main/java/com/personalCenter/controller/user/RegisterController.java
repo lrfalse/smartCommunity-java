@@ -40,7 +40,7 @@ public class RegisterController extends BaseApi {
 	public HttpResults register(HttpServletRequest request) throws Exception {
 		IsJsonDTO isJson=getIsJson(request);
 		UserReDto registerReDto= JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
-		String phone=registerReDto.getPhone();
+		String phone=registerReDto.getMobPhone();
 		String pwd=registerReDto.getPwd();
 		String authCode=redisService.get(phone+"checkCode");		//取出缓存中的数据
 		if(CommonUtils.isNotEmpty(phone,pwd)){
@@ -69,7 +69,7 @@ public class RegisterController extends BaseApi {
 	public HttpResults checkCode(HttpServletRequest request) throws Exception {
 		IsJsonDTO isJson=getIsJson(request);
 		UserReDto registerReDto=JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
-		String phone=registerReDto.getPhone();
+		String phone=registerReDto.getMobPhone();
 		String authCode=registerReDto.getAuthCode();
 		if(CommonUtils.isNotEmpty(phone)&&CommonUtils.isNotEmpty(authCode)){
 			boolean result=true;//SmsUtils.checkCode(phone,authCode);
@@ -92,9 +92,9 @@ public class RegisterController extends BaseApi {
 	public HttpResults checkPhone(HttpServletRequest request) throws Exception {
 		IsJsonDTO isJson=getIsJson(request);
 		UserReDto registerReDto=JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
-		if(CommonUtils.isNotEmpty(registerReDto.getPhone())){
+		if(CommonUtils.isNotEmpty(registerReDto.getMobPhone())){
 			UserEntity user=new UserEntity();
-			user.setMobPhone(registerReDto.getPhone());
+			user.setMobPhone(registerReDto.getMobPhone());
 			user=userService.getUser(user);
 			if(CommonUtils.isNotEmpty(user)){
 				httpResults=getHttpResultOk();				//电话号码存在
@@ -108,7 +108,7 @@ public class RegisterController extends BaseApi {
 	}
 	public static void main(String[] args) throws Exception {
 		UserReDto userReDto=new UserReDto();
-		userReDto.setPhone("18716393365");
+		userReDto.setMobPhone("18716393365");
 		userReDto.setAuthCode("652978");
 		System.out.println(JsonUtils.toJson(userReDto));
 	}

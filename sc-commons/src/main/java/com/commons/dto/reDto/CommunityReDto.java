@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Description:小区Dto
+ * @Description:小区Dto requestDto-->>reDto
  * @Author:feihong
  * @Vsesion:v.10
  * @Create:2018-04-24 21:21:10

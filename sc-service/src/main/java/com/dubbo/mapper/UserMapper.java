@@ -31,5 +31,12 @@ public interface UserMapper extends MyMapper<UserEntity> {
 	  **/
 	UserEntity selectUser(ParamDto dto);
 
+	/**
+	  * @Description(功能描述): 更新用户信息
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/26 16:24
+	  **/
+	int updateUser(ParamDto dto);
+
 
 }

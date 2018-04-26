@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import tk.mybatis.spring.annotation.MapperScan;
@@ -14,7 +15,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author(作者): lrfalse<wangliyou>
  * @date (开发日期): 2018/4/8 10:20
  **/
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @MapperScan(basePackages = "com.personalCenter.mapper")
 @ImportResource(value = "classpath:dubbo/dubbo-service.xml")
 public class PersonalCenterApplication implements CommandLineRunner {
