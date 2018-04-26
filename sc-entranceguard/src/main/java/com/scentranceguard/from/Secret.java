@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Secert implements Serializable{
+public class Secret implements Serializable{
 
     private String m;
 
