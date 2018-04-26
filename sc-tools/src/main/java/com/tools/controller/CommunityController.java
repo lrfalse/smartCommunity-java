@@ -29,7 +29,7 @@ import java.util.List;
 @RestController
 public class CommunityController {
 
-    String url = "http://restapi.amap.com/v3/place/text?key=264d80231fd6ab84d409310b74b6ad98&keywords=住宅区|别墅|住宅小区&city=重庆市&citylimit=true&children=5&offset=24&page=1&extensions=all";
+    String url = "http://restapi.amap.com/v3/place/text?key=264d80231fd6ab84d409310b74b6ad98&keywords=巨宇江南city=重庆市&citylimit=true&children=5&offset=24&page=1&extensions=all";
     @Autowired
     private CommunityMapper communityMapper;
 
@@ -45,12 +45,10 @@ public class CommunityController {
 
    @GetMapping("/community")
     public String addCommunity() {
-        String[] arr={"杭州市","宁波市","湖州市","嘉兴市","金华市","丽水市","衢州市","绍兴市","台州市","温州市","舟山市","武汉市","鄂州市","黄冈市","黄石市","荆门市","荆州市","十堰市","随州市","襄阳市","咸宁市","孝感市","宜昌市","恩施土家族苗族自治州","天门市","潜江市","仙桃市","神农架林区"};
-        for (int j=0;j<arr.length;j++) {
-            String s1 = url.replace("重庆市", arr[j]);
+       // String[] arr={"杭州市","宁波市","湖州市","嘉兴市","金华市","丽水市","衢州市","绍兴市","台州市","温州市","舟山市","武汉市","鄂州市","黄冈市","黄石市","荆门市","荆州市","十堰市","随州市","襄阳市","咸宁市","孝感市","宜昌市","恩施土家族苗族自治州","天门市","潜江市","仙桃市","神农架林区"};
             for (int i = 1; i <=100; i++) {
                 String s = "page=" + i;
-                String replace = s1.replace("page=1", s);
+                String replace = url.replace("page=1", s);
                 Request request = new Request.Builder().url(replace).build();
                 Response response = null;
                 try {
@@ -59,7 +57,7 @@ public class CommunityController {
                     Demo demo = JSON.parseObject(str, Demo.class);
                     List<CommunityEntity> list = getList(demo.getPois());
                     //int i1 = list.size() / 24;
-                   /* List<String> query = communityMapper.queryLocation();
+                List<String> query = communityMapper.queryLocation();
                     Iterator<CommunityEntity> t_Iterator = list.iterator();
                     Iterator<String> iterator = query.iterator();
                     while (t_Iterator.hasNext()) {
@@ -70,14 +68,14 @@ public class CommunityController {
                                 t_Iterator.remove();
                             }
                         }
-                    }*/
+                    }
                     communityMapper.insertList(list);
                 } catch (Exception e) {
                     e.printStackTrace();
                     // return "失败";
                 }
             }
-        }
+
         return "成功";
     }
 

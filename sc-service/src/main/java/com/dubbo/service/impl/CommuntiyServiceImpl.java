@@ -21,6 +21,19 @@ public class CommuntiyServiceImpl implements CommunityService {
 
     @Autowired
     private CommunityMapper communityMapper;
+
+
+    /**
+      * @Description(功能描述): 颁发钥匙信息
+      * @author(作者): feihong
+      * @date (开发日期):2018-4-26 16:24
+      **/
+    @Override
+    public List<String> issuedKey(int community_id) {
+
+        return null;
+    }
+
     /**
       * @Description(功能描述): 定位区域小区
       * @author(作者): feihong
