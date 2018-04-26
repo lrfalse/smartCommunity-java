@@ -19,10 +19,9 @@ public class NoticeEntity extends BaseIdEntity{
     private String issuer;		//发布方
     private Integer type;		//公告类型(0：加急、1置顶、2普通)
     private Integer status;		//公告状态（0：正常 、1失效）
-    private String img_url;		//图片地址（多图用，隔开）
-    private Integer browse_num;	//浏览次数
-    private Integer comment_num;//评论次数
-    private Date publish_time;	//发布时间
-    private Date start_time;	//有效开始时间
-    private Date end_time;	    //有效结束时间
+    private String imgUrl;		//图片地址（多图用，隔开）
+    private Integer browseNum;	//浏览次数
+    private Date publishTime;	//发布时间
+    private Date startTime;	//有效开始时间
+    private Date endTime;	    //有效结束时间
 }
