@@ -13,7 +13,6 @@ import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.HashMap;
 
 /**
   * @Description(功能描述): 用户
@@ -51,7 +50,7 @@ public class UserServiceImpl implements UserService{
 	  **/
 	public int saveUser(UserEntity user) {
 		ParamDto dto=new ParamDto();
-		dto.put("mobPhone",user.getMobPhone());
+		dto.put("mobPhone_where",user.getMobPhone());
 		UserEntity isExtis=userMapper.selectUser(dto);						//判断用户手机号码是否存在
 		if(CommonUtils.isEmpty(isExtis)){
 			if(userMapper.insert(user)<0){

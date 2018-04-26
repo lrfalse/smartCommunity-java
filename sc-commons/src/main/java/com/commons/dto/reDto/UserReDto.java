@@ -9,7 +9,7 @@ import lombok.Data;
  **/
 @Data
 public class UserReDto {
-	private String phone;	//手机号
+	private String mobPhone;	//手机号
 	private String pwd;		//密码
 	private String authCode;//验证码
 }

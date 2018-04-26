@@ -3,6 +3,7 @@ package com.commons.service;
 import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.entity.UserEntity;
+import com.commons.exception.ScException;
 
 /**
   * @Description(功能描述): 用户
@@ -29,7 +30,7 @@ public interface UserService {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/24 21:04
 	  **/
-	int saveUser(UserEntity user);
+	int saveUser(UserEntity user) ;
 
 	/**
 	 * @Description(功能描述): 登录

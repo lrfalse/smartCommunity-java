@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Description:绑定手机号Dto
+ * @Description:绑定手机号Dto answerDto anDto
  * @Author:feihong
  * @Vsesion:v.10
  * @Create:2018-04-20 20:20:01
