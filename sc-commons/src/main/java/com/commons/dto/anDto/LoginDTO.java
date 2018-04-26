@@ -2,6 +2,8 @@ package com.commons.dto.anDto;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @Description:登录信息返回
  * @Author:feihong
@@ -9,7 +11,7 @@ import lombok.Data;
  * @Create:2018-04-19 09:9:36
  */
 @Data
-public class LoginDTO {
+public class LoginDTO implements Serializable{
 
     /**
      *用户名

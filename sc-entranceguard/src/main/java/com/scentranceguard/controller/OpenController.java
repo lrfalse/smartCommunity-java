@@ -4,15 +4,23 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
+import com.commons.entity.FaceEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
+import com.commons.service.FaceRegisterService;
 import com.commons.utils.HttpClientUtil;
 import com.scentranceguard.from.*;
+import org.omg.CORBA.PRIVATE_MEMBER;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +37,28 @@ public class OpenController extends BaseApi{
 
     private final String url="http://open.meilinapi.com/";
 
+    @Autowired
+    private FaceRegisterService faceRegisterService;
+
+    /**
+      * @Description(功能描述): 人脸图片注册
+      * @author(作者): feihong
+      * @date (开发日期):2018-4-26 11:00
+      **/
+    @PostMapping("faceRegister")
+    public HttpResults faceRegister(HttpServletRequest req, MultipartFile file) throws Exception {
+        String fileName = file.getOriginalFilename();   //获取文件名称
+        String filePath = "E:\\"+System.currentTimeMillis()/1000+"\\"+"image"+"\\";
+        File dest = new File(filePath + fileName);
+        // 检测是否存在目录
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        FaceEntity face = JSON.parseObject(getIsJson(req).getBodyJson(), FaceEntity.class);
+        file.transferTo(dest);
+        face.setImage_url(filePath + fileName);
+        return getHttpResult(faceRegisterService.addFace(face));
+    }
    /**
       * @Description(功能描述): 远程开门
       * @author(作者): feihong
