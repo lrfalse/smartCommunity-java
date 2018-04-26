@@ -9,7 +9,7 @@
     <dubbo:reference id="userService" interface="com.commons.service.UserService" />
     <dubbo:reference id="redisService" interface="com.commons.service.RedisService" />
     <dubbo:reference id="communityService" interface="com.commons.service.CommunityService"/>
-    <dubbo:reference id="faceRegister" interface="com.commons.service.FaceRegisterService"/>
+    <dubbo:reference id="faceRegisterService" interface="com.commons.service.FaceRegisterService"/>
     <!--<dubbo:annotation package="com.commons.service"/>-->
 
 </beans>

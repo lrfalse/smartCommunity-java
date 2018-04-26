@@ -1,6 +1,7 @@
 package com.personalCenter.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
@@ -61,4 +62,16 @@ public class CommunityController extends BaseApi{
             return getHttpResult(community);
         }
     }
+
+    /**
+      * @Description(功能描述): 分配钥匙
+      * @author(作者): feihong
+      * @date (开发日期):2018-4-26 16;12
+      **/
+    public HttpResults  issuedKey(HttpServletRequest req) throws Exception {
+        JSONObject jsonObject = JSON.parseObject(getIsJson(req).getBodyJson());
+        String communtiy_id = (String)jsonObject.get("communtiy_id");
+        return getHttpResultOk();
+    }
+
 }

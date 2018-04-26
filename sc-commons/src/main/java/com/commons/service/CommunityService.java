@@ -25,4 +25,11 @@ public interface CommunityService {
       * @date (开发日期):2018-4-24 20:15:22
       **/
     CommunityEntity chooseCommunity(CommunityEntity communityEntity);
+
+    /**
+      * @Description(功能描述): 颁发钥匙信息
+      * @author(作者): feihong
+      * @date (开发日期):2018-4-26 16:21
+      **/
+    List<String>  issuedKey(int community_id);
 }
