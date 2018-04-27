@@ -44,16 +44,16 @@ public class RegisterController extends BaseApi {
 		String pwd=registerReDto.getPwd();
 		String authCode=redisService.get(phone+"checkCode");		//取出缓存中的数据
 		if(CommonUtils.isNotEmpty(phone,pwd)){
-			if(CommonUtils.isNotEmpty(authCode)){					//验证码不存在或者过期
+			//if(CommonUtils.isNotEmpty(authCode)){					//验证码不存在或者过期
 				UserEntity user=new UserEntity();
 				user.setMobPhone(phone);
 				user.setPwd(MD5Utils.md5(pwd));
 				if(userService.saveUser(user)>0){
 					httpResults=getHttpResultOk();
 				}
-			}else{
-				httpResults.setStatusCode(AppServiceEnums.AUTHCODE_TIMEOUT);
-			}
+			//}else{
+			//	httpResults.setStatusCode(AppServiceEnums.AUTHCODE_TIMEOUT);
+		   //}
 		}else{
 			httpResults=getHttpResultError();
 		}

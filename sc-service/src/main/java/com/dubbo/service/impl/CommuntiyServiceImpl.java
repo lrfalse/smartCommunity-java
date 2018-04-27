@@ -1,9 +1,13 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
+import com.commons.enums.AppServiceEnums;
+import com.commons.exception.ScException;
 import com.commons.service.CommunityService;
+import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.CommunityMapper;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +33,13 @@ public class CommuntiyServiceImpl implements CommunityService {
       * @date (开发日期):2018-4-26 16:24
       **/
     @Override
-    public List<String> issuedKey(int community_id) {
-
-        return null;
+    public List<String> issuedKey(Integer community_id) {
+        if (CommonUtils.isEmpty(community_id)){
+            throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
+        }
+        ParamDto paramDto = new ParamDto("community_id",community_id);
+        List<String> list = communityMapper.issuedKey(paramDto);
+        return list;
     }
 
     /**

@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -46,7 +47,7 @@ public class OpenController extends BaseApi{
       * @date (开发日期):2018-4-26 11:00
       **/
     @PostMapping("faceRegister")
-    public HttpResults faceRegister(HttpServletRequest req, MultipartFile file) throws Exception {
+    public HttpResults faceRegister(HttpServletRequest req, @RequestParam("file") MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();   //获取文件名称
         String filePath = "E:\\"+System.currentTimeMillis()/1000+"\\"+"image"+"\\";
         File dest = new File(filePath + fileName);
@@ -80,7 +81,7 @@ public class OpenController extends BaseApi{
       * @author(作者): feihong
       * @date (开发日期):2018-4-25
       **/
-    @PostMapping("pwdDoor")
+    @PostMapping("door")
     public HttpResults pwdDoor(HttpServletRequest req) throws Exception {
         PasswordOpenDoor openDoor = JSON.parseObject(getIsJson(req).getBodyJson(), PasswordOpenDoor.class);
        //二维码开门

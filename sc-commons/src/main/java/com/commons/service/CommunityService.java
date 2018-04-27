@@ -31,5 +31,5 @@ public interface CommunityService {
       * @author(作者): feihong
       * @date (开发日期):2018-4-26 16:21
       **/
-    List<String>  issuedKey(int community_id);
+    List<String>  issuedKey(Integer community_id);
 }

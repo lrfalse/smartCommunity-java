@@ -73,5 +73,4 @@ public class CommunityController extends BaseApi{
         String communtiy_id = (String)jsonObject.get("communtiy_id");
         return getHttpResultOk();
     }
-
 }

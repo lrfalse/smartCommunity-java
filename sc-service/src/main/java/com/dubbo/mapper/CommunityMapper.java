@@ -1,6 +1,7 @@
 package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
+import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.CommunityEntity;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface CommunityMapper extends MyMapper<CommunityEntity> {
      * @author(作者): feihong
      * @date (开发日期):2018-4-26 16:26
      **/
-    List<String> issuedKey(int commmunity);
+    List<String> issuedKey(ParamDto paramDto);
 }
