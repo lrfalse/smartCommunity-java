@@ -2,7 +2,8 @@ package com.commons.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @Description:用户信息表
@@ -14,105 +15,26 @@ import javax.persistence.*;
 @Table(name = "t_user")
 public class UserEntity extends BaseIdEntity{
 
+    private String name; 		//真实姓名
+    private String imageUrl; 	//头像地址
+    private String birthday;	//用户生日
+    private String sex;			//用户性别
+    private String cityId;		//城市
+    private String pwd;			//密码
+    private String identityCode;//身份证号码
+    private String mobPhone;	//移动电话
+    private String homePhone;	//家庭电话
+    private String address;		//家庭地址
+    private String ostCode;		//邮编
+    private String qopenId;		//QQ号码
+    private String email;		//电子邮件
+    private String seqNo;		//排序号
+    private String createTime;	//创建时间
+	private String wopenId;		//第三方登录唯一id
+	private int communityId;	//用户所在小区
+	private String status;		//状态 0:正常,1:非正常
+	private String remark;    	//备注
+	@Transient
+	private String token;		//W:微信 Q:qq P:微信登录
 
-    private String name; //真实姓名
-
-    private String imageUrl; //头像地址
-
-
-    /**
-     *用户生日
-     */
-    private String birthday;
-
-    /**
-     *用户性别
-     */
-    private String sex;
-
-    /**
-     *城市
-     */
-    private String cityId;
-    /**
-     *密码
-     */
-    private String pwd;
-
-    /**
-     *身份证号码
-     */
-    private String identityCode;
-
-    /**
-     *移动电话
-     */
-    private String mobPhone;
-
-    /**
-     *家庭电话
-     */
-    private String homePhone;
-
-    /**
-     *家庭地址
-     */
-    private String address;
-
-    /**
-     *邮编
-     */
-    private String ostCode;
-
-    /**
-     *QQ号码
-     */
-    private String qopenId;
-
-    /**
-     *电子邮件
-     */
-    private String email;
-
-    /**
-     *排序号
-     */
-    private String seqNo;
-
-
-
-    /**
-     *创建时间
-     */
-    private String createTime;
-
-
-
-    /**
-     *第三方登录唯一id
-     */
-    private String wopenId;
-
-    /**
-     *用户所在小区
-     */
-    private int communityId;
-
-
-
-    /**
-     *状态 0:正常,1:非正常
-     */
-    private String status;
-
-    /**
-     *备注
-     */
-    private String remark;
-
-    /**
-     * W:微信 Q:qq P:微信登录
-     */
-    @Transient
-    private String token;
 }

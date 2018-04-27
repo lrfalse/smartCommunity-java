@@ -5,6 +5,7 @@ import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,6 +31,13 @@ public interface UserMapper extends MyMapper<UserEntity> {
 	  * @date (开发日期): 2018/4/25 21:00
 	  **/
 	UserEntity selectUser(ParamDto dto);
+
+	/**
+	  * @Description(功能描述): 查询用户信息
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/26 17:15
+	  **/
+	List<UserEntity> selectListUser(ParamDto dto);
 
 	/**
 	  * @Description(功能描述): 更新用户信息

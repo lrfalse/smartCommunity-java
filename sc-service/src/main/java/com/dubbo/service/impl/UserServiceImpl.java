@@ -11,7 +11,10 @@ import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.UserMapper;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 
 /**
@@ -62,6 +65,19 @@ public class UserServiceImpl implements UserService{
 		return 1;
 	}
 
+	/**
+	  * @Description(功能描述): 分页查询 test用
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date (开发日期): 2018/4/26 20:17
+	  **/
+	public Page<UserEntity> getPageUser(UserEntity user){
+		ParamDto dto=new ParamDto();
+		Page<UserEntity> page=PageHelper.startPage(1, 10);
+		dto.clear();
+		dto.put("mobPhone_where",user.getMobPhone());
+		userMapper.selectListUser(dto);
+		return page;
+	}
 	/**
 	 * @Description(功能描述): 找回密码
 	 * @author(作者): feihong

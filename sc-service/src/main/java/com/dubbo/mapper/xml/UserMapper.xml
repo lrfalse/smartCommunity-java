@@ -46,7 +46,7 @@
             AND  identity_code = #{identityCode_where}
         </if>
         <if test="mobPhone_where != null" >
-            AND mob_phone = #{mobPhone_where_where}
+            AND mob_phone = #{mobPhone_where}
         </if>
         <if test="homePhone_where != null" >
             AND home_phone = #{homePhone_where}
@@ -163,6 +163,14 @@
 
     <!--查询用户信息-->
     <select id="selectUser" resultType="UserEntity" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+    <select id="selectListUser" resultType="UserEntity" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />
         from t_user

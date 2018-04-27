@@ -39,11 +39,9 @@ public class BaseIdEntity implements Serializable{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+    private Integer id;			//主键id
     @Transient
-    private Integer page = 1;
-
+    private Integer page = 1;	//页数
     @Transient
-    private Integer rows = 10;
+    private Integer rows = 10;	//行数
 }
