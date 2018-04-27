@@ -1,10 +1,11 @@
 package com.commons.service;
 
+import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.NoticeCommentDto;
+import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
-import com.github.pagehelper.Page;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public interface NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 9:39
      */
-    List<NoticeEntity> getNoticeList(NoticeEntity noticeEntity);
+    List<NoticeDto> getNoticeList(ParamDto paramDto);
     
     /**
      * @Description(功能描述) : 小区公告评论数
@@ -47,5 +48,12 @@ public interface NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 18:17
      */
-    Page<NoticeCommentDto> getNoticeCommentList(ParamDto paramDto);
+    BasePageDto<NoticeCommentDto> getNoticeCommentList(ParamDto paramDto);
+    
+    /**
+     * @Description(功能描述) : 发布评论
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/4/27 16:00
+     */
+    int releaseNoticeComment(NoticeCommentEntity noticeCommentEntity);
 }

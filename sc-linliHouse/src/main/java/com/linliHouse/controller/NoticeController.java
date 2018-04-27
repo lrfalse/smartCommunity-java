@@ -4,12 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.NoticeCommentDto;
+import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
 import com.commons.service.NoticeService;
-import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,22 +38,24 @@ public class NoticeController extends BaseApi {
      */
     @PostMapping("/getNotice")
     public HttpResults getNotice(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=(IsJsonDTO)req.getAttribute("preHandleJsonDto");
+        IsJsonDTO jsonDto=getIsJson(req);
         NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
         List<String> list = noticeService.getTitleDisplay(noticeEntity);
         return getHttpResult(list);
     }
 
     /**
-     * @Description(功能描述) : 小区列表数据
+     * @Description(功能描述) : 小区公告列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 9:35
      */
     @PostMapping("/getNoticeList")
     public HttpResults getNoticeList(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=(IsJsonDTO)req.getAttribute("preHandleJsonDto");
-        NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
-        List<NoticeEntity> list = noticeService.getNoticeList(noticeEntity);
+        IsJsonDTO jsonDto=getIsJson(req);
+        NoticeDto noticeDto = JSON.parseObject(jsonDto.getBodyJson(), NoticeDto.class);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",noticeDto.getCommunityId());
+        List<NoticeDto> list = noticeService.getNoticeList(paramDto);
         return getHttpResult(list);
     }
 
@@ -63,10 +66,11 @@ public class NoticeController extends BaseApi {
      */
     @PostMapping("/getNoticeCount")
     public HttpResults getNoticeCount(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=(IsJsonDTO)req.getAttribute("preHandleJsonDto");
+        /*IsJsonDTO jsonDto=getIsJson(req);
         NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
         int num = noticeService.getNoticeCommentCount(noticeCommentEntity);
-        return getHttpResult(num+"");
+        return getHttpResult(num+"");*/
+        return null;
     }
 
     /**
@@ -76,7 +80,7 @@ public class NoticeController extends BaseApi {
      */
     @PostMapping("/getNoticeDetails")
     public HttpResults getNoticeDetails(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=(IsJsonDTO)req.getAttribute("preHandleJsonDto");
+        IsJsonDTO jsonDto=getIsJson(req);
         NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
         NoticeEntity data = noticeService.getNoticeDetails(noticeEntity);
         return getHttpResult(data);
@@ -89,14 +93,26 @@ public class NoticeController extends BaseApi {
      */
     @PostMapping("/getNoticeCommentDetails")
     public HttpResults getNoticeCommentDetails(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=(IsJsonDTO)req.getAttribute("preHandleJsonDto");
+        IsJsonDTO jsonDto=getIsJson(req);
         NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("noticeId",noticeCommentEntity.getNoticeId());
         paramDto.put("status",noticeCommentEntity.getStatus());
-        Page<NoticeCommentDto> data = noticeService.getNoticeCommentList(paramDto);
-        return getHttpResult(data.getResult());
+        BasePageDto<NoticeCommentDto> dto = noticeService.getNoticeCommentList(paramDto);
+        return getHttpResult(dto);
     }
 
+    /**
+     * @Description(功能描述) : 公告发布评论
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/4/27 15:46
+     */
+    @PostMapping("/releaseNoticeComment")
+    public HttpResults releaseNoticeComment(HttpServletRequest req)throws Exception{
+        IsJsonDTO jsonDto=getIsJson(req);
+        NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
+        int n = noticeService.releaseNoticeComment(noticeCommentEntity);
+        return getHttpResult(n);
+    } 
 
 }

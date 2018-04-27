@@ -13,7 +13,7 @@
     <!--</resultMap>-->
 
     <!-- 小区公告详情评论 -->
-    <select id="queryNoticeCommentList" resultType="NoticeCommentDto" parameterType="ParamDto">
+    <select id="queryNoticeCommentList" resultType="com.commons.dto.anDto.NoticeCommentDto" parameterType="ParamDto">
         SELECT
             n.id,
             n.user_id,
@@ -26,7 +26,7 @@
             t_notice_comment n
             INNER JOIN t_user u ON n.user_id = u.id
         WHERE
-            n.status = '0'
+            n.status = #{status}
             AND n.notice_id = #{noticeId}
     </select>
 

@@ -2,6 +2,7 @@ package com.commons.dto.anDto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,8 @@ import java.util.Date;
  * @Date(开发日期) : 2018/4/26 19:24
  */
 @Data
-public class NoticeCommentDto extends BaseDTO {
+public class NoticeCommentDto implements Serializable {
+    private Integer id;
     private Integer userId;	    //评论人id
     private Integer noticeId;	//公告id
     private String name;        //真实姓名
