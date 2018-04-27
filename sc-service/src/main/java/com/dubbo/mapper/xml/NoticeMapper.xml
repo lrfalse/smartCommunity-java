@@ -7,12 +7,43 @@
         SELECT
             titile
         FROM
-            linlihouse.t_notice
+            t_notice
         WHERE
             STATUS = '0'
             AND community_id = #{communityId}
             and (SYSDATE() between start_time and end_time)
         ORDER BY type ASC,publish_time DESC
     </select>
+
+    <!-- 小区公告列表 -->
+    <select id="queryNoticeList" resultType="com.commons.dto.anDto.NoticeDto" parameterType="ParamDto">
+        SELECT
+            n.id,
+            n.community_id,
+            n.titile,
+            n.publish_time,
+            n.browse_num,
+            n.img_url,
+            COUNT( c.notice_id ) total
+        FROM
+            t_notice n
+            LEFT JOIN t_notice_comment c ON n.id = c.notice_id
+        WHERE
+            n.STATUS = '0'
+            AND n.community_id = #{communityId}
+            AND ( SYSDATE( ) BETWEEN n.start_time AND n.end_time )
+            AND c.STATUS = '0'
+        GROUP BY
+            n.id,
+            n.community_id,
+            n.titile,
+            n.publish_time,
+            n.browse_num,
+            n.img_url
+        ORDER BY
+            n.type ASC,
+            n.publish_time DESC
+    </select>
+
 
 </mapper>
