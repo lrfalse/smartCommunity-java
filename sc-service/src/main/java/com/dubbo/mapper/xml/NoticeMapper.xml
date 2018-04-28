@@ -3,7 +3,7 @@
 <mapper namespace="com.dubbo.mapper.NoticeMapper">
 
     <!-- 查询首页小区公告信息(标题显示)-->
-    <select id="queryNoticeTitle" resultType="java.lang.String">
+    <select id="queryNoticeTitle" resultType="java.lang.String" parameterType="ParamDto">
         SELECT
             titile
         FROM

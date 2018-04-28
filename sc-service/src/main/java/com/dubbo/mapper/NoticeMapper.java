@@ -4,7 +4,6 @@ import com.commons.config.MyMapper;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeEntity;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public interface NoticeMapper extends MyMapper<NoticeEntity> {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 9:41
      */
-    List<String> queryNoticeTitle(@Param("communityId") Integer communityId);
+    List<String> queryNoticeTitle(ParamDto paramDto);
 
     /**
      * @Description(功能描述) : 小区公告列表
