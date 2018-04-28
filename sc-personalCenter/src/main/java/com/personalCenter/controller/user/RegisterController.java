@@ -106,10 +106,4 @@ public class RegisterController extends BaseApi {
 		}
 		return httpResults;
 	}
-	public static void main(String[] args) throws Exception {
-		UserReDto userReDto=new UserReDto();
-		userReDto.setMobPhone("18716393365");
-		userReDto.setAuthCode("652978");
-		System.out.println(JsonUtils.toJson(userReDto));
-	}
 }
