@@ -7,8 +7,6 @@ import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
 import com.github.pagehelper.PageInfo;
 
-import java.util.List;
-
 /**
  * @Description(功能描述) : 小区公告
  * @Author(作者) : xly<xielinyang>

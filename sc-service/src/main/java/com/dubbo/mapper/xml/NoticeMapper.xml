@@ -21,6 +21,7 @@
             n.id,
             n.community_id,
             n.titile,
+            n.small_title,
             n.publish_time,
             n.browse_num,
             n.img_url,
