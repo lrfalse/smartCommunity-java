@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aes加解密</title>
+    <style type="text/css">
+        .bodyAes{
+            width: 1000px;
+            height: 100px;
+            margin-left: 50px;
+        }
+        .jsonBody{
+            width: 1000px; height: 200px;
+        }
+        .key{
+            width: 1000px; height: 10px;
+        }
+    </style>
+</head>
+<body>
+<strong>
+    ------------------------------------------------------------------加密-------------------------------------------------------------------------------
+    <br><br>
+</strong>
+明文json:<input class="jsonBody" id="jsonBody"/><button onclick="encrypt();">加密</button><br>
+body:<div id="bodys"class="bodyAes"></div><br>
+key:<div id="key" class="key"></div><br><br>
+<strong>
+    ------------------------------------------------------------------解密-------------------------------------------------------------------------------<br><br>
+</strong>
+密文:<input class="jsonBody" id="decryptText"/><button onclick="decrypt();">解密</button><br>
+body:<div id="decryptBodys"class="bodyAes"></div><br>
+</body>
+</html>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function encrypt(){
+        $("#bodys").html('');
+        $("#key").html('');
+        var jsonBody=$("#jsonBody").val();
+        if(jsonBody==null||jsonBody==""){
+            alert("请输入json明文");
+            return ;
+        }
+        $.ajax({
+            url:"encrypt",
+            type: "POST",
+            dataType:'json',
+            data:{"jsonBody":jsonBody},
+            success:function(data){
+                if(data.statusCode=="000"){
+                    $("#bodys").html(data.body);
+                    $("#key").html(data.key);
+                }else{
+                    alert(data.statusMsg);
+                }
+            }
+        });
+    }
+    function decrypt(){
+        $("#decryptBodys").html('');
+        var decryptText=$("#decryptText").val();
+        if(decryptText==""||decryptText==null){
+            alert("请输入需要解密的报文");
+            return
+        }
+        $.ajax({
+            url:"decrypt",
+            type: "POST",
+            dataType:'json',
+            data:{"decryptText":decryptText},
+            success:function(data){
+                if(data.statusCode=="000"){
+                    $("#decryptBodys").html(data.body);
+                }else{
+                    alert(data.statusMsg);
+                }
+            }
+        });
+    }
+</script>

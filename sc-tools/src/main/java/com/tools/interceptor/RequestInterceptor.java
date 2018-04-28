@@ -1,9 +1,5 @@
 package com.tools.interceptor;
 
-import com.commons.controller.BaseApi;
-import com.commons.dto.IsJsonDTO;
-import com.commons.enums.AppServiceEnums;
-import com.commons.exception.ScException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -44,7 +40,6 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  * @date (开发日期): 2018/4/3 16:40
 	  **/
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
 	}
 
 	@Override
