@@ -1,12 +1,11 @@
 package com.commons.service;
 
 import com.commons.dto.anDto.CommentDto;
-import com.commons.dto.anDto.CommentQueryDto;
 import com.commons.dto.reDto.ActivityJoinDto;
+import com.commons.dto.reDto.CommentReDto;
 import com.commons.entity.ActivityEntity;
 import com.commons.entity.CommentEntity;
-import com.github.pagehelper.Page;
-
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -44,7 +43,7 @@ public interface ActivityService {
       * @author(作者): feihong
       * @date (开发日期):2018-4-27 20:42
       **/
-    Page<CommentEntity> queryComment(CommentQueryDto commentQueryDto);
+    PageInfo<CommentEntity> queryComment(CommentReDto commentReDto);
 
     /** 
       * @Description(功能描述): 加入活动

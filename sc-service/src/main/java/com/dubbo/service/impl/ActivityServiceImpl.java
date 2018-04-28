@@ -1,11 +1,10 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.commons.dto.anDto.ActivityListDto;
 import com.commons.dto.anDto.CommentDto;
-import com.commons.dto.anDto.CommentQueryDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.ActivityJoinDto;
+import com.commons.dto.reDto.CommentReDto;
 import com.commons.entity.ActivityEntity;
 import com.commons.entity.ActivityJoinEntity;
 import com.commons.entity.CommentEntity;
@@ -19,8 +18,8 @@ import com.dubbo.mapper.ActivityMapper;
 
 import com.dubbo.mapper.CommentMapper;
 import com.dubbo.mapper.UserMapper;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
@@ -143,11 +142,11 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018-4-27 20:44
      **/
     @Override
-    public Page<CommentEntity> queryComment(CommentQueryDto commentQueryDto) {
+    public PageInfo<CommentEntity> queryComment(CommentReDto commentQueryDto) {
         ParamDto<String,String> paramDto = new ParamDto<>();
         paramDto.put("activityId",commentQueryDto.getActivityId());
-        Page<CommentEntity> objects = PageHelper.startPage(commentQueryDto.getPageNum(), commentQueryDto.getPageSize());
-        commentMapper.queryComment(paramDto);
+         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+        PageInfo<CommentEntity> objects =new PageInfo<>(commentMapper.queryComment(paramDto));
         return objects;
     }
 

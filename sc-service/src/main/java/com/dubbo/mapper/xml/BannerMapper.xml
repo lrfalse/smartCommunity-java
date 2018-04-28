@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.BannerMapper">
 
+    <!-- 查询首页小区公告信息(标题显示)-->
+    <select id="queryBannerList" resultType="com.commons.entity.BannerEntity" parameterType="ParamDto">
+        SELECT
+            *
+        FROM
+            t_banner
+        WHERE
+            STATUS = '0'
+            AND ( SYSDATE( ) BETWEEN start_time AND end_time )
+    </select>
+
 </mapper>

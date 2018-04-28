@@ -2,11 +2,13 @@ package com.commons.controller;
 
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.dto.anDto.BasePageDto;
 import com.commons.enums.AppServiceEnums;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
 import com.commons.utils.encrypt.AESEncryptUtils;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,6 +81,15 @@ public class BaseApi {
 		httpResults.setKey(MD5Utils.md5(JsonUtils.toJson(data)));		//添加签名
 		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
+		return httpResults;
+	}
+	/**
+	 * @Description(功能描述) : 返回加密报文信息 返回分页对象
+	 * @Author(作者) : xly<xielinyang>
+	 * @Date(开发日期) : 2018/4/28 10:44
+	 */
+	public static HttpResults getHttpResult(PageInfo pageInfo) throws Exception {
+		httpResults=getHttpResult(new BasePageDto(pageInfo));
 		return httpResults;
 	}
 	/**

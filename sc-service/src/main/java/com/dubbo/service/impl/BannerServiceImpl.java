@@ -6,6 +6,7 @@ import com.commons.entity.BannerEntity;
 import com.commons.service.BannerService;
 import com.dubbo.mapper.BannerMapper;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -27,9 +28,10 @@ public class BannerServiceImpl implements BannerService{
      * @Date(开发日期) : 2018/4/27 22:22
      */
     @Override
-    public List<BannerEntity> getBannerList(ParamDto paramDto) {
+    public PageInfo<BannerEntity> getBannerList(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<BannerEntity> list = bannerMapper.selectAll();
-        return list;
+        List<BannerEntity> list= bannerMapper.queryBannerList(paramDto);
+        PageInfo<BannerEntity> page =new PageInfo<>(list);
+        return page;
     }
 }

@@ -7,13 +7,13 @@ import com.commons.dto.IsJsonDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
 import com.commons.service.BannerService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * @Description(功能描述) : 首页轮播图Controller
@@ -38,7 +38,7 @@ public class BannerController extends BaseApi {
         BannerEntity noticeDto = JSON.parseObject(jsonDto.getBodyJson(), BannerEntity.class);
         //TODO 传入参数未确定
         ParamDto paramDto = new ParamDto();
-        List<BannerEntity> list = bannerService.getBannerList(paramDto);
-        return getHttpResult(list);
+        PageInfo<BannerEntity> pageInfo = bannerService.getBannerList(paramDto);
+        return getHttpResult(pageInfo);
     }
 }

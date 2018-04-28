@@ -2,8 +2,7 @@ package com.commons.service;
 
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
-
-import java.util.List;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @Description(功能描述) : 首页轮播图
@@ -17,5 +16,5 @@ public interface BannerService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/27 22:05
      */
-    List<BannerEntity> getBannerList(ParamDto paramDto);
+    PageInfo<BannerEntity> getBannerList(ParamDto paramDto);
 }

@@ -4,13 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
-import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.NoticeCommentDto;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
 import com.commons.service.NoticeService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,20 +60,6 @@ public class NoticeController extends BaseApi {
     }
 
     /**
-     * @Description(功能描述) : 小区公告评论数
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/4/26 16:12
-     */
-    @PostMapping("/getNoticeCount")
-    public HttpResults getNoticeCount(HttpServletRequest req)throws Exception{
-        /*IsJsonDTO jsonDto=getIsJson(req);
-        NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
-        int num = noticeService.getNoticeCommentCount(noticeCommentEntity);
-        return getHttpResult(num+"");*/
-        return null;
-    }
-
-    /**
      * @Description(功能描述) : 小区公告详情
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 17:58
@@ -98,8 +84,8 @@ public class NoticeController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("noticeId",noticeCommentEntity.getNoticeId());
         paramDto.put("status",noticeCommentEntity.getStatus());
-        BasePageDto<NoticeCommentDto> dto = noticeService.getNoticeCommentList(paramDto);
-        return getHttpResult(dto);
+        PageInfo<NoticeCommentDto> pageInfo = noticeService.getNoticeCommentList(paramDto);
+        return getHttpResult(pageInfo);
     }
 
     /**

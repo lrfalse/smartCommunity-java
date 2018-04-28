@@ -1,7 +1,6 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.NoticeCommentDto;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
@@ -13,8 +12,8 @@ import com.commons.service.NoticeService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.NoticeCommentMapper;
 import com.dubbo.mapper.NoticeMapper;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
@@ -55,16 +54,6 @@ public class NoticeServiceImpl implements NoticeService {
         List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
         return list;
     }
-    
-    /**
-     * @Description(功能描述) : 小区公告评论数
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/4/26 17:13
-     */
-    @Override
-    public int getNoticeCommentCount(NoticeCommentEntity noticeCommentEntity) {
-        return noticeCommentMapper.selectCount(noticeCommentEntity);
-    }
 
     /**
      * @Description(功能描述) : 小区公告详情
@@ -99,13 +88,11 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 19:17
      */
     @Override
-    public BasePageDto<NoticeCommentDto> getNoticeCommentList(ParamDto paramDto) {
-        Page page=PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+    public PageInfo<NoticeCommentDto> getNoticeCommentList(ParamDto paramDto) {
+        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
         List<NoticeCommentDto> list = noticeCommentMapper.queryNoticeCommentList(paramDto);
-        BasePageDto<NoticeCommentDto> dto = new BasePageDto<NoticeCommentDto>();
-        dto.setList(list);
-        dto.setTotal(page.getTotal());
-        return dto;
+        PageInfo<NoticeCommentDto> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     /**

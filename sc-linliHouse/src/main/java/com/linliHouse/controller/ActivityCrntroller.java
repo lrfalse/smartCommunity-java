@@ -5,17 +5,17 @@ import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.anDto.ActivityListDto;
+import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.CommentDto;
-import com.commons.dto.anDto.CommentPageDto;
-import com.commons.dto.anDto.CommentQueryDto;
 import com.commons.dto.reDto.ActivityJoinDto;
+import com.commons.dto.reDto.CommentReDto;
 import com.commons.entity.ActivityEntity;
 import com.commons.entity.CommentEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.ActivityService;
 import com.commons.utils.CommonUtils;
-import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -78,15 +78,12 @@ public class ActivityCrntroller extends BaseApi{
       * @date (开发日期):2018-4-27 20:36
       **/
     public HttpResults queryComment(HttpServletRequest req) throws Exception {
-        CommentQueryDto commentQueryDto = JSON.parseObject(getIsJson(req).getBodyJson(), CommentQueryDto.class);
-        if (CommonUtils.isEmpty(commentQueryDto.getPageNum())&&CommonUtils.isEmpty(commentQueryDto.getPageSize())&&CommonUtils.isEmpty(commentQueryDto.getActivityId())){
+        CommentReDto commentReDto = JSON.parseObject(getIsJson(req).getBodyJson(), CommentReDto.class);
+        if (CommonUtils.isEmpty(commentReDto.getPages())&&CommonUtils.isEmpty(commentReDto.getPageSize())&&CommonUtils.isEmpty(commentReDto.getActivityId())){
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         }
-        Page<CommentEntity> commentEntities = activityService.queryComment(commentQueryDto);
-        CommentPageDto commentPageDto =new CommentPageDto();
-        commentPageDto.setList(commentEntities.getResult());
-        commentPageDto.setTotal(commentEntities.getTotal());
-        return getHttpResult(commentPageDto);
+        PageInfo<CommentEntity> pageInfo = activityService.queryComment(commentReDto);
+        return getHttpResult(new BasePageDto(pageInfo));
     }
 
     /**
