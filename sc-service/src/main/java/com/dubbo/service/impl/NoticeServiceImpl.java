@@ -38,9 +38,11 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/25 14:56
      */
     @Override
-    public List<String> getTitleDisplay(NoticeEntity noticeEntity) {
-        PageHelper.startPage(noticeEntity.getPage(), noticeEntity.getRows());
-        return noticeMapper.queryNoticeTitle(noticeEntity.getCommunityId());
+    public PageInfo<String> getTitleDisplay(ParamDto paramDto) {
+        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+        List<String> list = noticeMapper.queryNoticeTitle(paramDto);
+        PageInfo<String> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     /**
@@ -49,10 +51,11 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 9:41
      */
     @Override
-    public List<NoticeDto> getNoticeList(ParamDto paramDto) {
+    public PageInfo<NoticeDto> getNoticeList(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
         List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
-        return list;
+        PageInfo<NoticeDto> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     /**

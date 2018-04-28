@@ -20,14 +20,14 @@ public interface NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/25 14:48
      */
-    List<String> getTitleDisplay(NoticeEntity noticeEntity);
+    PageInfo<String> getTitleDisplay(ParamDto paramDto);
 
     /**
      * @Description(功能描述) : 小区公告列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 9:39
      */
-    List<NoticeDto> getNoticeList(ParamDto paramDto);
+    PageInfo<NoticeDto> getNoticeList(ParamDto paramDto);
 
     /**
      * @Description(功能描述) : 公告详情

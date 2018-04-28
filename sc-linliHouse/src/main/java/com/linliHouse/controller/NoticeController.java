@@ -40,8 +40,10 @@ public class NoticeController extends BaseApi {
     public HttpResults getNotice(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
-        List<String> list = noticeService.getTitleDisplay(noticeEntity);
-        return getHttpResult(list);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",noticeEntity.getCommunityId());
+        PageInfo<String> pageInfo = noticeService.getTitleDisplay(paramDto);
+        return getHttpResult(pageInfo);
     }
 
     /**
@@ -55,8 +57,8 @@ public class NoticeController extends BaseApi {
         NoticeDto noticeDto = JSON.parseObject(jsonDto.getBodyJson(), NoticeDto.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",noticeDto.getCommunityId());
-        List<NoticeDto> list = noticeService.getNoticeList(paramDto);
-        return getHttpResult(list);
+        PageInfo<NoticeDto> pageInfo = noticeService.getNoticeList(paramDto);
+        return getHttpResult(pageInfo);
     }
 
     /**
