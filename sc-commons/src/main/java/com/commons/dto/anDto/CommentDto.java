@@ -12,7 +12,6 @@ import java.io.Serializable;
  */
 @Data
 public class CommentDto implements Serializable{
-
     /**
      *用户id
      */

@@ -40,6 +40,7 @@ public class ActivityCrntroller extends BaseApi{
       * @author(作者): feihong
       * @date (开发日期):2018-4-27 15:33
       **/
+
     @PostMapping("homeActivity")
     public HttpResults homeActivity(HttpServletRequest req) throws Exception {
         String communityID= JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class).getActivityId();

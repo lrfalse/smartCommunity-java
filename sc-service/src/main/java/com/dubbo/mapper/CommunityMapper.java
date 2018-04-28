@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface CommunityMapper extends MyMapper<CommunityEntity> {
 
+
     /**
      * @Description(功能描述): 颁发钥匙
      * @author(作者): feihong
