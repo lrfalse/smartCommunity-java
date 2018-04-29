@@ -8,77 +8,25 @@
       <artifact name="sc-tools:Web exploded" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java" description="List&lt;CommunityEntity&gt; communityEntityList = Commun..." line="43" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="b63d2c5b-1b1f-453a-951a-06d821c08263" name="Default" comment="登录">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_101tec_zkclient_0_10.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_4_10.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_5_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_sgroschupf_zkclient_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_6.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_15_0_GA.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_netty_netty_3_2_5_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_25.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/resources/dubbo/dubbo-service.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_23.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_23.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_23.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_5_23.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_23.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_25.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityPeopleDto.java" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/config/MyMapper.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/DistrictEntity.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/DistrictEntity.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/UserEntity.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/UserService.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/encrypt/AESEncryptUtils.java" />
-      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/resources/dubbo-consumer.xml" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/resources/dubbo/dubbo-consumer.xml" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/sc-commons.iml" afterPath="$PROJECT_DIR$/sc-commons/sc-commons.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityListDto.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityListDto.java" />
+      <change beforePath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/ActivityService.java" afterPath="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/ActivityService.java" />
+      <change beforePath="$PROJECT_DIR$/sc-linli/sc-linli.iml" afterPath="$PROJECT_DIR$/sc-linli/sc-linli.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-linliHouse/sc-linliHouse.iml" afterPath="$PROJECT_DIR$/sc-linliHouse/sc-linliHouse.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityCrntroller.java" afterPath="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityController.java" />
       <change beforePath="$PROJECT_DIR$/sc-personalCenter/sc-personalCenter.iml" afterPath="$PROJECT_DIR$/sc-personalCenter/sc-personalCenter.iml" />
-      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java" />
-      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/handle/GlobalExceptionHandler.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/handle/GlobalExceptionHandler.java" />
-      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" />
-      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/resources/application-prod.properties" afterPath="$PROJECT_DIR$/sc-personalCenter/src/main/resources/application-prod.properties" />
       <change beforePath="$PROJECT_DIR$/sc-service/sc-service.iml" afterPath="$PROJECT_DIR$/sc-service/sc-service.iml" />
-      <change beforePath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/UserMapper.xml" afterPath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/DistrictServiceImpl.java" afterPath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/DistrictServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/sc-service/src/main/resources/dubbo/dubbo-provider.xml" afterPath="$PROJECT_DIR$/sc-service/src/main/resources/dubbo/dubbo-provider.xml" />
-      <change beforePath="$PROJECT_DIR$/smartCommunity.iml" afterPath="$PROJECT_DIR$/smartCommunity.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/ActivityMapper.java" afterPath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/ActivityMapper.java" />
+      <change beforePath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/ActivityMapper.xml" afterPath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/ActivityMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/ActivityServiceImpl.java" afterPath="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/ActivityServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/sc-tools/sc-tools.iml" afterPath="$PROJECT_DIR$/sc-tools/sc-tools.iml" />
+      <change beforePath="$PROJECT_DIR$/sc-tradingArea/sc-tradingArea.iml" afterPath="$PROJECT_DIR$/sc-tradingArea/sc-tradingArea.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/sc-linlihouse/target/" />
     <ignored path="$PROJECT_DIR$/sc-commons/target/" />
@@ -97,10 +45,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/smartCommunity_java$PersonalCenterApplication.coverage" NAME="PersonalCenterApplication Coverage Results" MODIFIED="1524318668837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/smartCommunity$ToolsApplication.coverage" NAME="ToolsApplication Coverage Results" MODIFIED="1523848200981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.tools.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/smartCommunity_java$PersonalCenterApplication.coverage" NAME="PersonalCenterApplication Coverage Results" MODIFIED="1524318668837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -115,47 +63,106 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dubbo-service.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/resources/dubbo/dubbo-service.xml">
+    <leaf>
+      <file leaf-file-name="ActivityController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="224">
+              <caret line="47" column="59" lean-forward="false" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/UserService.java">
+      <file leaf-file-name="ActivityListDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityListDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="28">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DistrictService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java">
+      <file leaf-file-name="ActivityServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/ActivityServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalCenterApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java">
+      <file leaf-file-name="ActivityJoinEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/ActivityJoinEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="162">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommentEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/CommentMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/ActivityEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BindPhoneDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/BindPhoneDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#953#954#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityPeopleDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityPeopleDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -225,16 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/DistrictService.java" />
-        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/HttpResult.java" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/XXO.java" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginRegisterController.java" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/mapper/CommunityMapper.java" />
-        <option value="$PROJECT_DIR$/sc-personalCenter/pom.xml" />
-        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/vo/CityCode.java" />
         <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/ChooseCommunity.java" />
         <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/ChooseCommunity.java" />
@@ -276,6 +273,16 @@
         <option value="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/UserService.java" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java" />
+        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityCrntroller.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/ActivityEntity.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityPeople.java" />
+        <option value="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/ActivityMapper.java" />
+        <option value="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/ActivityMapper.xml" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityDto.java" />
+        <option value="$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityController.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/ActivityService.java" />
+        <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityListDto.java" />
+        <option value="$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/ActivityServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -413,178 +420,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-commons" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-personalCenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-personalCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-personalCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-personalCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-personalCenter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="personalCenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
-              <item name="sc-tradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="smartCommunity-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity-java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4531722" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -824,6 +684,8 @@
       <workItem from="1524032045529" duration="132795000" />
       <workItem from="1524446034636" duration="15000" />
       <workItem from="1524446066213" duration="18990000" />
+      <workItem from="1524913903772" duration="275000" />
+      <workItem from="1524914931062" duration="9757000" />
     </task>
     <task id="LOCAL-00001" summary="新增加解密流程。">
       <created>1522751558614</created>
@@ -976,7 +838,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303496000" />
+    <option name="totallyTimeSpent" value="313528000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -988,7 +850,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22234637" sideWeight="0.50959486" order="8" side_tool="true" content_ui="tabs" />
@@ -1001,19 +863,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19776537" sideWeight="0.49307036" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49497208" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33873874" sideWeight="0.4904051" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18435754" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33966482" sideWeight="0.4904051" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.49573562" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21481876" sideWeight="0.4936508" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22748092" sideWeight="0.4936508" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1988273" sideWeight="0.5063492" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6044693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39459458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1021,6 +882,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14748603" sideWeight="0.4968017" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49497208" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13539445" sideWeight="0.50642204" order="10" side_tool="true" content_ui="tabs" />
@@ -1165,176 +1027,15 @@
           <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="177" />
+      <option name="time" value="178" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/RuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#4000#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="false" />
-            <element signature="e#1628#1629#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/exception/ScException2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/handle/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#796#827#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/SmsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/RandomUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="31" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/MD5Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="20" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/lcationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="16" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/JsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="71" column="40" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="71" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/JsonValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/HttpClientUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/ExceptionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/utils/ArithUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-643">
-          <caret line="165" column="18" lean-forward="false" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/enums/SmsEnums.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/reDto/UserReDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/interceptor/RequestInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/sc-personalCenter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/DistrictServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,9 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1138">
           <caret line="727" column="58" lean-forward="false" selection-start-line="727" selection-start-column="56" selection-end-line="727" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1376,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1392,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1400,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="14" column="87" lean-forward="true" selection-start-line="14" selection-start-column="87" selection-end-line="14" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1408,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,7 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="12" column="87" lean-forward="true" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="10" column="80" lean-forward="false" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1440,7 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="20" column="35" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="20" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,7 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,47 +1141,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/DistrictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-575">
-          <caret line="75" column="33" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="true" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding>
-            <marker date="1524477198325" expanded="true" signature="357:416" ph="SELECT * FRO... t_user" />
-            <marker date="1524477198325" expanded="true" signature="726:802" ph="UPDATE linlihouse.t_user... " />
-            <marker date="1524477198325" expanded="true" signature="894:970" ph="UPDATE linlihouse.t_user... " />
-            <marker date="1524477198325" expanded="true" signature="1060:1136" ph="UPDATE linlihouse.t_user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/DistrictController.java" />
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/CommunityService.java" />
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/LoginController.java" />
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/xml/LoginRegisterMapper.xml" />
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -1509,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1517,10 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1534,74 +1180,197 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/CommunityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/LoginRegisterMapper.java" />
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/service/LoginRegisterService.java" />
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/mapper/CommunityMapper.java" />
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/resources/dubbo/dubbo-service.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="228">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/W.java" />
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/W.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/CommentPageDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="185">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/DistrictService.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/CommentDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/PersonalCenterApplication.java">
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/BasePageDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="175">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/ActivityJoinMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/ActivityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/xml/ActivityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
+            <marker date="1525014629044" expanded="true" signature="255:319" ph="UPDATE t_activity... " />
+            <marker date="1525014629044" expanded="true" signature="471:653" ph="SELECT ta.`p... t_activity" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/BannerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/service/ActivityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/reDto/ActivityJoinDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/ActivityEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityPeopleDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/BindPhoneDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-linliHouse/src/main/java/com/linliHouse/controller/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="47" column="59" lean-forward="false" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/dto/anDto/ActivityListDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/CommentEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/ActivityJoinEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-service/src/main/java/com/dubbo/service/impl/ActivityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,7 +1416,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>jdk1.8.0_161</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1659,7 +1428,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>smartCommunity</last-edited>
+          <last-edited>sc-personalCenter</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

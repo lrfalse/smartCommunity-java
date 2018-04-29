@@ -16,10 +16,16 @@ public class ActivityListDto implements Serializable{
     /**
      * 小区
      */
-    private String activityId;
+    private String communtyID;
 
     /**
-     *活动名称
+     *当前页
      */
-    private String page;
+    private String pageNum;
+
+    /**
+     * 每页显示多少
+     */
+    private String  pageSize;
+
 }

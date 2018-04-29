@@ -1,6 +1,9 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.commons.dto.anDto.ActivityDto;
+import com.commons.dto.anDto.ActivityListDto;
+import com.commons.dto.anDto.ActivityPeopleDto;
 import com.commons.dto.anDto.CommentDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.ActivityJoinDto;
@@ -22,6 +25,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -67,14 +71,26 @@ public class ActivityServiceImpl implements ActivityService{
       * @date (开发日期):2018-04-27 17:16:22
       **/
     @Override
-    public List<ActivityEntity> queryActivity(String communityId) {
-        if (CommonUtils.isEmpty(communityId)){
+    public List<ActivityDto> queryActivity(ActivityListDto activityListDto) {
+        if (CommonUtils.isEmpty(activityListDto)){
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         }
+        List<ActivityDto> list = new ArrayList<>();
         ActivityEntity activityEntity =new ActivityEntity();
-        activityEntity.setCommunityId(communityId);
+        activityEntity.setCommunityId(activityListDto.getCommuntyID());
+        PageHelper.startPage(Integer.valueOf(activityListDto.getPageNum()),Integer.valueOf(activityListDto.getPageSize()));
         List<ActivityEntity> select = activityMapper.select(activityEntity);
-        return  select;
+        for (ActivityEntity activity:select) {
+            ActivityDto activityDto = new ActivityDto();
+            Integer id = activity.getId();
+            //根据活动id查询用户头像及参加人数
+            List<ActivityPeopleDto> dtos = activityMapper.queryActivityPeople(String.valueOf(id));
+            activityDto.setImgUrl(activity.getImgUrl());
+            activityDto.setTitle(activity.getTitle());
+            activityDto.setList(dtos);
+            list.add(activityDto);
+        }
+        return  list;
     }
 
     /**
@@ -118,19 +134,21 @@ public class ActivityServiceImpl implements ActivityService{
             userEntity.setWopenId(activityJoinDto.getWopenId());
             UserEntity entity = userMapper.selectOne(userEntity);
             int insert = activityJoinMapper.insert(bulidActivityJoin(entity));
-
+            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             return insert;
         }else if (activityJoinDto.getTag().equals("Q")){
             UserEntity userEntity = new UserEntity();
             userEntity.setQopenId(activityJoinDto.getQopenId());
             UserEntity entity = userMapper.selectOne(userEntity);
             int insert = activityJoinMapper.insert(bulidActivityJoin(entity));
+            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             return insert;
         }else if (activityJoinDto.getTag().equals("P")){
             UserEntity userEntity = new UserEntity();
             userEntity.setMobPhone(activityJoinDto.getMobPhone());
             UserEntity entity = userMapper.selectOne(userEntity);
             int insert = activityJoinMapper.insert(bulidActivityJoin(entity));
+            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             return insert;
         }
         throw new  ScException(AppServiceEnums.SYS_DATA_ERROR);

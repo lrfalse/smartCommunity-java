@@ -1,5 +1,7 @@
 package com.commons.service;
 
+import com.commons.dto.anDto.ActivityDto;
+import com.commons.dto.anDto.ActivityListDto;
 import com.commons.dto.anDto.CommentDto;
 import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
@@ -22,7 +24,7 @@ public interface ActivityService {
       * @author(作者): feihong
       * @date (开发日期):2018-04-27 17:15:52
       **/
-    List<ActivityEntity> queryActivity(String communityId);
+    List<ActivityDto> queryActivity(ActivityListDto communityId);
 
     /**
      * @Description(功能描述): 活动详情

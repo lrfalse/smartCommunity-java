@@ -1,7 +1,11 @@
 package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
+import com.commons.dto.anDto.ActivityPeopleDto;
 import com.commons.entity.ActivityEntity;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @Description:社区活动
@@ -10,5 +14,7 @@ import com.commons.entity.ActivityEntity;
  */
 public interface ActivityMapper extends MyMapper<ActivityEntity>{
 
-    int updatePeopleNum(String attivityId);//更新活动人数
+    int updatePeopleNum(@Param("id")String id);//更新活动人数
+
+    List<ActivityPeopleDto> queryActivityPeople(@Param("activityId")String activityId);
 }

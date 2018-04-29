@@ -2,7 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.ActivityMapper">
 
+   <!--更新参加活动人数-->
    <update id="updatePeopleNum">
-
+  UPDATE t_activity ta SET people_num=people_num+1 WHERE id =#{id}
    </update>
+   <!--查询参加活动人及头像-->
+   <select id="queryActivityPeople" parameterType="String" resultType="com.commons.dto.anDto.ActivityPeopleDto">
+    SELECT
+  ta.`people_num`,
+  tj.`image_url`,
+  tj.`user_name`
+  FROM
+  t_activity ta
+  INNER JOIN t_activity_join tj
+    ON ta.`id` = tj.`activity_id`
+    WHERE ta.`id` =#{activityId}
+   </select>
 </mapper>

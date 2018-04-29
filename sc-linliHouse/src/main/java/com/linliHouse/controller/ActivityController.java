@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
+import com.commons.dto.anDto.ActivityDto;
 import com.commons.dto.anDto.ActivityListDto;
 import com.commons.dto.anDto.BasePageDto;
 import com.commons.dto.anDto.CommentDto;
@@ -30,7 +31,7 @@ import java.util.List;
  * @Create:2018-04-27 15:15:20
  */
 @RestController
-public class ActivityCrntroller extends BaseApi{
+public class ActivityController extends BaseApi{
 
 
     @Autowired
@@ -43,8 +44,8 @@ public class ActivityCrntroller extends BaseApi{
 
     @PostMapping("homeActivity")
     public HttpResults homeActivity(HttpServletRequest req) throws Exception {
-        String communityID= JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class).getActivityId();
-        List<ActivityEntity> entities = activityService.queryActivity(communityID);
+        ActivityListDto listDto = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class);
+        List<ActivityDto> entities = activityService.queryActivity(listDto);
         return getHttpResult(entities);
     }
 
@@ -95,4 +96,5 @@ public class ActivityCrntroller extends BaseApi{
         ActivityJoinDto join = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityJoinDto.class);
         return getHttpResultOk();
     }
+
 }
