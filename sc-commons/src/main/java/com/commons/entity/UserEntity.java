@@ -28,7 +28,6 @@ public class UserEntity extends BaseIdEntity{
     private String ostCode;		//邮编
     private String qopenId;		//QQ号码
     private String email;		//电子邮件
-    private String seqNo;		//排序号
     private String createTime;	//创建时间
 	private String wopenId;		//第三方登录唯一id
 	private int communityId;	//用户所在小区

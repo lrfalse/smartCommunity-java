@@ -63,9 +63,7 @@
         <if test="email_where != null" >
             AND  email = #{email_where}
         </if>
-        <if test="seqNo_where != null" >
-            AND  seq_no = #{seqNo_where}
-        </if>
+
         <if test="createTime_where != null" >
             AND  create_time = #{createTime_where,jdbcType=TIMESTAMP}
         </if>
@@ -130,9 +128,6 @@
             </if>
             <if test="email != null" >
                 email = #{email,jdbcType=VARCHAR},
-            </if>
-            <if test="seqNo != null" >
-                seq_no = #{seqNo,jdbcType=VARCHAR},
             </if>
             <if test="createTime != null" >
                 create_time = #{createTime,jdbcType=TIMESTAMP},

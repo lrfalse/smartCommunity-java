@@ -22,12 +22,12 @@ public class FaceCheck implements Serializable{
     /**
      *电话号码
      */
-    private String phone_number;
+    private String mob_phone;
 
     /**
      *小区
      */
-    private String community;
+    private String community_id;
 
     /**
      *房号
