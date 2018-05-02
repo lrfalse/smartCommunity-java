@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.boot.web.server.ErrorPage;
 import org.springframework.boot.web.server.ErrorPageRegistry;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import tk.mybatis.spring.annotation.MapperScan;
@@ -22,6 +23,7 @@ import tk.mybatis.spring.annotation.MapperScan;
   **/
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @MapperScan(basePackages = "com.tools.mapper")
+@ImportResource(value = "classpath:dubbo/dubbo-service.xml")
 public class ToolsApplication  implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(ToolsApplication.class);
 	public static void main(String[] args) {
