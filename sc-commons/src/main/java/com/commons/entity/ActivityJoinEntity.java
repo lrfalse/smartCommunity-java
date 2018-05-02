@@ -32,4 +32,9 @@ public class ActivityJoinEntity extends BaseIdEntity{
      *参加时间
      */
     private String crateTime;
+
+    /**
+     *用户id
+     */
+    private String userId;
 }
