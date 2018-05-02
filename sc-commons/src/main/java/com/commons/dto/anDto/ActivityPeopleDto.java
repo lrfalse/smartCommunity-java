@@ -16,7 +16,7 @@ public class ActivityPeopleDto implements Serializable {
     /**
      * 头像地址
      */
-    private String imageUrl;
+    private String imgUrl;
 
     /**
      * 参加活动人数

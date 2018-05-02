@@ -97,8 +97,8 @@ public class CommunityController {
             }
             communityEntity.setPcode(Integer.valueOf(pois.getPcode()));
             communityEntity.setPname(pois.getPname());
-            communityEntity.setCitycode(Integer.valueOf(pois.getCitycode()));
-            communityEntity.setCityname(pois.getCityname());
+            communityEntity.setCityCode(Integer.valueOf(pois.getCitycode()));
+            communityEntity.setCityName(pois.getCityname());
             communityEntity.setAdcode(Integer.valueOf(pois.getAdcode()));
             communityEntity.setAdname(pois.getAdname());
             communityEntity.setEntr_location(pois.getEntr_location());

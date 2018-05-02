@@ -21,7 +21,7 @@ public class ActivityJoinEntity extends BaseIdEntity{
     /**
      *头像地址
      */
-    private String imageUrl;
+    private String imgUrl;
 
     /**
      *参加人名称

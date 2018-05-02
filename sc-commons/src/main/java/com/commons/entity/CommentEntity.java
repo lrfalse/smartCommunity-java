@@ -47,5 +47,5 @@ public class CommentEntity extends BaseIdEntity {
     /**
      *头像地址
      */
-    private String imageUrl;
+    private String imgUrl;
 }

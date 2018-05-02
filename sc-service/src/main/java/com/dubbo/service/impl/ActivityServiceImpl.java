@@ -180,7 +180,7 @@ public class ActivityServiceImpl implements ActivityService{
        commentEntity.setActivityId(commentDto.getActivityId());
        commentEntity.setContent(commentDto.getContent());
        commentEntity.setUserName(entity.getName());
-       commentEntity.setImageUrl(entity.getImageUrl());
+       commentEntity.setImgUrl(entity.getImgUrl());
        return commentEntity;
    }
 
@@ -191,7 +191,7 @@ public class ActivityServiceImpl implements ActivityService{
      **/
    public ActivityJoinEntity bulidActivityJoin(UserEntity userEntity){
        ActivityJoinEntity activityJoinEntity =new ActivityJoinEntity();
-       activityJoinEntity.setImageUrl(userEntity.getImageUrl());
+       activityJoinEntity.setImgUrl(userEntity.getImgUrl());
        activityJoinEntity.setUserName(userEntity.getName());
        activityJoinEntity.setCrateTime(String.valueOf(new Date()));
        return activityJoinEntity;

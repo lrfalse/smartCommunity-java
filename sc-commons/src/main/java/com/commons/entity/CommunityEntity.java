@@ -28,9 +28,9 @@ public class CommunityEntity extends BaseIdEntity  {
 
     private String pname;//重庆市
 
-    private Integer citycode;
+    private Integer cityCode;
 
-    private String cityname;
+    private String cityName;
 
     private Integer adcode;//区域编码
 

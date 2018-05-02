@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 public class UserEntity extends BaseIdEntity{
 
     private String name; 		//真实姓名
-    private String imageUrl; 	//头像地址
+    private String imgUrl; 	//头像地址
     private String birthday;	//用户生日
     private String sex;			//用户性别
     private String cityId;		//城市

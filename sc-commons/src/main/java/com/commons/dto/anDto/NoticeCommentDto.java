@@ -16,7 +16,7 @@ public class NoticeCommentDto implements Serializable {
     private Integer userId;	    //评论人id
     private Integer noticeId;	//公告id
     private String name;        //真实姓名
-    private String imageUrl;    //头像地址
+    private String imgUrl;    //头像地址
     private String content;		//评论内容
     private Date commentTime;	//评论时间
 }

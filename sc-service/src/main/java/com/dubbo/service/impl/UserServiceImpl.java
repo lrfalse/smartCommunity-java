@@ -181,7 +181,7 @@ public class UserServiceImpl implements UserService{
 	 **/
 	public LoginDTO bulidLoginDto(UserEntity entity,String i) {
 		LoginDTO loginDTO = new LoginDTO();
-		loginDTO.setImage_url(entity.getImageUrl());
+		loginDTO.setImage_url(entity.getImgUrl());
 		loginDTO.setName(entity.getName());
 		loginDTO.setSex(entity.getSex());
 		loginDTO.setToken(i);//1:非首次登录,0:首次登录
