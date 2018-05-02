@@ -42,7 +42,28 @@ public class CommuntiyServiceImpl implements CommunityService {
         return list;
     }
 
-    /**
+	/**
+	  * @Description(功能描述): 保存小区信息
+	  * @author(作者): feihong
+	  * @date(开发日期): 2018/5/2 9:48
+	  **/
+	public void batchSave(List<CommunityEntity> list) {
+		communityMapper.insertList(list);
+	}
+
+	/**
+	 * @Description(功能描述): 保存小区信息
+	 * @author(作者): feihong
+	 * @date(开发日期): 2018/5/2 9:48
+	 **/
+	public List<String> queryLocation() {
+		return communityMapper.queryLocation();
+	}
+	public List<CommunityEntity> query(CommunityEntity communityEntity){
+		return communityMapper.select(communityEntity);
+	}
+
+	/**
       * @Description(功能描述): 定位区域小区
       * @author(作者): feihong
       * @date (开发日期):2018-4-24 20:17:23

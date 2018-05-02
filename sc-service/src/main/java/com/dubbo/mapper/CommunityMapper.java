@@ -20,4 +20,6 @@ public interface CommunityMapper extends MyMapper<CommunityEntity> {
      * @date (开发日期):2018-4-26 16:26
      **/
     List<String> issuedKey(ParamDto paramDto);
+    List<String> queryLocation();
+	List<CommunityEntity> query(String str);
 }

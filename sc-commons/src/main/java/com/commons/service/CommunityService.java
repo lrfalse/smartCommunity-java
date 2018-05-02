@@ -2,6 +2,7 @@ package com.commons.service;
 
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -32,4 +33,19 @@ public interface CommunityService {
       * @date (开发日期):2018-4-26 16:21
       **/
     List<String>  issuedKey(Integer community_id);
+
+    /**
+      * @Description(功能描述): 保存小区信息
+      * @author(作者): feihong
+      * @date(开发日期): 2018/5/2 9:48
+      **/
+	void batchSave(@Param("list") List<CommunityEntity> list);
+
+	/**
+	  * @Description(功能描述): 查询小区信息
+	  * @author(作者): feihong
+	  * @date(开发日期): 2018/5/2 9:50
+	  **/
+	List<String> queryLocation();
+	List<CommunityEntity> query(CommunityEntity communityEntity);
 }

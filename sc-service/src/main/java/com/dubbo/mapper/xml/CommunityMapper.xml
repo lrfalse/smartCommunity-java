@@ -3,5 +3,7 @@
 <mapper namespace="com.dubbo.mapper.CommunityMapper">
     <!--查看评论-->
     <!--<select id="issuedKey" parameterType="ParamDto" resultType="list">-->
-
+    <select id="queryLocation" resultType="java.lang.String">
+        SELECT t.g_location FROM linlihouse.t_community_info t
+    </select>
 </mapper>

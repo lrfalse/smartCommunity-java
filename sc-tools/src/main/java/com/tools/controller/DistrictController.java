@@ -9,7 +9,6 @@ import com.commons.entity.DistrictEntity;
 import com.commons.service.DistrictService;
 import com.commons.utils.lcationUtils;
 import com.commons.utils.HttpClientUtil;
-import com.tools.mapper.CommunityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,8 +32,12 @@ public class DistrictController extends BaseApi {
     @Autowired
     private DistrictService districtService;
 
-    @Autowired
-    CommunityMapper communityMapper;
+	@ResponseBody
+	@RequestMapping(value = "/getDistrict")
+	public HttpResults getDistrict() throws Exception {
+		return getHttpResult(districtService.getDistrict(3));
+	}
+
 
     /**
      * @Description(功能描述): 新增省市区
