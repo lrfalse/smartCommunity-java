@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.CommentMapper">
-
-    <select id="queryComment" parameterType="ParamDto" resultType="list">
-        SELECT
-          tc.comment_time,
-          tc.content,
-          tc.user_name,
-          tc.image_url
-          FROM t_activity ta INNER JOIN t_activity_comment tc ON ta.id = tc.activity_id
-          WHERE tc.activity_id = '1' AND tc.status = '0';
+    <!--查看评论-->
+    <select id="queryComment" parameterType="ParamDto" resultType="com.commons.entity.CommentEntity">
+       SELECT
+      ta.user_name,
+      ta.comment_time,
+      ta.image_url,
+      ta.content
+      FROM t_activity_comment ta
+      WHERE activity_id =#{activityId} AND status = '0'
     </select>
 </mapper>

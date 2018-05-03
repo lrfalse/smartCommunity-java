@@ -114,14 +114,14 @@ public class AESEncryptUtils {
 	}
 
   public static void main(String[] args) throws Exception {
-	  String cSrc ="{\"activityId\":\"1\"}";           // 需要加密的字串
+	  String cSrc ="{\"communityId\":\"45624624\",\"pages\":\"1\",\"pageSize\":\"3\"}";           // 需要加密的字串
       String enString = AESEncryptUtils.getInstance().encrypt(cSrc);  // 加密
       System.out.println("加密后的字串值：" + enString);
 	  String md5Str = MD5Utils.md5(cSrc);  // 加密
-      String str="F5Tz5F90YaclkEkO2susIwNKEiXKqwMA4/Ju+V00P4t0IazDeo0Oa4dORp+y/AQqAY1nEEIqaxE6\\nmBVbGqLrWrLZQngKt/rA5XfF2cBHh9tPxx6WUMDlnpty6uCjZOAURUE+uRT5gtMXnFw1r8fh7QRb\\nrHo8gHg91GWcDC63x4Lger9k9uXiAqzQ2ZvuvEjqliiUqS3IvWTBJog+5jA33ZkRtXnCJ/UGO47s\\nnMGHBfgmRc0FBP947tUb6LslproefqPIcBPPRVxY0x/D1tr7cv8HzVDWjjEJ+D1eTXq42VJ92yCQ\\nK4+lMQIduDcsbr9mys4ToVCO893uIu5KqLH83wOUwxU4wYBX8KPyklFSvhkZZRiaF1rUvwKJ4d4c\\nWYKUGrNX013hrc0DIXGrw4yjYgxJIcLOEqF850dT7flZqxw12m/bC4r2KxtYDnbYfcUU5HB1Seur\\nZaShd3ZhH9z1rKuFvwJcs61rN9mzJRPiDPx3L+EbQqfAEyToZAjbvoa8GvJpr34WwKAgYkfKFDsM\\nrL47LfmYd7EQo1Jn4O40qaAPmjfatqJzeSo3k90sn2KwUM37wGY/ZA9dQiG8kr3j7TzEsEDWdpfl\\n0VoPnLRNegyNKQcC8iCQRxp6Sk2T230qVxwseW8PJQM4bP4/F9ePxYx+xwuetMfsszCjWOWdkhac\\nq0kC+fstgC0ct7uxYHpftcI8udybosxEREYXoeaTXSNhoAkQFleNcT0auj3Qe/ZXcalk3lVc5KWt\\nO5Mi4pHKZnVOfk3oI7+eKdm5NHjZHZ7Dadmb8Ik6y5b01PGHrwv3ECqhvC0fH2fvRuOHLPO2JxJ+\\nlGmq3pdVbQGpqMeCit7ZluLrCjtgS7x0/6fklzy3fpugSTrj8rW8RJbRWZuua31zTfv+kLqNKKuj\\ngXjlHXBs16Ovm8vKIB+N0TFYtsYJdUYseFUcxii7ypCofpuKt9Fblpsfvz9h6STCycAawD9lKfmL\\n6zCstCRUzdKorj0=";
-      String replace = str.replace("\\n", "");
+      String str="BO5Tkgxyg/VnzZ7FKFBVbDtt3D/3sIqAOCBpnVkTZN2FF9UDoGdSOKrsmkTqiX1OwJr0Y+xOMV/t\nZB2IHdI+fSkNaDh0iPDnkcH8qp6D7de0dPyowL9jpSrgkQp2HyhULuiIXZPOAP2ZZiET/9z6es90\nUQ8gXdEWLw+jeb8T7AdBCXLtrhbhn5hEdzZZs0pEZ4En3yTYCjkDgqG0LRklWXD4twNJHZMIBhvH\nmhYxDlbDraIS3HFjsN9BoTKKEypTM95musUOr++14E/kWEyOwJQ6lwJp/SHdVtZd6qJGMKddIsaL\n1uzkRSp24C5RNHAR9vau+TLDMr4hx+UifqLmIR4kdbTICxtOYDKuIeb9q0m8Fi9RUyoTMCkflZSC\nLrQi5BebfJYNaFZXq5WFO81pMTAAfLnoWc+Q6APprEyn1FoFAfad5gzkavmKzW71Db4A2KVv+ObN\nsI8GDkllDM52eJYAzsFSg6U/aOaHczcWjgpdZgdabyVKO33HgCWfbODmaOaju9hwtIORzC+Anr5G\n86D8XmuNw6ridf+/U4zRB2Z4lMNJIsVo+MR7erRzPBupnyT7uEi2xfdc8QWhW2l6VQCt0xzcul18\nBmtUKMNCmG6/h8e9ZaKICyXyOPeBl2IDMYp1MZrmG1Q+b9pK7MPczAF87jMK93111pw1r2Vh5Tqg\nJRJ++7J5+nUjv6gn+MsUVg6BNZZQtnXNUTInfHlaq3E05TTTX9A3e9SqKBuEfKmbSnTlWsmC4D0e\n4Mm37HD5yLr/qW/L84mKdf4NJxm18vUE4WljYcBDRn/WgLTRrO85qZ5wLtLIhHTrDSxwpKoUeLXP\naUqjU5zDrZ4Sb/Xsmou142xBNIaZ5UE7Yx4hoNhEEI/6kuekqwC+NF+eCFbl89lWDsb92omYK4DX\n2J/emLeY+2clT8nvU1UINk3oOIqS0pg3Y9RXrZNO5xWDgecDy0b7lrTwS4DIlkyl7vMSigWWHneI\nvM0lmYCdJEKZYuib/jQlzI7VUO9eF1KxYXyX4N71/BAan4z7h6yE6DQCvVpwP8w1eOQ03HQbTz7v\nlh5ZjiWINiNkvWCo0mYKB2IQdmgZ6FL5zqEDQlbE6UJaTfd9ns2Npu3UcvR0VMM+QEqiLOOXfwNU\nuilhXRKiijEGxu4CEQnBuAIXPedIiip3lg==";
+      String replace = str.replace("\n", "");
       System.out.println("加密后的md5值：" + md5Str);
-      String DeString = AESEncryptUtils.getInstance().decrypt("a2cpwALAl1JyOStUYf4e3S+GIbeyyNv50mM1hZDJr0378mMCKaWSvKSYPqFqLGBCs8dxwUuQSxjLMDFCQ1CQuJKnlTxC9nI13oL1gA2dRuzYmcResk2pO/WZyoajRL6JWYoicm2tR5sty63eqpx1uNYAv5NNBWX0HI6wWt/CZl+KUJRi2LxgNm745bcEpZb0MOyc3wi3upyf36BUXVecxurytINQHYcGHJ7ivhwYAYdcvDU3b0zMQlAtf+g2pQ60KtyRmFVsKQ+QpATgbHYUlEVumZ+8ZVKq+RMzT3hRBDfAt3/sTrnk6ZfJWpQcp1z+untohIOcmIl8eDOGIwr3D9QEXCMWdmO3o+JagLzA63mKp/m+w5HSWiT+5r1uj/Jq8cNlCjWBJETG2+/aK2dvYjbyzn2tVk9iRsaaKz30cnIpMs6MdUYVitRXR2ShqCpOYQAey0ZflqW5GUxfm9PK7fQrl36le08i1RP1OIGXo1qIG3/ClhtWjUNEov58j+Xw");
+      String DeString = AESEncryptUtils.getInstance().decrypt(replace);
       System.out.println("解密后的字串值：" + DeString);
   }
 }

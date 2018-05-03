@@ -13,7 +13,7 @@ import java.util.List;
  * @Create:2018-04-27 21:21:28
  */
 @Data
-public class CommentPageDto implements Serializable {
+public class CommentShowDto implements Serializable {
 
     /**
      *总评论数

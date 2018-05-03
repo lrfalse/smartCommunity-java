@@ -64,7 +64,7 @@ public class ActivityEntity extends BaseIdEntity{
     /**
      *活动人数
      */
-    private String peopleNum;
+    private Integer peopleNum;
 
     /**
      *活动费用

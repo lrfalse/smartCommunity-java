@@ -1,5 +1,6 @@
 package com.commons.dto.anDto;
 
+import com.commons.dto.reDto.BasePageReDto;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,21 +12,13 @@ import java.io.Serializable;
  * @Create:2018-04-27 16:16:18
  */
 @Data
-public class ActivityListDto implements Serializable{
+public class ActivityListDto extends BasePageReDto{
 
     /**
      * 小区
      */
-    private String communtyID;
+    private String communityId;
 
-    /**
-     *当前页
-     */
-    private String pageNum;
 
-    /**
-     * 每页显示多少
-     */
-    private String  pageSize;
 
 }

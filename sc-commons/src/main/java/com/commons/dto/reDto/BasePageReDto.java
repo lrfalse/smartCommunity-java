@@ -11,6 +11,6 @@ import java.io.Serializable;
  */
 @Data
 public class BasePageReDto<T> implements Serializable {
-    private int pages=1;   //当前页
+    private int pages;   //当前页
     private int pageSize;   //页数大小
 }

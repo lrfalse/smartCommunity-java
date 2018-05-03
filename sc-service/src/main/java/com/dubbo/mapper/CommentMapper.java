@@ -3,6 +3,7 @@ package com.dubbo.mapper;
 import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.CommentEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

@@ -25,6 +25,11 @@ public class ActivityDto implements Serializable{
     private String title;
 
     /**
+     *人数
+     */
+    private Integer peopleNum;
+
+    /**
      * 活动人数及头像
      */
     private List<ActivityPeopleDto> list;
