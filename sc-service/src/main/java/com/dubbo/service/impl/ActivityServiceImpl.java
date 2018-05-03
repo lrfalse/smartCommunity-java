@@ -1,5 +1,4 @@
 package com.dubbo.service.impl;
-
 import com.alibaba.dubbo.config.annotation.Service;
 import com.commons.dto.anDto.*;
 import com.commons.dto.dbDto.ParamDto;
@@ -15,13 +14,11 @@ import com.commons.service.ActivityService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.ActivityJoinMapper;
 import com.dubbo.mapper.ActivityMapper;
-
 import com.dubbo.mapper.CommentMapper;
 import com.dubbo.mapper.UserMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,10 +56,11 @@ public class ActivityServiceImpl implements ActivityService{
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         }
         List<ActivityDto> list = new ArrayList<>();
-        ActivityEntity activityEntity =new ActivityEntity();
-        activityEntity.setCommunityId(activityListDto.getCommunityId());
+
         PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
-        List<ActivityEntity> activityEntities = activityMapper.select(activityEntity);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",activityListDto.getCommunityId());
+        List<ActivityEntity> activityEntities = activityMapper.queryActivity(paramDto);
         for (ActivityEntity activity : activityEntities) {
             ActivityDto activityDto = new ActivityDto();
             activityDto.setImgUrl(activity.getImgUrl());
@@ -74,7 +72,7 @@ public class ActivityServiceImpl implements ActivityService{
             activityDto.setList(dtos);
             list.add(activityDto);
         }
-        System.out.println(list);
+
         return  list;
     }
 

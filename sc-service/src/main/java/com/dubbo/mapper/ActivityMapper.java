@@ -24,4 +24,6 @@ public interface ActivityMapper extends MyMapper<ActivityEntity>{
     List<ActivityImageNameDto> queryNmaeImage(ParamDto paramDto);//查询参加人名称及头像
 
     List<JoinActityDto> queryActivityJoin(ParamDto paramDto);//查询我参与的活动
+
+    List<ActivityEntity> queryActivity(ParamDto paramDto);//根据小区id查询活动,根据时间倒序排
 }

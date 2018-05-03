@@ -8,16 +8,25 @@
    </update>
    <!--查询参加活动人及头像-->
    <select id="queryActivityPeople" parameterType="String" resultType="com.commons.dto.anDto.ActivityPeopleDto">
-    SELECT
-      tj.`image_url`
-      FROM
-      t_activity ta
-      INNER JOIN t_activity_join tj
-      ON ta.`id` = tj.`activity_id`
-      WHERE ta.`id` =#{activityId}
+    SELECT image_url
+    FROM t_activity_join
+    WHERE activity_id =#{activityId}
    </select>
+
     <!--查询参加活动所有人-->
     <select id="queryNmaeImage" parameterType="ParamDto" resultType="com.commons.dto.anDto.ActivityImageNameDto">
     SELECT * FROM t_activity_join WHERE activity_id=#{activityId}
+    </select>
+
+    <!--根据小区id查询所有活动,时间倒序排序-->
+    <select id="queryActivity" parameterType="ParamDto" resultType="com.commons.entity.ActivityEntity">
+      SELECT
+      id,
+      img_url,
+      title,
+      people_num
+      FROM t_activity
+      WHERE community_id =#{communityId}
+      ORDER BY concat(publish_time, start_time) DESC
     </select>
 </mapper>
