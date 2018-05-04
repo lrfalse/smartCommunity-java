@@ -4,8 +4,8 @@
     <!--当前表列-->
     <sql id="Base_Column_List" >
         id, name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address,
-        ost_code, qopen_id, email, seq_no, create_time, status, remark, wopen_id, community_id,
-        image_url, city_id
+        ost_code, qopen_id, email,create_time, status, remark, wopen_id, community_id,
+        img_url, city_id
     </sql>
     <!--查询手机号码是否绑定-->
     <select id="selectPhone" resultType="com.commons.entity.UserEntity">
@@ -23,7 +23,10 @@
     <update id="updatePwd">
         UPDATE t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
     </update>
+    <!--添加用户-->
+    <insert id="adduser" parameterType="com.commons.entity.UserEntity">
 
+    </insert>
     <!--where条件-->
     <sql id="whereCondition">
         1=1
