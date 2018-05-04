@@ -4,6 +4,7 @@ import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
+import com.commons.entity.QuestionsImgEntity;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -61,4 +62,11 @@ public interface AskQuestionsService {
      * @Date(开发日期) : 2018/5/4 9:27
      */
     int reply(QuestionsCommentEntity questionsCommentEntity);
+
+    /**
+     * @Description(功能描述) : 问答图片
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/4 17:40
+     */
+    int saveQuestionsImg(QuestionsImgEntity questionsImgEntity);
 }

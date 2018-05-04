@@ -19,7 +19,6 @@ public class AskQuestionsEntity extends BaseIdEntity {
     private Integer userId;		//发布人ID
     private String type;		//问题类型（1：美食，2：运动，3：情感，4：育儿，5：教育，6：社区，7：知识，8：娱乐）多个用逗号隔开
     private Integer status;		//问题状态（0：正常 、1失效）
-    private String imgUrl;		//图片地址（多图用，隔开）
     private Integer browseNum;	//浏览次数
     private Date publishTime;	//发布时间
 }

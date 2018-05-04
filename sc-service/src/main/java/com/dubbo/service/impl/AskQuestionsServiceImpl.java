@@ -5,10 +5,12 @@ import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
+import com.commons.entity.QuestionsImgEntity;
 import com.commons.service.AskQuestionsService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.AskQuestionsMapper;
 import com.dubbo.mapper.QuestionsCommentMapper;
+import com.dubbo.mapper.QuestionsImgMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,8 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
     private AskQuestionsMapper askQuestionsMapper;
     @Autowired
     private QuestionsCommentMapper questionsCommentMapper;
+    @Autowired
+    private QuestionsImgMapper questionsImgMapper;
 
     /**
      * @Description(功能描述) : 去提问
@@ -128,6 +132,20 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
             if(n>0){
                 return 1;
             }
+        }
+        return 0;
+    }
+
+    /**
+     * @Description(功能描述) : 问题图片
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/4 17:41
+     */
+    @Override
+    public int saveQuestionsImg(QuestionsImgEntity questionsImgEntity) {
+        int n = questionsImgMapper.insert(questionsImgEntity);
+        if(n > 0){
+            return 1;
         }
         return 0;
     }
