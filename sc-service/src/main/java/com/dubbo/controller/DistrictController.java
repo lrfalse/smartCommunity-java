@@ -4,6 +4,7 @@ import com.commons.controller.BaseApi;
 import com.commons.entity.DistrictEntity;
 import com.commons.service.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +21,12 @@ public class DistrictController extends BaseApi {
  	@Autowired
     private DistrictService districtService;
 
+ 	@Autowired
+ 	private Environment env;
 
     @RequestMapping(value = "/getDistrictById")
     public DistrictEntity addDistrict() throws Exception {
+		String userImgUrl=env.getProperty("sc.user.img.url");
 		return districtService.getDistrict(3);
     }
 
