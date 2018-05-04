@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.AskQuestionsMapper">
+
+    <!-- 查询提问和评论数 -->
+    <select id="queryAsk" resultType="com.commons.dto.anDto.AskQuestionsDto" parameterType="ParamDto">
+        SELECT
+        q.id,
+        q.community_id,
+        q.title,
+        q.content,
+        q.user_id,
+        q.type,
+        q.STATUS,
+        q.img_url,
+        q.browse_num,
+        COUNT( c.id ) total,
+        q.publish_time
+        FROM
+        t_questions q
+        LEFT JOIN ( SELECT id, questions_id FROM t_questions_comment WHERE STATUS = '0' ) c ON q.id = c.questions_id
+        WHERE
+        q.community_id = #{communityId}
+        <if test="userId != null">
+            AND q.user_id = #{userId}
+        </if>
+        <if test="type != null">
+            AND q.type LIKE CONCAT('%',#{type},'%')
+        </if>
+        AND q.STATUS = '0'
+        GROUP BY
+        q.id,
+        q.community_id,
+        q.title,
+        q.content,
+        q.user_id,
+        q.type,
+        q.STATUS,
+        q.img_url,
+        q.browse_num
+        ORDER BY
+        <if test="popular">
+            q.browse_num DESC,
+        </if>
+        q.publish_time DESC
+    </select>
+
+    <!-- 问题详情评论 -->
+    <select id="queryComment" resultType="com.commons.entity.QuestionsCommentEntity" parameterType="ParamDto">
+        SELECT
+            *
+        FROM
+            t_questions_comment
+        WHERE
+            questions_id = #{questionsId}
+            AND STATUS = '0'
+        ORDER BY
+            comment_time DESC
+    </select>
+
+</mapper>
