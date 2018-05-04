@@ -13,6 +13,8 @@
     <dubbo:reference id="noticeService" interface="com.commons.service.NoticeService" />
     <dubbo:reference id="activityService" interface="com.commons.service.ActivityService" />
     <dubbo:reference id="bannerService" interface="com.commons.service.BannerService" />
+    <dubbo:reference id="contactUsService" interface="com.commons.service.ContactUsService" />
+    <dubbo:reference id="askQuestionsService" interface="com.commons.service.AskQuestionsService" />
 
     <!--<dubbo:annotation package="com.commons.service"/>-->
 

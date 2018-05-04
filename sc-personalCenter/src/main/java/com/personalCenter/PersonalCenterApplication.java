@@ -16,7 +16,6 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @date (开发日期): 2018/4/8 10:20
  **/
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@MapperScan(basePackages = "com.personalCenter.mapper")
 @ImportResource(value = "classpath:dubbo/dubbo-service.xml")
 public class PersonalCenterApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(PersonalCenterApplication.class);
