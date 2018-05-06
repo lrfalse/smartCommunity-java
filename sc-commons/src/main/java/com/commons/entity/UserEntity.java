@@ -30,10 +30,12 @@ public class UserEntity extends BaseIdEntity{
     private String email;		//电子邮件
     private String createTime;	//创建时间
 	private String wopenId;		//第三方登录唯一id
-	private int communityId;	//用户所在小区
+	private Integer communityId;	//用户所在小区
 	private String status;		//状态 0:正常,1:非正常
 	private String remark;    	//备注
+    private String code;        //
+    private String cityCode;
 	@Transient
-	private String token;		//W:微信 Q:qq P:微信登录
+	private String token;		//W:微信 Q:qq P:手机
 
 }

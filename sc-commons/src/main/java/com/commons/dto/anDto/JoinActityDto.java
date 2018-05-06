@@ -16,7 +16,7 @@ public class JoinActityDto implements Serializable{
     /**
      *活动名称
      */
-    private String name;
+    private String title;
 
     /**
      *图片地址

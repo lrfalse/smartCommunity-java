@@ -56,13 +56,22 @@ public class ActivityServiceImpl implements ActivityService{
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         }
         List<ActivityDto> list = new ArrayList<>();
-
-        PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",activityListDto.getCommunityId());
-        List<ActivityEntity> activityEntities = activityMapper.queryActivity(paramDto);
+        List<ActivityEntity> activityEntities=null;
+        //首页查询五个活动
+        if (activityListDto.getTag().equals("0")){
+            PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
+            List<ActivityEntity> activityEntities1 = activityMapper.homeQueryActivity(paramDto);
+            activityEntities=activityEntities1;
+        }else if (activityListDto.getTag().equals("1")){
+            PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
+            List<ActivityEntity> activityEntities2 = activityMapper.queryActivity(paramDto);
+            activityEntities=activityEntities2;
+        }
         for (ActivityEntity activity : activityEntities) {
             ActivityDto activityDto = new ActivityDto();
+            activityDto.setActivityId(String.valueOf(activity.getId()));
             activityDto.setImgUrl(activity.getImgUrl());
             activityDto.setTitle(activity.getTitle());
             activityDto.setPeopleNum(activity.getPeopleNum());
@@ -72,7 +81,6 @@ public class ActivityServiceImpl implements ActivityService{
             activityDto.setList(dtos);
             list.add(activityDto);
         }
-
         return  list;
     }
 
@@ -117,6 +125,7 @@ public class ActivityServiceImpl implements ActivityService{
         PageHelper.startPage(commentReDto.getPages(), commentReDto.getPageSize());
         ParamDto paramDto = new ParamDto();
         paramDto.put("activityId",commentReDto.getActivityId());
+        paramDto.put("status",commentReDto.getStatus());
         List<CommentEntity> commentEntities = commentMapper.queryComment(paramDto);
         PageInfo<CommentEntity> pageInfo = new PageInfo<>(commentEntities);
         return pageInfo;
@@ -128,7 +137,10 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018/5/2 20:02
      **/
     @Override
-    public PageInfo<ActivityImageNameDto> getPreson(ParamDto paramDto) {
+        public PageInfo<ActivityImageNameDto> getPreson(CommentReDto commentReDto) {
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("activityId",commentReDto.getActivityId());
+        PageHelper.startPage(commentReDto.getPages(),commentReDto.getPageSize());
         List<ActivityImageNameDto> activityImageNameDtos = activityMapper.queryNmaeImage(paramDto);
         PageInfo pageInfo = new PageInfo(activityImageNameDtos);
         return pageInfo;
@@ -185,10 +197,16 @@ public class ActivityServiceImpl implements ActivityService{
      **/
     @Override
     public int joinActivity(ActivityJoinDto activityJoinDto) {
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("activityId",activityJoinDto.getActivityId());
         if (activityJoinDto.getTag().equals("W")){
             UserEntity userEntity = new UserEntity();
             userEntity.setWopenId(activityJoinDto.getWopenId());
             UserEntity entity = userMapper.selectOne(userEntity);
+            List<String> list=activityMapper.queryUserId(paramDto);
+            if (list.contains(entity.getId())){
+                throw new ScException(AppServiceEnums.EXIST_JOIN);
+            }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
             int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             if (isinsert(i,insert)){
@@ -199,6 +217,10 @@ public class ActivityServiceImpl implements ActivityService{
             UserEntity userEntity = new UserEntity();
             userEntity.setQopenId(activityJoinDto.getQopenId());
             UserEntity entity = userMapper.selectOne(userEntity);
+            List<String> list=activityMapper.queryUserId(paramDto);
+            if (list.contains(entity.getId())){
+                throw new ScException(AppServiceEnums.EXIST_JOIN);
+            }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
             int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             if (isinsert(i,insert)){
@@ -209,6 +231,10 @@ public class ActivityServiceImpl implements ActivityService{
             UserEntity userEntity = new UserEntity();
             userEntity.setMobPhone(activityJoinDto.getMobPhone());
             UserEntity entity = userMapper.selectOne(userEntity);
+            List<String> list=activityMapper.queryUserId(paramDto);
+            if (list.contains(entity.getId())){
+                throw new ScException(AppServiceEnums.EXIST_JOIN);
+            }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
             int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
             if (isinsert(i,insert)){

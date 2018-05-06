@@ -12,10 +12,6 @@ import java.io.Serializable;
  */
 @Data
 public class CommentDto implements Serializable{
-    /**
-     *用户id
-     */
-    private String userId;
 
     /**
      *活动
@@ -26,16 +22,6 @@ public class CommentDto implements Serializable{
      *评论内容
      */
     private String content;
-
-    /**
-     *评论状态(0正常，1失效)
-     */
-    private String status;
-
-    /**
-     *评论时间
-     */
-    private String commentTime;
 
     /**
      *用户微信openid

@@ -6,6 +6,7 @@
    <update id="updatePeopleNum">
        UPDATE t_activity ta SET people_num=people_num+1 WHERE id =#{id}
    </update>
+
    <!--查询参加活动人及头像-->
    <select id="queryActivityPeople" parameterType="String" resultType="com.commons.dto.anDto.ActivityPeopleDto">
     SELECT image_url
@@ -21,12 +22,39 @@
     <!--根据小区id查询所有活动,时间倒序排序-->
     <select id="queryActivity" parameterType="ParamDto" resultType="com.commons.entity.ActivityEntity">
       SELECT
-      id,
-      img_url,
-      title,
-      people_num
-      FROM t_activity
+      ty.id,
+      tg.img_url,
+      ty.title,
+      ty.people_num
+      FROM t_activity ty INNER JOIN t_activity_img tg ON ty.id=tg.activity_id
       WHERE community_id =#{communityId}
       ORDER BY concat(publish_time, start_time) DESC
+    </select>
+
+    <!--根据小区id查询所有活动,时间倒序排序,前五条-->
+    <select id="homeQueryActivity" parameterType="ParamDto" resultType="com.commons.entity.ActivityEntity">
+      SELECT
+      ty.id,
+      tg.img_url,
+      ty.title,
+      ty.people_num
+      FROM t_activity ty INNER JOIN t_activity_img tg ON ty.id=tg.activity_id
+      WHERE community_id =#{communityId}
+      ORDER BY concat(publish_time, start_time) DESC limit 5
+    </select>
+
+    <!--查询我参与的活动-->
+    <select id="queryActivityJoin" parameterType="ParamDto" resultType="com.commons.dto.anDto.JoinActityDto">
+     SELECT
+     ty.title,
+     ty.img_url
+     FROM t_user tr INNER JOIN t_activity_join tn ON tr.id = tn.user_id
+     INNER JOIN t_activity ty ON ty.id = tn.activity_id
+     WHERE tr.id =#{id};
+     </select>
+
+
+    <select id="queryUserId" parameterType="ParamDto" resultType="String">
+        SELECT user_id FROM t_activity_join WHERE activity_id=#{activityId}
     </select>
 </mapper>

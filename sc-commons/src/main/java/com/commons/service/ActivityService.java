@@ -58,5 +58,5 @@ public interface ActivityService {
       * @author(作者): feihong
       * @date (开发日期):2018/5/2 20:00
       **/
-    PageInfo<ActivityImageNameDto> getPreson(ParamDto paramDto);
+    PageInfo<ActivityImageNameDto> getPreson(CommentReDto commentReDto);
 }

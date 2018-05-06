@@ -44,7 +44,7 @@ public interface UserService {
 	 * @author(作者): feihong
 	 * @date (开发日期):2018-4-24 14:45:33
 	 **/
-	BindPhoneDto bindPhone(UserEntity userEntity);
+	LoginDTO bindPhone(UserEntity userEntity);
 
 	/**
 	 * @Description(功能描述): 找回密码

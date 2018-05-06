@@ -8,7 +8,6 @@ import com.commons.dto.anDto.*;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
-import com.commons.entity.ActivityEntity;
 import com.commons.entity.CommentEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
@@ -36,7 +35,7 @@ public class ActivityController extends BaseApi{
     private ActivityService activityService;
 
     /**
-      * @Description(功能描述): 首页社区活动及列表
+      * @Description(功能描述): 首页社区活动列表
       * @author(作者): feihong
       * @date (开发日期):2018-4-27 15:33
       **/
@@ -44,7 +43,9 @@ public class ActivityController extends BaseApi{
     public HttpResults homeActivity(HttpServletRequest req) throws Exception {
         ActivityListDto listDto = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class);
         List<ActivityDto> activityDtos = activityService.queryActivityDetail(listDto);
-        return getHttpResult(activityDtos);
+        PageInfo<ActivityDto> pageInfo = new PageInfo<>(activityDtos);
+        return getHttpResult(pageInfo);
+
     }
 
     /**
@@ -105,11 +106,8 @@ public class ActivityController extends BaseApi{
      **/
    @PostMapping("getPreson")
     public HttpResults getPreson(HttpServletRequest req) throws Exception {
-       JSONObject parse = (JSONObject)JSONObject.parse(getIsJson(req).getBodyJson());
-       String o = (String)parse.get("activityId");
-       ParamDto paramDto = new ParamDto();
-       paramDto.put("activityId",o);
-       PageInfo<ActivityImageNameDto> preson = activityService.getPreson(paramDto);
+       CommentReDto parse = JSONObject.parseObject(getIsJson(req).getBodyJson(), CommentReDto.class);
+       PageInfo<ActivityImageNameDto> preson = activityService.getPreson(parse);
        return getHttpResult(preson);
    }
 }

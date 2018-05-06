@@ -4,6 +4,7 @@ import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ public interface UserMapper extends MyMapper<UserEntity> {
 
     int updatePwd(@Param("mobphone") String mobphone, @Param("pwd") String pwd); //找回密码
 
+	int addUserImgUrl(ParamDto paramDto);//手机号码已经注册过把头像放进头像表
 
 	/**
 	  * @Description(功能描述): 查询用户信息
@@ -46,5 +48,18 @@ public interface UserMapper extends MyMapper<UserEntity> {
 	  **/
 	int updateUser(ParamDto dto);
 
+	/**
+	  * @Description(功能描述): 添加或查询用户
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/4 22:01
+	  **/
 
+	int adduser(UserEntity userEntity);
+
+	/**
+	  * @Description(功能描述): 查询用户是否存在
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/4 22:01
+	  **/
+	UserEntity queryUser(ParamDto paramDto);
 }

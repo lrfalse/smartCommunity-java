@@ -25,5 +25,9 @@ public interface ActivityMapper extends MyMapper<ActivityEntity>{
 
     List<JoinActityDto> queryActivityJoin(ParamDto paramDto);//查询我参与的活动
 
-    List<ActivityEntity> queryActivity(ParamDto paramDto);//根据小区id查询活动,根据时间倒序排
+    List<ActivityEntity> queryActivity(ParamDto paramDto);//根据小区id查询所有活动,根据时间倒序排
+
+    List<ActivityEntity> homeQueryActivity(ParamDto paramDto);//根据小区id查询活动,根据时间倒序排 前五条
+
+    List<String> queryUserId(ParamDto paramDto);//查询用户的uiserId
 }

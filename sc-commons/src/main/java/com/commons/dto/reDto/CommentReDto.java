@@ -14,4 +14,9 @@ public class CommentReDto extends BasePageReDto {
      *活动id
      */
     private String activityId;
+
+    /**
+     *状态 0正常 1失效
+     */
+    private String status;
 }

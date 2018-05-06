@@ -37,9 +37,9 @@ public class FeedbackController extends BaseApi {
     public String feedback(HttpServletRequest req) {
         FeedBackEntity backEntity = JSON.parseObject(getIsJson(req).getBodyJson(), FeedBackEntity.class);
         List<MultipartFile> files = ((MultipartHttpServletRequest) req).getFiles("file");
+        StringBuffer sb=new StringBuffer();
         MultipartFile file = null;
         BufferedOutputStream stream = null;
-        StringBuffer sb=new StringBuffer();
         String filePath="E:\\"+"upload"+"\\";
         for (int i = 0; i < files.size(); ++i) {
             file = files.get(i);
@@ -49,7 +49,6 @@ public class FeedbackController extends BaseApi {
                     stream = new BufferedOutputStream(new FileOutputStream(new File(filePath+file.getOriginalFilename())));
                     stream.write(bytes);
                     stream.close();
-
                     sb.append(filePath+file.getOriginalFilename()+",");
                 } catch (Exception e) {
                     logger.info("上传文件失败"+i+":"+e.getMessage());

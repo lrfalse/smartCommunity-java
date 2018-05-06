@@ -15,6 +15,10 @@ import java.util.List;
 public class ActivityDto implements Serializable{
 
     /**
+     *活动id
+     */
+    private String activityId;
+    /**
      * 活动图片地址
      */
     private String imgUrl;

@@ -84,7 +84,6 @@ public class UserServiceImpl implements UserService{
 	 * @date (开发日期):2018-4-24 20:02:21
 	 **/
 	public int updateUserByKey(UserEntity userEntity) {
-		String u=userEntity.getMobPhone();
 		UserEntity entity = userMapper.selectPhone(userEntity.getMobPhone());
 		if(CommonUtils.isEmpty(entity)){
 			throw new ScException(AppServiceEnums.PHONE_NOT_EXIST);
@@ -98,26 +97,56 @@ public class UserServiceImpl implements UserService{
 	 * @author(作者): feihong
 	 * @date (开发日期):2018-4-24 14:47:43
 	 **/
-	public BindPhoneDto bindPhone(UserEntity entity) {
+	public LoginDTO bindPhone(UserEntity entity) {
 		UserEntity user= userMapper.selectPhone(entity.getMobPhone());
-		//没有注册过
-		if (CommonUtils.isEmpty(user)){
+		//注册过
+		if (CommonUtils.isNotEmpty(user)){
+			ParamDto paramDto = new ParamDto();
+			paramDto.put("userId",user.getId());
+			paramDto.put("imgUrl",entity.getImgUrl());
+			paramDto.put("type","1");
 			if (entity.getToken().equals("Q")){
-				int qi= userMapper.updateqqPhone(entity.getMobPhone(),entity.getQopenId());
+				int qi= userMapper.updateUser(bulidParamDto(entity));
 				if (qi<0){
-					return buildBindPhoneEror();
+					throw new ScException(AppServiceEnums.SYS_EXCEPTION);
 				}
-				return buildBindPhone();
+				int qimg = userMapper.addUserImgUrl(paramDto);
+				if (qimg<0){
+					throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+				}
+				return bulidLoginDtoPone(user);
 			}else if(entity.getToken().equals("W")){
-				int wi= userMapper.updatewxPhone(entity.getMobPhone(),entity.getWopenId());
+				int wi= userMapper.updateUser(bulidParamDto(entity));
 				if (wi<0){
-					return buildBindPhoneEror();
+					throw new ScException(AppServiceEnums.SYS_EXCEPTION);
 				}
-				return buildBindPhone();
+				int wimg = userMapper.addUserImgUrl(paramDto);
+				if (wimg<0){
+					throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+				}
+				return bulidLoginDtoPone(user);
 			}
+			//没有注册过
+		}else {
+			if (entity.getSex().equals("男")){
+				entity.setSex("0");
+			}else {
+				entity.setSex("1");
+			}
+			int insert = userMapper.adduser(entity);
+			if (insert>0){
+				ParamDto param = new ParamDto();
+				param.put("userId",entity.getId());
+				param.put("imgUrl",entity.getImgUrl());
+				param.put("type","1");
+				int imgUrl = userMapper.addUserImgUrl(param);
+				if (imgUrl>0){
+					return bulidLoginDtoPone(entity);
+				}
+			}
+			throw new ScException(AppServiceEnums.SYS_EXCEPTION);
 		}
-		//手机号码注册过
-		throw new ScException(AppServiceEnums.PHONE_IN_BIND);
+		throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
 	}
 
 	/**
@@ -132,30 +161,26 @@ public class UserServiceImpl implements UserService{
 			//QQ登录
 			if (entity.getToken().equals("Q")) {
 				if (CommonUtils.isNotEmpty(entity.getQopenId())) {
-					UserEntity selectOne = userMapper.selectOne(entity);
-					if (CommonUtils.isEmpty(selectOne)) {
-						int qq = userMapper.insert(entity);
-						if (qq > 0) {
-							return bulidLoginDto(entity, "0");
-						} else {
-							throw new ScException(AppServiceEnums.SYS_EXCEPTION);
-						}
+					ParamDto dto=new ParamDto();
+					dto.put("qopenId_where",entity.getQopenId());
+					UserEntity user = userMapper.queryUser(dto);
+					if (CommonUtils.isEmpty(user)) {
+						return bulidLoginDto(entity);
 					}
-					return bulidLoginDto(entity,"1");
+					LoginDTO loginDTO = bulidLoginDto(user);
+					return loginDTO;
 				}
 				throw new ScException(AppServiceEnums.ERROR);
 				//微信登录
 			} else if (entity.getToken().equals("W")) {
 				if (CommonUtils.isNotEmpty(entity.getWopenId())) {
-					UserEntity selectOne = userMapper.selectOne(entity);
-					if (CommonUtils.isEmpty(selectOne)) {
-						int wx = userMapper.insert(entity);
-						if (wx > 0) {
-							return bulidLoginDto(entity, "0");
-						}
-						throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+					ParamDto dto=new ParamDto();
+					dto.put("wopenId_where",entity.getWopenId());
+					UserEntity user = userMapper.queryUser(dto);
+					if (CommonUtils.isEmpty(user)) {
+						return bulidLoginDto(entity);
 					}
-					return bulidLoginDto(entity, "1");
+					return bulidLoginDto(user);
 				}
 				throw new ScException(AppServiceEnums.ERROR);
 				//手机登录
@@ -166,7 +191,7 @@ public class UserServiceImpl implements UserService{
 					if (CommonUtils.isEmpty(userEntity)) {
 						throw new ScException(AppServiceEnums.ERROR);
 					} else {
-						return bulidLoginDtoPone(entity);
+						return bulidLoginDto(userEntity);
 					}
 				}
 				throw new ScException(AppServiceEnums.ERROR);
@@ -174,17 +199,45 @@ public class UserServiceImpl implements UserService{
 		}
 		return bulidLoginError();
 	}
+
+	/**
+	  * @Description(功能描述): 绑定手机对象构建
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/4 18:56
+	  **/
+	public ParamDto bulidParamDto(UserEntity entity){
+		ParamDto paramDto = new ParamDto();
+		paramDto.put("name",entity.getName());
+		if (entity.getSex().equals("男")){
+			paramDto.put("sex",0);
+		}else {
+			paramDto.put("sex",1);
+		}
+		if (entity.getToken().equals("Q")){
+			paramDto.put("qopenId",entity.getQopenId());
+		}else {
+			paramDto.put("wopenId",entity.getWopenId());
+		}
+
+		paramDto.put("mobPhone_where",entity.getMobPhone());
+		return paramDto;
+	}
 	/**
 	 * @Description(功能描述): 对象构建
 	 * @author(作者): feihong
 	 * @date (开发日期):2018-4-19 9:48:32
 	 **/
-	public LoginDTO bulidLoginDto(UserEntity entity,String i) {
+	public LoginDTO bulidLoginDto(UserEntity user) {
 		LoginDTO loginDTO = new LoginDTO();
-		loginDTO.setImage_url(entity.getImgUrl());
-		loginDTO.setName(entity.getName());
-		loginDTO.setSex(entity.getSex());
-		loginDTO.setToken(i);//1:非首次登录,0:首次登录
+		loginDTO.setImg_url(user.getImgUrl());
+		loginDTO.setName(user.getName());
+		if (user.getSex().equals("0")){
+			loginDTO.setSex("男");
+		}else {
+			loginDTO.setSex("女");
+		}
+		loginDTO.setCommuntiyId(String.valueOf(user.getCommunityId()));
+		loginDTO.setMobphone(user.getMobPhone());
 		return loginDTO;
 	}
 	/**
@@ -195,6 +248,15 @@ public class UserServiceImpl implements UserService{
 	public LoginDTO bulidLoginDtoPone(UserEntity entity) {
 		LoginDTO loginDTO = new LoginDTO();
 		loginDTO.setMobphone(entity.getMobPhone());
+		loginDTO.setCommuntiyId(String.valueOf(entity.getCommunityId()));
+		loginDTO.setImg_url(entity.getImgUrl());
+		loginDTO.setName(entity.getName());
+		if (entity.getSex().equals("0") | entity.getSex().equals("男") ){
+			loginDTO.setSex("男");
+		}else {
+			loginDTO.setSex("女");
+		}
+
 		return loginDTO;
 	}
 	/**
@@ -204,7 +266,6 @@ public class UserServiceImpl implements UserService{
 	 **/
 	public LoginDTO bulidLoginError(){
 		LoginDTO loginDTO = new LoginDTO();
-		loginDTO.setStatus("error:失败");
 		return loginDTO;
 	}
 
@@ -212,13 +273,17 @@ public class UserServiceImpl implements UserService{
 	 * @Description(功能描述): 手机号码绑定对象返回
 	 * @author(作者): feihong
 	 * @date (开发日期):2018-4-20 22:26:37
-	 **/
-	public BindPhoneDto buildBindPhone(){
+	 **//*
+	public BindPhoneDto buildBindPhone(UserEntity userEntity){
 		BindPhoneDto bindPhoneDto = new BindPhoneDto();
-		bindPhoneDto.setFtag("0");// 1:需要选择小区 0:已经选择
-		bindPhoneDto.setToken("1");//1:绑定成功 0:绑定失败
+		LoginDTO loginDTO = new LoginDTO();
+		loginDTO.setMobphone(entity.getMobPhone());
+		loginDTO.setCommuntiyId(String.valueOf(entity.getCommunityId()));
+		loginDTO.setMobphone(entity.getImgUrl());
+		loginDTO.setName(entity.getName());
+		loginDTO.setSex(entity.getSex());
 		return bindPhoneDto;
-	}
+	}*/
 
 	/**
 	 * @Description(功能描述): 手机号码绑定对象返回

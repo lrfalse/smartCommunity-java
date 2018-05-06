@@ -26,12 +26,7 @@ public class LoginDTO implements Serializable{
     /**
      *头像地址
      */
-    private String image_url;
-
-    /**
-     *是否首次登录 1:非首次登录 0:首次登录
-     */
-    private String token;
+    private String img_url;
 
     /**
      *手机号码
@@ -39,7 +34,7 @@ public class LoginDTO implements Serializable{
     private String mobphone;
 
     /**
-     *登录失败
+     *小区信息
      */
-    private String status;
+    private String communtiyId;
 }

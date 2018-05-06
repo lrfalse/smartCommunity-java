@@ -9,6 +9,6 @@
       ta.image_url,
       ta.content
       FROM t_activity_comment ta
-      WHERE activity_id =#{activityId} AND status = '0'
+      WHERE activity_id =#{activityId} AND status =#{status}
     </select>
 </mapper>

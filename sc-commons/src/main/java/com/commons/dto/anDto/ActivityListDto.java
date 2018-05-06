@@ -4,6 +4,7 @@ import com.commons.dto.reDto.BasePageReDto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.SortedSet;
 
 /**
  * @Description:首页活动
@@ -19,6 +20,9 @@ public class ActivityListDto extends BasePageReDto{
      */
     private String communityId;
 
-
+    /**
+     *标识  0:首页查询5条,1 查询所有活动
+     */
+    private String tag;
 
 }

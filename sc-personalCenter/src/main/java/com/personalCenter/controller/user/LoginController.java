@@ -51,14 +51,14 @@ public class LoginController extends BaseApi {
     public HttpResults bindPhone(HttpServletRequest req) throws Exception {
         IsJsonDTO jsonDto = (IsJsonDTO)req.getAttribute("preHandleJsonDto");
         UserEntity entity = JSON.parseObject(jsonDto.getBodyJson(), UserEntity.class);
-        BindPhoneDto bindPhoneDto = userService.bindPhone(entity);
-        return getHttpResult(bindPhoneDto);
+        LoginDTO loginDTO = userService.bindPhone(entity);
+        return getHttpResult(loginDTO);
     }
 
     /**
      * @Description(功能描述): 找回密码
      * @author(作者): feihong
-     * @date (开发日期):2018-4-23 9:46:33
+     * @date (开发日期):2018-5-4 22:00:33
      **/
     @PostMapping("backpwd")
     public HttpResults backPwd(HttpServletRequest req) throws Exception {
@@ -71,5 +71,4 @@ public class LoginController extends BaseApi {
             return getHttpResult(result);
         }
     }
-
 }
