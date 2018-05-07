@@ -23,7 +23,8 @@ public enum AppServiceEnums {
 	USER_EXIST("904","用户信息已经存在"),
 	PHONE_NOT_EXIST("905","手机号码不存再"),
 	PHONE_IN_BIND("906","手机号码已绑定"),
-	EXIST_JOIN("907","用户已经参加该活动");
+	EXIST_JOIN("907","用户已经参加该活动"),
+	NOT_JOIN_ACTIVITY("908","用户没有参加任何活动");
 
 	private String code;
 	private String msg;

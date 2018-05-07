@@ -6,7 +6,7 @@
        SELECT
       ta.user_name,
       ta.comment_time,
-      ta.image_url,
+      ta.img_url,
       ta.content
       FROM t_activity_comment ta
       WHERE activity_id =#{activityId} AND status =#{status}

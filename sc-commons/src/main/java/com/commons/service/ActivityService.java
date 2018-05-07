@@ -44,14 +44,14 @@ public interface ActivityService {
       * @author(作者): feihong
       * @date (开发日期):2018/4/27 22:37
       **/
-    int joinActivity(ActivityJoinDto activityJoinDto);
+    int joinActivityxx(ActivityJoinDto activityJoinDto);
 
     /**
       * @Description(功能描述): 我参加的活动
       * @author(作者): feihong
       * @date (开发日期):2018/5/2 14:10
       **/
-    PageInfo<JoinActityDto> join(CommentDto userId);
+    PageInfo<JoinActityDto> injoin(CommentDto userId);
 
     /**
       * @Description(功能描述): 查询活动参与所有人员

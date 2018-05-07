@@ -1,5 +1,6 @@
 package com.commons.dto.anDto;
 
+import com.commons.dto.reDto.BasePageReDto;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * @Create:2018-04-27 19:19:43
  */
 @Data
-public class CommentDto implements Serializable{
+public class CommentDto extends BasePageReDto{
 
     /**
      *活动

@@ -25,7 +25,8 @@ import javax.servlet.http.HttpServletRequest;
  * @date (开发日期) :2018/4/19 10:11
  **/
 @RestController
-public class RegisterController extends BaseApi {
+public class
+RegisterController extends BaseApi {
 
 	@Autowired
 	private UserService userService;		//用户

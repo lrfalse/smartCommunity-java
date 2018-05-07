@@ -39,7 +39,7 @@ public class ActivityController extends BaseApi{
       * @author(作者): feihong
       * @date (开发日期):2018-4-27 15:33
       **/
-    @PostMapping("activity")
+    @PostMapping("/activity")
     public HttpResults homeActivity(HttpServletRequest req) throws Exception {
         ActivityListDto listDto = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class);
         List<ActivityDto> activityDtos = activityService.queryActivityDetail(listDto);
@@ -83,7 +83,7 @@ public class ActivityController extends BaseApi{
     @PostMapping("joinActivity")
     public HttpResults joinActivity(HttpServletRequest req) throws Exception {
         ActivityJoinDto join = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityJoinDto.class);
-        int i = activityService.joinActivity(join);
+        int i = activityService.joinActivityxx(join);
         return getHttpResult(i);
     }
     
@@ -92,11 +92,11 @@ public class ActivityController extends BaseApi{
       * @author(作者): feihong
       * @date (开发日期):2018/5/2 10:14
       **/
-    @PostMapping("Join")
+    @PostMapping("join")
    public HttpResults Join(HttpServletRequest req) throws Exception {
         CommentDto commentDto= JSONObject.parseObject(getIsJson(req).getBodyJson(), CommentDto.class);
-        PageInfo<JoinActityDto> dtoPageInfo = activityService.join(commentDto);
-       return getHttpResult(dtoPageInfo.getList());
+        PageInfo<JoinActityDto> dtoPageInfo = activityService.injoin(commentDto);
+       return getHttpResult(dtoPageInfo);
    }
 
    /**

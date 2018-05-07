@@ -38,7 +38,7 @@ public class LoginController extends BaseApi {
     public HttpResults login(HttpServletRequest req) throws Exception {
         IsJsonDTO jsonDto = (IsJsonDTO) req.getAttribute("preHandleJsonDto");
         UserEntity entity = JSON.parseObject(jsonDto.getBodyJson(), UserEntity.class);
-        LoginDTO login = userService.login(entity);
+        LoginDTO login = userService.logIn(entity);
         return getHttpResult(login);
     }
 
