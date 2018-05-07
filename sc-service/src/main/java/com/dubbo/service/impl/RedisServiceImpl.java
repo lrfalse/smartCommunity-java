@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Description(功能描述) :
+ * @Description(功能描述) :redis 服务接口
  * @author(作者) :lrfalse<wangliyou>
  * @date (开发日期) :2018/4/24 19:31
  **/

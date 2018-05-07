@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService{
 	  **/
 	public Page<UserEntity> getPageUser(UserEntity user){
 		ParamDto dto=new ParamDto();
-		Page<UserEntity> page=PageHelper.startPage(1, 10);
+		Page<UserEntity> page=PageHelper.startPage(dto.getPage(), dto.getRows());
 		dto.clear();
 		dto.put("mobPhone_where",user.getMobPhone());
 		userMapper.selectListUser(dto);
