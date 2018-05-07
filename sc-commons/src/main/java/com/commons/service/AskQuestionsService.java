@@ -47,14 +47,21 @@ public interface AskQuestionsService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:25
      */
-    AskQuestionsEntity problemDetails(AskQuestionsEntity askQuestionsEntity);
+    AskQuestionsDto problemDetails(ParamDto paramDto);
 
     /**
-     * @Description(功能描述) : 问题详情评论
+     * @Description(功能描述) : 问题详情评论列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:46
      */
-    PageInfo<QuestionsCommentEntity> commentDetails(ParamDto paramDto);
+    PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto);
+
+    /**
+     * @Description(功能描述) : 评论详情
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/7 14:47
+     */
+    QuestionsCommentEntity commentDetails(QuestionsCommentEntity questionsCommentEntity);
 
     /**
      * @Description(功能描述) : 我来回答
@@ -64,7 +71,7 @@ public interface AskQuestionsService {
     int reply(QuestionsCommentEntity questionsCommentEntity);
 
     /**
-     * @Description(功能描述) : 问答图片
+     * @Description(功能描述) : 保存问答图片
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/4 17:40
      */

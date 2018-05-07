@@ -1,5 +1,6 @@
 package com.commons.service;
 
+import com.commons.dto.anDto.BannerDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
 import com.github.pagehelper.PageInfo;
@@ -16,5 +17,5 @@ public interface BannerService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/27 22:05
      */
-    PageInfo<BannerEntity> getBannerList(ParamDto paramDto);
+    PageInfo<BannerDto> getBannerList(ParamDto paramDto);
 }

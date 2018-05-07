@@ -1,7 +1,6 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.commons.dto.anDto.NoticeCommentDto;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
@@ -38,10 +37,10 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/25 14:56
      */
     @Override
-    public PageInfo<String> getTitleDisplay(ParamDto paramDto) {
+    public PageInfo<NoticeEntity> getTitleDisplay(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<String> list = noticeMapper.queryNoticeTitle(paramDto);
-        PageInfo<String> pageInfo = new PageInfo<>(list);
+        List<NoticeEntity> list = noticeMapper.queryNoticeTitle(paramDto);
+        PageInfo<NoticeEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;
     }
 
@@ -64,11 +63,18 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 18:05
      */
     @Override
-    public NoticeEntity getNoticeDetails(NoticeEntity noticeEntity) {
-        NoticeEntity data = noticeMapper.selectOne(noticeEntity);
-        //浏览次数增加
-        this.browseNumIncreased(data);
-        return data;
+    public NoticeDto getNoticeDetails(ParamDto paramDto) {
+        List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
+        NoticeDto dto = null;
+        if(list != null && list.size()>0) {
+            NoticeEntity noticeEntity = new NoticeEntity();
+            dto = list.get(0);
+            noticeEntity.setId(dto.getId());
+            noticeEntity.setBrowseNum(dto.getBrowseNum());
+            //浏览次数增加
+            this.browseNumIncreased(noticeEntity);
+        }
+        return dto;
     }
 
     /**
@@ -82,7 +88,7 @@ public class NoticeServiceImpl implements NoticeService {
         }else{
             noticeEntity.setBrowseNum(noticeEntity.getBrowseNum()+1);
         }
-        noticeMapper.updateByPrimaryKey(noticeEntity);
+        noticeMapper.updateByPrimaryKeySelective(noticeEntity);
     }
 
     /**
@@ -91,10 +97,10 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 19:17
      */
     @Override
-    public PageInfo<NoticeCommentDto> getNoticeCommentList(ParamDto paramDto) {
+    public PageInfo<NoticeCommentEntity> getNoticeCommentList(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<NoticeCommentDto> list = noticeCommentMapper.queryNoticeCommentList(paramDto);
-        PageInfo<NoticeCommentDto> pageInfo = new PageInfo<>(list);
+        List<NoticeCommentEntity> list = noticeCommentMapper.queryNoticeCommentList(paramDto);
+        PageInfo<NoticeCommentEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;
     }
 

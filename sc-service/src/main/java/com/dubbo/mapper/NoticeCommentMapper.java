@@ -1,7 +1,6 @@
 package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
-import com.commons.dto.anDto.NoticeCommentDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 
@@ -19,5 +18,5 @@ public interface NoticeCommentMapper extends MyMapper<NoticeCommentEntity> {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 19:30
      */
-    List<NoticeCommentDto> queryNoticeCommentList(ParamDto paramDto);
+    List<NoticeCommentEntity> queryNoticeCommentList(ParamDto paramDto);
 }

@@ -14,8 +14,8 @@ import java.util.Date;
 @Table( name = "t_notice")
 public class NoticeEntity extends BaseIdEntity{
     private Integer communityId;//所属小区ID
-    private String titile;		//公告标题
-    private String small_title;	//小标题
+    private String title;		//公告标题
+    private String smallTitle;	//小标题
     private String content;		//公告内容
     private String issuer;		//发布方
     private Integer type;		//公告类型(0：置顶、1加急、2普通)

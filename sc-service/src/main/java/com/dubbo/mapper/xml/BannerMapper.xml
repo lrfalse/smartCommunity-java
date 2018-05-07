@@ -3,14 +3,29 @@
 <mapper namespace="com.dubbo.mapper.BannerMapper">
 
     <!-- 查询首页小区公告信息(标题显示)-->
-    <select id="queryBannerList" resultType="com.commons.entity.BannerEntity" parameterType="ParamDto">
+    <select id="queryBannerList" resultType="com.commons.dto.anDto.BannerDto" parameterType="ParamDto">
         SELECT
-            *
+            b.id,
+            b.community_id,
+            b.start_time,
+            b.end_time,
+            b.link_url,
+            b.STATUS,
+            GROUP_CONCAT( i.img_url ) img_url
         FROM
-            t_banner
+            t_banner b
+            LEFT JOIN t_banner_img i ON b.id = i.banner_id
         WHERE
-            STATUS = '0'
-            AND ( SYSDATE( ) BETWEEN start_time AND end_time )
+            b.community_id = #{communityId}
+            AND b.STATUS = #{status}
+            AND ( SYSDATE( ) BETWEEN b.start_time AND b.end_time )
+        GROUP BY
+            b.id,
+            b.community_id,
+            b.start_time,
+            b.end_time,
+            b.link_url,
+            b.STATUS
     </select>
 
 </mapper>

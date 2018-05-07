@@ -1,6 +1,7 @@
 package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
+import com.commons.dto.anDto.BannerDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
 
@@ -18,5 +19,5 @@ public interface BannerMapper extends MyMapper<BannerEntity> {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/28 9:18
      */
-    List<BannerEntity> queryBannerList(ParamDto paramDto);
+    List<BannerDto> queryBannerList(ParamDto paramDto);
 }

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.dto.anDto.BannerDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
 import com.commons.service.BannerService;
@@ -35,10 +36,11 @@ public class BannerController extends BaseApi {
     @PostMapping("/getBannerList")
     public HttpResults getBannerList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
-        BannerEntity noticeDto = JSON.parseObject(jsonDto.getBodyJson(), BannerEntity.class);
-        //TODO 传入参数未确定
+        BannerEntity bannerEntity = JSON.parseObject(jsonDto.getBodyJson(), BannerEntity.class);
         ParamDto paramDto = new ParamDto();
-        PageInfo<BannerEntity> pageInfo = bannerService.getBannerList(paramDto);
+        paramDto.put("communityId",bannerEntity.getCommunityId());
+        paramDto.put("status",bannerEntity.getStatus());
+        PageInfo<BannerDto> pageInfo = bannerService.getBannerList(paramDto);
         return getHttpResult(pageInfo);
     }
 }
