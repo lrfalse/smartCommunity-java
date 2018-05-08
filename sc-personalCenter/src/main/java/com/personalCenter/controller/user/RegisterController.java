@@ -6,13 +6,10 @@ import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.UserEntity;
-import com.commons.enums.AppServiceEnums;
 import com.commons.service.RedisService;
 import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
-import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
-import com.commons.utils.SmsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +22,8 @@ import javax.servlet.http.HttpServletRequest;
  * @date (开发日期) :2018/4/19 10:11
  **/
 @RestController
-public class RegisterController extends BaseApi {
+public class
+RegisterController extends BaseApi {
 
 	@Autowired
 	private UserService userService;		//用户
@@ -42,7 +40,7 @@ public class RegisterController extends BaseApi {
 		UserReDto registerReDto= JSON.parseObject(isJson.getBodyJson(),UserReDto.class);
 		String phone=registerReDto.getMobPhone();
 		String pwd=registerReDto.getPwd();
-		String authCode=redisService.get(phone+"checkCode");		//取出缓存中的数据
+		//String authCode=redisService.get(phone+"checkCode");		//取出缓存中的数据
 		if(CommonUtils.isNotEmpty(phone,pwd)){
 			//if(CommonUtils.isNotEmpty(authCode)){					//验证码不存在或者过期
 				UserEntity user=new UserEntity();

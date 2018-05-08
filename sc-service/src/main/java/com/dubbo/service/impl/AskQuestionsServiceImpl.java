@@ -6,6 +6,8 @@ import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
+import com.commons.enums.AppServiceEnums;
+import com.commons.exception.ScException;
 import com.commons.service.AskQuestionsService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.AskQuestionsMapper;
@@ -100,22 +102,35 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
      * @Date(开发日期) : 2018/5/3 11:25
      */
     @Override
-    public AskQuestionsEntity problemDetails(AskQuestionsEntity askQuestionsEntity) {
-        AskQuestionsEntity entity = askQuestionsMapper.selectOne(askQuestionsEntity);
-        return entity;
+    public AskQuestionsDto problemDetails(ParamDto paramDto) {
+        List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
+        if(list!=null && list.size()>0){
+            return list.get(0);
+        }
+        return null;
     }
 
     /**
-     * @Description(功能描述) : 问题详情评论
+     * @Description(功能描述) : 问题详情评论列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:49
      */
     @Override
-    public PageInfo<QuestionsCommentEntity> commentDetails(ParamDto paramDto) {
+    public PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
         List<QuestionsCommentEntity> list = askQuestionsMapper.queryComment(paramDto);
         PageInfo<QuestionsCommentEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;
+    }
+
+    /**
+     * @Description(功能描述) : 评论详情
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/7 14:48
+     */
+    @Override
+    public QuestionsCommentEntity commentDetails(QuestionsCommentEntity questionsCommentEntity) {
+        return questionsCommentMapper.selectOne(questionsCommentEntity);
     }
 
     /**
@@ -129,15 +144,16 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
             qce.setCommentTime(new Date());
             qce.setStatus(0);
             int n = questionsCommentMapper.insert(qce);
-            if(n>0){
-                return 1;
+            if (n < 0) {
+                throw new ScException(AppServiceEnums.SYS_EXCEPTION);
             }
+            return 1;
         }
         return 0;
     }
 
     /**
-     * @Description(功能描述) : 问题图片
+     * @Description(功能描述) : 保存问题图片
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/4 17:41
      */

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
-import com.commons.dto.anDto.NoticeCommentDto;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
@@ -35,13 +34,14 @@ public class NoticeController extends BaseApi {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/25 16:05
      */
-    @PostMapping("/getNotice")
-    public HttpResults getNotice(HttpServletRequest req)throws Exception{
+    @PostMapping("/getTitleDisplayList")
+    public HttpResults getTitleDisplayList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",noticeEntity.getCommunityId());
-        PageInfo<String> pageInfo = noticeService.getTitleDisplay(paramDto);
+        paramDto.put("status",noticeEntity.getStatus());
+        PageInfo<NoticeEntity> pageInfo = noticeService.getTitleDisplay(paramDto);
         return getHttpResult(pageInfo);
     }
 
@@ -56,6 +56,8 @@ public class NoticeController extends BaseApi {
         NoticeDto noticeDto = JSON.parseObject(jsonDto.getBodyJson(), NoticeDto.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",noticeDto.getCommunityId());
+        paramDto.put("status",noticeDto.getStatus());
+        paramDto.put("type",noticeDto.getType());
         PageInfo<NoticeDto> pageInfo = noticeService.getNoticeList(paramDto);
         return getHttpResult(pageInfo);
     }
@@ -68,8 +70,13 @@ public class NoticeController extends BaseApi {
     @PostMapping("/getNoticeDetails")
     public HttpResults getNoticeDetails(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
-        NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
-        NoticeEntity data = noticeService.getNoticeDetails(noticeEntity);
+        NoticeDto noticeDto = JSON.parseObject(jsonDto.getBodyJson(), NoticeDto.class);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("id",noticeDto.getId());
+        paramDto.put("communityId",noticeDto.getCommunityId());
+        paramDto.put("status",noticeDto.getStatus());
+        paramDto.put("type",noticeDto.getType());
+        NoticeDto data = noticeService.getNoticeDetails(paramDto);
         return getHttpResult(data);
     }
 
@@ -85,7 +92,7 @@ public class NoticeController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("noticeId",noticeCommentEntity.getNoticeId());
         paramDto.put("status",noticeCommentEntity.getStatus());
-        PageInfo<NoticeCommentDto> pageInfo = noticeService.getNoticeCommentList(paramDto);
+        PageInfo<NoticeCommentEntity> pageInfo = noticeService.getNoticeCommentList(paramDto);
         return getHttpResult(pageInfo);
     }
 

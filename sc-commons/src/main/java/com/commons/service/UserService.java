@@ -37,7 +37,7 @@ public interface UserService {
 	 * @author(作者): feihong
 	 * @date (开发日期):2018-4-24 10:33:21
 	 **/
-	LoginDTO login(UserEntity userEntity);
+	LoginDTO logIn(UserEntity userEntity);
 
 	/**
 	 * @Description(功能描述): 绑定手机号码

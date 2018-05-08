@@ -61,7 +61,7 @@ public class ActivityServiceImpl implements ActivityService{
         List<ActivityEntity> activityEntities=null;
         //首页查询五个活动
         if (activityListDto.getTag().equals("0")){
-            PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
+            //PageHelper.startPage(activityListDto.getPages(),activityListDto.getPageSize());
             List<ActivityEntity> activityEntities1 = activityMapper.homeQueryActivity(paramDto);
             activityEntities=activityEntities1;
         }else if (activityListDto.getTag().equals("1")){
@@ -93,22 +93,26 @@ public class ActivityServiceImpl implements ActivityService{
      **/
     @Override
     public int Comment(CommentDto commentDto) {
+        ParamDto paramDto = new ParamDto();
         if (commentDto.getTag().equals("W")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setWopenId(commentDto.getWopenId());
-            UserEntity entity = userMapper.selectOne(userEntity);
+            paramDto.put("wopenId",commentDto.getWopenId());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            if (entity.equals(null)){
+                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
         }else if (commentDto.getTag().equals("Q")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setQopenId(commentDto.getQopenId());
-            UserEntity entity = userMapper.selectOne(userEntity);
+            paramDto.put("qopenId",commentDto.getQopenId());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            if (entity.equals(null)){
+                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
         }else if (commentDto.getTag().equals("P")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setMobPhone(commentDto.getMobPhone());
-            UserEntity entity = userMapper.selectOne(userEntity);
+            paramDto.put("mobPhone",commentDto.getMobPhone());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            if (entity.equals(null)){
+                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
         }
@@ -122,10 +126,10 @@ public class ActivityServiceImpl implements ActivityService{
      **/
     @Override
     public PageInfo<CommentEntity> queryComment(CommentReDto commentReDto) {
-        PageHelper.startPage(commentReDto.getPages(), commentReDto.getPageSize());
         ParamDto paramDto = new ParamDto();
         paramDto.put("activityId",commentReDto.getActivityId());
         paramDto.put("status",commentReDto.getStatus());
+        PageHelper.startPage(commentReDto.getPages(), commentReDto.getPageSize());
         List<CommentEntity> commentEntities = commentMapper.queryComment(paramDto);
         PageInfo<CommentEntity> pageInfo = new PageInfo<>(commentEntities);
         return pageInfo;
@@ -152,39 +156,43 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018/5/2 11:15
      **/
     @Override
-    public PageInfo<JoinActityDto> join(CommentDto commentDto) {
+    public PageInfo<JoinActityDto> injoin(CommentDto commentDto) {
+        ParamDto paramAcDto = new ParamDto();
         if (commentDto.getTag().equals("W")){
-            String wopenId = commentDto.getWopenId();
-            UserEntity userEntity = new UserEntity();
-            userEntity.setWopenId(wopenId);
-            UserEntity entity = userMapper.selectOne(userEntity);
-            Integer id = entity.getId();
+            paramAcDto.put("wopenId",commentDto.getWopenId());
+            UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
-            paramDto.put("id",id);
+            paramDto.put("id",entity.getId());
+            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
-            PageInfo pageInfo = new PageInfo(dtos);
+            if (dtos.size()==0){
+                throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
+            }
+            PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
         }else if (commentDto.getTag().equals("P")){
-            String mobPhone = commentDto.getMobPhone();
-            UserEntity userEntity = new UserEntity();
-            userEntity.setMobPhone(mobPhone);
-            UserEntity entity = userMapper.selectOne(userEntity);
-            Integer id = entity.getId();
+            paramAcDto.put("mobPhone",commentDto.getMobPhone());
+            UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
-            paramDto.put("id",id);
+            paramDto.put("id",entity.getId());
+            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
-            PageInfo pageInfo = new PageInfo(dtos);
+            if (dtos.size()==0){
+                throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
+            }
+            PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
         }else if (commentDto.getTag().equals("Q")) {
-            String qopenId = commentDto.getQopenId();
-            UserEntity userEntity = new UserEntity();
-            userEntity.setQopenId(qopenId);
-            UserEntity entity = userMapper.selectOne(userEntity);
-            Integer id = entity.getId();
+            paramAcDto.put("qopenId",commentDto.getQopenId());
+            UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
-            paramDto.put("id", id);
+            paramDto.put("id", entity.getId());
+            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
-            PageInfo pageInfo = new PageInfo(dtos);
+            if (dtos.size()==0){
+                throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
+            }
+            PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
         }
         throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
@@ -196,15 +204,15 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018/4/27 22:43
      **/
     @Override
-    public int joinActivity(ActivityJoinDto activityJoinDto) {
+    public int joinActivityxx(ActivityJoinDto activityJoinDto) {
+        ParamDto paramAcDto = new ParamDto();
+        paramAcDto.put("activityId",activityJoinDto.getActivityId());
         ParamDto paramDto = new ParamDto();
-        paramDto.put("activityId",activityJoinDto.getActivityId());
         if (activityJoinDto.getTag().equals("W")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setWopenId(activityJoinDto.getWopenId());
-            UserEntity entity = userMapper.selectOne(userEntity);
-            List<String> list=activityMapper.queryUserId(paramDto);
-            if (list.contains(entity.getId())){
+            paramDto.put("wopenId",activityJoinDto.getWopenId());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            List<String> list = activityMapper.queryUserId(paramAcDto);
+            if (list.contains(String.valueOf(entity.getId()))){
                 throw new ScException(AppServiceEnums.EXIST_JOIN);
             }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
@@ -214,11 +222,11 @@ public class ActivityServiceImpl implements ActivityService{
             }
             return 0;
         }else if (activityJoinDto.getTag().equals("Q")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setQopenId(activityJoinDto.getQopenId());
-            UserEntity entity = userMapper.selectOne(userEntity);
-            List<String> list=activityMapper.queryUserId(paramDto);
-            if (list.contains(entity.getId())){
+            paramDto.put("qopenId",activityJoinDto.getQopenId());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            List<String> list = activityMapper.queryUserId(paramAcDto);
+            String id = String.valueOf(entity.getId());
+            if (list.contains(id)){
                 throw new ScException(AppServiceEnums.EXIST_JOIN);
             }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
@@ -228,11 +236,10 @@ public class ActivityServiceImpl implements ActivityService{
             }
             return 0;
         }else if (activityJoinDto.getTag().equals("P")){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setMobPhone(activityJoinDto.getMobPhone());
-            UserEntity entity = userMapper.selectOne(userEntity);
-            List<String> list=activityMapper.queryUserId(paramDto);
-            if (list.contains(entity.getId())){
+            paramDto.put("mobPhone",activityJoinDto.getMobPhone());
+            UserEntity entity = userMapper.selectUserId(paramDto);
+            List<String> list=activityMapper.queryUserId(paramAcDto);
+            if (list.contains(String.valueOf(entity.getId()))){
                 throw new ScException(AppServiceEnums.EXIST_JOIN);
             }
             int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));

@@ -44,22 +44,6 @@ public class AskQuestionsController extends BaseApi {
     private Environment env;
 
     /**
-     * @Description(功能描述) : 去提问
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/5/2 15:26
-     */
-    /*@PostMapping("/goWithAsk")
-    public HttpResults goWithAsk(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=getIsJson(req);
-        AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-        AskQuestionsEntity entity = askQuestionsService.goWithAsk(askQuestionsEntity);
-        if(entity == null){
-            return getHttpResult(0);
-        }
-        return getHttpResult(entity);
-    }*/
-
-    /**
      * @Description(功能描述) : 我的提问
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/2 16:10
@@ -71,6 +55,7 @@ public class AskQuestionsController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
         paramDto.put("userId",askQuestionsEntity.getUserId());
+        paramDto.put("status",askQuestionsEntity.getStatus());
         AskQuestionsDto dto = askQuestionsService.mineAsk(paramDto);
         return getHttpResult(dto);
     }
@@ -86,6 +71,7 @@ public class AskQuestionsController extends BaseApi {
         AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
+        paramDto.put("status",askQuestionsEntity.getStatus());
         paramDto.put("type",askQuestionsEntity.getType());
         PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.questionClassification(paramDto);
         return getHttpResult(pageInfo);
@@ -102,6 +88,7 @@ public class AskQuestionsController extends BaseApi {
         AskQuestionsDto askQuestionsDto = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsDto.class);
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",askQuestionsDto.getCommunityId());
+        paramDto.put("status",askQuestionsDto.getStatus());
         //popular 为true时是热门问题，为false时是最新问题
         paramDto.put("popular",askQuestionsDto.getPopular());
         PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.topQuestions(paramDto);
@@ -116,24 +103,42 @@ public class AskQuestionsController extends BaseApi {
     @PostMapping("/problemDetails")
     public HttpResults problemDetails(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
-        AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-        AskQuestionsEntity entity = askQuestionsService.problemDetails(askQuestionsEntity);
-        return getHttpResult(entity);
+        AskQuestionsDto askQuestionsDto = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsDto.class);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",askQuestionsDto.getCommunityId());
+        paramDto.put("status",askQuestionsDto.getStatus());
+        paramDto.put("id",askQuestionsDto.getId());
+        AskQuestionsDto dto = askQuestionsService.problemDetails(paramDto);
+        return getHttpResult(dto);
     }
 
     /**
-     * @Description(功能描述) : 问题详情评论
+     * @Description(功能描述) : 问题详情评论列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:38
+     */
+    @PostMapping("/commentList")
+    public HttpResults commentList(HttpServletRequest req)throws Exception{
+        IsJsonDTO jsonDto=getIsJson(req);
+        QuestionsCommentEntity questionsCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), QuestionsCommentEntity.class);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("questionsId",questionsCommentEntity.getQuestionsId());
+        paramDto.put("status",questionsCommentEntity.getStatus());
+        PageInfo<QuestionsCommentEntity> pageInfo = askQuestionsService.commentList(paramDto);
+        return getHttpResult(pageInfo);
+    }
+
+    /**
+     * @Description(功能描述) : 评论详情
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/7 14:45
      */
     @PostMapping("/commentDetails")
     public HttpResults commentDetails(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         QuestionsCommentEntity questionsCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), QuestionsCommentEntity.class);
-        ParamDto paramDto = new ParamDto();
-        paramDto.put("questionsId",questionsCommentEntity.getQuestionsId());
-        PageInfo<QuestionsCommentEntity> pageInfo = askQuestionsService.commentDetails(paramDto);
-        return getHttpResult(pageInfo);
+        QuestionsCommentEntity entity= askQuestionsService.commentDetails(questionsCommentEntity);
+        return getHttpResult(entity);
     }
 
     /**
@@ -178,7 +183,7 @@ public class AskQuestionsController extends BaseApi {
                         }
                         byte[] bytes = file.getBytes();
                         String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-                        fileName = filePath +"/"+ UUID.randomUUID()+suffix;
+                        fileName = filePath +"/"+ UUID.randomUUID().toString().replace("-","")+suffix;
                         stream = new BufferedOutputStream(new FileOutputStream(fileName));
                         stream.write(bytes);
                         stream.close();

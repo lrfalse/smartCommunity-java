@@ -3,13 +3,13 @@
 <mapper namespace="com.dubbo.mapper.NoticeMapper">
 
     <!-- 查询首页小区公告信息(标题显示)-->
-    <select id="queryNoticeTitle" resultType="java.lang.String" parameterType="ParamDto">
+    <select id="queryNoticeTitle" resultType="com.commons.entity.NoticeEntity" parameterType="ParamDto">
         SELECT
-            titile
+            *
         FROM
             t_notice
         WHERE
-            STATUS = '0'
+            STATUS = #{status}
             AND community_id = #{communityId}
             and (SYSDATE() between start_time and end_time)
         ORDER BY type ASC,publish_time DESC
@@ -17,34 +17,25 @@
 
     <!-- 小区公告列表 -->
     <select id="queryNoticeList" resultType="com.commons.dto.anDto.NoticeDto" parameterType="ParamDto">
-        SELECT
-            n.id,
-            n.community_id,
-            n.titile,
-            n.small_title,
-            n.publish_time,
-            n.browse_num,
-            n.img_url,
-            COUNT( c.notice_id ) total
-        FROM
-            t_notice n
-            LEFT JOIN t_notice_comment c ON n.id = c.notice_id
-        WHERE
-            n.STATUS = '0'
-            AND n.community_id = #{communityId}
-            AND ( SYSDATE( ) BETWEEN n.start_time AND n.end_time )
-            AND c.STATUS = '0'
-        GROUP BY
-            n.id,
-            n.community_id,
-            n.titile,
-            n.publish_time,
-            n.browse_num,
-            n.img_url
-        ORDER BY
-            n.type ASC,
-            n.publish_time DESC
+        select t.id,t.community_id,t.title,t.small_title,t.content,t.issuer,t.type,t.status,t.browse_num,t.publish_time,t.img_url,count(c.notice_id) total from
+        (
+            select n.id,n.community_id,n.title,n.small_title,n.content,n.issuer,n.type,n.status,n.browse_num,n.publish_time,GROUP_CONCAT(i.img_url) img_url from
+            (
+                SELECT * FROM t_notice
+                WHERE
+                    STATUS = #{status}
+                    AND community_id = #{communityId}
+                    AND ( SYSDATE() BETWEEN start_time AND end_time )
+            ) n left join (select * from t_notice_img where type = #{type}) i on n.id = i.notice_id
+            GROUP BY n.id,n.community_id,n.title,n.small_title,n.content,n.issuer,n.type,n.status,n.browse_num,n.publish_time,n.start_time,n.end_time
+        ) t left join
+        (select notice_id from t_notice_comment where status = #{status}) c on t.id = c.notice_id
+        WHERE 1=1
+        <if test="id != null">
+          and t.id = #{id}
+        </if>
+        GROUP BY t.id,t.community_id,t.title,t.small_title,t.content,t.issuer,t.type,t.status,t.browse_num,t.publish_time,t.img_url
+        ORDER BY t.type ASC,t.publish_time DESC
     </select>
-
 
 </mapper>

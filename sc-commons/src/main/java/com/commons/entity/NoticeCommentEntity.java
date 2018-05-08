@@ -18,4 +18,6 @@ public class NoticeCommentEntity extends BaseIdEntity{
     private String content;		//评论内容
     private Integer status;		//评论状态(0正常，1失效)
     private Date commentTime;	//评论时间
+    private String userName;	//用户名称
+    private String imgUrl;	    //用户头像图片
 }

@@ -1,6 +1,7 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.commons.dto.anDto.BannerDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.BannerEntity;
 import com.commons.service.BannerService;
@@ -28,10 +29,10 @@ public class BannerServiceImpl implements BannerService{
      * @Date(开发日期) : 2018/4/27 22:22
      */
     @Override
-    public PageInfo<BannerEntity> getBannerList(ParamDto paramDto) {
+    public PageInfo<BannerDto> getBannerList(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<BannerEntity> list= bannerMapper.queryBannerList(paramDto);
-        PageInfo<BannerEntity> page =new PageInfo<>(list);
+        List<BannerDto> list= bannerMapper.queryBannerList(paramDto);
+        PageInfo<BannerDto> page =new PageInfo<>(list);
         return page;
     }
 }

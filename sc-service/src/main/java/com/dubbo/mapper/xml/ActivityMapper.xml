@@ -9,7 +9,7 @@
 
    <!--查询参加活动人及头像-->
    <select id="queryActivityPeople" parameterType="String" resultType="com.commons.dto.anDto.ActivityPeopleDto">
-    SELECT image_url
+    SELECT img_url
     FROM t_activity_join
     WHERE activity_id =#{activityId}
    </select>
@@ -45,12 +45,13 @@
 
     <!--查询我参与的活动-->
     <select id="queryActivityJoin" parameterType="ParamDto" resultType="com.commons.dto.anDto.JoinActityDto">
-     SELECT
-     ty.title,
-     ty.img_url
-     FROM t_user tr INNER JOIN t_activity_join tn ON tr.id = tn.user_id
-     INNER JOIN t_activity ty ON ty.id = tn.activity_id
-     WHERE tr.id =#{id};
+    SELECT
+      ty.title,
+      tg.img_url
+    FROM t_user tr INNER JOIN t_activity_join tn ON tr.id = tn.user_id
+    INNER JOIN t_activity ty ON ty.id = tn.activity_id
+    INNER JOIN t_activity_img tg ON tg.activity_id = ty.id
+    WHERE tr.id =#{id};
      </select>
 
 

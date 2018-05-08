@@ -27,6 +27,8 @@ public interface UserMapper extends MyMapper<UserEntity> {
 
 	int addUserImgUrl(ParamDto paramDto);//手机号码已经注册过把头像放进头像表
 
+	String queryUserImgId(ParamDto paramDto);
+
 	/**
 	  * @Description(功能描述): 查询用户信息
 	  * @author(作者): lrfalse<wangliyou>
@@ -62,4 +64,11 @@ public interface UserMapper extends MyMapper<UserEntity> {
 	  * @date (开发日期):2018/5/4 22:01
 	  **/
 	UserEntity queryUser(ParamDto paramDto);
+
+	/**
+	  * @Description(功能描述): 查询用户信息
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/7 10:09
+	  **/
+	UserEntity selectUserId(ParamDto paramDto);
 }

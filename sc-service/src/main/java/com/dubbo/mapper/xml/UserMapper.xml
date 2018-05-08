@@ -5,8 +5,28 @@
     <sql id="Base_Column_List" >
         id, name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address,
         ost_code, qopen_id, email,create_time, status, remark, wopen_id, community_id,
-        img_url, city_id
+        city_id
     </sql>
+    <!---->
+    <select id="selectUserId" parameterType="ParamDto" resultType="com.commons.entity.UserEntity">
+      SELECT
+      tg.img_url,
+      tr.id,
+      tr.name
+      FROM t_user tr INNER JOIN t_user_img tg ON tr.id = tg.user_id
+        <where>
+            <if test="wopenId !=null ">
+                AND wopen_id=#{wopenId}
+            </if>
+            <if test="qopenId != null">
+                AND qopen_id=#{qopenId}
+            </if>
+            <if test="mobPhone !=null ">
+                AND mob_phone=#{mobPhone}
+            </if>
+        </where>
+
+    </select>
     <!--查询手机号码是否绑定-->
     <select id="selectPhone" resultType="com.commons.entity.UserEntity">
         SELECT * FROM linlihouse.t_user WHERE mob_phone=#{mobphone}
@@ -23,15 +43,21 @@
     <update id="updatePwd">
         UPDATE t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
     </update>
+
     <!--添加用户图片-->
     <insert id="addUserImgUrl" parameterType="ParamDto">
     INSERT INTO t_user_img(img_url, user_id,type) VALUES(#{imgUrl},#{userId},#{type})
+
     </insert>
     <!--添加用户-->
     <insert id="adduser" parameterType="com.commons.entity.UserEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
         INSERT INTO t_user (name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address, ost_code, qopen_id, email, create_time, status, remark, wopen_id, community_id, city_id)
  VALUES (#{name}, #{code}, #{birthday},#{sex},#{pwd},#{identityCode},#{mobPhone},#{homePhone},#{address},#{ostCode},#{qopenId},#{email},#{ostCode},#{status},#{remark},#{wopenId},#{communityId},#{cityCode})
     </insert>
+    <!--查询t_user_img是否已经存在user-->
+    <select id="queryUserImgId" parameterType="ParamDto" resultType="String">
+        SELECT user_id FROM t_user_img WHERE user_id=#{id}
+    </select>
     <!--where条件-->
     <sql id="whereCondition">
         1=1
@@ -87,9 +113,7 @@
         <if test="communityId_where != null" >
             AND community_id = #{communityId_where,jdbcType=BIGINT}
         </if>
-        <if test="imgUrl_where != null" >
-            AND img_url = #{imgUrl_where}
-        </if>
+
         <if test="cityId_where != null" >
             AND city_id = #{cityId_where,jdbcType=BIGINT}
         </if>
@@ -151,9 +175,6 @@
             </if>
             <if test="communityId != null" >
                 community_id = #{communityId,jdbcType=BIGINT},
-            </if>
-            <if test="imgUrl != null" >
-                img_url = #{imgUrl,jdbcType=VARCHAR},
             </if>
             <if test="cityId != null" >
                 city_id = #{cityId,jdbcType=BIGINT},

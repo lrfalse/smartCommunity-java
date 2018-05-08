@@ -4,45 +4,34 @@
 
     <!-- 查询提问和评论数 -->
     <select id="queryAsk" resultType="com.commons.dto.anDto.AskQuestionsDto" parameterType="ParamDto">
+        SELECT t.id,t.community_id,t.title,t.content,t.user_id,t.type,t.status,t.browse_num,t.publish_time,t.img_url,COUNT( c.questions_id ) total FROM
+        (
         SELECT
-        q.id,
-        q.community_id,
-        q.title,
-        q.content,
-        q.user_id,
-        q.type,
-        q.STATUS,
-        q.img_url,
-        q.browse_num,
-        COUNT( c.id ) total,
-        q.publish_time
+        q.id,q.community_id,q.title,q.content,q.user_id,q.type,q.status,q.browse_num,q.publish_time,GROUP_CONCAT(i.img_url) img_url
         FROM
-        t_questions q
-        LEFT JOIN ( SELECT id, questions_id FROM t_questions_comment WHERE STATUS = '0' ) c ON q.id = c.questions_id
-        WHERE
-        q.community_id = #{communityId}
+        (SELECT * from t_questions where community_id = #{communityId} and status = #{status}) q
+        left join
+        (SELECT * from t_questions_img where type = #{status}) i on i.questions_id = q.id
+        GROUP BY q.id,q.community_id,q.title,q.content,q.user_id,q.type,q.status,q.browse_num,q.publish_time
+        ) t
+        left join
+        (select questions_id FROM t_questions_comment where status = #{status}) c on c.questions_id = t.id
+        where 1=1
+        <if test="id != null">
+        	and t.id = #{id}
+        </if>
         <if test="userId != null">
-            AND q.user_id = #{userId}
+        	and t.user_id = #{userId}
         </if>
         <if test="type != null">
-            AND q.type LIKE CONCAT('%',#{type},'%')
+        	and t.type LIKE CONCAT('%',#{type},'%')
         </if>
-        AND q.STATUS = '0'
-        GROUP BY
-        q.id,
-        q.community_id,
-        q.title,
-        q.content,
-        q.user_id,
-        q.type,
-        q.STATUS,
-        q.img_url,
-        q.browse_num
+        GROUP BY t.id,t.community_id,t.title,t.content,t.user_id,t.type,t.status,t.browse_num,t.publish_time,t.img_url
         ORDER BY
         <if test="popular">
-            q.browse_num DESC,
+            t.browse_num DESC,
         </if>
-        q.publish_time DESC
+        t.publish_time DESC
     </select>
 
     <!-- 问题详情评论 -->
@@ -53,7 +42,7 @@
             t_questions_comment
         WHERE
             questions_id = #{questionsId}
-            AND STATUS = '0'
+            AND STATUS = #{status}
         ORDER BY
             comment_time DESC
     </select>
