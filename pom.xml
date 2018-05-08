@@ -15,7 +15,8 @@
         <module>sc-personalCenter</module>	<!-- 个人中心 -->
         <module>sc-tradingArea</module>	    <!-- 超级商圈 -->
         <module>sc-tools</module>	        <!-- 外接工具 -->
-        <module>sc-service</module>	        <!-- dubbo服务 -->
+        <module>sc-service</module>         <!-- dubbo服务 -->
+        <module>sc-admin</module>           <!-- admin后台管理系统 -->
     </modules>
   <dependencies>
     <dependency>
@@ -28,6 +29,15 @@
   </dependencies>
   <build>
     <finalName>smartCommunity</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <configuration>
+                  <fork>true</fork>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
     <profiles>
         <profile>
@@ -37,7 +47,7 @@
                 <jdk>1.8</jdk>
             </activation>
             <properties>
-                <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_161</JAVA_HOME>
+                <JAVA_HOME>C:\Program Files\Java\1.8.0_161</JAVA_HOME>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
                 <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
