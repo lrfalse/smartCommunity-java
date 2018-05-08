@@ -24,8 +24,6 @@ public class BaseApi {
 
 	public  HttpResults httpResults;
 
-
-
 	/**
 	  * @Description(功能描述): 解析正文数据
 	  * @author(作者): lrfalse<wangliyou>

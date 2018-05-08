@@ -4,11 +4,13 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
+import com.commons.entity.DistrictEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.CommunityService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.CommunityMapper;
+import com.dubbo.mapper.DistrictMapper;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,7 +27,8 @@ public class CommuntiyServiceImpl implements CommunityService {
 
     @Autowired
     private CommunityMapper communityMapper;
-
+    @Autowired
+    private DistrictMapper districtMapper;
 
     /**
       * @Description(功能描述): 颁发钥匙信息
@@ -59,7 +62,21 @@ public class CommuntiyServiceImpl implements CommunityService {
 	public List<String> queryLocation() {
 		return communityMapper.queryLocation();
 	}
-	public List<CommunityEntity> query(CommunityEntity communityEntity){
+
+	/**
+	  * @Description(功能描述): 查询市
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/8 20:03
+	  **/
+    @Override
+    public List<DistrictEntity> queryCity() {
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("city","city");
+        List<DistrictEntity> entities = districtMapper.queryCity(paramDto);
+        return entities;
+    }
+
+    public List<CommunityEntity> query(CommunityEntity communityEntity){
 		return communityMapper.select(communityEntity);
 	}
 

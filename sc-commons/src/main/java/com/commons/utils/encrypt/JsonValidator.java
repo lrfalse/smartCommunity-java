@@ -185,7 +185,7 @@ public class JsonValidator {
 	private boolean escape() {
 		int start = col - 1;
 		if (" \\\"/bfnrtu".indexOf(c) < 0) {
-			return error("escape sequence  \\\",\\\\,\\/,\\b,\\f,\\n,\\r,\\t  or  \\uxxxx ",start);
+			return error("escape sequence  \\\",\\\\,\\/,\\b,\\f,\n,\\r,\\t  or  \\uxxxx ",start);
 		}
 		if (c == 'u') {
 			if (!ishex(nextCharacter()) || !ishex(nextCharacter()) || !ishex(nextCharacter()) || !ishex(nextCharacter())) {

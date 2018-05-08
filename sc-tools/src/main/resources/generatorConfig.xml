@@ -50,6 +50,6 @@
 
 
         <!-- 指定数据库表 -->
-        <table schema="" tableName="t_user"  domainObjectName="UserEntity"></table>
+        <table schema="" tableName="t_nanny"  domainObjectName="NannyEntity"></table>
     </context>
 </generatorConfiguration>
