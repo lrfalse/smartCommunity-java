@@ -43,9 +43,11 @@
     <update id="updatePwd">
         UPDATE t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
     </update>
+
     <!--添加用户图片-->
     <insert id="addUserImgUrl" parameterType="ParamDto">
     INSERT INTO t_user_img(img_url, user_id,type) VALUES(#{imgUrl},#{userId},#{type})
+
     </insert>
     <!--添加用户-->
     <insert id="adduser" parameterType="com.commons.entity.UserEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
