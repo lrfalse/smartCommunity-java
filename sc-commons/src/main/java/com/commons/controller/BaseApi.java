@@ -22,13 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 public class BaseApi {
 	private static final Logger logger = LoggerFactory.getLogger(BaseApi.class);
 
-	public static HttpResults httpResults;
+	public  HttpResults httpResults;
 
-	static {
-		if(CommonUtils.isEmpty(httpResults)){
-			httpResults=new HttpResults();
-		}
-	}
+
 
 	/**
 	  * @Description(功能描述): 解析正文数据
@@ -77,6 +73,7 @@ public class BaseApi {
 	  * @date (开发日期): 2018/4/3 17:38
 	  **/
 	public static HttpResults getHttpResult(Object data) throws Exception {
+		HttpResults httpResults=new HttpResults();
 		httpResults.setBody(AESEncryptUtils.encrypt(data));				//加密
 		httpResults.setKey(MD5Utils.md5(JsonUtils.toJson(data)));		//添加签名
 		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
@@ -89,8 +86,7 @@ public class BaseApi {
 	 * @Date(开发日期) : 2018/4/28 10:44
 	 */
 	public static HttpResults getHttpResult(PageInfo pageInfo) throws Exception {
-		httpResults=getHttpResult(new BasePageDto(pageInfo));
-		return httpResults;
+		return getHttpResult(new BasePageDto(pageInfo));
 	}
 	/**
 	  * @Description(功能描述): 只返回状态结果
@@ -98,6 +94,7 @@ public class BaseApi {
 	  * @date (开发日期): 2018/4/19 10:50
 	  **/
 	public static HttpResults getHttpResultOk() throws Exception {
+		HttpResults httpResults=new HttpResults();
 		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
 		return httpResults;
@@ -108,6 +105,7 @@ public class BaseApi {
 	  * @date (开发日期): 2018/4/19 10:50
 	  **/
 	public static HttpResults getHttpResultError() throws Exception {
+		HttpResults httpResults=new HttpResults();
 		httpResults.setStatusCode(AppServiceEnums.SYS_DATA_ERROR.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_DATA_ERROR.getMsg());
 		return httpResults;
@@ -139,5 +137,6 @@ public class BaseApi {
 			return getHttpResultError();
 		}
 	}
+
 
 }
