@@ -67,12 +67,7 @@ public class NoticeServiceImpl implements NoticeService {
         List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
         NoticeDto dto = null;
         if(list != null && list.size()>0) {
-            NoticeEntity noticeEntity = new NoticeEntity();
             dto = list.get(0);
-            noticeEntity.setId(dto.getId());
-            noticeEntity.setBrowseNum(dto.getBrowseNum());
-            //浏览次数增加
-            this.browseNumIncreased(noticeEntity);
         }
         return dto;
     }
@@ -82,7 +77,8 @@ public class NoticeServiceImpl implements NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/27 15:17
      */
-    private void browseNumIncreased(NoticeEntity noticeEntity){
+    @Override
+    public void browseNumIncreased(NoticeEntity noticeEntity){
         if(CommonUtils.isEmpty(noticeEntity.getBrowseNum())){
             noticeEntity.setBrowseNum(1);
         }else{

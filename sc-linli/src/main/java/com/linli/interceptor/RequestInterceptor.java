@@ -29,14 +29,13 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  **/
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
-		/*IsJsonDTO isJson=BaseApi.receiveMsg(request);
+		IsJsonDTO isJson=BaseApi.receiveMsg(request);
 		if(isJson.isIsjson()){
 			request.setAttribute("preHandleJsonDto", isJson);
 		}else{
 			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
 
 		}
-		*/
 		return true;
 	}
 

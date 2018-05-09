@@ -1,4 +1,4 @@
-package com.personalCenter.controller;
+package com.linli.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
@@ -10,12 +10,15 @@ import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
 import com.commons.service.AskQuestionsService;
+import com.commons.service.RedisService;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -36,12 +39,14 @@ import java.util.UUID;
 @RequestMapping("/")
 public class AskQuestionsController extends BaseApi {
 
-    private static final Logger logger= LoggerFactory.getLogger(FeedbackController.class);
+    private static final Logger logger= LoggerFactory.getLogger(AskQuestionsController.class);
 
     @Autowired
     private AskQuestionsService askQuestionsService;
     @Autowired
     private Environment env;
+    @Autowired
+    private RedisService redisService;
 
     /**
      * @Description(功能描述) : 我的提问
@@ -109,6 +114,18 @@ public class AskQuestionsController extends BaseApi {
         paramDto.put("status",askQuestionsDto.getStatus());
         paramDto.put("id",askQuestionsDto.getId());
         AskQuestionsDto dto = askQuestionsService.problemDetails(paramDto);
+        if(dto!=null){
+            String ip = req.getRemoteAddr()+"problemDetails"+dto.getId();
+            String temp = redisService.get(ip);
+            //判断用户是否在15分钟内重复查看该条信息，重复则不增加浏览量
+            if(temp == null || !ip.equals(temp.replace("\"",""))){
+                redisService.set(ip,ip,15);
+                AskQuestionsEntity askQuestionsEntity = new AskQuestionsEntity();
+                askQuestionsEntity.setId(dto.getId());
+                askQuestionsEntity.setBrowseNum(dto.getBrowseNum());
+                askQuestionsService.browsingIncrease(askQuestionsEntity);
+            }
+        }
         return getHttpResult(dto);
     }
 

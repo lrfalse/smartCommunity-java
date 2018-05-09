@@ -50,6 +50,13 @@ public interface AskQuestionsService {
     AskQuestionsDto problemDetails(ParamDto paramDto);
 
     /**
+     * @Description(功能描述) : 浏览量增加
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 17:44
+     */
+    void browsingIncrease(AskQuestionsEntity askQuestionsEntity);
+
+    /**
      * @Description(功能描述) : 问题详情评论列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:46
