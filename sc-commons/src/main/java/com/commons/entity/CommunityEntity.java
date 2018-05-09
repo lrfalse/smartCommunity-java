@@ -38,7 +38,7 @@ public class CommunityEntity extends BaseIdEntity  {
 
     private String entr_location;
 
-    private String photos_url;
+   // private String photos_url;
 
     private String status;
 

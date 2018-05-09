@@ -102,7 +102,6 @@ public class CommunityController {
             communityEntity.setAdcode(Integer.valueOf(pois.getAdcode()));
             communityEntity.setAdname(pois.getAdname());
             communityEntity.setEntr_location(pois.getEntr_location());
-            communityEntity.setPhotos_url("");
             communityEntity.setStatus("0");
             communityEntity.setRemark("");
             tlist.add(communityEntity);
