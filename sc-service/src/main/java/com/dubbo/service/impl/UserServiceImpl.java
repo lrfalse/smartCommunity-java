@@ -257,6 +257,7 @@ public class UserServiceImpl implements UserService {
         loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
         loginDTO.setUserId(user.getId());
+        loginDTO.setToken(MD5Utils.md5(user.getMobPhone()));
 		try {
 			saveUserForRedis(loginDTO);	//用户信息存入缓存
 		} catch (Exception e) {
