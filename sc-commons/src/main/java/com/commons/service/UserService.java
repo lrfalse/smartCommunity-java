@@ -30,7 +30,7 @@ public interface UserService {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/24 21:04
 	  **/
-	int saveUser(UserEntity user) ;
+	UserEntity saveUser(UserEntity user) ;
 
 	/**
 	 * @Description(功能描述): 登录

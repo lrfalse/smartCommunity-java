@@ -27,7 +27,6 @@ public enum AppServiceEnums {
 	EXIST_JOIN("907","用户已经参加该活动"),
 	NOT_JOIN_ACTIVITY("908","用户没有参加任何活动"),
 	EXIST_JOIN_NANNY("909","您已经加入过");
-
 	private String code;
 	private String msg;
 

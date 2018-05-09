@@ -1,5 +1,6 @@
 package com.commons.dto.reDto;
 
+import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * @Create:2018-04-24 21:21:10
  */
 @Data
-public class CommunityReDto implements Serializable{
+public class CommunityReDto extends BaseIdEntity implements Serializable{
 
     /**
      *开始页
@@ -27,4 +28,9 @@ public class CommunityReDto implements Serializable{
      *区域编码
      */
     private Integer adcode;
+
+    /**
+     *小区id
+     */
+    private String communityId;
 }

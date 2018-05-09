@@ -6,4 +6,8 @@
     <select id="queryLocation" resultType="java.lang.String">
         SELECT t.g_location FROM linlihouse.t_community_info t
     </select>
+
+    <update id="bindCommuntity" parameterType="ParamDto">
+    UPDATE t_user tr SET community_id =#{communtyId} WHERE id=#{id}
+    </update>
 </mapper>

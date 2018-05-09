@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.dto.reDto.CommentReDto;
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
 import com.commons.entity.DistrictEntity;
@@ -85,5 +86,17 @@ public class CommunityController extends BaseApi{
     public HttpResults queryCity(HttpServletRequest req) throws Exception {
         List<DistrictEntity> entities = communityService.queryCity();
         return getHttpResult(entities);
+    }
+
+    /**
+      * @Description(功能描述): 绑定小区
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/9 16:06
+      **/
+    @PostMapping("bindCommunity")
+    public HttpResults bindCommunity(HttpServletRequest req) throws Exception{
+        CommunityReDto reDto = JSON.parseObject(getIsJson(req).getBodyJson(), CommunityReDto.class);
+        int i = communityService.bindCommunity(reDto);
+        return getHttpResult(i);
     }
 }

@@ -191,4 +191,32 @@
         </where>
         ORDER BY ty.work_time ASC
     </select>
+
+    <!--查询保姆详细信息-->
+    <select id="queryEntity" parameterType="ParamDto" resultType="com.commons.entity.NannyEntity">
+        SELECT
+          ty.name,
+          ty.age,
+          tg.img_url,
+          ty.ethnic_id,
+          ty.ethnic,
+          ty.education,
+          ty.train_result,
+          ty.train_name,
+          ty.train_time,
+          ty.certificate,
+          ty.bill_health,
+          ty.identity_card,
+          ty.mob_phone,
+          ty.address,
+          ty.community_name,
+          ty.community_id,
+          ty.work_start_time,
+          ty.work_end_time,
+          ty.work_time,
+          ty.service_pnum,
+          ty.type
+        FROM t_nanny ty INNER JOIN t_nanny_img tg ON ty.id = tg.nanny_id
+        WHERE ty.id =#{id}
+    </select>
 </mapper>

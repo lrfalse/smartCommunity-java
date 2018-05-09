@@ -22,4 +22,10 @@ public interface CommunityMapper extends MyMapper<CommunityEntity> {
     List<String> issuedKey(ParamDto paramDto);
     List<String> queryLocation();
 	List<CommunityEntity> query(String str);
+	/**
+	  * @Description(功能描述): 绑定小区
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/9 16:21
+	  **/
+	int bindCommuntity(ParamDto paramDto);
 }

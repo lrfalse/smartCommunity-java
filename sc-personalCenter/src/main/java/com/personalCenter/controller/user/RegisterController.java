@@ -46,9 +46,8 @@ RegisterController extends BaseApi {
 				UserEntity user=new UserEntity();
 				user.setMobPhone(phone);
 				user.setPwd(MD5Utils.md5(pwd));
-				if(userService.saveUser(user)>0){
-					httpResults=getHttpResultOk();
-				}
+			UserEntity userEntity = userService.saveUser(user);
+			return getHttpResult(userEntity);
 			//}else{
 			//	httpResults.setStatusCode(AppServiceEnums.AUTHCODE_TIMEOUT);
 		   //}

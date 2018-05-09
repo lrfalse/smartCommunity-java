@@ -1,6 +1,7 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
@@ -8,11 +9,13 @@ import com.commons.entity.DistrictEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.CommunityService;
+import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.CommunityMapper;
 import com.dubbo.mapper.DistrictMapper;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import sun.java2d.pipe.AAShapePipe;
 
 import java.util.List;
 
@@ -29,7 +32,8 @@ public class CommuntiyServiceImpl implements CommunityService {
     private CommunityMapper communityMapper;
     @Autowired
     private DistrictMapper districtMapper;
-
+    @Autowired
+    private UserService userService;
     /**
       * @Description(功能描述): 颁发钥匙信息
       * @author(作者): feihong
@@ -63,7 +67,24 @@ public class CommuntiyServiceImpl implements CommunityService {
 		return communityMapper.queryLocation();
 	}
 
-	/**
+    /**
+      * @Description(功能描述): 绑定小区
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/9 16:18
+      **/
+    public int bindCommunity(CommunityReDto communityReDto) {
+        LoginDTO redisUser = userService.getRedisUser(communityReDto.getToken());
+        if (CommonUtils.isEmpty(redisUser)){
+            throw new ScException(AppServiceEnums.NULL_USER_DATA);
+        }
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communtyId",communityReDto.getCommunityId());
+        paramDto.put("id",redisUser.getUserId());
+        int i = communityMapper.bindCommuntity(paramDto);
+        return i;
+    }
+
+    /**
 	  * @Description(功能描述): 查询市
 	  * @author(作者): feihong
 	  * @date (开发日期):2018/5/8 20:03

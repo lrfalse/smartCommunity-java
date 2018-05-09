@@ -42,9 +42,9 @@ public class NannyServiceImpl implements NannyService {
       **/
     @Override
     public NannyEntity nannyDetail(String id) {
-        NannyEntity entity = new NannyEntity();
-        entity.setId(Integer.valueOf(id));
-        NannyEntity selectOne = nannyMapper.selectOne(entity);
+        ParamDto paramDto=new ParamDto();
+        paramDto.put("id",id);
+        NannyEntity selectOne = nannyMapper.queryEntity(paramDto);
         return selectOne;
     }
 

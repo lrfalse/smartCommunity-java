@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
      * @author(作者): lrfalse<wangliyou>
      * @date (开发日期): 2018/4/25 9:41
      **/
-    public int saveUser(UserEntity user) {
+    public UserEntity saveUser(UserEntity user) {
         ParamDto dto = new ParamDto();
         dto.put("mobPhone_where", user.getMobPhone());
         UserEntity isExtis = userMapper.selectUser(dto);                        //判断用户手机号码是否存在
@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
         if (im<0){
             throw new ScException(AppServiceEnums.SYS_EXCEPTION);
         }
-        return 1;
+        return user;
     }
 
     /**
@@ -249,11 +249,7 @@ public class UserServiceImpl implements UserService {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setImg_url(user.getImgUrl());
         loginDTO.setName(user.getName());
-        if (user.getSex().equals("0")) {
-            loginDTO.setSex("男");
-        } else {
-            loginDTO.setSex("女");
-        }
+        loginDTO.setSex(user.getSex());
         loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
         loginDTO.setUserId(user.getId());

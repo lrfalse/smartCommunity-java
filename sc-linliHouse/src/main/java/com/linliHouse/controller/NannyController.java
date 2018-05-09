@@ -67,6 +67,9 @@ public class NannyController extends BaseApi{
         JSONObject parse = (JSONObject)JSON.parse(getIsJson(req).getBodyJson());
         String id = (String)parse.get("id");
         NannyEntity entity = nannyService.nannyDetail(id);
+        if (CommonUtils.isEmpty(entity)){
+        return getHttpResultError();
+        }
         return getHttpResult(entity);
     }
 }

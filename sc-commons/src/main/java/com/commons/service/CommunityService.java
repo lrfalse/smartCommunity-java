@@ -56,4 +56,11 @@ public interface CommunityService {
 	  * @date (开发日期):2018/5/8 20:01
 	  **/
 	List<DistrictEntity> queryCity();
+
+	/**
+	  * @Description(功能描述): 小区绑定
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/9 16:14
+	  **/
+	int bindCommunity(CommunityReDto communityReDto);
 }
