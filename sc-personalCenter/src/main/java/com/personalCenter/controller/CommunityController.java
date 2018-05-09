@@ -13,6 +13,7 @@ import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.CommunityService;
 import com.commons.utils.CommonUtils;
+import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -98,5 +99,6 @@ public class CommunityController extends BaseApi{
         CommunityReDto reDto = JSON.parseObject(getIsJson(req).getBodyJson(), CommunityReDto.class);
         int i = communityService.bindCommunity(reDto);
         return getHttpResult(i);
+
     }
 }

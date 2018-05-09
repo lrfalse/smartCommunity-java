@@ -225,11 +225,7 @@ public class UserServiceImpl implements UserService {
     public ParamDto bulidParamDto(UserEntity entity) {
         ParamDto paramDto = new ParamDto();
         paramDto.put("name", entity.getName());
-        if (entity.getSex().equals("男")) {
-            paramDto.put("sex", 0);
-        } else {
-            paramDto.put("sex", 1);
-        }
+        paramDto.put("sex", entity.getSex());
         if (entity.getToken().equals("Q")) {
             paramDto.put("qopenId", entity.getQopenId());
         } else {

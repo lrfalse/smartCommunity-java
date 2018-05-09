@@ -60,7 +60,7 @@ public class LoginController extends BaseApi {
      * @author(作者): feihong
      * @date (开发日期):2018-5-4 22:00:33
      **/
-    @PostMapping("backpwd")
+    @PostMapping("/backpwd")
     public HttpResults backPwd(HttpServletRequest req) throws Exception {
         IsJsonDTO isJsonDTO = (IsJsonDTO) req.getAttribute("preHandleJsonDto");
         UserEntity user = JSON.parseObject(isJsonDTO.getBodyJson(), UserEntity.class);
