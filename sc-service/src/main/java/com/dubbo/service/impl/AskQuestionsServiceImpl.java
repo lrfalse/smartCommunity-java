@@ -111,6 +111,21 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
     }
 
     /**
+     * @Description(功能描述) : 浏览量增加
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 17:46
+     */
+    @Override
+    public void browsingIncrease(AskQuestionsEntity askQuestionsEntity) {
+        if(CommonUtils.isEmpty(askQuestionsEntity.getBrowseNum())){
+            askQuestionsEntity.setBrowseNum(1);
+        }else{
+            askQuestionsEntity.setBrowseNum(askQuestionsEntity.getBrowseNum()+1);
+        }
+        askQuestionsMapper.updateByPrimaryKeySelective(askQuestionsEntity);
+    }
+
+    /**
      * @Description(功能描述) : 问题详情评论列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:49

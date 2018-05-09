@@ -46,4 +46,11 @@ public interface NoticeService {
      * @Date(开发日期) : 2018/4/27 16:00
      */
     int releaseNoticeComment(NoticeCommentEntity noticeCommentEntity);
+
+    /**
+     * @Description(功能描述) : 浏览数增加
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 17:39
+     */
+    void browseNumIncreased(NoticeEntity noticeEntity);
 }

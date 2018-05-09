@@ -9,6 +9,7 @@ import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
 import com.commons.service.NoticeService;
+import com.commons.service.RedisService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,8 @@ public class NoticeController extends BaseApi {
 
     @Autowired
     private NoticeService noticeService;
+    @Autowired
+    private RedisService redisService;
 
     /**
      * @Description(功能描述) : 首页小区公告信息(标题显示)
@@ -76,8 +79,20 @@ public class NoticeController extends BaseApi {
         paramDto.put("communityId",noticeDto.getCommunityId());
         paramDto.put("status",noticeDto.getStatus());
         paramDto.put("type",noticeDto.getType());
-        NoticeDto data = noticeService.getNoticeDetails(paramDto);
-        return getHttpResult(data);
+        NoticeDto dto = noticeService.getNoticeDetails(paramDto);
+        if(dto!=null){
+            String ip = req.getRemoteAddr()+"getNoticeDetails"+dto.getId();
+            String temp = redisService.get(ip);
+            //判断用户是否在15分钟内重复查看该条信息，重复则不增加浏览量
+            if(temp == null || !ip.equals(temp.replace("\"",""))){
+                redisService.set(ip,ip,15);
+                NoticeEntity noticeEntity = new NoticeEntity();
+                noticeEntity.setId(dto.getId());
+                noticeEntity.setBrowseNum(dto.getBrowseNum());
+                noticeService.browseNumIncreased(noticeEntity);
+            }
+        }
+        return getHttpResult(dto);
     }
 
     /**

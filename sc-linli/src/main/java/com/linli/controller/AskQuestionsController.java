@@ -6,6 +6,7 @@ import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.anDto.LoginDTO;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
@@ -39,7 +40,7 @@ import java.util.UUID;
 @RequestMapping("/")
 public class AskQuestionsController extends BaseApi {
 
-    private static final Logger logger= LoggerFactory.getLogger(FeedbackController.class);
+    private static final Logger logger= LoggerFactory.getLogger(AskQuestionsController.class);
 
     @Autowired
     private AskQuestionsService askQuestionsService;
@@ -54,10 +55,10 @@ public class AskQuestionsController extends BaseApi {
      * @Date(开发日期) : 2018/5/2 16:10
      */
     @PostMapping("/mineAsk")
-    public HttpResults mineAsk(HttpServletRequest req)throws Exception{
-        IsJsonDTO jsonDto=getIsJson(req);
-        AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-        ParamDto paramDto = new ParamDto();
+	public HttpResults mineAsk(HttpServletRequest req)throws Exception{
+		IsJsonDTO jsonDto=getIsJson(req);
+		AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
+		ParamDto paramDto = new ParamDto();
 		LoginDTO loginDTO=userService.getRedisUser(askQuestionsEntity.getToken());
 		paramDto.put("communityId",askQuestionsEntity.getCommunityId());
 		paramDto.put("userId",loginDTO.getUserId());
@@ -65,7 +66,7 @@ public class AskQuestionsController extends BaseApi {
 		AskQuestionsDto dto = askQuestionsService.mineAsk(paramDto);
 		return getHttpResult(dto);
 
-    }
+	}
 
     /**
      * @Description(功能描述) : 提问分类
