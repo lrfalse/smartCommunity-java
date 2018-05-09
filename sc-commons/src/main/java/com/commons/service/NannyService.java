@@ -1,6 +1,7 @@
 package com.commons.service;
 
 
+import com.commons.entity.HomeMakEntity;
 import com.commons.entity.NannyEntity;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public interface NannyService {
       * @author(作者): feihong
       * @date (开发日期):2018/5/8 11:56
       **/
-    int inJoin(NannyEntity nannyEntity);
+    int inJoin(HomeMakEntity homeMakEntity);
 
     /**
       * @Description(功能描述): 查询保姆列表
@@ -25,4 +26,11 @@ public interface NannyService {
       * @date (开发日期):2018/5/8 15:55
       **/
     List<NannyEntity> queryNanny(NannyEntity nannyEntity);
+
+    /**
+      * @Description(功能描述): 保姆详情
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/9 11:59
+      **/
+    NannyEntity nannyDetail(String id);
 }

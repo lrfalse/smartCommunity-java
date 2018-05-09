@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 
 
 @Data
@@ -50,9 +52,8 @@ public class NannyEntity extends BaseIdEntity{
 
     private Integer servicePnum;//服务人数
 
-    private String type;//类型 保姆，月嫂，育儿嫂，护工
+    private Integer type;//类型 0 保姆，1月嫂，2育儿嫂，3护工
 
     @Transient
-    private String tag;//0 本小区 1//非本小区
-
+    private String tag;//0倒序排序,1正序
 }

@@ -13,5 +13,7 @@ public interface NannyMapper extends MyMapper<NannyEntity>{
       * @author(作者): feihong
       * @date (开发日期):2018/5/8 16:49
       **/
-    List<NannyEntity> queryNanny(ParamDto paramDto);
+    List<NannyEntity> queryNannyDesc(ParamDto paramDto);
+
+    List<NannyEntity> queryNannyAsc(ParamDto paramDto);
 }

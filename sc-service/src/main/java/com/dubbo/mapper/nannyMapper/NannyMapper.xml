@@ -137,9 +137,10 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-    <select id="queryNanny" parameterType="ParamDto" resultType="com.commons.entity.NannyEntity">
+    <!--到序-->
+    <select id="queryNannyDesc" parameterType="ParamDto" resultType="com.commons.entity.NannyEntity">
        SELECT
+        ty.id,
         ty.name,
         ty.age,
         ty.community_name,
@@ -162,5 +163,32 @@
            </if>
        </where>
         ORDER BY ty.work_time DESC
+    </select>
+    <!--正序-->
+    <select id="queryNannyAsc" parameterType="ParamDto" resultType="com.commons.entity.NannyEntity">
+        SELECT
+        ty.id,
+        ty.name,
+        ty.age,
+        ty.community_name,
+        ty.mob_phone,
+        ty.work_time,
+        tg.img_url,
+        ty.community_id,
+        ty.work_time,
+        ty.type
+        FROM t_nanny ty INNER JOIN t_nanny_img tg ON ty.id = tg.nanny_id
+        <where>
+            <if test="workTime != null" >
+                AND work_time >=#{workTime,jdbcType=INTEGER}
+            </if>
+            <if test="type != null" >
+                AND type = #{type}
+            </if>
+            <if test="communityId != null" >
+                AND community_id =#{communityId}
+            </if>
+        </where>
+        ORDER BY ty.work_time ASC
     </select>
 </mapper>

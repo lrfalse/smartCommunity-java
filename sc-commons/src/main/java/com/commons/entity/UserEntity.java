@@ -36,6 +36,6 @@ public class UserEntity extends BaseIdEntity{
     private String code;        //
     private String cityCode;
 	@Transient
-	private String token;		//W:微信 Q:qq P:手机
+	private String tag;		//W:微信 Q:qq P:手机
 
 }

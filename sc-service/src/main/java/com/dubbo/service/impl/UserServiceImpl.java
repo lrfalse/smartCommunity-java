@@ -167,11 +167,11 @@ public class UserServiceImpl implements UserService {
      * @date (开发日期):2018-4-24 10:35:44
      **/
     public LoginDTO logIn(UserEntity entity) throws ScException {
-        if (entity.getToken() == null) {
+        if (entity.getTag() == null) {
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         } else {
             //QQ登录
-            if (entity.getToken().equals("Q")) {
+            if (entity.getTag().equals("Q")) {
                 if (CommonUtils.isNotEmpty(entity.getQopenId())) {
                     ParamDto dto = new ParamDto();
                     dto.put("qopenId_where", entity.getQopenId());
@@ -184,7 +184,7 @@ public class UserServiceImpl implements UserService {
                 }
                 throw new ScException(AppServiceEnums.ERROR);
                 //微信登录
-            } else if (entity.getToken().equals("W")) {
+            } else if (entity.getTag().equals("W")) {
                 if (CommonUtils.isNotEmpty(entity.getWopenId())) {
                     ParamDto dto = new ParamDto();
                     dto.put("wopenId_where", entity.getWopenId());
@@ -196,7 +196,7 @@ public class UserServiceImpl implements UserService {
                 }
                 throw new ScException(AppServiceEnums.ERROR);
                 //手机登录
-            } else if (entity.getToken().equals("P")) {
+            } else if (entity.getTag().equals("P")) {
                 if (CommonUtils.isNotEmpty(entity.getMobPhone()) && CommonUtils.isNotEmpty(entity.getPwd())) {
                     ParamDto dto = new ParamDto();
                     dto.put("pwd_where", MD5Utils.md5(entity.getPwd()));
@@ -280,16 +280,25 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	/**
+	  * @Description(功能描述): 删除用户缓存信息
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/9 11:26
+	  **/
+    public void removeUserForRedis(String token) {
+        redisService.delete(token);
+    }
+	/**
 	 * @Description(功能描述): 根据token获取缓存数据
 	 * @author(作者): lrfalse<wangliyou>
 	 * @date(开发日期): 2018/5/9 10:31
 	 **/
-	public LoginDTO getRedisUser(String token) {
-		if(CommonUtils.isNotEmpty(redisService.get(token))){
-			return JSON.parseObject(redisService.get(token),LoginDTO.class);
-		}
-		throw new ScException(AppServiceEnums.NULL_USER_DATA);
-	}
+    public LoginDTO getRedisUser(String token) {
+        if(CommonUtils.isNotEmpty(redisService.get(token))){
+            return JSON.parseObject(redisService.get(token),LoginDTO.class);
+        }
+        throw new ScException(AppServiceEnums.NULL_USER_DATA);
+    }
+
 
     /**
      * @Description(功能描述): 手机登陆返回对象
