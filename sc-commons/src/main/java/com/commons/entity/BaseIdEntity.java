@@ -42,6 +42,8 @@ public class BaseIdEntity implements Serializable{
     private Integer id;			//主键id
     @Transient
     private Integer page = 1;	//页数
-    @Transient
-    private Integer rows = 10;	//行数
+	@Transient
+	private Integer rows = 10;	//行数
+	@Transient
+	private String token;		//token数据
 }

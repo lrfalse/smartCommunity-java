@@ -13,28 +13,11 @@ import java.io.Serializable;
 @Data
 public class LoginDTO implements Serializable{
 
-    /**
-     *用户名
-     */
-    private String name;
-
-    /**
-     *姓别
-     */
-    private String sex;
-
-    /**
-     *头像地址
-     */
-    private String img_url;
-
-    /**
-     *手机号码
-     */
-    private String mobphone;
-
-    /**
-     *小区信息
-     */
-    private Integer communtiyId;
+    private String name;		//用户名
+    private String sex;			//姓别
+    private String img_url;		//头像地址
+    private String mobphone;	//手机号码
+    private Integer communtiyId;//小区信息
+	private Integer userId;		//用户id
+    private String token;		//登录用户唯一标识
 }

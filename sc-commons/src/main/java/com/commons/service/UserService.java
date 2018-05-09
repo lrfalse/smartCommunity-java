@@ -38,6 +38,12 @@ public interface UserService {
 	 * @date (开发日期):2018-4-24 10:33:21
 	 **/
 	LoginDTO logIn(UserEntity userEntity);
+	/**
+	  * @Description(功能描述): 根据token获取用户信息 token生产规则 token=md5(phone)
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date(开发日期): 2018/5/9 10:29
+	  **/
+	LoginDTO getRedisUser(String md5Token);
 
 	/**
 	 * @Description(功能描述): 绑定手机号码
@@ -52,4 +58,6 @@ public interface UserService {
 	 * @date (开发日期):2018-4-24 19:55:34
 	 **/
 	int updateUserByKey(UserEntity userEntity);
+
+
 }

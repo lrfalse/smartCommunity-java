@@ -1,14 +1,17 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.fastjson.JSON;
 import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
+import com.commons.service.RedisService;
 import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
+import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.UserMapper;
 import com.github.pagehelper.Page;
@@ -26,6 +29,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+	@Autowired
+	private RedisService redisService;
 
     /**
      * @Description(功能描述): 新增用户
@@ -209,7 +214,10 @@ public class UserServiceImpl implements UserService {
         return bulidLoginError();
     }
 
-    /**
+
+
+
+	/**
      * @Description(功能描述): 绑定手机对象构建
      * @author(作者): feihong
      * @date (开发日期):2018/5/4 18:56
@@ -248,8 +256,40 @@ public class UserServiceImpl implements UserService {
         }
         loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
-        return loginDTO;
+        loginDTO.setUserId(user.getId());
+		try {
+			saveUserForRedis(loginDTO);	//用户信息存入缓存
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		loginDTO.setUserId(null);
+		return loginDTO;
     }
+    /**
+      * @Description(功能描述): 缓存用户信息
+      * @author(作者): lrfalse<wangliyou>
+      * @date(开发日期): 2018/5/9 10:38
+      **/
+	public void saveUserForRedis(LoginDTO loginDTO)  {
+		String phone=loginDTO.getMobphone();
+		String token=MD5Utils.md5(phone);
+		try {
+			redisService.set(token, JsonUtils.toJson(loginDTO));
+		} catch (Exception e) {
+			throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+		}
+	}
+	/**
+	 * @Description(功能描述): 根据token获取缓存数据
+	 * @author(作者): lrfalse<wangliyou>
+	 * @date(开发日期): 2018/5/9 10:31
+	 **/
+	public LoginDTO getRedisUser(String token) {
+		if(CommonUtils.isNotEmpty(redisService.get(token))){
+			return JSON.parseObject(redisService.get(token),LoginDTO.class);
+		}
+		throw new ScException(AppServiceEnums.NULL_USER_DATA);
+	}
 
     /**
      * @Description(功能描述): 手机登陆返回对象

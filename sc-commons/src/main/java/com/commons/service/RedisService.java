@@ -1,5 +1,7 @@
 package com.commons.service;
 
+import com.commons.utils.JsonUtils;
+
 /**
  * @Description(功能描述) :redis缓存服务
  * @author(作者) :lrfalse<wangliyou>
@@ -14,6 +16,12 @@ public interface RedisService {
 	 **/
 	void set(String key, Object object);
 
+	/** 
+	  * @Description(功能描述): 设置无过期时间
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date(开发日期): 2018/5/9 9:49
+	  **/ 
+	void setNoTime(String key,Object object);
 	/**
 	 * @Description(功能描述): 设置有过期时间的缓存值
 	 * @author(作者): lrfalse<wangliyou>
@@ -39,5 +47,6 @@ public interface RedisService {
 	 * @date (开发日期): 2018/4/24 19:54
 	 **/
 	boolean isExist(String key);
+
 
 }

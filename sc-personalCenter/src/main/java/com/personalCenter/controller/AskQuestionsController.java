@@ -5,11 +5,14 @@ import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.anDto.AskQuestionsDto;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
 import com.commons.service.AskQuestionsService;
+import com.commons.service.UserService;
+import com.commons.utils.CommonUtils;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +45,8 @@ public class AskQuestionsController extends BaseApi {
     private AskQuestionsService askQuestionsService;
     @Autowired
     private Environment env;
+	@Autowired
+	private UserService userService;
 
     /**
      * @Description(功能描述) : 我的提问
@@ -53,11 +58,13 @@ public class AskQuestionsController extends BaseApi {
         IsJsonDTO jsonDto=getIsJson(req);
         AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
         ParamDto paramDto = new ParamDto();
-        paramDto.put("communityId",askQuestionsEntity.getCommunityId());
-        paramDto.put("userId",askQuestionsEntity.getUserId());
-        paramDto.put("status",askQuestionsEntity.getStatus());
-        AskQuestionsDto dto = askQuestionsService.mineAsk(paramDto);
-        return getHttpResult(dto);
+		LoginDTO loginDTO=userService.getRedisUser(askQuestionsEntity.getToken());
+		paramDto.put("communityId",askQuestionsEntity.getCommunityId());
+		paramDto.put("userId",loginDTO.getUserId());
+		paramDto.put("status",askQuestionsEntity.getStatus());
+		AskQuestionsDto dto = askQuestionsService.mineAsk(paramDto);
+		return getHttpResult(dto);
+
     }
 
     /**

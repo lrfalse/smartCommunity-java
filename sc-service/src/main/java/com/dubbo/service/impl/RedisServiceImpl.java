@@ -32,6 +32,13 @@ public class RedisServiceImpl implements RedisService{
 			e.printStackTrace();
 		}
 	}
+	public void setNoTime(String key,Object object){
+		try {
+			stringRedisTemplate.opsForValue().set(key, JsonUtils.toJson(object));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	  * @Description(功能描述): 设置有过期时间的缓存值
 	  * @author(作者): lrfalse<wangliyou>

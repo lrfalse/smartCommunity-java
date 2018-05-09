@@ -17,6 +17,7 @@ public enum AppServiceEnums {
 	/**
 	 * 业务逻辑错误
 	 */
+	NULL_USER_DATA("900","登录超时，请重新登录"),
 	ERROR_CODE("901","验证码错误"),
 	ERROR("902","用户登录失败，用户名或密码错误"),
 	AUTHCODE_TIMEOUT("903","短信验证码过期，请重新验证手机号"),
