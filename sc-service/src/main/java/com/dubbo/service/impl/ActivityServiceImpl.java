@@ -202,55 +202,34 @@ public class ActivityServiceImpl implements ActivityService{
      * @Description(功能描述): 参加活动
      * @author(作者): feihong
      * @date (开发日期):2018/4/27 22:43
+	 * @return 0:失败 1：成功
      **/
-    @Override
-    public int joinActivityxx(ActivityJoinDto activityJoinDto) {
-        ParamDto paramAcDto = new ParamDto();
-        paramAcDto.put("activityId",activityJoinDto.getActivityId());
-        ParamDto paramDto = new ParamDto();
-        if (activityJoinDto.getTag().equals("W")){
-            paramDto.put("wopenId",activityJoinDto.getWopenId());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            List<String> list = activityMapper.queryUserId(paramAcDto);
-            if (list.contains(String.valueOf(entity.getId()))){
-                throw new ScException(AppServiceEnums.EXIST_JOIN);
-            }
-            int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
-            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
-            if (isinsert(i,insert)){
-                return 1;
-            }
-            return 0;
-        }else if (activityJoinDto.getTag().equals("Q")){
-            paramDto.put("qopenId",activityJoinDto.getQopenId());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            List<String> list = activityMapper.queryUserId(paramAcDto);
-            String id = String.valueOf(entity.getId());
-            if (list.contains(id)){
-                throw new ScException(AppServiceEnums.EXIST_JOIN);
-            }
-            int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
-            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
-            if (isinsert(i,insert)){
-                return 1;
-            }
-            return 0;
-        }else if (activityJoinDto.getTag().equals("P")){
-            paramDto.put("mobPhone",activityJoinDto.getMobPhone());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            List<String> list=activityMapper.queryUserId(paramAcDto);
-            if (list.contains(String.valueOf(entity.getId()))){
-                throw new ScException(AppServiceEnums.EXIST_JOIN);
-            }
-            int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
-            int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
-            if (isinsert(i,insert)){
-                return 1;
-            }
-            return 0;
-        }
-        throw new  ScException(AppServiceEnums.SYS_DATA_ERROR);
-    }
+
+	public int joinActivityxx(ActivityJoinDto activityJoinDto) {
+		ParamDto paramAcDto = new ParamDto();
+		paramAcDto.put("activityId",activityJoinDto.getActivityId());
+		ParamDto paramDto = new ParamDto();
+		if(CommonUtils.isNotEmpty(activityJoinDto.getWopenId())){
+			paramDto.put("wopenId",activityJoinDto.getWopenId());
+		}else if(CommonUtils.isNotEmpty(activityJoinDto.getQopenId())){
+			paramDto.put("qopenId",activityJoinDto.getQopenId());
+		}else if(CommonUtils.isNotEmpty(activityJoinDto.getMobPhone())){
+			paramDto.put("mobPhone",activityJoinDto.getMobPhone());
+		}else{
+			throw new  ScException(AppServiceEnums.SYS_DATA_ERROR);
+		}
+		UserEntity entity = userMapper.selectUserId(paramDto);
+		List<String> list = activityMapper.queryUserId(paramAcDto);
+		if (list.contains(String.valueOf(entity.getId()))){
+			throw new ScException(AppServiceEnums.EXIST_JOIN);
+		}
+		int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
+		int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
+		if (isinsert(i,insert)){
+			return 1;			//成功
+		}
+		return 0;				//失败
+	}
 
 
     /**
