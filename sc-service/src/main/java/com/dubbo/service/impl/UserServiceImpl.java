@@ -293,9 +293,11 @@ public class UserServiceImpl implements UserService {
 	 * @author(作者): lrfalse<wangliyou>
 	 * @date(开发日期): 2018/5/9 10:31
 	 **/
-    public LoginDTO getRedisUser(String token) {
+    public LoginDTO getRedisUser(String token)   {
         if(CommonUtils.isNotEmpty(redisService.get(token))){
-            return JSON.parseObject(redisService.get(token),LoginDTO.class);
+            String userStr=redisService.get(token);
+            String userDto= (String) JSON.parse(userStr);
+            return JSON.parseObject(userDto,LoginDTO.class);
         }
         throw new ScException(AppServiceEnums.NULL_USER_DATA);
     }
