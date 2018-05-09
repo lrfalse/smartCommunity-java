@@ -36,5 +36,5 @@ public class LoginDTO implements Serializable{
     /**
      *小区信息
      */
-    private String communtiyId;
+    private Integer communtiyId;
 }

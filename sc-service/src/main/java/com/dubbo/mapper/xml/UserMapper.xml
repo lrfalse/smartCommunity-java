@@ -4,8 +4,7 @@
     <!--当前表列-->
     <sql id="Base_Column_List" >
         id, name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address,
-        ost_code, qopen_id, email,create_time, status, remark, wopen_id, community_id,
-        city_id
+        ost_code, qopen_id, email,create_time, status, remark,  wopen_id,  community_id,city_id
     </sql>
     <!---->
     <select id="selectUserId" parameterType="ParamDto" resultType="com.commons.entity.UserEntity">
@@ -51,7 +50,7 @@
     </insert>
     <!--添加用户-->
     <insert id="adduser" parameterType="com.commons.entity.UserEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
-        INSERT INTO t_user (name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address, ost_code, qopen_id, email, create_time, status, remark, wopen_id, community_id, city_id)
+        INSERT INTO t_user  (name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address, ost_code, qopen_id, email, create_time, status, remark, wopen_id, community_id, city_id)
  VALUES (#{name}, #{code}, #{birthday},#{sex},#{pwd},#{identityCode},#{mobPhone},#{homePhone},#{address},#{ostCode},#{qopenId},#{email},#{ostCode},#{status},#{remark},#{wopenId},#{communityId},#{cityCode})
     </insert>
     <!--查询t_user_img是否已经存在user-->

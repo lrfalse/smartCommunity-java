@@ -15,7 +15,7 @@
     <dubbo:reference id="bannerService" interface="com.commons.service.BannerService" />
     <dubbo:reference id="contactUsService" interface="com.commons.service.ContactUsService" />
     <dubbo:reference id="askQuestionsService" interface="com.commons.service.AskQuestionsService" />
-
+    <dubbo:reference id="nannyService" interface="com.commons.service.NannyService"/>
     <!--<dubbo:annotation package="com.commons.service"/>-->
 
 </beans>

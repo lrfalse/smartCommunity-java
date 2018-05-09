@@ -7,6 +7,7 @@ import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
+import com.commons.entity.DistrictEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.CommunityService;
@@ -26,6 +27,7 @@ import java.util.List;
  */
 @RestController
 public class CommunityController extends BaseApi{
+
 
     @Autowired
     private CommunityService communityService;
@@ -72,5 +74,16 @@ public class CommunityController extends BaseApi{
         JSONObject jsonObject = JSON.parseObject(getIsJson(req).getBodyJson());
         String communtiy_id = (String)jsonObject.get("communtiy_id");
         return getHttpResultOk();
+    }
+
+    /**
+      * @Description(功能描述): 查询市
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/8 19:58
+      **/
+    @PostMapping("queryCity")
+    public HttpResults queryCity(HttpServletRequest req) throws Exception {
+        List<DistrictEntity> entities = communityService.queryCity();
+        return getHttpResult(entities);
     }
 }

@@ -5,6 +5,8 @@
 	<sql id="Base_Column_List">
 				adcode,	name,	pcode,	location,	level
 	</sql>
-
+<select id="queryCity" resultType="com.commons.entity.DistrictEntity" parameterType="ParamDto">
+SELECT id,name FROM t_district WHERE level=#{city}
+</select>
 
 </mapper>

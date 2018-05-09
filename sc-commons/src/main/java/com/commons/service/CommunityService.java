@@ -2,6 +2,7 @@ package com.commons.service;
 
 import com.commons.dto.reDto.CommunityReDto;
 import com.commons.entity.CommunityEntity;
+import com.commons.entity.DistrictEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -48,4 +49,11 @@ public interface CommunityService {
 	  **/
 	List<String> queryLocation();
 	List<CommunityEntity> query(CommunityEntity communityEntity);
+
+	/**
+	  * @Description(功能描述): 查询市
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/8 20:01
+	  **/
+	List<DistrictEntity> queryCity();
 }

@@ -246,7 +246,7 @@ public class UserServiceImpl implements UserService {
         } else {
             loginDTO.setSex("女");
         }
-        loginDTO.setCommuntiyId(String.valueOf(user.getCommunityId()));
+        loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
         return loginDTO;
     }
@@ -259,7 +259,7 @@ public class UserServiceImpl implements UserService {
     public LoginDTO bulidLoginDtoPone(UserEntity entity) {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setMobphone(entity.getMobPhone());
-        loginDTO.setCommuntiyId(String.valueOf(entity.getCommunityId()));
+        loginDTO.setCommuntiyId(entity.getCommunityId());
         loginDTO.setImg_url(entity.getImgUrl());
         loginDTO.setName(entity.getName());
         if (entity.getSex().equals("0") | entity.getSex().equals("男")) {
