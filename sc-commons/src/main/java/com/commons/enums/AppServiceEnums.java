@@ -17,6 +17,8 @@ public enum AppServiceEnums {
 	/**
 	 * 业务逻辑错误
 	 */
+	DOES_NOT_EXIST("800","该用户没有提问"),
+
 	NULL_USER_DATA("900","登录超时，请重新登录"),
 	ERROR_CODE("901","验证码错误"),
 	ERROR("902","用户登录失败，用户名或密码错误"),

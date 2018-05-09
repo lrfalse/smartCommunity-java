@@ -1,4 +1,4 @@
-package com.personalCenter.controller;
+package com.linli.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
@@ -6,20 +6,22 @@ import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.anDto.LoginDTO;
-import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
+import com.commons.enums.AppServiceEnums;
+import com.commons.exception.ScException;
 import com.commons.service.AskQuestionsService;
 import com.commons.service.UserService;
-import com.commons.utils.CommonUtils;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -64,8 +66,10 @@ public class AskQuestionsController extends BaseApi {
 		paramDto.put("userId",loginDTO.getUserId());
 		paramDto.put("status",askQuestionsEntity.getStatus());
 		AskQuestionsDto dto = askQuestionsService.mineAsk(paramDto);
+		if(dto == null){
+            throw new ScException(AppServiceEnums.DOES_NOT_EXIST);
+        }
 		return getHttpResult(dto);
-
 	}
 
     /**
