@@ -3,9 +3,12 @@ package com.commons.service;
 import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
+import com.commons.entity.ChatTypeEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
 import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * @Description(功能描述) : 问答
@@ -34,6 +37,13 @@ public interface AskQuestionsService {
      * @Date(开发日期) : 2018/5/2 19:42
      */
     PageInfo<AskQuestionsDto> questionClassification(ParamDto paramDto);
+
+    /**
+     * @Description(功能描述) : 根据标题title搜索问题
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 10:05
+     */
+    PageInfo<AskQuestionsDto> problemSearch(ParamDto paramDto);
 
     /**
      * @Description(功能描述) : 热门问题
@@ -83,4 +93,11 @@ public interface AskQuestionsService {
      * @Date(开发日期) : 2018/5/4 17:40
      */
     int saveQuestionsImg(QuestionsImgEntity questionsImgEntity);
+
+    /**
+     * @Description(功能描述) : 查询邻里聊天室类型list
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/5 16:41
+     */
+    List<ChatTypeEntity> getChatTypeList(ChatTypeEntity chatTypeEntity);
 }
