@@ -26,7 +26,7 @@ public interface CommunityService {
       * @author(作者): feihong
       * @date (开发日期):2018-4-24 20:15:22
       **/
-	List<CommunityEntity> chooseCommunity(CommunityEntity communityEntity);
+	List<CommunityEntity> chooseCommunit(CommunityEntity communityEntity);
 
     /**
       * @Description(功能描述): 颁发钥匙信息
