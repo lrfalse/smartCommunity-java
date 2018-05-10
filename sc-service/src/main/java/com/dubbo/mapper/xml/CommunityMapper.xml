@@ -10,4 +10,9 @@
     <update id="bindCommuntity" parameterType="ParamDto">
     UPDATE t_user tr SET community_id =#{communtyId} WHERE id=#{id}
     </update>
+
+    <!--小区检索-->
+    <select id="query" parameterType="ParamDto" resultType="com.commons.entity.CommunityEntity">
+    SELECT * FROM t_community_info WHERE name LIKE CONCAT(CONCAT('%', #{name}), '%')
+    </select>
 </mapper>
