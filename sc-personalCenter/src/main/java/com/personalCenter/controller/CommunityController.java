@@ -59,10 +59,10 @@ public class CommunityController extends BaseApi{
     public HttpResults chooseCommunity(HttpServletRequest req)throws Exception {
         IsJsonDTO jsonDto = (IsJsonDTO) req.getAttribute("preHandleJsonDto");
         CommunityEntity entity = JSON.parseObject(jsonDto.getBodyJson(), CommunityEntity.class);
-        if (CommonUtils.isEmpty(entity.getName()) && CommonUtils.isEmpty(entity.getAdcode()) &&CommonUtils.isEmpty(entity.getPname())) {
+        if (CommonUtils.isEmpty(entity.getName())) {
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         } else {
-            CommunityEntity community = communityService.chooseCommunity(entity);
+            List<CommunityEntity> community = communityService.chooseCommunity(entity);
             return getHttpResult(community);
         }
     }

@@ -122,8 +122,8 @@ public class CommuntiyServiceImpl implements CommunityService {
       * @date (开发日期):2018-4-24 20:18:24
       **/
     @Override
-    public CommunityEntity chooseCommunity(CommunityEntity communityEntity) {
-        CommunityEntity entity = communityMapper.selectOne(communityEntity);
+    public  List<CommunityEntity> chooseCommunity(CommunityEntity communityEntity) {
+        List<CommunityEntity>entity = communityMapper.select(communityEntity);
         return entity;
     }
 }
