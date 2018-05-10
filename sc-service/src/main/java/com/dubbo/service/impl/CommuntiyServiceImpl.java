@@ -126,7 +126,7 @@ public class CommuntiyServiceImpl implements CommunityService {
         ParamDto paramDto = new ParamDto();
         paramDto.put("name",communityEntity.getName());
         PageHelper.startPage(communityEntity.getPage(),50);
-        List<CommunityEntity>entity = communityMapper.query(paramDto);
+        List<CommunityEntity> entity = communityMapper.query(paramDto);
         return entity;
     }
 }

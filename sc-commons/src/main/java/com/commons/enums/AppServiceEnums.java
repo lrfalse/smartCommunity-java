@@ -28,7 +28,8 @@ public enum AppServiceEnums {
 	PHONE_IN_BIND("906","手机号码已绑定"),
 	EXIST_JOIN("907","用户已经参加该活动"),
 	NOT_JOIN_ACTIVITY("908","用户没有参加任何活动"),
-	EXIST_JOIN_NANNY("909","您已经加入过");
+	EXIST_JOIN_NANNY("909","您已经加入过"),
+	NOT_COMMUNITY("910","没有对应小区");
 	private String code;
 	private String msg;
 
