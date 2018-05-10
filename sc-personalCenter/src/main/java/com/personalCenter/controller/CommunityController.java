@@ -62,7 +62,7 @@ public class CommunityController extends BaseApi{
         if (CommonUtils.isEmpty(entity.getName())) {
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         } else {
-            List<CommunityEntity> community = communityService.chooseCommunity(entity);
+            List<CommunityEntity> community = communityService.chooseCommunit(entity);
             return getHttpResult(community);
         }
     }

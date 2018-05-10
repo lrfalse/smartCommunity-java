@@ -122,11 +122,12 @@ public class CommuntiyServiceImpl implements CommunityService {
       * @date (开发日期):2018-4-24 20:18:24
       **/
     @Override
-    public  List<CommunityEntity> chooseCommunity(CommunityEntity communityEntity) {
+    public  List<CommunityEntity> chooseCommunit(CommunityEntity communityEntity) {
         ParamDto paramDto = new ParamDto();
         paramDto.put("name",communityEntity.getName());
         PageHelper.startPage(communityEntity.getPage(),50);
         List<CommunityEntity> entity = communityMapper.query(paramDto);
         return entity;
     }
+
 }
