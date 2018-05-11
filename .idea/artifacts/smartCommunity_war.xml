@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="smartCommunity:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="smartCommunity.war">
-      <element id="artifact" artifact-name="smartCommunity:war exploded" />
-    </root>
-  </artifact>
-</component>

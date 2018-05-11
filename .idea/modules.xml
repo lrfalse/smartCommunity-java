@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/sc-admin/sc-admin.iml" filepath="$PROJECT_DIR$/sc-admin/sc-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-commons/sc-commons.iml" filepath="$PROJECT_DIR$/sc-commons/sc-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" filepath="$PROJECT_DIR$/sc-entranceguard/sc-entranceguard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-admin/sc-estateAdmin/sc-estateAdmin.iml" filepath="$PROJECT_DIR$/sc-admin/sc-estateAdmin/sc-estateAdmin.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-linli/sc-linli.iml" filepath="$PROJECT_DIR$/sc-linli/sc-linli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-admin/sc-linliAdmin/sc-linliAdmin.iml" filepath="$PROJECT_DIR$/sc-admin/sc-linliAdmin/sc-linliAdmin.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-linliHouse/sc-linliHouse.iml" filepath="$PROJECT_DIR$/sc-linliHouse/sc-linliHouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-admin/sc-merchantAdmin/sc-merchantAdmin.iml" filepath="$PROJECT_DIR$/sc-admin/sc-merchantAdmin/sc-merchantAdmin.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-personalCenter/sc-personalCenter.iml" filepath="$PROJECT_DIR$/sc-personalCenter/sc-personalCenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-service/sc-service.iml" filepath="$PROJECT_DIR$/sc-service/sc-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sc-tools/sc-tools.iml" filepath="$PROJECT_DIR$/sc-tools/sc-tools.iml" />
