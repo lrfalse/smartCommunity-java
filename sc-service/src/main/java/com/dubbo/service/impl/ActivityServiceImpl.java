@@ -75,7 +75,7 @@ public class ActivityServiceImpl implements ActivityService{
             activityDto.setImgUrl(activity.getImgUrl());
             activityDto.setTitle(activity.getTitle());
             activityDto.setPeopleNum(activity.getPeopleNum());
-            Integer id = activity.getId();
+            Long id = activity.getId();
             //根据活动id查询用户头像地址
             List<ActivityPeopleDto> dtos = activityMapper.queryActivityPeople(String.valueOf(id));
             activityDto.setList(dtos);

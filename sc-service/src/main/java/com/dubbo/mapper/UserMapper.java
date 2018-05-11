@@ -4,10 +4,7 @@ import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Description(功能描述) :用户信息

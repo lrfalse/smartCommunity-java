@@ -1,9 +1,8 @@
 package com.commons.service;
 
-import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
+import com.commons.dto.reDto.FeedBackReDto;
 import com.commons.entity.UserEntity;
-import com.commons.exception.ScException;
 
 /**
   * @Description(功能描述): 用户
@@ -58,6 +57,14 @@ public interface UserService {
 	 * @date (开发日期):2018-4-24 19:55:34
 	 **/
 	int updateUserByKey(UserEntity userEntity);
+
+	/**
+	  * @Description(功能描述): 意见反馈
+	  * @author(作者): feihong
+	  * @date (开发日期):2018/5/10 17:16
+	  *
+	 * @param */
+	int addFeedBack(FeedBackReDto feedBackReDto);
 
 
 }

@@ -9,7 +9,7 @@ import lombok.Data;
  * @Create:2018/05/03 11:11:41
  */
 @Data
-public class FeedBackEntity extends BaseEntity {
+public class FeedBackEntity extends BaseIdEntity {
 
     /**
      *意见反馈内容
@@ -19,17 +19,17 @@ public class FeedBackEntity extends BaseEntity {
     /**
      *用户id
      */
-    private String user_id;
+    private String userId;
 
     /**
      *用户意见反馈提交图片
      */
-    private String img_url;
+    private String imgUrl;
 
     /**
      *反馈时间
      */
-    private String feedback_time;
+    private String feedbackTime;
 
     /**
      *'状态：0正常 1失效'
