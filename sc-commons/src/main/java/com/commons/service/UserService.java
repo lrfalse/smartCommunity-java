@@ -1,9 +1,7 @@
 package com.commons.service;
 
-import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.entity.UserEntity;
-import com.commons.exception.ScException;
 
 /**
   * @Description(功能描述): 用户

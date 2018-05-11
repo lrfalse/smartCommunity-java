@@ -1,70 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dubbo.mapper.UserMapper">
+<mapper namespace="com.dubbo.mapper.sys.SysUserMapper">
     <!--当前表列-->
     <sql id="Base_Column_List" >
-        id, name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address,
-        ost_code, qopen_id, email,create_time, status, remark,  wopen_id,  community_id,city_id
+        id, name, nick_name, birthday, sex, img_url, pwd, identity_code, mob_phone, address,
+        ost_code, email, create_time, type, status, remark
     </sql>
-    <!---->
-    <select id="selectUserId" parameterType="ParamDto" resultType="com.commons.entity.UserEntity">
-      SELECT
-      tg.img_url,
-      tr.id,
-      tr.name
-      FROM t_user tr INNER JOIN t_user_img tg ON tr.id = tg.user_id
-        <where>
-            <if test="wopenId !=null ">
-                AND wopen_id=#{wopenId}
-            </if>
-            <if test="qopenId != null">
-                AND qopen_id=#{qopenId}
-            </if>
-            <if test="mobPhone !=null ">
-                AND mob_phone=#{mobPhone}
-            </if>
-        </where>
-
-    </select>
-    <!--查询手机号码是否绑定-->
-    <select id="selectPhone" resultType="com.commons.entity.UserEntity">
-        SELECT * FROM linlihouse.t_user WHERE mob_phone=#{mobphone}
-    </select>
-    <!--根据qqid绑定手机号码-->
-    <update id="updateqqPhone">
-        UPDATE t_user SET mob_phone=#{mobphone} WHERE qopen_id=#{qopenid}
-    </update>
-    <!--根据微信id绑定手机号码-->
-    <update id="updatewxPhone">
-        UPDATE t_user SET mob_phone=#{mobphone} WHERE wopen_id=#{wopenid}
-    </update>
-    <!--找回密码-->
-    <update id="updatePwd">
-        UPDATE t_user SET pwd=#{pwd} WHERE mob_phone=#{mobphone};
-    </update>
-
-    <!--添加用户图片-->
-    <insert id="addUserImgUrl" parameterType="ParamDto">
-    INSERT INTO t_user_img(img_url, user_id,type) VALUES(#{imgUrl},#{userId},#{type})
-
-    </insert>
-    <!--添加用户-->
-    <insert id="adduser" parameterType="com.commons.entity.UserEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
-        INSERT INTO t_user  (name, code, birthday, sex, pwd, identity_code, mob_phone, home_phone, address, ost_code, qopen_id, email, create_time, status, remark, wopen_id, community_id, city_id)
- VALUES (#{name}, #{code}, #{birthday},#{sex},#{pwd},#{identityCode},#{mobPhone},#{homePhone},#{address},#{ostCode},#{qopenId},#{email},#{ostCode},#{status},#{remark},#{wopenId},#{communityId},#{cityCode})
-    </insert>
-    <!--查询t_user_img是否已经存在user-->
-    <select id="queryUserImgId" parameterType="ParamDto" resultType="String">
-        SELECT user_id FROM t_user_img WHERE user_id=#{id}
-    </select>
     <!--where条件-->
     <sql id="whereCondition">
         1=1
         <if test="name_where != null" >
             AND name = #{name_where_where}
-        </if>
-        <if test="code_where != null" >
-            AND code = #{code_where}
         </if>
         <if test="birthday_where != null" >
             AND  birthday = #{birthday_where}
@@ -81,17 +27,11 @@
         <if test="mobPhone_where != null" >
             AND mob_phone = #{mobPhone_where}
         </if>
-        <if test="homePhone_where != null" >
-            AND home_phone = #{homePhone_where}
-        </if>
         <if test="address_where != null" >
             AND address = #{address_where}
         </if>
         <if test="ostCode_where != null" >
             AND  ost_code = #{ostCode_where}
-        </if>
-        <if test="qopenId_where != null" >
-            AND qopen_id = #{qopenId_where}
         </if>
         <if test="email_where != null" >
             AND  email = #{email_where}
@@ -106,109 +46,30 @@
         <if test="remark_where != null" >
             AND  remark = #{remark_where}
         </if>
-        <if test="wopenId_where != null" >
-            AND wopen_id = #{wopenId_where}
-        </if>
-        <if test="communityId_where != null" >
-            AND community_id = #{communityId_where,jdbcType=BIGINT}
-        </if>
-
-        <if test="cityId_where != null" >
-            AND city_id = #{cityId_where,jdbcType=BIGINT}
+        <if test="type_where != null" >
+            AND type = #{type_where,jdbcType=BIGINT}
         </if>
     </sql>
-    <!--更新用户信息-->
-    <update id="updateUser" parameterType="ParamDto" >
-        update t_user
-        <set >
-            <if test="id != null" >
-                id = #{id,jdbcType=INTEGER},
-            </if>
-            <if test="name != null" >
-                name = #{name,jdbcType=VARCHAR},
-            </if>
-            <if test="code != null" >
-                code = #{code,jdbcType=VARCHAR},
-            </if>
-            <if test="birthday != null" >
-                birthday = #{birthday,jdbcType=VARCHAR},
-            </if>
-            <if test="sex != null" >
-                sex = #{sex,jdbcType=VARCHAR},
-            </if>
-            <if test="pwd != null" >
-                pwd = #{pwd,jdbcType=VARCHAR},
-            </if>
-            <if test="identityCode != null" >
-                identity_code = #{identityCode,jdbcType=VARCHAR},
-            </if>
-            <if test="mobPhone != null" >
-                mob_phone = #{mobPhone,jdbcType=VARCHAR},
-            </if>
-            <if test="homePhone != null" >
-                home_phone = #{homePhone,jdbcType=VARCHAR},
-            </if>
-            <if test="address != null" >
-                address = #{address,jdbcType=VARCHAR},
-            </if>
-            <if test="ostCode != null" >
-                ost_code = #{ostCode,jdbcType=VARCHAR},
-            </if>
-            <if test="qopenId != null" >
-                qopen_id = #{qopenId,jdbcType=VARCHAR},
-            </if>
-            <if test="email != null" >
-                email = #{email,jdbcType=VARCHAR},
-            </if>
-            <if test="createTime != null" >
-                create_time = #{createTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="status != null" >
-                status = #{status,jdbcType=BIT},
-            </if>
-            <if test="remark != null" >
-                remark = #{remark,jdbcType=VARCHAR},
-            </if>
-            <if test="wopenId != null" >
-                wopen_id = #{wopenId,jdbcType=VARCHAR},
-            </if>
-            <if test="communityId != null" >
-                community_id = #{communityId,jdbcType=BIGINT},
-            </if>
-            <if test="cityId != null" >
-                city_id = #{cityId,jdbcType=BIGINT},
-            </if>
-        </set>
-       <where>
-            <include refid="whereCondition"/>
-       </where>
-    </update>
 
-    <!--查询用户信息-->
-     <select  id="selectUser" resultType="UserEntity" parameterType="ParamDto" >
+    <!--根据where条件查询系统用户信息-->
+    <select  id="getSysUser" resultType="SysUserEntity" parameterType="ParamDto" >
         select
-        <include refid="Base_Column_List" />
-        from t_user
+        <include refid="Base_Column_List"/>
+        from sys_user
         <where>
             <include refid="whereCondition"/>
         </where>
     </select>
-
-    <select id="selectListUser" resultType="UserEntity" parameterType="ParamDto" >
+    <!--登录-->
+    <select  id="login" resultType="SysUserEntity" parameterType="ParamDto" >
         select
-        <include refid="Base_Column_List" />
-        from t_user
+        <include refid="Base_Column_List"/>
+        from sys_user
         <where>
-            <include refid="whereCondition"/>
-        </where>
-    </select>
-    <!--查询用户是否存在-->
-    <select id="queryUser" resultType="UserEntity" parameterType="ParamDto" >
-        select
-        <include refid="Base_Column_List" />
-        from t_user
-        <where>
-            <include refid="whereCondition"/>
+            1=1
+            and (name=#{name_where} or mob_phone=#{name_where} )
+             and pwd=#{pwd_where}
+            and status=0
         </where>
     </select>
 </mapper>

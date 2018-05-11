@@ -14,7 +14,6 @@ import javax.persistence.Transient;
 @Data
 @Table(name = "t_user")
 public class UserEntity extends BaseIdEntity{
-
     private String name; 		//真实姓名
     private String imgUrl; 	//头像地址
     private String birthday;	//用户生日
@@ -30,7 +29,7 @@ public class UserEntity extends BaseIdEntity{
     private String email;		//电子邮件
     private String createTime;	//创建时间
 	private String wopenId;		//第三方登录唯一id
-	private Integer communityId;	//用户所在小区
+	private Long communityId;	//用户所在小区
 	private String status;		//状态 0:正常,1:非正常
 	private String remark;    	//备注
     private String code;        //

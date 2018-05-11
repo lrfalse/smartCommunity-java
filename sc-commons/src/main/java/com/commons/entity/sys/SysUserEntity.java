@@ -1,9 +1,10 @@
-package com.commons.entity;
+package com.commons.entity.sys;
 
+import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import java.util.Date;
 
 /**
  * @Description:用户信息表
@@ -12,30 +13,22 @@ import javax.persistence.Transient;
  * @Create:2018-04-09 19:19:02
  */
 @Data
-@Table(name = "t_user")
-public class UserEntity extends BaseIdEntity{
+@Table(name = "sys_user")
+public class SysUserEntity extends BaseIdEntity{
 
     private String name; 		//真实姓名
-    private String imgUrl; 	//头像地址
+    private String imgUrl; 		//头像地址
     private String birthday;	//用户生日
     private String sex;			//用户性别
-    private String cityId;		//城市
+    private String nickName;	//昵称
     private String pwd;			//密码
     private String identityCode;//身份证号码
     private String mobPhone;	//移动电话
-    private String homePhone;	//家庭电话
     private String address;		//家庭地址
     private String ostCode;		//邮编
-    private String qopenId;		//QQ号码
     private String email;		//电子邮件
-    private String createTime;	//创建时间
-	private String wopenId;		//第三方登录唯一id
-	private Integer communityId;	//用户所在小区
-	private String status;		//状态 0:正常,1:非正常
+    private Date createTime;	//创建时间
+	private Integer status;		//状态 0:正常,1:非正常
 	private String remark;    	//备注
-    private String code;        //
-    private String cityCode;
-	@Transient
-	private String tag;		//W:微信 Q:qq P:手机
-
+    private String type;        //类型：0平台
 }

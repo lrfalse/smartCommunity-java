@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>sc-estateAdmin</name>
-	<description>物业管理系统</description>
+	<description>业务管理系统</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -78,7 +78,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
             </plugin>
         </plugins>
         <resources>

@@ -32,6 +32,11 @@ public class RedisServiceImpl implements RedisService{
 			e.printStackTrace();
 		}
 	}
+	/**
+	  * @Description(功能描述): 无过期时间
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date(开发日期): 2018/5/11 15:23
+	  **/
 	public void setNoTime(String key,Object object){
 		try {
 			stringRedisTemplate.opsForValue().set(key, JsonUtils.toJson(object));
