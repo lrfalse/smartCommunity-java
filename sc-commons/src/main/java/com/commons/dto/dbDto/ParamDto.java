@@ -1,5 +1,6 @@
 package com.commons.dto.dbDto;
 
+import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -21,5 +22,10 @@ public class ParamDto<K, V> extends HashMap<K, V> implements Serializable {
 
 	public ParamDto(K key, V value) {
 		put(key, value);
+	}
+
+	public ParamDto(BaseIdEntity baseIdEntity) {
+		this.page = baseIdEntity.getPage();
+		this.rows = baseIdEntity.getRows();
 	}
 }

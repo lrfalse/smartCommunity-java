@@ -61,7 +61,7 @@ public class AskQuestionsController extends BaseApi {
 	public HttpResults mineAsk(HttpServletRequest req)throws Exception{
 		IsJsonDTO jsonDto=getIsJson(req);
 		AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-		ParamDto paramDto = new ParamDto();
+		ParamDto paramDto = new ParamDto(askQuestionsEntity);
 		LoginDTO loginDTO=userService.getRedisUser(askQuestionsEntity.getToken());
 		paramDto.put("communityId",askQuestionsEntity.getCommunityId());
 		paramDto.put("userId",loginDTO.getUserId());
