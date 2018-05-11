@@ -5,18 +5,22 @@ import com.alibaba.fastjson.JSON;
 import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
+import com.commons.dto.reDto.FeedBackReDto;
+import com.commons.entity.FeedBackEntity;
 import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.RedisService;
 import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
+import com.commons.utils.DateUtils;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 
 /**
@@ -29,8 +33,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
-	@Autowired
-	private RedisService redisService;
+    @Autowired
+    private RedisService redisService;
 
     /**
      * @Description(功能描述): 新增用户
@@ -88,6 +92,28 @@ public class UserServiceImpl implements UserService {
         dto.put("mobPhone_where", user.getMobPhone());
         userMapper.selectListUser(dto);
         return page;
+    }
+
+    /**
+     * @Description(功能描述): 意见反馈
+     * @author(作者): feihong
+     * @date (开发日期):2018/5/10 17:20
+     **/
+    @Override
+    public int addFeedBack(FeedBackReDto feedBackReDto) {
+        FeedBackEntity feedBackEntity = bulidFeedBack(feedBackReDto);
+        int i = userMapper.addFeedBack(feedBackEntity);
+        if (i>0) {
+            List<String> list = feedBackReDto.getList();
+            for (String str : list) {
+                ParamDto paramDtoUrl = new ParamDto();
+                paramDtoUrl.put("id",feedBackEntity.getId());
+                paramDtoUrl.put("imgUrl",str);
+                int i1 = userMapper.addFeedBackImg(paramDtoUrl);
+            }
+            return 1;
+        }
+        return 0;
     }
 
     /**
@@ -217,7 +243,7 @@ public class UserServiceImpl implements UserService {
 
 
 
-	/**
+    /**
      * @Description(功能描述): 绑定手机对象构建
      * @author(作者): feihong
      * @date (开发日期):2018/5/4 18:56
@@ -246,45 +272,45 @@ public class UserServiceImpl implements UserService {
         loginDTO.setImg_url(user.getImgUrl());
         loginDTO.setName(user.getName());
         loginDTO.setSex(user.getSex());
-        loginDTO.setCommuntiyId(user.getCommunityId());
+        loginDTO.setCommuntiyId(Long.valueOf(user.getCommunityId()));
         loginDTO.setMobphone(user.getMobPhone());
         loginDTO.setUserId(user.getId());
         loginDTO.setToken(MD5Utils.md5(user.getMobPhone()));
-		try {
-			saveUserForRedis(loginDTO);	//用户信息存入缓存
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		loginDTO.setUserId(null);
-		return loginDTO;
+        try {
+            saveUserForRedis(loginDTO);	//用户信息存入缓存
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       // loginDTO.setUserId(null);
+        return loginDTO;
     }
     /**
-      * @Description(功能描述): 缓存用户信息
-      * @author(作者): lrfalse<wangliyou>
-      * @date(开发日期): 2018/5/9 10:38
-      **/
-	public void saveUserForRedis(LoginDTO loginDTO)  {
-		String phone=loginDTO.getMobphone();
-		String token=MD5Utils.md5(phone);
-		try {
-			redisService.setNoTime(token, JsonUtils.toJson(loginDTO));
-		} catch (Exception e) {
-			throw new ScException(AppServiceEnums.SYS_EXCEPTION);
-		}
-	}
-	/**
-	  * @Description(功能描述): 删除用户缓存信息
-	  * @author(作者): feihong
-	  * @date (开发日期):2018/5/9 11:26
-	  **/
+     * @Description(功能描述): 缓存用户信息
+     * @author(作者): lrfalse<wangliyou>
+     * @date(开发日期): 2018/5/9 10:38
+     **/
+    public void saveUserForRedis(LoginDTO loginDTO)  {
+        String phone=loginDTO.getMobphone();
+        String token=MD5Utils.md5(phone);
+        try {
+            redisService.set(token, JsonUtils.toJson(loginDTO));
+        } catch (Exception e) {
+            throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+        }
+    }
+    /**
+     * @Description(功能描述): 删除用户缓存信息
+     * @author(作者): feihong
+     * @date (开发日期):2018/5/9 11:26
+     **/
     public void removeUserForRedis(String token) {
         redisService.delete(token);
     }
-	/**
-	 * @Description(功能描述): 根据token获取缓存数据
-	 * @author(作者): lrfalse<wangliyou>
-	 * @date(开发日期): 2018/5/9 10:31
-	 **/
+    /**
+     * @Description(功能描述): 根据token获取缓存数据
+     * @author(作者): lrfalse<wangliyou>
+     * @date(开发日期): 2018/5/9 10:31
+     **/
     public LoginDTO getRedisUser(String token)   {
         if(CommonUtils.isNotEmpty(redisService.get(token))){
             String userStr=redisService.get(token);
@@ -303,7 +329,7 @@ public class UserServiceImpl implements UserService {
     public LoginDTO bulidLoginDtoPone(UserEntity entity) {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setMobphone(entity.getMobPhone());
-        loginDTO.setCommuntiyId(entity.getCommunityId());
+        loginDTO.setCommuntiyId(Long.valueOf(entity.getCommunityId()));
         loginDTO.setImg_url(entity.getImgUrl());
         loginDTO.setName(entity.getName());
         if (entity.getSex().equals("0") | entity.getSex().equals("男")) {
@@ -326,51 +352,16 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * @Description(功能描述): 手机号码绑定对象返回
+     * @Description(功能描述): 意见反馈
      * @author(作者): feihong
-     * @date (开发日期):2018-4-20 22:26:37
+     * @date (开发日期):2018/5/10 17:22
      **/
-    public BindPhoneDto buildBindPhone1() {
-        BindPhoneDto bindPhoneDto = new BindPhoneDto();
-        bindPhoneDto.setFtag("1");
-        bindPhoneDto.setToken("1");
-        return bindPhoneDto;
+    public FeedBackEntity bulidFeedBack(FeedBackReDto feedBackReDto){
+        FeedBackEntity feedBackEntity = new FeedBackEntity();
+        feedBackEntity.setStatus("0");
+        feedBackEntity.setContext(feedBackReDto.getContext());
+        feedBackEntity.setFeedbackTime(DateUtils.getDateStringForYMDHMS());
+        feedBackEntity.setUserId(feedBackReDto.getUserId());
+        return feedBackEntity;
     }
-
-    /**
-     * @Description(功能描述): 手机号码绑定对象返回
-     * @author(作者): feihong
-     * @date (开发日期):2018-4-20 22:26:37
-     **/
-    public BindPhoneDto buildBindPhoneEror() {
-        BindPhoneDto bindPhoneDto = new BindPhoneDto();
-        bindPhoneDto.setFtag("1");
-        bindPhoneDto.setToken("0");
-        return bindPhoneDto;
-    }
-
-    /**
-     * @Description(功能描述): 构建根据是手机号码绑定QQ
-     * @author(作者): feihong
-     * @date (开发日期):2018-4-24 17:01
-     **/
-    public UserEntity bulidBindqq(UserEntity entity) {
-        UserEntity updateEntity = new UserEntity();
-        updateEntity.setId(entity.getId());
-        updateEntity.setQopenId(entity.getQopenId());
-        return updateEntity;
-    }
-
-    /**
-     * @Description(功能描述): 构建根据是手机号码绑定微信
-     * @author(作者): feihong
-     * @date (开发日期):2018-4-24 17:01
-     **/
-    public UserEntity bulidBindwx(UserEntity entity) {
-        UserEntity updateEntity = new UserEntity();
-        updateEntity.setId(entity.getId());
-        updateEntity.setWopenId(entity.getWopenId());
-        return updateEntity;
-    }
-
 }
