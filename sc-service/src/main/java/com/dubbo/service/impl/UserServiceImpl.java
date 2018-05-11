@@ -267,7 +267,7 @@ public class UserServiceImpl implements UserService {
 		String phone=loginDTO.getMobphone();
 		String token=MD5Utils.md5(phone);
 		try {
-			redisService.set(token, JsonUtils.toJson(loginDTO));
+			redisService.setNoTime(token, JsonUtils.toJson(loginDTO));
 		} catch (Exception e) {
 			throw new ScException(AppServiceEnums.SYS_EXCEPTION);
 		}
