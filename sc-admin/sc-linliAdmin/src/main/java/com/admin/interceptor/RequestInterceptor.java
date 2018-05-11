@@ -1,5 +1,9 @@
 package com.admin.interceptor;
 
+import com.commons.controller.BaseSysApi;
+import com.commons.dto.IsJsonDTO;
+import com.commons.enums.AppServiceEnums;
+import com.commons.exception.ScException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,14 +29,13 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  **/
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
-		/*IsJsonDTO isJson=BaseApi.receiveMsg(request);
-		if(isJson.isIsjson()){
-			request.setAttribute("preHandleJsonDto", isJson);
-		}else{
-			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
-
-		}
-		*/
+// 		IsJsonDTO isJson= BaseSysApi.receiveMsg(request,response );
+//		if(isJson.isIsjson()){
+//			request.setAttribute("preHandleJsonDto", isJson);
+//		}else{
+//			throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
+//
+//		}
 		return true;
 	}
 
@@ -43,7 +46,6 @@ public class RequestInterceptor implements HandlerInterceptor {
 	  **/
 	@Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
 	}
 
 	@Override

@@ -34,7 +34,7 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new RequestInterceptor()).addPathPatterns("/**")
-				.excludePathPatterns("/user/login","/user/register","/forgotpwd","/sendsms","/checkvercode","/index","/error","/testHtml");//无需拦截
+				.excludePathPatterns("login","register","/forgotpwd","/sendsms","/checkvercode","/index","/error");//无需拦截
 		super.addInterceptors(registry);
 	}
 

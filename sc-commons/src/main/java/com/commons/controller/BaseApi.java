@@ -91,7 +91,7 @@ public class BaseApi {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/19 10:50
 	  **/
-	public static HttpResults getHttpResultOk() throws Exception {
+	public static HttpResults getHttpResultOk() {
 		HttpResults httpResults=new HttpResults();
 		httpResults.setStatusCode(AppServiceEnums.SYS_SUCCESS.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_SUCCESS.getMsg());
@@ -102,7 +102,7 @@ public class BaseApi {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date (开发日期): 2018/4/19 10:50
 	  **/
-	public static HttpResults getHttpResultError() throws Exception {
+	public static HttpResults getHttpResultError() {
 		HttpResults httpResults=new HttpResults();
 		httpResults.setStatusCode(AppServiceEnums.SYS_DATA_ERROR.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_DATA_ERROR.getMsg());
@@ -114,7 +114,7 @@ public class BaseApi {
 	  * @date (开发日期): 2018/4/19 11:21
 	 * @param result  : 大于0 成功状态  or  失败状态
 	  **/
-	public static HttpResults getHttpResult(int result) throws Exception {
+	public static HttpResults getHttpResult(int result)  {
 		if(result>0){
 			return getHttpResultOk();
 		}else{

@@ -5,7 +5,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
+/**
+  * @Description(功能描述): 时间工具类
+  * @author(作者): lrfalse<wangliyou>
+  * @date(开发日期): 2018/5/11 11:02
+  **/
 public class DateUtils {
 
 	/***

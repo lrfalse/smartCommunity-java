@@ -10,14 +10,14 @@ package com.commons.service;
 public interface RedisService {
 
 	/**
-	 * @Description(功能描述): 设置值
+	 * @Description(功能描述): 设置值 默认10分钟
 	 * @author(作者): lrfalse<wangliyou>
 	 * @date (开发日期): 2018/4/24 19:50
 	 **/
 	void set(String key, Object object);
 
 	/** 
-	  * @Description(功能描述): 设置无过期时间
+	  * @Description(功能描述): 无过期时间
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/5/9 9:49
 	  **/ 
