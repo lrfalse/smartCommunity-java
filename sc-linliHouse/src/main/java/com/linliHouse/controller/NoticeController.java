@@ -4,12 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
 import com.commons.entity.NoticeEntity;
 import com.commons.service.NoticeService;
 import com.commons.service.RedisService;
+import com.commons.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +33,8 @@ public class NoticeController extends BaseApi {
     private NoticeService noticeService;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private UserService userService;
 
     /**
      * @Description(功能描述) : 首页小区公告信息(标题显示)
@@ -120,7 +124,8 @@ public class NoticeController extends BaseApi {
     public HttpResults releaseNoticeComment(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
-        int n = noticeService.releaseNoticeComment(noticeCommentEntity);
+        LoginDTO loginDTO=userService.getRedisUser(noticeCommentEntity.getToken());
+        int n = noticeService.releaseNoticeComment(noticeCommentEntity,loginDTO);
         return getHttpResult(n);
     } 
 

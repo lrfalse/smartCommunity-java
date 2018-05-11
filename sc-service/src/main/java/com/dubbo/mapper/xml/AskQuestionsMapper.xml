@@ -16,16 +16,20 @@
         ) t
         left join
         (select questions_id FROM t_questions_comment where status = #{status}) c on c.questions_id = t.id
-        where 1=1
-        <if test="id != null">
-        	and t.id = #{id}
-        </if>
-        <if test="userId != null">
-        	and t.user_id = #{userId}
-        </if>
-        <if test="type != null">
-        	and t.type LIKE CONCAT('%',#{type},'%')
-        </if>
+        <where>
+            <if test="id != null">
+                and t.id = #{id}
+            </if>
+            <if test="userId != null">
+                and t.user_id = #{userId}
+            </if>
+            <if test="type != null">
+                and t.type LIKE CONCAT('%',#{type},'%')
+            </if>
+            <if test="title != null">
+                and t.title LIKE CONCAT('%',#{title},'%')
+            </if>
+        </where>
         GROUP BY t.id,t.community_id,t.title,t.content,t.user_id,t.type,t.status,t.browse_num,t.publish_time,t.img_url
         ORDER BY
         <if test="popular">

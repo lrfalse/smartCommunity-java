@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
+import com.commons.entity.ChatTypeEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
 import com.commons.enums.AppServiceEnums;
@@ -11,6 +12,7 @@ import com.commons.exception.ScException;
 import com.commons.service.AskQuestionsService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.AskQuestionsMapper;
+import com.dubbo.mapper.ChatTypeMapper;
 import com.dubbo.mapper.QuestionsCommentMapper;
 import com.dubbo.mapper.QuestionsImgMapper;
 import com.github.pagehelper.PageHelper;
@@ -34,6 +36,8 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
     private QuestionsCommentMapper questionsCommentMapper;
     @Autowired
     private QuestionsImgMapper questionsImgMapper;
+    @Autowired
+    private ChatTypeMapper chatTypeMapper;
 
     /**
      * @Description(功能描述) : 去提问
@@ -77,6 +81,19 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
      */
     @Override
     public PageInfo<AskQuestionsDto> questionClassification(ParamDto paramDto) {
+        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+        List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
+        return pageInfo;
+    }
+
+    /**
+     * @Description(功能描述) : 根据标题title搜索问题
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 10:15
+     */
+    @Override
+    public PageInfo<AskQuestionsDto> problemSearch(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
         List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
         PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
@@ -179,5 +196,21 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
             return 1;
         }
         return 0;
+    }
+
+    /**
+     * @Description(功能描述) : 查询邻里聊天室类型list
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/5 16:41
+     */
+    public List<ChatTypeEntity> getChatTypeList(ChatTypeEntity chatTypeEntity){
+        ChatTypeEntity ct;
+        if(chatTypeEntity == null){
+            ct = new ChatTypeEntity();
+            ct.setStatus(0);
+        }else{
+            ct = chatTypeEntity;
+        }
+        return chatTypeMapper.select(ct);
     }
 }

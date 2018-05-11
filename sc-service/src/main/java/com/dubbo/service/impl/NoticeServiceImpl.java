@@ -1,6 +1,7 @@
 package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.anDto.NoticeDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.NoticeCommentEntity;
@@ -106,17 +107,20 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/27 15:54
      */
     @Override
-    public int releaseNoticeComment(NoticeCommentEntity noticeCommentEntity) {
-        if(noticeCommentEntity!=null){
+    public int releaseNoticeComment(NoticeCommentEntity noticeCommentEntity,LoginDTO loginDTO) {
+        if(noticeCommentEntity!=null && CommonUtils.isNotEmpty(noticeCommentEntity.getNoticeId()) && CommonUtils.isNotEmpty(noticeCommentEntity.getContent())){
             noticeCommentEntity.setStatus(0);
             noticeCommentEntity.setCommentTime(new Date());
+            noticeCommentEntity.setUserId(loginDTO.getUserId());
+            noticeCommentEntity.setImgUrl(loginDTO.getImg_url());
+            noticeCommentEntity.setUserName(loginDTO.getName());
             int n = noticeCommentMapper.insert(noticeCommentEntity);
             if (n < 0) {
-                throw new ScException(AppServiceEnums.SYS_EXCEPTION);
+                throw new ScException(AppServiceEnums.INSERT_FAILURE);
             }
             return 1;
         }else{
-            return 0;
+            throw new ScException(AppServiceEnums.CONTENT_IS_WRONG);
         }
     }
 }

@@ -8,6 +8,7 @@ import com.commons.dto.anDto.AskQuestionsDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.AskQuestionsEntity;
+import com.commons.entity.ChatTypeEntity;
 import com.commons.entity.QuestionsCommentEntity;
 import com.commons.entity.QuestionsImgEntity;
 import com.commons.enums.AppServiceEnums;
@@ -90,6 +91,23 @@ public class AskQuestionsController extends BaseApi {
     }
 
     /**
+     * @Description(功能描述) : 根据标题title搜索问题
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/8 10:18
+     */
+    @PostMapping("/problemSearch")
+    public HttpResults problemSearch(HttpServletRequest req)throws Exception{
+        IsJsonDTO jsonDto=getIsJson(req);
+        AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",askQuestionsEntity.getCommunityId());
+        paramDto.put("status",askQuestionsEntity.getStatus());
+        paramDto.put("title",askQuestionsEntity.getTitle());
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.problemSearch(paramDto);
+        return getHttpResult(pageInfo);
+    }
+
+    /**
      * @Description(功能描述) : 热门问题/最新问题
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/2 19:38
@@ -167,6 +185,22 @@ public class AskQuestionsController extends BaseApi {
     }
 
     /**
+     * @Description(功能描述) : 查询邻里聊天室类型list
+     * @Author(作者) : xly<xielinyang>
+     * @Date(开发日期) : 2018/5/5 16:41
+     */
+    @PostMapping("/getChatTypeList")
+    public HttpResults getChatTypeList(HttpServletRequest req)throws Exception{
+        IsJsonDTO jsonDto=getIsJson(req);
+        ChatTypeEntity chatTypeEntity = JSON.parseObject(jsonDto.getBodyJson(), ChatTypeEntity.class);
+        List<ChatTypeEntity> list= askQuestionsService.getChatTypeList(chatTypeEntity);
+        if(list==null){
+            return getHttpResult(0);
+        }
+        return getHttpResult(list);
+    }
+
+    /**
      * @Description(功能描述) : 去提问
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/4 14:49
@@ -174,6 +208,8 @@ public class AskQuestionsController extends BaseApi {
     @PostMapping("/goWithAsk")
     public HttpResults goWithAsk(HttpServletRequest req)throws Exception{
         AskQuestionsEntity askQuestionsEntity = JSON.parseObject(getIsJson(req).getBodyJson(), AskQuestionsEntity.class);
+        LoginDTO loginDTO=userService.getRedisUser(askQuestionsEntity.getToken());
+        askQuestionsEntity.setUserId(loginDTO.getUserId());
         askQuestionsEntity.setStatus(0);
         askQuestionsEntity.setBrowseNum(0);
         askQuestionsEntity.setPublishTime(new Date());

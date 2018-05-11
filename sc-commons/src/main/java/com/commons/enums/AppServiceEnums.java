@@ -18,6 +18,8 @@ public enum AppServiceEnums {
 	 * 业务逻辑错误
 	 */
 	DOES_NOT_EXIST("800","该用户没有提问"),
+	INSERT_FAILURE("801","发布公告评论失败"),
+	CONTENT_IS_WRONG("802","发布内容为空"),
 
 	NULL_USER_DATA("900","登录超时，请重新登录"),
 	ERROR_CODE("901","验证码错误"),
@@ -28,7 +30,8 @@ public enum AppServiceEnums {
 	PHONE_IN_BIND("906","手机号码已绑定"),
 	EXIST_JOIN("907","用户已经参加该活动"),
 	NOT_JOIN_ACTIVITY("908","用户没有参加任何活动"),
-	EXIST_JOIN_NANNY("909","您已经加入过");
+	EXIST_JOIN_NANNY("909","您已经加入过"),
+	NOT_COMMUNITY("910","没有对应小区");
 	private String code;
 	private String msg;
 
