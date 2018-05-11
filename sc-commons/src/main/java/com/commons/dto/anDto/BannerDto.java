@@ -12,8 +12,8 @@ import java.util.Date;
  */
 @Data
 public class BannerDto implements Serializable {
-    private Integer id;
-    private String communityId;	//小区id
+    private Long id;
+    private Long communityId;	//小区id
     private Date startTime;	    //有效开始时间
     private Date endTime;	    //有效结束时间
     private String linkUrl;		//点击跳转地址

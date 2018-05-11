@@ -13,10 +13,10 @@ import java.util.Date;
 @Data
 @Table(name = "t_questions")
 public class AskQuestionsEntity extends BaseIdEntity {
-    private Integer communityId;//所属小区ID
+    private Long communityId;   //所属小区ID
     private String title;		//问题标题
     private String content;		//问题内容
-    private Integer userId;		//发布人ID
+    private Long userId;		//发布人ID
     private String type;		//问题类型 (邻里聊天室类型) t_chat_type
     private Integer status;		//问题状态（0：正常 、1失效）
     private Integer browseNum;	//浏览次数

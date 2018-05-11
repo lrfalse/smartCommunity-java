@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Data
 @Table(name = "t_questions_img")
 public class QuestionsImgEntity extends BaseIdEntity {
-    private Integer questionsId;    //问答id
+    private Long questionsId;       //问答id
     private String imgUrl;		    //图片地址
     private Integer type;	        //图片类型0：问题图片 1：问题回答图片
 }

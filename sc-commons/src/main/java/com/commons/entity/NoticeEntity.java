@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @Table( name = "t_notice")
 public class NoticeEntity extends BaseIdEntity{
-    private Integer communityId;//所属小区ID
+    private Long communityId;   //所属小区ID
     private String title;		//公告标题
     private String smallTitle;	//小标题
     private String content;		//公告内容

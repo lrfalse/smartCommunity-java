@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Data
 public class NoticeDto implements Serializable {
-    private Integer id;
+    private Long id;
     private Integer communityId;//所属小区ID
     private String title;		//公告标题
     private String smallTitle;	//小标题
