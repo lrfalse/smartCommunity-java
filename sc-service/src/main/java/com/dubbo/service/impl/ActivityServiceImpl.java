@@ -94,25 +94,25 @@ public class ActivityServiceImpl implements ActivityService{
     @Override
     public int Comment(CommentDto commentDto) {
         ParamDto paramDto = new ParamDto();
-        if (commentDto.getTag().equals("W")){
+        if (CommonUtils.isNotEmpty(commentDto.getWopenId())){
             paramDto.put("wopenId",commentDto.getWopenId());
             UserEntity entity = userMapper.selectUserId(paramDto);
             if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
+                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
-        }else if (commentDto.getTag().equals("Q")){
+        }else if (CommonUtils.isNotEmpty(commentDto.getQopenId())){
             paramDto.put("qopenId",commentDto.getQopenId());
             UserEntity entity = userMapper.selectUserId(paramDto);
             if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
+                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
-        }else if (commentDto.getTag().equals("P")){
+        }else if (CommonUtils.isNotEmpty(commentDto.getMobPhone())){
             paramDto.put("mobPhone",commentDto.getMobPhone());
             UserEntity entity = userMapper.selectUserId(paramDto);
             if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.SYS_DATA_ERROR);}
+                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
             int insert = commentMapper.insert(bulidComment(commentDto,entity));
             return insert;
         }
@@ -143,10 +143,11 @@ public class ActivityServiceImpl implements ActivityService{
     @Override
         public PageInfo<ActivityImageNameDto> getPreson(CommentReDto commentReDto) {
         ParamDto paramDto = new ParamDto();
+        String activityId = commentReDto.getActivityId();
         paramDto.put("activityId",commentReDto.getActivityId());
         PageHelper.startPage(commentReDto.getPages(),commentReDto.getPageSize());
-        List<ActivityImageNameDto> activityImageNameDtos = activityMapper.queryNmaeImage(paramDto);
-        PageInfo pageInfo = new PageInfo(activityImageNameDtos);
+        List<ActivityImageNameDto> activityImageNameDtos = activityMapper.queryNmaeImg(paramDto);
+          PageInfo pageInfo = new PageInfo(activityImageNameDtos);
         return pageInfo;
     }
 
@@ -157,37 +158,34 @@ public class ActivityServiceImpl implements ActivityService{
      **/
     @Override
     public PageInfo<JoinActityDto> injoin(CommentDto commentDto) {
-        ParamDto paramAcDto = new ParamDto();
-        if (commentDto.getTag().equals("W")){
+             ParamDto paramAcDto = new ParamDto();
+        if (CommonUtils.isNotEmpty(commentDto.getWopenId())){
             paramAcDto.put("wopenId",commentDto.getWopenId());
             UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
             paramDto.put("id",entity.getId());
-            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
             if (dtos.size()==0){
                 throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
             }
             PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
-        }else if (commentDto.getTag().equals("P")){
+        }else if (CommonUtils.isNotEmpty(commentDto.getMobPhone())){
             paramAcDto.put("mobPhone",commentDto.getMobPhone());
             UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
             paramDto.put("id",entity.getId());
-            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
             if (dtos.size()==0){
                 throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
             }
             PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
-        }else if (commentDto.getTag().equals("Q")) {
+        }else if (CommonUtils.isNotEmpty(commentDto.getQopenId())) {
             paramAcDto.put("qopenId",commentDto.getQopenId());
             UserEntity entity = userMapper.selectUserId(paramAcDto);
             ParamDto paramDto = new ParamDto();
             paramDto.put("id", entity.getId());
-            //PageHelper.startPage(commentDto.getPages(),commentDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
             if (dtos.size()==0){
                 throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);

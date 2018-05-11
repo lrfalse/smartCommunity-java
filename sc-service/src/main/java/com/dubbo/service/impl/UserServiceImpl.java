@@ -2,7 +2,6 @@ package com.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
-import com.commons.dto.anDto.BindPhoneDto;
 import com.commons.dto.anDto.LoginDTO;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.FeedBackReDto;
@@ -100,7 +99,7 @@ public class UserServiceImpl implements UserService {
      * @date (开发日期):2018/5/10 17:20
      **/
     @Override
-    public int addFeedBack(FeedBackReDto feedBackReDto) {
+    public int addFeedBackxx(FeedBackReDto feedBackReDto) {
         FeedBackEntity feedBackEntity = bulidFeedBack(feedBackReDto);
         int i = userMapper.addFeedBack(feedBackEntity);
         if (i>0) {
@@ -115,6 +114,7 @@ public class UserServiceImpl implements UserService {
         }
         return 0;
     }
+
 
     /**
      * @Description(功能描述): 找回密码
@@ -272,7 +272,7 @@ public class UserServiceImpl implements UserService {
         loginDTO.setImg_url(user.getImgUrl());
         loginDTO.setName(user.getName());
         loginDTO.setSex(user.getSex());
-        loginDTO.setCommuntiyId(Long.valueOf(user.getCommunityId()));
+        loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
         loginDTO.setUserId(user.getId());
         loginDTO.setToken(MD5Utils.md5(user.getMobPhone()));
@@ -329,7 +329,7 @@ public class UserServiceImpl implements UserService {
     public LoginDTO bulidLoginDtoPone(UserEntity entity) {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setMobphone(entity.getMobPhone());
-        loginDTO.setCommuntiyId(Long.valueOf(entity.getCommunityId()));
+        loginDTO.setCommuntiyId(entity.getCommunityId());
         loginDTO.setImg_url(entity.getImgUrl());
         loginDTO.setName(entity.getName());
         if (entity.getSex().equals("0") | entity.getSex().equals("男")) {

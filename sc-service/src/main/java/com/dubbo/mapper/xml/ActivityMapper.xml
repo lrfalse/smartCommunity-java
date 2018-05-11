@@ -15,8 +15,8 @@
    </select>
 
     <!--查询参加活动所有人-->
-    <select id="queryNmaeImage" parameterType="ParamDto" resultType="com.commons.dto.anDto.ActivityImageNameDto">
-    SELECT * FROM t_activity_join WHERE activity_id=#{activityId}
+    <select id="queryNmaeImg" parameterType="ParamDto" resultType="com.commons.dto.anDto.ActivityImageNameDto">
+     SELECT user_name,img_url FROM t_activity_join WHERE activity_id=#{activityId}
     </select>
 
     <!--根据小区id查询所有活动,时间倒序排序-->
@@ -45,13 +45,12 @@
 
     <!--查询我参与的活动-->
     <select id="queryActivityJoin" parameterType="ParamDto" resultType="com.commons.dto.anDto.JoinActityDto">
-    SELECT
-      ty.title,
-      tg.img_url
-    FROM t_user tr INNER JOIN t_activity_join tn ON tr.id = tn.user_id
-    INNER JOIN t_activity ty ON ty.id = tn.activity_id
-    INNER JOIN t_activity_img tg ON tg.activity_id = ty.id
-    WHERE tr.id =#{id};
+   SELECT
+  ty.title,
+  tg.img_url
+  FROM t_activity ty INNER JOIN t_activity_join tn ON ty.id = tn.activity_id
+  INNER JOIN t_activity_img tg ON ty.id = tg.activity_id
+  WHERE tn.user_id =#{id};
      </select>
 
 

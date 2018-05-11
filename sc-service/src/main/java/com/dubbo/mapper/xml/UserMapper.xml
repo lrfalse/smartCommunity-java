@@ -24,7 +24,6 @@
                 AND mob_phone=#{mobPhone}
             </if>
         </where>
-
     </select>
     <!--查询手机号码是否绑定-->
     <select id="selectPhone" resultType="com.commons.entity.UserEntity">
@@ -46,7 +45,6 @@
     <!--添加用户图片-->
     <insert id="addUserImgUrl" parameterType="ParamDto">
     INSERT INTO t_user_img(img_url, user_id,type) VALUES(#{imgUrl},#{userId},#{type})
-
     </insert>
     <!--添加用户-->
     <insert id="adduser" parameterType="com.commons.entity.UserEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
@@ -57,6 +55,14 @@
     <select id="queryUserImgId" parameterType="ParamDto" resultType="String">
         SELECT user_id FROM t_user_img WHERE user_id=#{id}
     </select>
+    <!--意見反饋-->
+    <insert id="addFeedBack" parameterType="com.commons.entity.FeedBackEntity" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+    INSERT INTO t_feedback(context, user_id, feedback_time,status) VALUES (#{context},#{userId},#{feedbackTime},#{status})
+    </insert>
+    <!--意见反馈图片上传-->
+    <insert id="addFeedBackImg" parameterType="ParamDto">
+        INSERT INTO t_feedback_img(feedback_id, img_url) VALUES (#{id},#{imgUrl})
+    </insert>
     <!--where条件-->
     <sql id="whereCondition">
         1=1

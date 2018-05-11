@@ -64,7 +64,7 @@ public interface UserService {
 	  * @date (开发日期):2018/5/10 17:16
 	  *
 	 * @param */
-	int addFeedBack(FeedBackReDto feedBackReDto);
+	int addFeedBackxx(FeedBackReDto feedBackReDto);
 
 
 }

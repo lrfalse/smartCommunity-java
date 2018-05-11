@@ -68,7 +68,7 @@ public class FeedbackController extends BaseApi {
             }
             backEntity.setUserId(String.valueOf(redisUser.getUserId()));
             backEntity.setList(list);
-            int i = userService.addFeedBack(backEntity);
+            int i = userService.addFeedBackxx(backEntity);
             return getHttpResult(i);
         }
     }

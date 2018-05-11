@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ImportResource;
  * @date (开发日期): 2018/4/8 10:20
  **/
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@ImportResource(value = "classpath:dubbo/dubbo-service.xml")
+ @ImportResource(value = "classpath:dubbo/dubbo-service.xml")
 public class PersonalCenterApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(PersonalCenterApplication.class);
 

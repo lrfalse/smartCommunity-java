@@ -20,5 +20,5 @@ public class ActivityImageNameDto implements Serializable {
     /**
      *头像
      */
-    private String imageUrl;
+    private String imgUrl;
 }
