@@ -1,4 +1,4 @@
-package com.dubbo.mapper.nannyMapper;
+package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
 import com.commons.entity.HomeMakEntity;

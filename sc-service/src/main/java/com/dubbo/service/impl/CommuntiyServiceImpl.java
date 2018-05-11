@@ -15,7 +15,6 @@ import com.dubbo.mapper.CommunityMapper;
 import com.dubbo.mapper.DistrictMapper;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import sun.java2d.pipe.AAShapePipe;
 
 import java.util.List;
 

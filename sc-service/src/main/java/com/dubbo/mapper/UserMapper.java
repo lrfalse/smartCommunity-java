@@ -2,6 +2,7 @@ package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
+import com.commons.entity.FeedBackEntity;
 import com.commons.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -68,4 +69,17 @@ public interface UserMapper extends MyMapper<UserEntity> {
 	  * @date (开发日期):2018/5/7 10:09
 	  **/
 	UserEntity selectUserId(ParamDto paramDto);
+	/**
+	 * @Description(功能描述): 意见反馈
+	 * @author(作者): feihong
+	 * @date (开发日期):2018/5/10 17:31
+	 **/
+	int addFeedBack(FeedBackEntity feedBackEntity);
+
+	/**
+	 * @Description(功能描述): 意见反馈图片上传
+	 * @author(作者): feihong
+	 * @date (开发日期):2018/5/11 8:59
+	 **/
+	int addFeedBackImg(ParamDto paramDto);
 }
