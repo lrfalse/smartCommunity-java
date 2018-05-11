@@ -18,6 +18,6 @@ public class LoginDTO implements Serializable{
     private String img_url;		//头像地址
     private String mobphone;	//手机号码
     private Integer communtiyId;//小区信息
-	private Integer userId;		//用户id
+	private long userId;		//用户id
     private String token;		//登录用户唯一标识
 }
