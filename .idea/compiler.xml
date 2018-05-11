@@ -8,9 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sc-commons" />
         <module name="sc-entranceguard" />
+        <module name="sc-estateAdmin" />
         <module name="sc-linli" />
+        <module name="sc-linliAdmin" />
         <module name="sc-linliHouse" />
         <module name="sc-linlihouse" />
+        <module name="sc-merchantAdmin" />
         <module name="sc-personalCenter" />
         <module name="sc-service" />
         <module name="sc-tools" />
@@ -18,17 +21,25 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="demo2" target="1.8" />
+      <module name="sc-admin" target="1.8" />
       <module name="sc-commons" target="1.8" />
       <module name="sc-entranceguard" target="1.8" />
+      <module name="sc-estateAdmin" target="1.8" />
       <module name="sc-linLi" target="1.8" />
       <module name="sc-linli" target="1.8" />
+      <module name="sc-linliAdmin" target="1.8" />
       <module name="sc-linlihouse" target="1.8" />
       <module name="sc-linliHouse" target="1.8" />
       <module name="sc-linliHouse (1)" target="1.8" />
+      <module name="sc-merchantAdmin" target="1.8" />
       <module name="sc-personalCenter" target="1.8" />
       <module name="sc-service" target="1.8" />
       <module name="sc-tools" target="1.8" />
       <module name="sc-tradingArea" target="1.8" />
+      <module name="scadmin" target="1.8" />
+      <module name="scadmin1" target="1.8" />
       <module name="smartCommunity" target="1.8" />
     </bytecodeTargetLevel>
   </component>
