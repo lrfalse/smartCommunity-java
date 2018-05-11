@@ -13,8 +13,8 @@ import java.util.Date;
 @Data
 @Table( name = "t_notice_comment")
 public class NoticeCommentEntity extends BaseIdEntity{
-    private Integer userId;	    //评论人id
-    private Integer noticeId;	//公告id
+    private Long userId;	    //评论人id
+    private Long noticeId;	    //公告id
     private String content;		//评论内容
     private Integer status;		//评论状态(0正常，1失效)
     private Date commentTime;	//评论时间

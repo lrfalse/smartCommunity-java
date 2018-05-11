@@ -13,9 +13,9 @@ import java.util.Date;
 @Data
 @Table(name = "t_questions_comment")
 public class QuestionsCommentEntity extends BaseIdEntity {
-    private Integer userId;		    //评论人
+    private Long userId;		    //评论人
     private String userName;		//评论人名称
-    private Integer questionsId;   //问答id
+    private Long questionsId;       //问答id
     private String content;		    //评论内容
     private Integer status;		    //评论状态(0正常，1失效)
     private String imgUrl;		    //图片地址
