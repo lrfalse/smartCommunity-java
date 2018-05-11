@@ -20,7 +20,7 @@ public class NoticeDto implements Serializable {
     private String issuer;		//发布方
     private Integer type;		//公告类型(0：置顶、1加急、2普通)
     private Integer status;		//公告状态（0：正常 、1失效）
-    private Integer browseNum;	//浏览次数
+    private Integer browseNum=0;//浏览次数
     private Date publishTime;	//发布时间
     private String imgUrl;		//图片地址（多图用，隔开）
     private Integer total;	    //评论次数
