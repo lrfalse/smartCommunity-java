@@ -45,7 +45,7 @@ public class NoticeController extends BaseApi {
     public HttpResults getTitleDisplayList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
-        ParamDto paramDto = new ParamDto();
+        ParamDto paramDto = new ParamDto(noticeEntity);
         paramDto.put("communityId",noticeEntity.getCommunityId());
         paramDto.put("status",noticeEntity.getStatus());
         PageInfo<NoticeEntity> pageInfo = noticeService.getTitleDisplay(paramDto);
@@ -60,11 +60,11 @@ public class NoticeController extends BaseApi {
     @PostMapping("/getNoticeList")
     public HttpResults getNoticeList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
-        NoticeDto noticeDto = JSON.parseObject(jsonDto.getBodyJson(), NoticeDto.class);
-        ParamDto paramDto = new ParamDto();
-        paramDto.put("communityId",noticeDto.getCommunityId());
-        paramDto.put("status",noticeDto.getStatus());
-        paramDto.put("type",noticeDto.getType());
+        NoticeEntity noticeEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeEntity.class);
+        ParamDto paramDto = new ParamDto(noticeEntity);
+        paramDto.put("communityId",noticeEntity.getCommunityId());
+        paramDto.put("status",noticeEntity.getStatus());
+        paramDto.put("type",noticeEntity.getType());
         PageInfo<NoticeDto> pageInfo = noticeService.getNoticeList(paramDto);
         return getHttpResult(pageInfo);
     }
@@ -108,7 +108,7 @@ public class NoticeController extends BaseApi {
     public HttpResults getNoticeCommentDetails(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         NoticeCommentEntity noticeCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), NoticeCommentEntity.class);
-        ParamDto paramDto = new ParamDto();
+        ParamDto paramDto = new ParamDto(noticeCommentEntity);
         paramDto.put("noticeId",noticeCommentEntity.getNoticeId());
         paramDto.put("status",noticeCommentEntity.getStatus());
         PageInfo<NoticeCommentEntity> pageInfo = noticeService.getNoticeCommentList(paramDto);

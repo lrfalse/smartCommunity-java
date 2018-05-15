@@ -3,6 +3,7 @@ package com.commons.entity;
 import lombok.Data;
 
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -21,4 +22,6 @@ public class AskQuestionsEntity extends BaseIdEntity {
     private Integer status;		//问题状态（0：正常 、1失效）
     private Integer browseNum;	//浏览次数
     private Date publishTime;	//发布时间
+    @Transient
+    private Boolean popular;    //true为热门问题/false为最新问题
 }

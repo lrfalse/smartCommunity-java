@@ -32,25 +32,11 @@ public interface AskQuestionsService {
     AskQuestionsDto mineAsk(ParamDto paramDto);
 
     /**
-     * @Description(功能描述) : 提问分类
+     * @Description(功能描述) : 提问分类、根据标题title搜索问题、热门问题
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/2 19:42
      */
-    PageInfo<AskQuestionsDto> questionClassification(ParamDto paramDto);
-
-    /**
-     * @Description(功能描述) : 根据标题title搜索问题
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/5/8 10:05
-     */
-    PageInfo<AskQuestionsDto> problemSearch(ParamDto paramDto);
-
-    /**
-     * @Description(功能描述) : 热门问题
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/5/2 19:42
-     */
-    PageInfo<AskQuestionsDto> topQuestions(ParamDto paramDto);
+    PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto);
 
     /**
      * @Description(功能描述) : 问题详情

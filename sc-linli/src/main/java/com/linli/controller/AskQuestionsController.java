@@ -82,11 +82,11 @@ public class AskQuestionsController extends BaseApi {
     public HttpResults questionClassification(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-        ParamDto paramDto = new ParamDto();
+        ParamDto paramDto = new ParamDto(askQuestionsEntity);
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
         paramDto.put("status",askQuestionsEntity.getStatus());
         paramDto.put("type",askQuestionsEntity.getType());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.questionClassification(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
         return getHttpResult(pageInfo);
     }
 
@@ -99,11 +99,11 @@ public class AskQuestionsController extends BaseApi {
     public HttpResults problemSearch(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
-        ParamDto paramDto = new ParamDto();
+        ParamDto paramDto = new ParamDto(askQuestionsEntity);
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
         paramDto.put("status",askQuestionsEntity.getStatus());
         paramDto.put("title",askQuestionsEntity.getTitle());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.problemSearch(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
         return getHttpResult(pageInfo);
     }
 
@@ -115,13 +115,13 @@ public class AskQuestionsController extends BaseApi {
     @PostMapping("/topQuestions")
     public HttpResults topQuestions(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
-        AskQuestionsDto askQuestionsDto = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsDto.class);
-        ParamDto paramDto = new ParamDto();
-        paramDto.put("communityId",askQuestionsDto.getCommunityId());
-        paramDto.put("status",askQuestionsDto.getStatus());
+        AskQuestionsEntity askQuestionsEntity = JSON.parseObject(jsonDto.getBodyJson(), AskQuestionsEntity.class);
+        ParamDto paramDto = new ParamDto(askQuestionsEntity);
+        paramDto.put("communityId",askQuestionsEntity.getCommunityId());
+        paramDto.put("status",askQuestionsEntity.getStatus());
         //popular 为true时是热门问题，为false时是最新问题
-        paramDto.put("popular",askQuestionsDto.getPopular());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.topQuestions(paramDto);
+        paramDto.put("popular",askQuestionsEntity.getPopular());
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
         return getHttpResult(pageInfo);
     }
 
@@ -151,7 +151,7 @@ public class AskQuestionsController extends BaseApi {
     public HttpResults commentList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         QuestionsCommentEntity questionsCommentEntity = JSON.parseObject(jsonDto.getBodyJson(), QuestionsCommentEntity.class);
-        ParamDto paramDto = new ParamDto();
+        ParamDto paramDto = new ParamDto(questionsCommentEntity);
         paramDto.put("questionsId",questionsCommentEntity.getQuestionsId());
         paramDto.put("status",questionsCommentEntity.getStatus());
         PageInfo<QuestionsCommentEntity> pageInfo = askQuestionsService.commentList(paramDto);

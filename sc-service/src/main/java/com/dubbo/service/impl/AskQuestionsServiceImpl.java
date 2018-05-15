@@ -75,38 +75,12 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
     }
 
     /**
-     * @Description(功能描述) : 提问分类
+     * @Description(功能描述) : 提问分类、根据标题title搜索问题、热门问题
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/2 19:52
      */
     @Override
-    public PageInfo<AskQuestionsDto> questionClassification(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
-        PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
-        return pageInfo;
-    }
-
-    /**
-     * @Description(功能描述) : 根据标题title搜索问题
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/5/8 10:15
-     */
-    @Override
-    public PageInfo<AskQuestionsDto> problemSearch(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
-        List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
-        PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
-        return pageInfo;
-    }
-
-    /**
-     * @Description(功能描述) : 热门问题
-     * @Author(作者) : xly<xielinyang>
-     * @Date(开发日期) : 2018/5/2 20:25
-     */
-    @Override
-    public PageInfo<AskQuestionsDto> topQuestions(ParamDto paramDto) {
+    public PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto) {
         PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
         List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
         PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
