@@ -24,8 +24,4 @@ public class ParamDto<K, V> extends HashMap<K, V> implements Serializable {
 		put(key, value);
 	}
 
-	public ParamDto(BaseIdEntity baseIdEntity) {
-		this.page = baseIdEntity.getPage();
-		this.rows = baseIdEntity.getRows();
-	}
 }

@@ -52,7 +52,7 @@ public class NoticeServiceImpl implements NoticeService {
      */
     @Override
     public PageInfo<NoticeDto> getNoticeList(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+        PageHelper.startPage(Integer.parseInt(paramDto.get("page").toString()), Integer.parseInt(paramDto.get("rows").toString()));
         List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
         PageInfo<NoticeDto> pageInfo = new PageInfo<>(list);
         return pageInfo;
@@ -108,7 +108,7 @@ public class NoticeServiceImpl implements NoticeService {
      */
     @Override
     public int releaseNoticeComment(NoticeCommentEntity noticeCommentEntity,LoginDTO loginDTO) {
-        if(noticeCommentEntity!=null && CommonUtils.isNotEmpty(noticeCommentEntity.getNoticeId()) && CommonUtils.isNotEmpty(noticeCommentEntity.getContent())){
+        if(noticeCommentEntity!=null && CommonUtils.isNotEmpty(loginDTO.getUserId()) && CommonUtils.isNotEmpty(noticeCommentEntity.getContent())){
             noticeCommentEntity.setStatus(0);
             noticeCommentEntity.setCommentTime(new Date());
             noticeCommentEntity.setUserId(loginDTO.getUserId());
