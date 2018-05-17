@@ -40,6 +40,11 @@ public class CommentDto extends BasePageReDto{
     private String mobPhone;
 
     /**
+     *登录token
+     */
+    private String token;
+
+    /**
      *标识 W:微信 Q:qq P:手机
      */
     private String tag;

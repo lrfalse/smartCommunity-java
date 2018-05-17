@@ -1,13 +1,13 @@
 package com.dubbo.mapper;
 
 import com.commons.config.MyMapper;
+import com.commons.dto.anDto.ActivityDetailDto;
 import com.commons.dto.anDto.ActivityImageNameDto;
 import com.commons.dto.anDto.ActivityPeopleDto;
 import com.commons.dto.anDto.JoinActityDto;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.ActivityEntity;
 import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 /**
@@ -30,4 +30,6 @@ public interface ActivityMapper extends MyMapper<ActivityEntity>{
     List<ActivityEntity> homeQueryActivity(ParamDto paramDto);//根据小区id查询活动,根据时间倒序排 前五条
 
     List<String> queryUserId(ParamDto paramDto);//查询用户的uiserId
+
+    ActivityDetailDto findActivityDetail(ParamDto paramDto);//查询活动详情
 }

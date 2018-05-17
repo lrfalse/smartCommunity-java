@@ -51,7 +51,7 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018-04-27 17:16:22
      **/
     @Override
-    public List<ActivityDto> queryActivityDetail(ActivityListDto activityListDto) {
+        public List<ActivityDto> queryActivityDetail(ActivityListDto activityListDto) {
         if (CommonUtils.isEmpty(activityListDto)){
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         }
@@ -143,7 +143,6 @@ public class ActivityServiceImpl implements ActivityService{
     @Override
         public PageInfo<ActivityImageNameDto> getPreson(CommentReDto commentReDto) {
         ParamDto paramDto = new ParamDto();
-        String activityId = commentReDto.getActivityId();
         paramDto.put("activityId",commentReDto.getActivityId());
         PageHelper.startPage(commentReDto.getPages(),commentReDto.getPageSize());
         List<ActivityImageNameDto> activityImageNameDtos = activityMapper.queryNmaeImg(paramDto);
@@ -228,6 +227,21 @@ public class ActivityServiceImpl implements ActivityService{
 		}
 		return 0;				//失败
 	}
+
+    /**
+      * @Description(功能描述): 活动详情
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/17 15:17
+      **/
+    public ActivityDetailDto findActivityDetail(String activityId) {
+        if (CommonUtils.isEmpty(activityId)){
+            throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
+        }
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("activityId",activityId);
+        ActivityDetailDto activityDetail = activityMapper.findActivityDetail(paramDto);
+        return activityDetail;
+    }
 
 
     /**

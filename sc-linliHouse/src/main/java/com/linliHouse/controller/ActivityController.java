@@ -8,6 +8,7 @@ import com.commons.dto.anDto.*;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
+import com.commons.entity.ActivityEntity;
 import com.commons.entity.CommentEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
@@ -19,7 +20,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * @Description:社区活动
@@ -109,5 +113,18 @@ public class ActivityController extends BaseApi{
        CommentReDto parse = JSONObject.parseObject(getIsJson(req).getBodyJson(), CommentReDto.class);
        PageInfo<ActivityImageNameDto> preson = activityService.getPreson(parse);
        return getHttpResult(preson);
+   }
+
+   /**
+     * @Description(功能描述): 活动详情
+     * @author(作者): feihong
+     * @date (开发日期):2018/5/17 15:08
+     **/
+   @PostMapping("activityDetail")
+    public HttpResults activityDetail(HttpServletRequest req) throws Exception {
+       JSONObject parse = (JSONObject)JSONObject.parse(getIsJson(req).getBodyJson());
+       String o = (String)parse.get("activityId");
+       ActivityDetailDto detail = activityService.findActivityDetail(o);
+       return getHttpResult(detail);
    }
 }

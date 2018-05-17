@@ -59,4 +59,11 @@ public interface ActivityService {
       * @date (开发日期):2018/5/2 20:00
       **/
     PageInfo<ActivityImageNameDto> getPreson(CommentReDto commentReDto);
+
+    /**
+      * @Description(功能描述): 活动详情
+      * @author(作者): feihong
+      * @date (开发日期):2018/5/17 15:13
+      **/
+    ActivityDetailDto findActivityDetail(String activityId);
 }

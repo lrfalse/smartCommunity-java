@@ -57,4 +57,22 @@
     <select id="queryUserId" parameterType="ParamDto" resultType="String">
         SELECT user_id FROM t_activity_join WHERE activity_id=#{activityId}
     </select>
+
+    <select id="findActivityDetail" parameterType="ParamDto" resultType="com.commons.dto.anDto.ActivityDetailDto">
+      SELECT
+       id,
+      content,
+      start_time,
+      end_time,
+      address,
+      people_num,
+      cost,
+      abort_time,
+      contacts,
+      phone,
+      publish_time,
+      issuer
+      FROM t_activity
+      WHERE id =#{activityId}
+    </select>
 </mapper>
