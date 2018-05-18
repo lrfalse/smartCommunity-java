@@ -25,7 +25,8 @@
       ty.id,
       tg.img_url,
       ty.title,
-      ty.people_num
+      ty.people_num,
+      ty.abort_time
       FROM t_activity ty INNER JOIN t_activity_img tg ON ty.id=tg.activity_id
       WHERE community_id =#{communityId}
       ORDER BY concat(publish_time, start_time) DESC
@@ -37,7 +38,8 @@
       ty.id,
       tg.img_url,
       ty.title,
-      ty.people_num
+      ty.people_num,
+      ty.abort_time
       FROM t_activity ty INNER JOIN t_activity_img tg ON ty.id=tg.activity_id
       WHERE community_id =#{communityId}
       ORDER BY concat(publish_time, start_time) DESC limit 5
