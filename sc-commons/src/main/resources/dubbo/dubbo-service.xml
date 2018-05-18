@@ -7,7 +7,7 @@
 
     <dubbo:reference id="communityService" interface="com.commons.service.CommunityService"/>
     <dubbo:reference id="districtService" interface="com.commons.service.DistrictService" />
-    <dubbo:reference id="userService" interface="com.commons.service.UserService" />
+    <dubbo:reference id="userService" interface="com.commons.service.UserService"/>
     <dubbo:reference id="redisService" interface="com.commons.service.RedisService" />
 
     <dubbo:reference id="faceRegisterService" interface="com.commons.service.FaceRegisterService"/>

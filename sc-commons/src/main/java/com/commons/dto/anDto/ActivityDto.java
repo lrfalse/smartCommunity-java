@@ -15,6 +15,10 @@ import java.util.List;
 public class ActivityDto implements Serializable{
 
     /**
+     *结束时间
+     */
+    private String abortTime;
+    /**
      *活动id
      */
     private String activityId;
