@@ -6,21 +6,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.http.HttpMethod;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /** 
   * @Description(功能描述): 平台管理系统
   * @author(作者): lrfalse<wangliyou>
   * @date(开发日期): 2018/5/11 14:34
-  **/ 
+  **/
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @ImportResource(value = "classpath:dubbo/dubbo-service.xml")
 public class LinliadminApplication implements CommandLineRunner {
