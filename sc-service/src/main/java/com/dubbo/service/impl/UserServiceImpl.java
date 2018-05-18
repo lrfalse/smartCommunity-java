@@ -200,7 +200,7 @@ public class UserServiceImpl implements UserService {
             if (entity.getTag().equals("Q")) {
                 if (CommonUtils.isNotEmpty(entity.getQopenId())) {
                     ParamDto dto = new ParamDto();
-                    dto.put("qopenId_where", entity.getQopenId());
+                    dto.put("qopenId", entity.getQopenId());
                     UserEntity user = userMapper.queryUser(dto);
                     if (CommonUtils.isEmpty(user)) {
                         return bulidLoginDto(entity);
@@ -213,7 +213,7 @@ public class UserServiceImpl implements UserService {
             } else if (entity.getTag().equals("W")) {
                 if (CommonUtils.isNotEmpty(entity.getWopenId())) {
                     ParamDto dto = new ParamDto();
-                    dto.put("wopenId_where", entity.getWopenId());
+                    dto.put("wopenId", entity.getWopenId());
                     UserEntity user = userMapper.queryUser(dto);
                     if (CommonUtils.isEmpty(user)) {
                         return bulidLoginDto(entity);
@@ -225,9 +225,9 @@ public class UserServiceImpl implements UserService {
             } else if (entity.getTag().equals("P")) {
                 if (CommonUtils.isNotEmpty(entity.getMobPhone()) && CommonUtils.isNotEmpty(entity.getPwd())) {
                     ParamDto dto = new ParamDto();
-                    dto.put("pwd_where", MD5Utils.md5(entity.getPwd()));
-                    dto.put("mobPhone_where", (entity.getMobPhone()));
-                    UserEntity userEntity = userMapper.selectUser(dto);
+                    dto.put("pwd", MD5Utils.md5(entity.getPwd()));
+                    dto.put("mobPhone", (entity.getMobPhone()));
+                    UserEntity userEntity = userMapper.queryUser(dto);
                     if (CommonUtils.isEmpty(userEntity)) {
                         throw new ScException(AppServiceEnums.ERROR);
                     } else {
@@ -275,13 +275,17 @@ public class UserServiceImpl implements UserService {
         loginDTO.setCommuntiyId(user.getCommunityId());
         loginDTO.setMobphone(user.getMobPhone());
         loginDTO.setUserId(user.getId());
-        loginDTO.setToken(MD5Utils.md5(user.getMobPhone()));
-        try {
-            saveUserForRedis(loginDTO);	//用户信息存入缓存
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (CommonUtils.isEmpty(user.getMobPhone())){
+            loginDTO.setToken(null);
+        }else {
+            loginDTO.setToken(MD5Utils.md5(user.getMobPhone()));
+            try {
+                saveUserForRedis(loginDTO);	//用户信息存入缓存
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // loginDTO.setUserId(null);
         }
-       // loginDTO.setUserId(null);
         return loginDTO;
     }
     /**

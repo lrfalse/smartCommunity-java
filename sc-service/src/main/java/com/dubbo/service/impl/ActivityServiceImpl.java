@@ -2,8 +2,8 @@ package com.dubbo.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.commons.dto.anDto.*;
 import com.commons.dto.dbDto.ParamDto;
-import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
+import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.ActivityEntity;
 import com.commons.entity.ActivityJoinEntity;
 import com.commons.entity.CommentEntity;
@@ -11,6 +11,7 @@ import com.commons.entity.UserEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.ActivityService;
+import com.commons.service.UserService;
 import com.commons.utils.CommonUtils;
 import com.dubbo.mapper.ActivityJoinMapper;
 import com.dubbo.mapper.ActivityMapper;
@@ -44,6 +45,9 @@ public class ActivityServiceImpl implements ActivityService{
 
     @Autowired
     private ActivityJoinMapper activityJoinMapper;
+
+    @Autowired
+    private UserService userService;
 
     /**
      * @Description(功能描述): 首页活动展示及活动详情
@@ -93,30 +97,15 @@ public class ActivityServiceImpl implements ActivityService{
      **/
     @Override
     public int Comment(CommentDto commentDto) {
-        ParamDto paramDto = new ParamDto();
-        if (CommonUtils.isNotEmpty(commentDto.getWopenId())){
-            paramDto.put("wopenId",commentDto.getWopenId());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
-            int insert = commentMapper.insert(bulidComment(commentDto,entity));
-            return insert;
-        }else if (CommonUtils.isNotEmpty(commentDto.getQopenId())){
-            paramDto.put("qopenId",commentDto.getQopenId());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
-            int insert = commentMapper.insert(bulidComment(commentDto,entity));
-            return insert;
-        }else if (CommonUtils.isNotEmpty(commentDto.getMobPhone())){
-            paramDto.put("mobPhone",commentDto.getMobPhone());
-            UserEntity entity = userMapper.selectUserId(paramDto);
-            if (entity.equals(null)){
-                throw new ScException(AppServiceEnums.NULL_USER_DATA);}
-            int insert = commentMapper.insert(bulidComment(commentDto,entity));
+        if (CommonUtils.isNotEmpty(commentDto.getToken())) {
+            LoginDTO entity = userService.getRedisUser(commentDto.getToken());
+            if (CommonUtils.isEmpty(entity)) {
+                throw new ScException(AppServiceEnums.NULL_USER_DATA);
+            }
+            int insert = commentMapper.insert(bulidComment(commentDto, entity));
             return insert;
         }
-        throw new  ScException(AppServiceEnums.SYS_DATA_ERROR);
+      return 0;
     }
 
     /**
@@ -156,43 +145,16 @@ public class ActivityServiceImpl implements ActivityService{
      * @date (开发日期):2018/5/2 11:15
      **/
     @Override
-    public PageInfo<JoinActityDto> injoin(CommentDto commentDto) {
+    public PageInfo<JoinActityDto> injoin(UserReDto userReDto) {
+             LoginDTO entity = userService.getRedisUser(userReDto.getToken());
              ParamDto paramAcDto = new ParamDto();
-        if (CommonUtils.isNotEmpty(commentDto.getWopenId())){
-            paramAcDto.put("wopenId",commentDto.getWopenId());
-            UserEntity entity = userMapper.selectUserId(paramAcDto);
-            ParamDto paramDto = new ParamDto();
-            paramDto.put("id",entity.getId());
-            List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
+             paramAcDto.put("id",entity.getUserId());
+            List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramAcDto);
             if (dtos.size()==0){
                 throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
             }
             PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
             return pageInfo;
-        }else if (CommonUtils.isNotEmpty(commentDto.getMobPhone())){
-            paramAcDto.put("mobPhone",commentDto.getMobPhone());
-            UserEntity entity = userMapper.selectUserId(paramAcDto);
-            ParamDto paramDto = new ParamDto();
-            paramDto.put("id",entity.getId());
-            List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
-            if (dtos.size()==0){
-                throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
-            }
-            PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
-            return pageInfo;
-        }else if (CommonUtils.isNotEmpty(commentDto.getQopenId())) {
-            paramAcDto.put("qopenId",commentDto.getQopenId());
-            UserEntity entity = userMapper.selectUserId(paramAcDto);
-            ParamDto paramDto = new ParamDto();
-            paramDto.put("id", entity.getId());
-            List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramDto);
-            if (dtos.size()==0){
-                throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);
-            }
-            PageInfo<JoinActityDto> pageInfo = new PageInfo<>(dtos);
-            return pageInfo;
-        }
-        throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
     }
 
     /**
@@ -202,26 +164,16 @@ public class ActivityServiceImpl implements ActivityService{
 	 * @return 0:失败 1：成功
      **/
 
-	public int joinActivityxx(ActivityJoinDto activityJoinDto) {
-		ParamDto paramAcDto = new ParamDto();
-		paramAcDto.put("activityId",activityJoinDto.getActivityId());
-		ParamDto paramDto = new ParamDto();
-		if(CommonUtils.isNotEmpty(activityJoinDto.getWopenId())){
-			paramDto.put("wopenId",activityJoinDto.getWopenId());
-		}else if(CommonUtils.isNotEmpty(activityJoinDto.getQopenId())){
-			paramDto.put("qopenId",activityJoinDto.getQopenId());
-		}else if(CommonUtils.isNotEmpty(activityJoinDto.getMobPhone())){
-			paramDto.put("mobPhone",activityJoinDto.getMobPhone());
-		}else{
-			throw new  ScException(AppServiceEnums.SYS_DATA_ERROR);
-		}
-		UserEntity entity = userMapper.selectUserId(paramDto);
+	public int  joinActivityxx(UserReDto userReDto) {
+        LoginDTO user = userService.getRedisUser(userReDto.getToken());
+        ParamDto paramAcDto = new ParamDto();
+		paramAcDto.put("activityId",userReDto.getActivityId());
 		List<String> list = activityMapper.queryUserId(paramAcDto);
-		if (list.contains(String.valueOf(entity.getId()))){
+		if (list.contains(String.valueOf(user.getUserId()))){
 			throw new ScException(AppServiceEnums.EXIST_JOIN);
 		}
-		int insert = activityJoinMapper.insert(bulidActivityJoin(activityJoinDto,entity));
-		int i = activityMapper.updatePeopleNum(activityJoinDto.getActivityId());
+		int insert = activityJoinMapper.insert(bulidActivityJoin(userReDto,user));
+		int i = activityMapper.updatePeopleNum(userReDto.getActivityId());
 		if (isinsert(i,insert)){
 			return 1;			//成功
 		}
@@ -249,15 +201,15 @@ public class ActivityServiceImpl implements ActivityService{
      * @author(作者): feihong
      * @date (开发日期):2018-4-27 20:08
      **/
-    public CommentEntity bulidComment(CommentDto commentDto,UserEntity entity){
+    public CommentEntity bulidComment(CommentDto commentDto,LoginDTO entity){
         SimpleDateFormat format0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         CommentEntity commentEntity =new CommentEntity();
-        commentEntity.setUserId(String.valueOf(entity.getId()));
+        commentEntity.setUserId(String.valueOf(entity.getUserId()));
         commentEntity.setCommentTime(format0.format(new Date()));
         commentEntity.setActivityId(commentDto.getActivityId());
         commentEntity.setContent(commentDto.getContent());
         commentEntity.setUserName(entity.getName());
-        commentEntity.setImgUrl(entity.getImgUrl());
+        commentEntity.setImgUrl(entity.getImg_url());
         commentEntity.setStatus("0");
         return commentEntity;
     }
@@ -267,14 +219,14 @@ public class ActivityServiceImpl implements ActivityService{
      * @author(作者): feihong
      * @date (开发日期):2018/4/27 22:45
      **/
-    public ActivityJoinEntity bulidActivityJoin(ActivityJoinDto activityJoinDto,UserEntity userEntity){
+    public ActivityJoinEntity bulidActivityJoin(UserReDto userReDto,LoginDTO loginDTO){
         SimpleDateFormat format0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         ActivityJoinEntity activityJoinEntity =new ActivityJoinEntity();
-        activityJoinEntity.setImgUrl(userEntity.getImgUrl());
-        activityJoinEntity.setUserName(userEntity.getName());
+        activityJoinEntity.setImgUrl(loginDTO.getImg_url());
+        activityJoinEntity.setUserName(loginDTO.getName());
         activityJoinEntity.setCrateTime(format0.format(new Date()));
-        activityJoinEntity.setActivityId(activityJoinDto.getActivityId());
-        activityJoinEntity.setUserId(String.valueOf(userEntity.getId()));
+        activityJoinEntity.setActivityId(userReDto.getActivityId());
+        activityJoinEntity.setUserId(String.valueOf(loginDTO.getUserId()));
         return activityJoinEntity;
     }
 

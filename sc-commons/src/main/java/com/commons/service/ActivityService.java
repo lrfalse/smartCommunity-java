@@ -1,10 +1,8 @@
 package com.commons.service;
 
 import com.commons.dto.anDto.*;
-import com.commons.dto.dbDto.ParamDto;
-import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
-import com.commons.entity.ActivityEntity;
+import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.CommentEntity;
 import com.github.pagehelper.PageInfo;
 
@@ -44,14 +42,14 @@ public interface ActivityService {
       * @author(作者): feihong
       * @date (开发日期):2018/4/27 22:37
       **/
-    int joinActivityxx(ActivityJoinDto activityJoinDto);
+    int joinActivityxx(UserReDto userReDto);
 
     /**
       * @Description(功能描述): 我参加的活动
       * @author(作者): feihong
       * @date (开发日期):2018/5/2 14:10
       **/
-    PageInfo<JoinActityDto> injoin(CommentDto userId);
+    PageInfo<JoinActityDto> injoin(UserReDto userReDto);
 
     /**
       * @Description(功能描述): 查询活动参与所有人员

@@ -5,10 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.anDto.*;
-import com.commons.dto.dbDto.ParamDto;
-import com.commons.dto.reDto.ActivityJoinDto;
 import com.commons.dto.reDto.CommentReDto;
-import com.commons.entity.ActivityEntity;
+import com.commons.dto.reDto.UserReDto;
 import com.commons.entity.CommentEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
@@ -20,10 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * @Description:社区活动
@@ -86,7 +81,7 @@ public class ActivityController extends BaseApi{
       **/
     @PostMapping("joinActivity")
     public HttpResults joinActivity(HttpServletRequest req) throws Exception {
-        ActivityJoinDto join = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityJoinDto.class);
+        UserReDto join = JSON.parseObject(getIsJson(req).getBodyJson(), UserReDto.class);
         int i = activityService.joinActivityxx(join);
         return getHttpResult(i);
     }
@@ -98,7 +93,7 @@ public class ActivityController extends BaseApi{
       **/
     @PostMapping("join")
    public HttpResults Join(HttpServletRequest req) throws Exception {
-        CommentDto commentDto= JSONObject.parseObject(getIsJson(req).getBodyJson(), CommentDto.class);
+        UserReDto commentDto= JSONObject.parseObject(getIsJson(req).getBodyJson(), UserReDto.class);
         PageInfo<JoinActityDto> dtoPageInfo = activityService.injoin(commentDto);
        return getHttpResult(dtoPageInfo);
    }

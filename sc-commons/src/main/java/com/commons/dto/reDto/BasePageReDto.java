@@ -13,4 +13,5 @@ import java.io.Serializable;
 public class BasePageReDto<T> implements Serializable {
     private int pages;   //当前页
     private int pageSize;   //页数大小
+    private  String token;  //唯一标识
 }

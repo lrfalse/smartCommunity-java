@@ -210,11 +210,27 @@
     </select>
     <!--查询用户是否存在-->
     <select id="queryUser" resultType="UserEntity" parameterType="ParamDto" >
-        select
-        <include refid="Base_Column_List" />
-        from t_user
+       SELECT
+        tr.name,
+        tr.sex,
+        tr.community_id,
+        tr.mob_phone,
+        tr.id,
+        tg.img_url
+      FROM t_user tr INNER JOIN t_user_img tg ON tr.id = tg.user_id
         <where>
-            <include refid="whereCondition"/>
+            <if test="wopenId !=null ">
+                AND wopen_id=#{wopenId}
+            </if>
+            <if test="qopenId != null">
+                AND qopen_id=#{qopenId}
+            </if>
+            <if test="mobPhone !=null ">
+                AND mob_phone=#{mobPhone}
+            </if>
+            <if test="pwd !=null ">
+                AND pwd=#{pwd}
+            </if>
         </where>
     </select>
 </mapper>
