@@ -69,7 +69,7 @@
             1=1
             and (name=#{name_where} or mob_phone=#{name_where} )
              and pwd=#{pwd_where}
-            and status=0
+            and status=#{status}
         </where>
     </select>
 </mapper>
