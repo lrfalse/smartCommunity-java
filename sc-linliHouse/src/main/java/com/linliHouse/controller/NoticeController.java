@@ -48,7 +48,7 @@ public class NoticeController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",noticeEntity.getCommunityId());
         paramDto.put("status",noticeEntity.getStatus());
-        PageInfo<NoticeEntity> pageInfo = noticeService.getTitleDisplay(paramDto);
+        PageInfo<NoticeEntity> pageInfo = noticeService.getTitleDisplay(paramDto,noticeEntity.getPage(),noticeEntity.getRows());
         return getHttpResult(pageInfo);
     }
 
@@ -65,9 +65,7 @@ public class NoticeController extends BaseApi {
         paramDto.put("communityId",noticeEntity.getCommunityId());
         paramDto.put("status",noticeEntity.getStatus());
         paramDto.put("type",noticeEntity.getType());
-        paramDto.put("page",noticeEntity.getPage());
-        paramDto.put("rows",noticeEntity.getRows());
-        PageInfo<NoticeDto> pageInfo = noticeService.getNoticeList(paramDto);
+        PageInfo<NoticeDto> pageInfo = noticeService.getNoticeList(paramDto,noticeEntity.getPage(),noticeEntity.getRows());
         return getHttpResult(pageInfo);
     }
 
@@ -113,7 +111,7 @@ public class NoticeController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("noticeId",noticeCommentEntity.getNoticeId());
         paramDto.put("status",noticeCommentEntity.getStatus());
-        PageInfo<NoticeCommentEntity> pageInfo = noticeService.getNoticeCommentList(paramDto);
+        PageInfo<NoticeCommentEntity> pageInfo = noticeService.getNoticeCommentList(paramDto,noticeCommentEntity.getPage(),noticeCommentEntity.getRows());
         return getHttpResult(pageInfo);
     }
 

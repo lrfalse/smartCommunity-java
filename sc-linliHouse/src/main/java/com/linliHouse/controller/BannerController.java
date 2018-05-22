@@ -40,7 +40,7 @@ public class BannerController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("communityId",bannerEntity.getCommunityId());
         paramDto.put("status",bannerEntity.getStatus());
-        PageInfo<BannerDto> pageInfo = bannerService.getBannerList(paramDto);
+        PageInfo<BannerDto> pageInfo = bannerService.getBannerList(paramDto,bannerEntity.getPage(),bannerEntity.getRows());
         return getHttpResult(pageInfo);
     }
 }

@@ -17,5 +17,5 @@ public interface BannerService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/27 22:05
      */
-    PageInfo<BannerDto> getBannerList(ParamDto paramDto);
+    PageInfo<BannerDto> getBannerList(ParamDto paramDto,Integer page,Integer rows);
 }

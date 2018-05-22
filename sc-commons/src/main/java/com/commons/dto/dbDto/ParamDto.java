@@ -1,6 +1,5 @@
 package com.commons.dto.dbDto;
 
-import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import java.io.Serializable;

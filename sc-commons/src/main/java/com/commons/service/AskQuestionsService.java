@@ -36,7 +36,7 @@ public interface AskQuestionsService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/2 19:42
      */
-    PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto);
+    PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto,Integer page,Integer rows);
 
     /**
      * @Description(功能描述) : 问题详情
@@ -57,7 +57,7 @@ public interface AskQuestionsService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/3 11:46
      */
-    PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto);
+    PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto,Integer page,Integer rows);
 
     /**
      * @Description(功能描述) : 评论详情

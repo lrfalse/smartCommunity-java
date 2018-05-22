@@ -14,6 +14,7 @@ import com.commons.entity.QuestionsImgEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.AskQuestionsService;
+import com.commons.service.RedisService;
 import com.commons.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -51,6 +52,8 @@ public class AskQuestionsController extends BaseApi {
     private Environment env;
 	@Autowired
 	private UserService userService;
+    @Autowired
+    private RedisService redisService;
 
     /**
      * @Description(功能描述) : 我的提问
@@ -86,7 +89,7 @@ public class AskQuestionsController extends BaseApi {
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
         paramDto.put("status",askQuestionsEntity.getStatus());
         paramDto.put("type",askQuestionsEntity.getType());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto,askQuestionsEntity.getPage(),askQuestionsEntity.getRows());
         return getHttpResult(pageInfo);
     }
 
@@ -103,7 +106,7 @@ public class AskQuestionsController extends BaseApi {
         paramDto.put("communityId",askQuestionsEntity.getCommunityId());
         paramDto.put("status",askQuestionsEntity.getStatus());
         paramDto.put("title",askQuestionsEntity.getTitle());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto,askQuestionsEntity.getPage(),askQuestionsEntity.getRows());
         return getHttpResult(pageInfo);
     }
 
@@ -121,7 +124,7 @@ public class AskQuestionsController extends BaseApi {
         paramDto.put("status",askQuestionsEntity.getStatus());
         //popular 为true时是热门问题，为false时是最新问题
         paramDto.put("popular",askQuestionsEntity.getPopular());
-        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto);
+        PageInfo<AskQuestionsDto> pageInfo = askQuestionsService.getAskQuestionsPageInfo(paramDto,askQuestionsEntity.getPage(),askQuestionsEntity.getRows());
         return getHttpResult(pageInfo);
     }
 
@@ -139,6 +142,18 @@ public class AskQuestionsController extends BaseApi {
         paramDto.put("status",askQuestionsDto.getStatus());
         paramDto.put("id",askQuestionsDto.getId());
         AskQuestionsDto dto = askQuestionsService.problemDetails(paramDto);
+        if(dto!=null){
+            String ip = req.getRemoteAddr()+"problemDetails"+dto.getId();
+            String temp = redisService.get(ip);
+            //判断用户是否在15分钟内重复查看该条信息，重复则不增加浏览量
+            if(temp == null || !ip.equals(temp.replace("\"",""))){
+                redisService.set(ip,ip,1);
+                AskQuestionsEntity askQuestionsEntity = new AskQuestionsEntity();
+                askQuestionsEntity.setId(dto.getId());
+                askQuestionsEntity.setBrowseNum(dto.getBrowseNum());
+                askQuestionsService.browsingIncrease(askQuestionsEntity);
+            }
+        }
         return getHttpResult(dto);
     }
 
@@ -154,7 +169,7 @@ public class AskQuestionsController extends BaseApi {
         ParamDto paramDto = new ParamDto();
         paramDto.put("questionsId",questionsCommentEntity.getQuestionsId());
         paramDto.put("status",questionsCommentEntity.getStatus());
-        PageInfo<QuestionsCommentEntity> pageInfo = askQuestionsService.commentList(paramDto);
+        PageInfo<QuestionsCommentEntity> pageInfo = askQuestionsService.commentList(paramDto,questionsCommentEntity.getPage(),questionsCommentEntity.getRows());
         return getHttpResult(pageInfo);
     }
 

@@ -18,14 +18,14 @@ public interface NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/25 14:48
      */
-    PageInfo<NoticeEntity> getTitleDisplay(ParamDto paramDto);
+    PageInfo<NoticeEntity> getTitleDisplay(ParamDto paramDto,Integer page,Integer rows);
 
     /**
      * @Description(功能描述) : 小区公告列表
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 9:39
      */
-    PageInfo<NoticeDto> getNoticeList(ParamDto paramDto);
+    PageInfo<NoticeDto> getNoticeList(ParamDto paramDto,Integer page,Integer rows);
 
     /**
      * @Description(功能描述) : 公告详情
@@ -39,7 +39,7 @@ public interface NoticeService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/4/26 18:17
      */
-    PageInfo<NoticeCommentEntity> getNoticeCommentList(ParamDto paramDto);
+    PageInfo<NoticeCommentEntity> getNoticeCommentList(ParamDto paramDto,Integer page,Integer rows);
     
     /**
      * @Description(功能描述) : 发布评论

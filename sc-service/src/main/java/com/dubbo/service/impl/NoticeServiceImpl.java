@@ -38,8 +38,8 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/25 14:56
      */
     @Override
-    public PageInfo<NoticeEntity> getTitleDisplay(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+    public PageInfo<NoticeEntity> getTitleDisplay(ParamDto paramDto,Integer page,Integer rows) {
+        PageHelper.startPage(page,rows);
         List<NoticeEntity> list = noticeMapper.queryNoticeTitle(paramDto);
         PageInfo<NoticeEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;
@@ -51,8 +51,8 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 9:41
      */
     @Override
-    public PageInfo<NoticeDto> getNoticeList(ParamDto paramDto) {
-        PageHelper.startPage(Integer.parseInt(paramDto.get("page").toString()), Integer.parseInt(paramDto.get("rows").toString()));
+    public PageInfo<NoticeDto> getNoticeList(ParamDto paramDto,Integer page,Integer rows) {
+        PageHelper.startPage(page,rows);
         List<NoticeDto> list = noticeMapper.queryNoticeList(paramDto);
         PageInfo<NoticeDto> pageInfo = new PageInfo<>(list);
         return pageInfo;
@@ -94,8 +94,8 @@ public class NoticeServiceImpl implements NoticeService {
      * @Date(开发日期) : 2018/4/26 19:17
      */
     @Override
-    public PageInfo<NoticeCommentEntity> getNoticeCommentList(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+    public PageInfo<NoticeCommentEntity> getNoticeCommentList(ParamDto paramDto,Integer page,Integer rows) {
+        PageHelper.startPage(page,rows);
         List<NoticeCommentEntity> list = noticeCommentMapper.queryNoticeCommentList(paramDto);
         PageInfo<NoticeCommentEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;

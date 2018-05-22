@@ -80,8 +80,8 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
      * @Date(开发日期) : 2018/5/2 19:52
      */
     @Override
-    public PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+    public PageInfo<AskQuestionsDto> getAskQuestionsPageInfo(ParamDto paramDto,Integer page,Integer rows) {
+        PageHelper.startPage(page,rows);
         List<AskQuestionsDto> list = askQuestionsMapper.queryAsk(paramDto);
         PageInfo<AskQuestionsDto> pageInfo = new PageInfo<>(list);
         return pageInfo;
@@ -122,8 +122,8 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
      * @Date(开发日期) : 2018/5/3 11:49
      */
     @Override
-    public PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(), paramDto.getRows());
+    public PageInfo<QuestionsCommentEntity> commentList(ParamDto paramDto,Integer page,Integer rows) {
+        PageHelper.startPage(page,rows);
         List<QuestionsCommentEntity> list = askQuestionsMapper.queryComment(paramDto);
         PageInfo<QuestionsCommentEntity> pageInfo = new PageInfo<>(list);
         return pageInfo;
