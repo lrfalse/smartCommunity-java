@@ -147,7 +147,7 @@ public class AskQuestionsController extends BaseApi {
             String temp = redisService.get(ip);
             //判断用户是否在15分钟内重复查看该条信息，重复则不增加浏览量
             if(temp == null || !ip.equals(temp.replace("\"",""))){
-                redisService.set(ip,ip,1);
+                redisService.set(ip,ip,15);
                 AskQuestionsEntity askQuestionsEntity = new AskQuestionsEntity();
                 askQuestionsEntity.setId(dto.getId());
                 askQuestionsEntity.setBrowseNum(dto.getBrowseNum());
