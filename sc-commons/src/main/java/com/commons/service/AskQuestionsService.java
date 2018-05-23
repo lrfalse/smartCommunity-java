@@ -85,5 +85,5 @@ public interface AskQuestionsService {
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/5 16:41
      */
-    List<ChatTypeEntity> getChatTypeList(ChatTypeEntity chatTypeEntity);
+    List<ChatTypeEntity> getChatTypeList(ParamDto paramDto);
 }

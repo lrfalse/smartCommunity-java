@@ -208,7 +208,10 @@ public class AskQuestionsController extends BaseApi {
     public HttpResults getChatTypeList(HttpServletRequest req)throws Exception{
         IsJsonDTO jsonDto=getIsJson(req);
         ChatTypeEntity chatTypeEntity = JSON.parseObject(jsonDto.getBodyJson(), ChatTypeEntity.class);
-        List<ChatTypeEntity> list= askQuestionsService.getChatTypeList(chatTypeEntity);
+        ParamDto paramDto = new ParamDto();
+        paramDto.put("communityId",chatTypeEntity.getCommunityId());
+        paramDto.put("status",0);
+        List<ChatTypeEntity> list= askQuestionsService.getChatTypeList(paramDto);
         if(list==null){
             return getHttpResult(0);
         }

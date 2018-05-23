@@ -177,14 +177,17 @@ public class AskQuestionsServiceImpl implements AskQuestionsService{
      * @Author(作者) : xly<xielinyang>
      * @Date(开发日期) : 2018/5/5 16:41
      */
-    public List<ChatTypeEntity> getChatTypeList(ChatTypeEntity chatTypeEntity){
-        ChatTypeEntity ct;
-        if(chatTypeEntity == null){
-            ct = new ChatTypeEntity();
-            ct.setStatus(0);
-        }else{
-            ct = chatTypeEntity;
+    public List<ChatTypeEntity> getChatTypeList(ParamDto paramDto){
+        List<ChatTypeEntity> list = chatTypeMapper.queryType(paramDto);
+        if(list!=null) {
+            ChatTypeEntity c;
+            for (int i = 0; i < list.size(); i++) {
+                c = list.get(i);
+                paramDto.put("type",c.getId());
+                Integer n = chatTypeMapper.queryTypeCount(paramDto);
+                list.get(i).setQuantity(n);
+            }
         }
-        return chatTypeMapper.select(ct);
+        return list;
     }
 }
