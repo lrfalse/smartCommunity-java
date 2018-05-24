@@ -150,6 +150,9 @@ public class ActivityServiceImpl implements ActivityService{
              LoginDTO entity = userService.getRedisUser(userReDto.getToken());
              ParamDto paramAcDto = new ParamDto();
              paramAcDto.put("id",entity.getUserId());
+             paramAcDto.put("pages",userReDto.getPages());
+             paramAcDto.put("pageSize",userReDto.getPageSize());
+             PageHelper.startPage(userReDto.getPages(),userReDto.getPageSize());
             List<JoinActityDto> dtos = activityMapper.queryActivityJoin(paramAcDto);
             if (dtos.size()==0){
                 throw new ScException(AppServiceEnums.NOT_JOIN_ACTIVITY);

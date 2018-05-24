@@ -1,8 +1,9 @@
 package com.commons.dto.anDto;
-
+import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import java.io.Serializable;
+
 
 /**
  * @Description:我参加的活动
@@ -14,6 +15,10 @@ import java.io.Serializable;
 public class JoinActityDto implements Serializable{
 
     /**
+     *id
+     */
+    private String id;
+    /**
      *活动名称
      */
     private String title;
@@ -22,4 +27,9 @@ public class JoinActityDto implements Serializable{
      *图片地址
      */
     private String imgUrl;
+
+    /**
+     *活动参加人数
+     */
+    private String peopleNum;
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public class ActivityController extends BaseApi{
       * @date (开发日期):2018-4-27 15:33
       **/
     @PostMapping("/activity")
-    public HttpResults homeActivity(HttpServletRequest req) throws Exception {
+    public HttpResults homeActivity( HttpServletRequest req) throws Exception {
         ActivityListDto listDto = JSON.parseObject(getIsJson(req).getBodyJson(), ActivityListDto.class);
         List<ActivityDto> activityDtos = activityService.queryActivityDetail(listDto);
         PageInfo<ActivityDto> pageInfo = new PageInfo<>(activityDtos);

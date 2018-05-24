@@ -47,12 +47,14 @@
 
     <!--查询我参与的活动-->
     <select id="queryActivityJoin" parameterType="ParamDto" resultType="com.commons.dto.anDto.JoinActityDto">
-   SELECT
-  ty.title,
-  tg.img_url
-  FROM t_activity ty INNER JOIN t_activity_join tn ON ty.id = tn.activity_id
-  INNER JOIN t_activity_img tg ON ty.id = tg.activity_id
-  WHERE tn.user_id =#{id};
+     SELECT
+      ty.id,
+      ty.title,
+      tg.img_url,
+      ty.people_num
+    FROM t_activity_join tn INNER JOIN t_activity_img tg ON tn.activity_id = tg.activity_id
+      INNER JOIN t_activity ty ON tn.activity_id = ty.id
+    WHERE tn.user_id =#{id}
      </select>
 
 

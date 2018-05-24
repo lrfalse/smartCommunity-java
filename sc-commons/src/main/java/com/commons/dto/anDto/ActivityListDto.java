@@ -3,6 +3,7 @@ package com.commons.dto.anDto;
 import com.commons.dto.reDto.BasePageReDto;
 import lombok.Data;
 
+import javax.validation.Valid;
 import java.io.Serializable;
 import java.util.SortedSet;
 
@@ -18,6 +19,7 @@ public class ActivityListDto extends BasePageReDto{
     /**
      * 小区
      */
+    @Valid()
     private String communityId;
 
     /**
