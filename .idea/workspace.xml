@@ -9,11 +9,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b63d2c5b-1b1f-453a-951a-06d821c08263" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="b63d2c5b-1b1f-453a-951a-06d821c08263" name="Default" comment="版本更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sc-personalCenter/src/main/java/com/personalCenter/controller/CommunityController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" afterPath="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" />
+      <change beforePath="$PROJECT_DIR$/sc-admin/sc-estateAdmin/src/main/java/com/admin/controller/TestController.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/sc-linlihouse/target/" />
     <ignored path="$PROJECT_DIR$/sc-commons/target/" />
@@ -139,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sc-entranceguard/pom.xml" />
         <option value="$PROJECT_DIR$/sc-tools/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/sc-tools/pom.xml" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/resources/application-com.properties" />
@@ -190,6 +187,7 @@
         <option value="$PROJECT_DIR$/sc-admin/sc-linliAdmin/src/main/java/com/admin/controller/CommunityInfoController.java" />
         <option value="$PROJECT_DIR$/sc-commons/src/main/java/com/commons/entity/sys/HousingestateEntity.java" />
         <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java" />
+        <option value="$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/DistrictController.java" />
       </list>
     </option>
   </component>
@@ -379,6 +377,46 @@
               <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
               <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
               <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-estateAdmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-estateAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-estateAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-estateAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartCommunity" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="sc-estateAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smartCommunity" type="b2602c69:ProjectViewProjectNode" />
@@ -992,21 +1030,7 @@
       <workItem from="1529546318133" duration="5602000" />
       <workItem from="1529923524995" duration="914000" />
       <workItem from="1530067700463" duration="598000" />
-      <workItem from="1530494162935" duration="48268000" />
-    </task>
-    <task id="LOCAL-00013" summary="新增外接工具">
-      <created>1523615654882</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1523615654882</updated>
-    </task>
-    <task id="LOCAL-00014" summary="优化工具项目">
-      <created>1523849507526</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1523849507526</updated>
+      <workItem from="1530494162935" duration="48452000" />
     </task>
     <task id="LOCAL-00015" summary="新增省市区数据拉取">
       <created>1523873839393</created>
@@ -1337,7 +1361,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531317114467</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="版本更新">
+      <created>1531320204985</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1531320204986</updated>
+    </task>
+    <task id="LOCAL-00063" summary="版本更新">
+      <created>1531320356364</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1531320356364</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1352,7 +1390,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="732310000" />
+    <option name="totallyTimeSpent" value="732494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1365,7 +1403,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22234637" sideWeight="0.50959486" order="8" side_tool="true" content_ui="tabs" />
@@ -1384,7 +1421,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21787709" sideWeight="0.4904051" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38435754" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38435754" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.49573562" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17537314" sideWeight="0.4936508" order="0" side_tool="false" content_ui="combo" />
@@ -1534,12 +1571,6 @@
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sc-admin/sc-estateAdmin/src/main/java/com/admin/controller/TestController.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="247" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sc-commons/src/main/java/com/commons/controller/BaseSysApi.java</url>
           <line>46</line>
           <properties />
@@ -1573,105 +1604,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/workTools/local/repo/com/github/pagehelper/pagehelper/5.1.3/pagehelper-5.1.3.jar!/com/github/pagehelper/PageInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4923">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <marker date="1523512985516" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1523512985516" expanded="false" signature="145:189" ph="..." />
-            <marker date="1523512985516" expanded="true" signature="737:883" ph="{...}" />
-            <marker date="1523512985516" expanded="false" signature="918:929" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="943:949" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="1004:2194" ph="{...}" />
-            <marker date="1523512985516" expanded="false" signature="2246:2257" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="2283:2289" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="2360:2371" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="2412:2418" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="2460:3491" ph="{...}" />
-            <marker date="1523512985516" expanded="true" signature="3521:3985" ph="{...}" />
-            <marker date="1523512985516" expanded="true" signature="4023:4252" ph="{...}" />
-            <marker date="1523512985516" expanded="false" signature="4281:4292" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4312:4318" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4359:4370" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4393:4399" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4429:4440" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4461:4467" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4510:4521" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4546:4552" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4578:4589" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4606:4612" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4647:4658" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4675:4681" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4711:4722" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4743:4749" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4792:4803" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4828:4834" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4862:4873" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4892:4898" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="4937:4948" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="4969:4975" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5002:5013" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5031:5037" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5074:5085" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5104:5110" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="5116:5134" ph="/**...*/" />
-            <marker date="1523512985516" expanded="false" signature="5180:5191" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5221:5227" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="5233:5251" ph="/**...*/" />
-            <marker date="1523512985516" expanded="false" signature="5311:5322" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5357:5363" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5392:5403" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5423:5429" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5470:5481" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5504:5510" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5540:5551" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5572:5578" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5621:5632" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5657:5663" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="5669:5687" ph="/**...*/" />
-            <marker date="1523512985516" expanded="false" signature="5732:5743" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5772:5778" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="5784:5802" ph="/**...*/" />
-            <marker date="1523512985516" expanded="false" signature="5860:5871" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5904:5910" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="5946:5957" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="5981:5987" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6040:6051" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6082:6088" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6123:6134" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6157:6163" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6214:6225" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6254:6260" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6300:6311" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6339:6345" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6406:6417" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6456:6462" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6498:6509" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6533:6539" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6592:6603" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6634:6640" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6675:6686" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6712:6718" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6771:6782" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6817:6823" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6863:6874" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="6903:6909" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="6970:6981" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="7022:7028" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="7067:7078" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="7108:7114" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="7152:7163" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="7192:7198" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="7259:7270" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="7313:7319" ph=" }" />
-            <marker date="1523512985516" expanded="false" signature="7378:7389" ph=" { " />
-            <marker date="1523512985516" expanded="false" signature="7430:7436" ph=" }" />
-            <marker date="1523512985516" expanded="true" signature="7467:8941" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Enum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -1706,14 +1638,6 @@
             <element signature="e#1032#1033#0" expanded="false" />
             <element signature="e#1049#1050#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/DistrictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2088,10 +2012,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/DistrictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sc-tools/src/main/java/com/tools/controller/CommunityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc-admin/sc-estateAdmin/src/main/java/com/admin/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
           <folding />
         </state>
       </provider>
