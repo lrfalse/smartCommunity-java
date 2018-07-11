@@ -3,10 +3,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application  name="${dubbo.consumer.name}"/>
     <dubbo:registry group="${dubbo.registry.group.name}"  protocol="zookeeper" address="${dubbo.zookeeper.register.address}" client="zkclient" timeout="-1" />
-    <dubbo:protocol  host="${dubbo.registry.protocol.host}" />
+    <!--<dubbo:protocol  host="${dubbo.registry.protocol.host}" />-->
 
-    <dubbo:reference id="communityService" interface="com.commons.service.CommunityService"/>
-    <dubbo:reference id="districtService" interface="com.commons.service.DistrictService" />
+    <dubbo:reference id="communityService" interface="com.commons.service.sys.CommunityInfoService"/>
+    <dubbo:reference id="districtService" interface="com.commons.service.sys.CitysService" />
     <dubbo:reference id="userService" interface="com.commons.service.UserService"/>
     <dubbo:reference id="redisService" interface="com.commons.service.RedisService" />
 
@@ -16,10 +16,10 @@
     <dubbo:reference id="bannerService" interface="com.commons.service.BannerService" />
     <dubbo:reference id="contactUsService" interface="com.commons.service.ContactUsService"/>
     <dubbo:reference id="askQuestionsService" interface="com.commons.service.AskQuestionsService" />
-    <dubbo:reference id="nannyService" interface="com.commons.service.NannyService"  />
 
     <!--后台service-->
     <dubbo:reference id="sysUserService" interface="com.commons.service.sys.SysUserService"/>
     <dubbo:reference id="sysMenuService" interface="com.commons.service.sys.SysMenuService"/>
+    <dubbo:reference id="propertyCompanyService" interface="com.commons.service.sys.PropertyCompanyService"/>
 
 </beans>

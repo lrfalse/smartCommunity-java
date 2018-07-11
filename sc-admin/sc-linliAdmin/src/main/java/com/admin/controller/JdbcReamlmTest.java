@@ -9,7 +9,7 @@ import org.apache.shiro.subject.Subject;
 import org.junit.Test;
 
 /**
- * @Description(功能描述) :
+ * @Description(功能描述) :用户权限
  * @author(作者) :lrfalse<wangliyou>
  * @date (开发日期) :2018/5/8 22:27
  **/

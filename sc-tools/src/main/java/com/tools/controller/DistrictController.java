@@ -6,7 +6,7 @@ import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.anDto.TestDto;
 import com.commons.entity.DistrictEntity;
-import com.commons.service.DistrictService;
+import com.commons.service.sys.CitysService;
 import com.commons.utils.lcationUtils;
 import com.commons.utils.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class DistrictController extends BaseApi {
     private String districtUrl = "http://restapi.amap.com/v3/config/district?key=264d80231fd6ab84d409310b74b6ad98";    //省市请求地址
 
     @Autowired
-    private DistrictService districtService;
+    private CitysService districtService;
 
 	@ResponseBody
 	@RequestMapping(value = "/getDistrict")

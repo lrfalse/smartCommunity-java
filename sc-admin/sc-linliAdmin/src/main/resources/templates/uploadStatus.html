@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h1>图片服务器测试</h1>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div th:if="${path}">
+    图片地址：<a th:href="@{${path}}"><span th:text="${path}"></span></a><br/>
+    <img th:src="@{${path}}"/>
+</div>
+
+</body>
+</html>

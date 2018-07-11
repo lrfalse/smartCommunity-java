@@ -1,8 +1,8 @@
 package com.tools.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.commons.entity.CommunityEntity;
-import com.commons.service.CommunityService;
+import com.commons.entity.sys.CommunityInfoEntity;
+import com.commons.service.sys.CommunityInfoService;
 import com.commons.utils.lcationUtils;
 import com.tools.from.Demo;
 import com.tools.from.Pois;
@@ -30,7 +30,7 @@ public class CommunityController {
 
     String url = "http://restapi.amap.com/v3/place/text?key=264d80231fd6ab84d409310b74b6ad98&keywords=巨宇江南city=重庆市&citylimit=true&children=5&offset=24&page=1&extensions=all";
 	@Autowired
-	private CommunityService communityService;
+	private CommunityInfoService communityService;
 
 
     /**
@@ -53,10 +53,10 @@ public class CommunityController {
                     response = client.newCall(request).execute();
                     String str = response.body().string();
                     Demo demo = JSON.parseObject(str, Demo.class);
-                    List<CommunityEntity> list = getList(demo.getPois());
+                    List<CommunityInfoEntity> list = getList(demo.getPois());
                     //int i1 = list.size() / 24;
                 List<String> query = communityService.queryLocation();
-                    Iterator<CommunityEntity> t_Iterator = list.iterator();
+                    Iterator<CommunityInfoEntity> t_Iterator = list.iterator();
                     Iterator<String> iterator = query.iterator();
                     while (t_Iterator.hasNext()) {
                         String t_info = t_Iterator.next().getG_location();
@@ -83,10 +83,10 @@ public class CommunityController {
      * @date (开发日期):2018/4/16
      * @Author: list对象
      **/
-    public List<CommunityEntity> getList(List<Pois> list) {
-        List<CommunityEntity> tlist = new ArrayList<>();
+    public List<CommunityInfoEntity> getList(List<Pois> list) {
+        List<CommunityInfoEntity> tlist = new ArrayList<>();
         for (Pois pois : list) {
-            CommunityEntity communityEntity = new CommunityEntity();
+            CommunityInfoEntity communityEntity = new CommunityInfoEntity();
             communityEntity.setName(pois.getName());
             communityEntity.setAddress(pois.getAddress());
             communityEntity.setG_location(pois.getLocation());
@@ -163,9 +163,9 @@ public class CommunityController {
 
     @RequestMapping("screen")
     public String screen(){
-		CommunityEntity communityEntity=new CommunityEntity();
+		CommunityInfoEntity communityEntity=new CommunityInfoEntity();
 		communityEntity.setAdname("永川区");
-        List<CommunityEntity> query = communityService.query(communityEntity);
+        List<CommunityInfoEntity> query = communityService.query(communityEntity);
         List<String> strings = Arrays.asList(arr);
         System.out.println(strings+"");
         System.out.println(strings.size());

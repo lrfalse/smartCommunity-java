@@ -6,11 +6,11 @@ import com.commons.controller.BaseApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.reDto.CommunityReDto;
-import com.commons.entity.CommunityEntity;
+import com.commons.entity.sys.CommunityInfoEntity;
 import com.commons.entity.DistrictEntity;
 import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
-import com.commons.service.CommunityService;
+import com.commons.service.sys.CommunityInfoService;
 import com.commons.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +30,7 @@ public class CommunityController extends BaseApi{
 
 
     @Autowired
-    private CommunityService communityService;
+    private CommunityInfoService communityService;
     /**
      * @Description(功能描述): 小区定位选择
      * @author(作者): feihong
@@ -43,7 +43,7 @@ public class CommunityController extends BaseApi{
         if (CommonUtils.isEmpty(entity.getPname()) && CommonUtils.isEmpty(entity.getAdcode())) {
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         } else {
-            List<CommunityEntity> entities = communityService.locationCommunity(entity);
+            List<CommunityInfoEntity> entities = communityService.locationCommunity(entity);
             System.out.println(entities.size());
             return getHttpResult(entities);
         }
@@ -56,11 +56,11 @@ public class CommunityController extends BaseApi{
     @PostMapping("/choosecommunity")
     public HttpResults chooseCommunity(HttpServletRequest req)throws Exception {
         IsJsonDTO jsonDto = (IsJsonDTO) req.getAttribute("preHandleJsonDto");
-        CommunityEntity entity = JSON.parseObject(jsonDto.getBodyJson(), CommunityEntity.class);
+        CommunityInfoEntity entity = JSON.parseObject(jsonDto.getBodyJson(), CommunityInfoEntity.class);
         if (CommonUtils.isEmpty(entity.getName())) {
             throw new ScException(AppServiceEnums.SYS_DATA_ERROR);
         } else {
-            List<CommunityEntity> community = communityService.chooseCommunit(entity);
+            List<CommunityInfoEntity> community = communityService.findCommunityInfos(entity);
             return getHttpResult(community);
         }
     }

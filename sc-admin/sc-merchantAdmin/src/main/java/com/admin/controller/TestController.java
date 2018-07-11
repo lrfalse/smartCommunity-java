@@ -1,7 +1,7 @@
 package com.admin.controller;
 
 import com.commons.entity.DistrictEntity;
-import com.commons.service.DistrictService;
+import com.commons.service.sys.CitysService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class TestController {
 	private final static Logger logger= LoggerFactory.getLogger(TestController.class);
 
 	@Autowired
-	private DistrictService districtService;
+	private CitysService districtService;
 
 	@RequestMapping(value = "/test")
 	public String test() {

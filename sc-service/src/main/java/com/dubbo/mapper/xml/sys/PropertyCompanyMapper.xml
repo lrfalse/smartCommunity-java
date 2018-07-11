@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.PropertyCompanyMapper">
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+        id, property_name, property_shortname, name,  phone,create_date,updater,update_date,is_valid
+    </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND id = #{id_where}
+        </if>
+        <if test="propertyName_where != null" >
+            AND property_name  LIKE CONCAT('%',#{propertyName_where},'%')
+        </if>
+        <if test="isValid_where != null" >
+            AND  is_valid = #{isValid_where}
+        </if>
+    </sql>
+    <select  id="findPropertyCompanys" resultType="PropertyCompanyEntity" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from t_propertyCompany
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+
+</mapper>

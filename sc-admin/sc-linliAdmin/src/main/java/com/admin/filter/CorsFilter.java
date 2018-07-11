@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/** 
+/**
   * @Description(功能描述): 请求跨域问题
   * @author(作者): lrfalse<wangliyou>
   * @date(开发日期): 2018/5/11 14:43
-  **/ 
+  **/
 @Component
 @SuppressWarnings("Duplicates")
 public class CorsFilter implements Filter{
@@ -26,12 +26,12 @@ public class CorsFilter implements Filter{
     public void init(FilterConfig filterConfig) throws ServletException {
     }
 
-    
-    /** 
+
+    /**
       * @Description(功能描述): 请求域设置
       * @author(作者): lrfalse<wangliyou>
       * @date(开发日期): 2018/5/11 14:21
-      **/ 
+      **/
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) servletResponse;

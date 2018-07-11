@@ -4,6 +4,7 @@ import com.commons.dto.HttpResults;
 import com.commons.dto.IsJsonDTO;
 import com.commons.dto.anDto.BasePageDto;
 import com.commons.enums.AppServiceEnums;
+import com.commons.enums.SysCodeEnums;
 import com.commons.utils.CommonUtils;
 import com.commons.utils.JsonUtils;
 import com.commons.utils.MD5Utils;
@@ -75,10 +76,10 @@ public class BaseSysApi {
 		return httpResults;
 	}
 	/**
-	 * @Description(功能描述) : 返回加密报文信息 返回分页对象
-	 * @Author(作者) : xly<xielinyang>
-	 * @Date(开发日期) : 2018/4/28 10:44
-	 */
+	 * @Description(功能描述): 返回加密报文信息 返回分页对象
+	 * @author(作者): lrfalse<wangliyou>
+	 * @date (开发日期): 2018/4/19 10:50
+	 **/
 	public static HttpResults getHttpResult(PageInfo pageInfo) throws Exception {
 		return getHttpResult(new BasePageDto(pageInfo));
 	}
@@ -102,6 +103,18 @@ public class BaseSysApi {
 		HttpResults httpResults=new HttpResults();
 		httpResults.setStatusCode(AppServiceEnums.SYS_DATA_ERROR.getCode());
 		httpResults.setStatusMsg(AppServiceEnums.SYS_DATA_ERROR.getMsg());
+		return httpResults;
+	}
+
+	/**
+	  * @Description(功能描述): 请求异常并返回错误信息
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date(开发日期): 2018/7/9 21:11
+	  **/
+	public static HttpResults getHttpResultError(SysCodeEnums sysCodeEnums) {
+		HttpResults httpResults=new HttpResults();
+		httpResults.setStatusCode(sysCodeEnums.getCode());
+		httpResults.setStatusMsg(sysCodeEnums.getMsg());
 		return httpResults;
 	}
 	/**
@@ -131,6 +144,7 @@ public class BaseSysApi {
 			return getHttpResultError();
 		}
 	}
+
 
 
 }

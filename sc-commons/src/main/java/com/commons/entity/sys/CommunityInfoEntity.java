@@ -1,20 +1,23 @@
-package com.commons.entity;
+package com.commons.entity.sys;
 
+import com.commons.entity.BaseIdEntity;
 import lombok.Data;
 
 import javax.persistence.Table;
 
 /**
- * @Description:小区信息
- * @Author:feihong
- * @Vsesion:v.10
- * @Create:2018-04-12 10:10:51
- */
+  * @Description(功能描述): 小区信息
+  * @author(作者): lrfalse<wangliyou>
+  * @date(开发日期): 2018/7/10 14:51
+  **/
 @Data
 @Table( name = "t_community_info")
-public class CommunityEntity extends BaseIdEntity  {
+public class CommunityInfoEntity extends BaseIdEntity {
 
     private String name; //小区名字
+
+	private String propertyName;//物业公司名称
+	private String propertyId;//物业公司id
 
     private String address;
 
@@ -38,9 +41,8 @@ public class CommunityEntity extends BaseIdEntity  {
 
     private String entr_location;
 
-   // private String photos_url;
 
-    private String status;
+    private Integer isValid;
 
     private String remark;
 

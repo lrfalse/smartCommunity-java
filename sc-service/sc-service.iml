@@ -111,6 +111,8 @@
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.22.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.22.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.csource:fastdfs-client-java:1.27-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.45" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE" level="project" />
