@@ -4,8 +4,9 @@ import com.commons.controller.BaseSysApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.sys.CommunityInfoEntity;
+import com.commons.entity.sys.HousingestateEntity;
 import com.commons.enums.SysCodeEnums;
-import com.commons.service.sys.CommunityInfoService;
+import com.commons.service.sys.HousingestateService;
 import com.commons.utils.CommonUtils;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
   * @date(开发日期): 2018/7/11 15:15
   **/ 
 @RestController
-public class CommunityInfoController extends BaseSysApi {
+public class HousingestateController extends BaseSysApi {
 
 	@Autowired
-	private CommunityInfoService communityInfoService;
+	private HousingestateService housingestateService;
 
 
 
@@ -31,17 +32,17 @@ public class CommunityInfoController extends BaseSysApi {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/7/10 16:16
 	  **/
-	@PostMapping("/saveCommunityInfo")
-	public HttpResults saveCommunityInfo(@RequestBody CommunityInfoEntity communityInfo){
-		if(CommonUtils.isNotEmpty(communityInfo)){
+	@PostMapping("/saveHousingestate")
+	public HttpResults saveHousingestate(@RequestBody HousingestateEntity housingestate){
+		if(CommonUtils.isNotEmpty(housingestate)){
 			ParamDto dto=new ParamDto();
-			dto.put("name_where", communityInfo.getName());
-			dto.put("propertyId_where", communityInfo.getPropertyId());
-			PageInfo counts= communityInfoService.findCommunityInfos(dto);
+			dto.put("name_where", housingestate.getName());
+			dto.put("areasId_where", housingestate.getAreasId());
+			PageInfo counts= housingestateService.findHousingestate(dto);
 			if(counts.getTotal()>0){
-				return getHttpResultError(SysCodeEnums.COMMUNITYINFO_EXIST);
+				return getHttpResultError(SysCodeEnums.HOUSINGESTATE_EXIST);
 			}
-			int result=communityInfoService.saveCommunityInfo(communityInfo);
+			int result=housingestateService.saveHousingestate(housingestate);
 			return getHttpResult(result);
 		}
 		return getHttpResultError();
@@ -52,10 +53,10 @@ public class CommunityInfoController extends BaseSysApi {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/7/10 16:15
 	  **/
-	@PostMapping("/updateCommunityInfo")
-	public HttpResults updateCommunityInfo(@RequestBody CommunityInfoEntity communityInfo){
-		if(CommonUtils.isNotEmpty(communityInfo)&&CommonUtils.isNotEmpty(communityInfo.getId())){
-			int result=communityInfoService.updateCommunityInfo(communityInfo);
+	@PostMapping("/updateHousingestate")
+	public HttpResults updatHousingestate(@RequestBody HousingestateEntity housingestate){
+		if(CommonUtils.isNotEmpty(housingestate)&&CommonUtils.isNotEmpty(housingestate.getId())){
+			int result=housingestateService.updateHousingestate(housingestate);
 			return getHttpResult(result);
 		}
 		return getHttpResultError();
@@ -66,15 +67,16 @@ public class CommunityInfoController extends BaseSysApi {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/7/10 15:06
 	  **/
-	@PostMapping("/findCommunityInfos")
-	public HttpResults findPropertyCompanys(@RequestBody CommunityInfoEntity communityInfoEntity) throws Exception {
-		if(CommonUtils.isNotEmpty(communityInfoEntity)){
+	@PostMapping("/findHousingestate")
+	public HttpResults findHousingestate(@RequestBody HousingestateEntity housingestate) throws Exception {
+		if(CommonUtils.isNotEmpty(housingestate)){
 			ParamDto dto=new ParamDto();
-			dto.put("propertyName_where", communityInfoEntity.getPropertyName());
-			dto.put("isValid_where", communityInfoEntity.getIsValid());
-			dto.setPage(communityInfoEntity.getPage());
-			dto.setRows(communityInfoEntity.getRows());
-			PageInfo result= communityInfoService.findCommunityInfos(dto);
+			dto.put("propertyId_where", housingestate.getPropertyId());
+			dto.put("name_where", housingestate.getName());
+			dto.put("isValid_where", housingestate.getIsValid());
+			dto.setPage(housingestate.getPage());
+			dto.setRows(housingestate.getRows());
+			PageInfo result= housingestateService.findHousingestate(dto);
 			return getHttpResult(result);
 		}
 		return getHttpResultError();
