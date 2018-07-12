@@ -2,6 +2,7 @@ package com.commons.service.sys;
 
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.sys.CommunityInfoEntity;
+import com.commons.entity.sys.HousingestateEntity;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -9,12 +10,12 @@ import com.github.pagehelper.PageInfo;
   * @author(作者): lrfalse<wangliyou>
   * @date(开发日期): 2018/7/10 14:59
   **/
-public interface CommunityInfoService {
+public interface HousingestateService {
 
-	int saveCommunityInfo(CommunityInfoEntity communityInfo);
+	int saveHousingestate(HousingestateEntity housingestate);
 
-	int updateCommunityInfo(CommunityInfoEntity communityInfo);
+	int updateHousingestate(HousingestateEntity housingestate);
 
-	PageInfo<CommunityInfoEntity> findCommunityInfos(ParamDto paramDto);
+	PageInfo<HousingestateEntity> findHousingestate(ParamDto paramDto);
 
 }

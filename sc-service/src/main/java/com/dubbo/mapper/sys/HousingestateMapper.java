@@ -3,6 +3,7 @@ package com.dubbo.mapper.sys;
 import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.sys.CommunityInfoEntity;
+import com.commons.entity.sys.HousingestateEntity;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
   * @author(作者): lrfalse<wangliyou>
   * @date(开发日期): 2018/7/10 14:54
   **/
-public interface CommunityInfoMapper extends MyMapper<CommunityInfoEntity> {
+public interface HousingestateMapper extends MyMapper<HousingestateEntity> {
 
 
 	/**
@@ -19,5 +20,5 @@ public interface CommunityInfoMapper extends MyMapper<CommunityInfoEntity> {
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/7/10 14:53
 	  **/
-	List<CommunityInfoEntity> findCommunityInfos(ParamDto paramDto);
+	List<HousingestateEntity> findHousingestate(ParamDto paramDto);
 }

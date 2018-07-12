@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.HousingestateMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.HousingestateEntity" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="provincesId" property="provincesId" jdbcType="BIGINT" />
+        <result column="propertyId" property="propertyId" jdbcType="BIGINT" />
+        <result column="propertyName" property="propertyName" jdbcType="VARCHAR" />
+        <result column="provincesName" property="provincesName" jdbcType="VARCHAR" />
+        <result column="cityId" property="cityid" jdbcType="BIGINT" />
+        <result column="cityName" property="cityName" jdbcType="VARCHAR" />
+        <result column="areasId" property="areasId" jdbcType="BIGINT" />
+        <result column="areasName" property="areasName" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="baiLongitude" property="baiLongitude" jdbcType="VARCHAR" />
+        <result column="baiLatitude" property="baiLatitude" jdbcType="VARCHAR" />
+        <result column="gorLongitude" property="gorLongitude" jdbcType="VARCHAR" />
+        <result column="gorLatitude" property="gorLatitude" jdbcType="VARCHAR" />
+        <result column="account" property="account" jdbcType="VARCHAR" />
+        <result column="passwords" property="passwords" jdbcType="VARCHAR" />
+        <result column="userId" property="userId" jdbcType="VARCHAR" />
+        <result column="isValid" property="isValid" jdbcType="INTEGER" />
+        <result column="creater" property="creater" jdbcType="VARCHAR" />
+        <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="updater" property="updater" jdbcType="VARCHAR" />
+        <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+    </resultMap>
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+     id, propertyId,propertyName,provincesId, provincesName, cityId, cityName, areasId, areasName, name, baiLongitude,
+    baiLatitude, gorLongitude, gorLatitude, account, passwords, userId, isValid, creater,
+    createDate, updater, updateDate,phone,contacts
+  </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND id = #{id_where}
+        </if>
+        <if test="areasId_where != null" >
+            AND  areasId = #{areasId_where}
+        </if>
+        <if test="name_where != null" >
+            AND name  LIKE CONCAT('%',#{name_where},'%')
+        </if>
+        <if test="propertyId_where != null" >
+            AND  propertyId = #{propertyId_where}
+        </if>
+        <if test="isValid_where != null" >
+            AND  is_valid = #{isValid_where}
+        </if>
+    </sql>
+
+    <!--小区检索-->
+    <select  id="findHousingestate" resultMap="BaseResultMap" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from housingestate
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+</mapper>

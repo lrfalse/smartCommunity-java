@@ -17,7 +17,7 @@ public enum SysCodeEnums {
 
 	//业务公司板块
 	PROPERCOMPANY_EXIST("910","物业公司信息已存在，请忽重复添加"),
-	COMMUNITYINFO_EXIST("911","小区信息已存在，请忽重复添加");
+	HOUSINGESTATE_EXIST("911","小区信息已存在，请忽重复添加");
 
 
 	private String code;

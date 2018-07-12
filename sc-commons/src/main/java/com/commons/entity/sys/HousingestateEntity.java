@@ -16,43 +16,47 @@ import java.util.Date;
 public class HousingestateEntity extends BaseIdEntity {
     private Long id;
 
-    private Long provincesid;	//省份名称
+    private Long propertyId;	//物业公司id
+    private Long propertyName;	//物业公司名字
+    private Long provincesId;	//省份id
 
-    private String provincesname;//省份名称
+    private String provincesName;//省份名称
 
-    private Long cityid;	//城市id
+    private Long cityId;	//城市id
 
-    private String cityname;	//城市名称
+    private String cityName;	//城市名称
 
-    private Long areasid;	//区县id
+    private Long areasId;	//区县id
 
-    private String areasname;//区县名称
+    private String areasName;//区县名称
 
     private String name;	//小区名字
 
-    private String bailongitude;
+    private String baiLongitude;
 
-    private String bailatitude;
+    private String baiLatitude;
 
-    private String gorlongitude;
+    private String gorLongitude;
 
-    private String gorlatitude;
+    private String gorLatitude;
+    private String phone;		//联系电话
+    private String contacts;	//	联系人
 
     private String account; //第三方账号
 
     private String passwords;//第三方密码
 
-    private String userid;//第三方用户id
+    private String userId;//第三方用户id
 
-    private Integer isvalid;//是否可用
+    private Integer isValid;//是否可用
 
     private String creater;
 
-    private Date createdate;
+    private Date createDate;
 
     private String updater;
 
-    private Date updatedate;
+    private Date updateDate;
 
 
 }
