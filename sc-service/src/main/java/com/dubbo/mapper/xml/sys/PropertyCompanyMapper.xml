@@ -21,7 +21,7 @@
     <select  id="findPropertyCompanys" resultType="PropertyCompanyEntity" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />
-        from t_propertyCompany
+        from propertycompany
         <where>
             <include refid="whereCondition"/>
         </where>
