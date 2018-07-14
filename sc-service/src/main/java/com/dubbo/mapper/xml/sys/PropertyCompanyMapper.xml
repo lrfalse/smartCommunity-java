@@ -14,7 +14,7 @@
     </resultMap>
     <!--当前表列-->
     <sql id="Base_Column_List" >
-        id, propertyName,  name,  phone,createDate,updater,updateDate,isValid
+        id, propertyName, propertyShortname, name,  phone,createDate,updater,updateDate,isValid
     </sql>
     <!--where条件-->
     <sql id="whereCondition">
