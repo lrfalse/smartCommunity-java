@@ -8,9 +8,11 @@ import com.commons.enums.SysCodeEnums;
 import com.commons.service.sys.BuildingService;
 import com.commons.utils.CommonUtils;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -60,7 +62,7 @@ public class BuildingController extends BaseSysApi {
 	}
 
 	/** 
-	  * @Description(功能描述): 查询物业公司
+	  * @Description(功能描述): 查询楼栋信息
 	  * @author(作者): lrfalse<wangliyou>
 	  * @date(开发日期): 2018/7/9 18:45
 	  **/ 
@@ -76,6 +78,12 @@ public class BuildingController extends BaseSysApi {
 			PageInfo result= buildingService.findBuilding(dto);
 			return getHttpResult(result);
 		}
+		return getHttpResultError();
+	}
+
+	@PostMapping("/feignTest")
+	public HttpResults feignTest(@Param("name") String name , @Param("key")String key) throws Exception {
+		System.out.println("name="+name+"key="+key);
 		return getHttpResultError();
 	}
 }

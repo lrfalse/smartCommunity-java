@@ -9,6 +9,8 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
+
 /**
   * @Description(功能描述): 小区信息
   * @author(作者): lrfalse<wangliyou>
@@ -21,6 +23,7 @@ public class HousingestateServiceImpl implements HousingestateService {
     private HousingestateMapper housingestateMapper;
 
 	public int saveHousingestate(HousingestateEntity housingestate){
+		housingestate.setCreateDate(new Date());
 		return housingestateMapper.insert(housingestate);
 	}
 

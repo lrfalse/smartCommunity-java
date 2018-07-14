@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.sys.PropertyCompanyMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.PropertyCompanyEntity" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="propertyName" property="propertyName" jdbcType="VARCHAR" />
+        <result column="propertyShortname" property="propertyShortname" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="INTEGER" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="updater" property="updater" jdbcType="VARCHAR" />
+        <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="isValid" property="isValid" jdbcType="INTEGER" />
+    </resultMap>
     <!--当前表列-->
     <sql id="Base_Column_List" >
-        id, property_name, property_shortname, name,  phone,create_date,updater,update_date,is_valid
+        id, propertyName,  name,  phone,createDate,updater,updateDate,isValid
     </sql>
     <!--where条件-->
     <sql id="whereCondition">
@@ -12,13 +23,13 @@
             AND id = #{id_where}
         </if>
         <if test="propertyName_where != null" >
-            AND property_name  LIKE CONCAT('%',#{propertyName_where},'%')
+            AND propertyName  LIKE CONCAT('%',#{propertyName_where},'%')
         </if>
         <if test="isValid_where != null" >
-            AND  is_valid = #{isValid_where}
+            AND  isValid = #{isValid_where}
         </if>
     </sql>
-    <select  id="findPropertyCompanys" resultType="PropertyCompanyEntity" parameterType="ParamDto" >
+    <select  id="findPropertyCompanys" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />
         from propertycompany

@@ -7,7 +7,7 @@
         <result column="propertyId" property="propertyId" jdbcType="BIGINT" />
         <result column="propertyName" property="propertyName" jdbcType="VARCHAR" />
         <result column="provincesName" property="provincesName" jdbcType="VARCHAR" />
-        <result column="cityId" property="cityid" jdbcType="BIGINT" />
+        <result column="cityId" property="cityId" jdbcType="BIGINT" />
         <result column="cityName" property="cityName" jdbcType="VARCHAR" />
         <result column="areasId" property="areasId" jdbcType="BIGINT" />
         <result column="areasName" property="areasName" jdbcType="VARCHAR" />
@@ -26,12 +26,13 @@
         <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP" />
         <result column="phone" property="phone" jdbcType="VARCHAR" />
         <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+        <result column="buildings" property="buildings" jdbcType="BIGINT" />
     </resultMap>
     <!--当前表列-->
     <sql id="Base_Column_List" >
-     id, propertyId,propertyName,provincesId, provincesName, cityId, cityName, areasId, areasName, name, baiLongitude,
-    baiLatitude, gorLongitude, gorLatitude, account, passwords, userId, isValid, creater,
-    createDate, updater, updateDate,phone,contacts
+     a.id, a.propertyId,a.propertyName,a.provincesId, a.provincesName, a.cityId, a.cityName, a.areasId, a.areasName, a.name, a.baiLongitude,
+    a.baiLatitude, a.gorLongitude, a.gorLatitude, a.account, a.passwords, a.userId, a.isValid, a.creater,
+    a.createDate, a.updater, a.updateDate,a.phone,a.contacts,ifnull(b.counts,0) buildings
   </sql>
     <!--where条件-->
     <sql id="whereCondition">
@@ -49,7 +50,7 @@
             AND  propertyId = #{propertyId_where}
         </if>
         <if test="isValid_where != null" >
-            AND  is_valid = #{isValid_where}
+            AND  isValid = #{isValid_where}
         </if>
     </sql>
 
@@ -57,7 +58,8 @@
     <select  id="findHousingestate" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />
-        from housingestate
+        from housingestate a left JOIN
+        (SELECT count(id) counts,housingEstateId from building GROUP BY housingEstateId) b on a.id=b.housingEstateId
         <where>
             <include refid="whereCondition"/>
         </where>

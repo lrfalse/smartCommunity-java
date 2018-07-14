@@ -29,7 +29,6 @@ public class PropertyCompanyServiceImpl implements PropertyCompanyService {
 	  * @date(开发日期): 2018/7/9 17:17
 	  **/
 	public int savePropertyCompany(PropertyCompanyEntity propertyCompany){
-		propertyCompany.setIsValid(0);
 		propertyCompany.setCreateDate(new Date());
 		return propertyCompanyMapper.insert(propertyCompany);
 	}

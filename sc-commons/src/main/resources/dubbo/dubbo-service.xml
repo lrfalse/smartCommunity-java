@@ -2,10 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application  name="${dubbo.consumer.name}"/>
-    <dubbo:registry group="${dubbo.registry.group.name}"  protocol="zookeeper" address="${dubbo.zookeeper.register.address}" client="zkclient" timeout="-1" />
+    <dubbo:registry   protocol="zookeeper" address="${dubbo.zookeeper.register.address}" client="zkclient" timeout="-1" />
     <!--<dubbo:protocol  host="${dubbo.registry.protocol.host}" />-->
 
-    <dubbo:reference id="housingestateService" interface="com.commons.service.sys.HousingestateService"/>
     <dubbo:reference id="districtService" interface="com.commons.service.sys.CitysService" />
     <dubbo:reference id="userService" interface="com.commons.service.UserService"/>
     <dubbo:reference id="redisService" interface="com.commons.service.RedisService" />
@@ -21,5 +20,7 @@
     <dubbo:reference id="sysUserService" interface="com.commons.service.sys.SysUserService"/>
     <dubbo:reference id="sysMenuService" interface="com.commons.service.sys.SysMenuService"/>
     <dubbo:reference id="propertyCompanyService" interface="com.commons.service.sys.PropertyCompanyService"/>
+    <dubbo:reference id="buildingService" interface="com.commons.service.sys.BuildingService"/>
+    <dubbo:reference id="housingestateService" interface="com.commons.service.sys.HousingestateService"/>
 
 </beans>

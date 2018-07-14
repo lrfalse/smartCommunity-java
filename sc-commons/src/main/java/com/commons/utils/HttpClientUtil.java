@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -246,14 +247,23 @@ public class HttpClientUtil {
 		}
 		return responseContent;
 	}
+	/**
+	  * @Description(功能描述):
+	  * @author(作者): lrfalse<wangliyou>
+	  * @date(开发日期): 2018/7/14 14:59
+	 *   fam_video_url: http://115.28.11.75:8070
+	user_Api:
+	getToken: /famvideo/user_Api/getToken.html
+	  **/
 	public static void main(String[] args) {
-		String httpUrl = "http://localhost:9200/schools/school/4";
-		String params = "{\r\n" +
-				"   \"name\":\"City School\", \"description\":\"ICSE\", \"street\":\"West End\", \"city\":\"Meerut\", \r\n" +
-				"   \"state\":\"UP\", \"zip\":\"250002\", \"location\":[28.9926174, 77.692485], \"fees\":3500, \r\n" +
-				"   \"tags\":[\"fully computerized\"], \"rating\":\"4.5\"\r\n" +
-				"}";
-		String respone = HttpClientUtil.getInstance().sendHttpPost(httpUrl, params);
+		String httpUrl = "http://115.28.11.75:8070/famvideo/user_Api/getToken.html";
+		String params ="platformId=153026671031026&signKey=yong_chuan";
+		// "{ \"platformId\":\"153026671031026\", \"signKey\":\"yong_chuan\"}";
+		Map<String, String> maps=new HashMap<>();
+		maps.put("platformId", "153026671031026");
+		maps.put("signKey","yong_chuan" );
+		String respone = HttpClientUtil.getInstance().sendHttpPost(httpUrl, maps);
+
 		System.out.println(respone);
 	}
 }

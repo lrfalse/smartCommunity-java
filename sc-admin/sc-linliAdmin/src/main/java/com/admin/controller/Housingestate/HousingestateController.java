@@ -67,17 +67,16 @@ public class HousingestateController extends BaseSysApi {
 	  * @date(开发日期): 2018/7/10 15:06
 	  **/
 	@PostMapping("/findHousingestate")
-	public HttpResults findHousingestate(@RequestBody HousingestateEntity housingestate) throws Exception {
+	public HttpResults findHousingestate(@RequestBody(required=false) HousingestateEntity housingestate) throws Exception {
+		ParamDto dto=new ParamDto();
 		if(CommonUtils.isNotEmpty(housingestate)){
-			ParamDto dto=new ParamDto();
 			dto.put("propertyId_where", housingestate.getPropertyId());
 			dto.put("name_where", housingestate.getName());
 			dto.put("isValid_where", housingestate.getIsValid());
 			dto.setPage(housingestate.getPage());
 			dto.setRows(housingestate.getRows());
-			PageInfo result= housingestateService.findHousingestate(dto);
-			return getHttpResult(result);
 		}
-		return getHttpResultError();
+		PageInfo result= housingestateService.findHousingestate(dto);
+		return getHttpResult(result);
 	}
 }
