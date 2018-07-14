@@ -37,7 +37,7 @@ public class HousingestateServiceImpl implements HousingestateService {
       * @date(开发日期): 2018/7/10 14:54
       **/
     public PageInfo<HousingestateEntity> findHousingestate(ParamDto paramDto) {
-        PageHelper.startPage(paramDto.getPage(),paramDto.getRows());
+        PageHelper.startPage(paramDto.getPage(),paramDto.getRows(),"createDate desc");
         return new PageInfo<>( housingestateMapper.findHousingestate(paramDto));
     }
 
