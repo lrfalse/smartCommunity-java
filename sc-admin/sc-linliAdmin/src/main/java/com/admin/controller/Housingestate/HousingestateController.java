@@ -1,9 +1,8 @@
-package com.admin.controller;
+package com.admin.controller.Housingestate;
 
 import com.commons.controller.BaseSysApi;
 import com.commons.dto.HttpResults;
 import com.commons.dto.dbDto.ParamDto;
-import com.commons.entity.sys.CommunityInfoEntity;
 import com.commons.entity.sys.HousingestateEntity;
 import com.commons.enums.SysCodeEnums;
 import com.commons.service.sys.HousingestateService;

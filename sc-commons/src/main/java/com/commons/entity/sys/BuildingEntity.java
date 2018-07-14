@@ -10,14 +10,14 @@ import java.util.Date;
 @Table(name = "building")
 public class BuildingEntity extends BaseIdEntity {
     private Long id;
-
-    private Long housingestateid;
-
-    private String housingestatename;
+	private Long propertyId;	//物业公司id
+	private Long propertyName;	//物业公司id
+    private Long housingEstateId;
+    private String housingEstateName;
 
     private String name;
 
-    private Integer isvalid;
+    private Integer isValid;
 
     private String creater;
 

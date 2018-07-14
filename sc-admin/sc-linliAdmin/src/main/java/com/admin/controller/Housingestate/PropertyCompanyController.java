@@ -1,4 +1,4 @@
-package com.admin.controller;
+package com.admin.controller.Housingestate;
 
 import com.commons.controller.BaseSysApi;
 import com.commons.dto.HttpResults;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description(功能描述) :
+ * @Description(功能描述) :物业信息
  * @author(作者) :lrfalse<wangliyou>
  * @date (开发日期) :2018/7/9 17:19
  **/

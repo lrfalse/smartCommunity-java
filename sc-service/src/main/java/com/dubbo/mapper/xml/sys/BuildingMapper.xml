@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.BuildingMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.BuildingEntity" >
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="housingEstateId" jdbcType="BIGINT" property="housingEstateId" />
+        <result column="propertyId" jdbcType="BIGINT" property="propertyId" />
+        <result column="housingEstateName" jdbcType="VARCHAR" property="housingEstateName" />
+        <result column="propertyName" jdbcType="VARCHAR" property="propertyName" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="isValid" jdbcType="INTEGER" property="isValid" />
+        <result column="creater" jdbcType="VARCHAR" property="creater" />
+        <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+        <result column="updater" jdbcType="VARCHAR" property="updater" />
+        <result column="updateDate" jdbcType="TIMESTAMP" property="updateDate" />
+    </resultMap>
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+     id, housingEstateId, housingEstateName, name, isValid, creater, createDate, updater, updateDate,propertyId,propertyName
+  </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND id = #{id_where}
+        </if>
+        <if test="propertyId_where != null" >
+            AND  propertyId = #{propertyId_where}
+        </if>
+        <if test="housingEstateId_where != null" >
+            AND housingEstateId  =#{housingEstateId_where}
+        </if>
+        <if test="isValid_where != null" >
+            AND  is_valid = #{isValid_where}
+        </if>
+        <if test="name_where != null" >
+            AND  name = #{name_where}
+        </if>
+    </sql>
+
+    <!--小区检索-->
+    <select  id="findBuilding" resultMap="BaseResultMap" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from housingestate
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+</mapper>
