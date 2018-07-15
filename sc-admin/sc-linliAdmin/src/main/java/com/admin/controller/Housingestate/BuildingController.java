@@ -67,18 +67,18 @@ public class BuildingController extends BaseSysApi {
 	  * @date(开发日期): 2018/7/9 18:45
 	  **/ 
 	@PostMapping("/findBuilding")
-	public HttpResults findBuilding(@RequestBody BuildingEntity building) throws Exception {
+	public HttpResults findBuilding(@RequestBody(required=false) BuildingEntity building) throws Exception {
+		ParamDto dto=new ParamDto();
 		if(CommonUtils.isNotEmpty(building)){
-			ParamDto dto=new ParamDto();
+
 			dto.put("propertyId_where", building.getPropertyId());
 			dto.put("housingEstateId_where", building.getHousingEstateId());
 			dto.put("name_where", building.getName());
 			dto.setPage(building.getPage());
 			dto.setRows(building.getRows());
-			PageInfo result= buildingService.findBuilding(dto);
-			return getHttpResult(result);
 		}
-		return getHttpResultError();
+		PageInfo result= buildingService.findBuilding(dto);
+		return getHttpResult(result);
 	}
 
 	@PostMapping("/feignTest")

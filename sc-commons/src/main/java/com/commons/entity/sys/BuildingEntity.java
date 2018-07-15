@@ -7,6 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+  * @Description(功能描述): 楼层信息
+  * @author(作者): lrfalse<wangliyou>
+  * @date(开发日期): 2018/7/14 19:58
+  **/
 @Data
 @Table(name = "building")
 public class BuildingEntity extends BaseIdEntity {
@@ -24,12 +29,12 @@ public class BuildingEntity extends BaseIdEntity {
     private Integer isValid;
 	@Column(name = "creater")
     private String creater;
-	@Column(name = "createdate")
-    private Date createdate;
+	@Column(name = "createDate")
+    private Date createDate;
 	@Column(name = "updater")
     private String updater;
-	@Column(name = "updatedate")
-    private Date updatedate;
+	@Column(name = "updateDate")
+    private Date updateDate;
 
 
 }

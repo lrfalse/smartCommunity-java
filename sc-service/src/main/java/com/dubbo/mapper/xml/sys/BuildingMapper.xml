@@ -42,7 +42,7 @@
     <select  id="findBuilding" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />
-        from housingestate
+        from building
         <where>
             <include refid="whereCondition"/>
         </where>
