@@ -16,4 +16,5 @@ public interface BuildingMapper extends MyMapper<BuildingEntity> {
 
 
 	List<BuildingEntity> findBuilding(ParamDto paramDto);
+	int updateBuildingByParam(ParamDto paramDto);
 }

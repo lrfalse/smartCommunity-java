@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.RoomMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.RoomEntity">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="housingEstateId" jdbcType="BIGINT" property="housingEstateId" />
+        <result column="housingEstateName" jdbcType="VARCHAR" property="housingEstateName" />
+        <result column="buildingId" jdbcType="BIGINT" property="buildingId" />
+        <result column="buildName" jdbcType="VARCHAR" property="buildName" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="coveredArea" jdbcType="VARCHAR" property="coveredArea" />
+        <result column="usableArea" jdbcType="VARCHAR" property="usableArea" />
+        <result column="unitPrice" jdbcType="VARCHAR" property="unitPrice" />
+        <result column="allPrice" jdbcType="VARCHAR" property="allPrice" />
+        <result column="isValid" jdbcType="INTEGER" property="isValid" />
+        <result column="creater" jdbcType="VARCHAR" property="creater" />
+        <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+        <result column="updater" jdbcType="VARCHAR" property="updater" />
+        <result column="updateDate" jdbcType="TIMESTAMP" property="updateDate" />
+    </resultMap>
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+     id, housingEstateId, housingEstateName, buildingId, buildName, name, coveredArea,
+    usableArea, unitPrice, allPrice, isValid, creater, createDate, updater, updateDate
+  </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND a.id = #{id_where}
+        </if>
+        <if test="propertyId_where != null" >
+            AND  b.propertyId = #{propertyId_where}
+        </if>
+        <if test="housingEstateId_where != null" >
+            AND a.housingEstateId  =#{housingEstateId_where}
+        </if>
+        <if test="buildingId_where != null" >
+            AND a.buildingId  =#{buildingId_where}
+        </if>
+        <if test="isValid_where != null" >
+            AND  a.is_valid = #{isValid_where}
+        </if>
+        <if test="name_where != null" >
+            AND  a.name = #{name_where}
+        </if>
+    </sql>
+    <update id="updateRoomByParam" parameterType="ParamDto" >
+        update room a
+        <set >
+            <if test="housingEstateName != null" >
+                a.housingEstateName = #{housingEstateName,jdbcType=VARCHAR},
+            </if>
+            <if test="propertyName != null" >
+                a.propertyName = #{propertyName,jdbcType=VARCHAR},
+            </if>
+            <if test="buildName != null" >
+                a.buildName = #{buildName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </update>
+    <!--房号检索-->
+    <select  id="findRoom" resultType="RoomVo" parameterType="ParamDto" >
+        SELECT a.id,a.name,ifnull(c.members,0) members,IFNULL(d.faces,0) faces,a.buildName,a.buildingId,a.housingEstateName,a.housingEstateId,b.propertyName,b.propertyId,
+        a.isValid,a.coveredArea,a.usableArea,a.unitPrice,a.allPrice
+        from room a left join housingestate b
+        on a.housingEstateId =b.id
+        left join (SELECT roomId,count(memberId) members from membertoroom
+        GROUP BY roomId) c
+        on a.id=c.roomId
+        left join (SELECT roomId,count(b.memberId) faces from membertoroom a left join memberface b
+        on a.memberId=b.memberId
+        GROUP BY a.roomId) d
+        on a.id=d.roomId
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+</mapper>

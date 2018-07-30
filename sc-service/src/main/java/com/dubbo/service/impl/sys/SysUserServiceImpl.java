@@ -7,9 +7,10 @@ import com.commons.enums.AppServiceEnums;
 import com.commons.exception.ScException;
 import com.commons.service.sys.SysUserService;
 import com.commons.utils.CommonUtils;
-import com.commons.utils.DateUtils;
 import com.commons.utils.MD5Utils;
 import com.dubbo.mapper.sys.SysUserMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
@@ -42,6 +43,15 @@ public class SysUserServiceImpl implements SysUserService {
 		}
 		return null;
 	}
+
+	public int updateSysUser(SysUserEntity sysUser) {
+		return sysUserMapper.updateByPrimaryKey(sysUser);
+	}
+	public int updateSysUserPwd(SysUserEntity sysUser) {
+    	sysUser.setPwd(MD5Utils.md5(sysUser.getPwd()));
+		return sysUserMapper.updateByPrimaryKeySelective(sysUser);
+	}
+
 	/**
 	  * @Description(功能描述): 登录
 	  * @author(作者): lrfalse<wangliyou>
@@ -50,7 +60,7 @@ public class SysUserServiceImpl implements SysUserService {
 	public SysUserEntity login(SysUserEntity sysUser){
 		ParamDto paramDto=new ParamDto();
 		paramDto.put("name_where", sysUser.getName());
-		paramDto.put("status", 0);
+		paramDto.put("isValid_where", 0);
 		paramDto.put("pwd_where",MD5Utils.md5(sysUser.getPwd()) );
 		sysUser= sysUserMapper.login(paramDto);
 		if(CommonUtils.isNotEmpty(sysUser)){
@@ -79,6 +89,12 @@ public class SysUserServiceImpl implements SysUserService {
 		}else{
 			throw new ScException(AppServiceEnums.USER_EXIST);
 		}
+	}
+
+
+	public PageInfo findSysUser(ParamDto paramDto) {
+		PageHelper.startPage(paramDto.getPage(),paramDto.getRows());
+		return new PageInfo<>( sysUserMapper.selectAll());
 	}
 
 }

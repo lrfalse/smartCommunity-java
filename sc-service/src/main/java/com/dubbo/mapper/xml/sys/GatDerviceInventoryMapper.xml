@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.GatDerviceInventoryMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.GatDerviceInventoryEntity" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="derviceNum" property="derviceNum" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="deviceName" property="deviceName"  jdbcType="VARCHAR" />
+        <result column="updateDate" jdbcType="TIMESTAMP" property="updateDate" />
+    </resultMap>
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+      id, derviceNum, status, deviceName
+   </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND id = #{id_where}
+        </if>
+        <if test="derviceNum_where != null" >
+            AND  derviceNum = #{derviceNum_where}
+        </if>
+    </sql>
+    <select  id="findGatDerviceInventory" resultMap="BaseResultMap" parameterType="ParamDto" >
+        select
+        <include refid="Base_Column_List" />
+        from gat_dervice_inventory
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </select>
+</mapper>

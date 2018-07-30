@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.mapper.sys.MemberMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.MemberEntity">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="openId" jdbcType="VARCHAR" property="openId" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="sex" jdbcType="INTEGER" property="sex" />
+        <result column="relationship" jdbcType="INTEGER" property="relationship" />
+        <result column="mid" jdbcType="BIGINT" property="mid" />
+        <result column="mbName" jdbcType="VARCHAR" property="mbName" />
+        <result column="isPerfectIdentity" jdbcType="INTEGER" property="isPerfectIdentity" />
+        <result column="isFaceRecognition" jdbcType="INTEGER" property="isFaceRecognition" />
+        <result column="creater" jdbcType="VARCHAR" property="creater" />
+        <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+        <result column="updater" jdbcType="VARCHAR" property="updater" />
+        <result column="updateDate" jdbcType="TIMESTAMP" property="updateDate" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="isValid" jdbcType="INTEGER" property="isValid" />
+    </resultMap>
+    <!--当前表列-->
+    <sql id="Base_Column_List" >
+      id, openId, name, phone, sex, relationship, mid, mbName, isPerfectIdentity, isFaceRecognition,
+    creater, createDate, updater, updateDate
+  </sql>
+    <!--where条件-->
+    <sql id="whereCondition">
+        1=1
+        <if test="id_where != null" >
+            AND id = #{id_where}
+        </if>
+    </sql>
+
+    <!--业主信息检索-->
+    <select  id="findMember" resultType="MemberVo" parameterType="ParamDto" >
+        SELECT a.id,a.name,a.phone,a.relationship,a.sex,ifnull(a.age,0) age,ifnull(b.memberId,0) faces,
+        a.isValid
+         from member
+        a left join memberface b on a.id = b.memberId
+        where a.id in(
+        SELECT memberId from membertoroom where roomId =#{roomId_where})
+        and isValid =#{isValid_where}
+    </select>
+
+
+</mapper>

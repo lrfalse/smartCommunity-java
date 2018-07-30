@@ -21,4 +21,6 @@ public interface HousingestateMapper extends MyMapper<HousingestateEntity> {
 	  * @date(开发日期): 2018/7/10 14:53
 	  **/
 	List<HousingestateEntity> findHousingestate(ParamDto paramDto);
+
+	int  updateHousingestateByParam(ParamDto paramDto);
 }

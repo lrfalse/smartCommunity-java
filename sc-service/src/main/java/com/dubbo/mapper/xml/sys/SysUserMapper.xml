@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dubbo.mapper.sys.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.commons.entity.sys.SysUserEntity" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+        <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="BIT" />
+        <result column="imgUrl" property="imgUrl" jdbcType="VARCHAR" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+        <result column="identityCode" property="identityCode" jdbcType="VARCHAR" />
+        <result column="mobPhone" property="mobPhone" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="ostCode" property="ostCode" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="type" property="type" jdbcType="BIT" />
+        <result column="isValid" property="isValid" jdbcType="BIT" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </resultMap>
     <!--当前表列-->
     <sql id="Base_Column_List" >
-        id, name, nick_name, birthday, sex, img_url, pwd, identity_code, mob_phone, address,
-        ost_code, email, create_time, type, status, remark
+        id, name, nickName, birthday, sex, imgUrl, pwd, identityCode, mobPhone, address,
+        ostCode, email, createTime, type, isValid, remark
     </sql>
     <!--where条件-->
     <sql id="whereCondition">
@@ -22,26 +40,26 @@
             AND  pwd = #{pwd_where}
         </if>
         <if test="identityCode_where != null" >
-            AND  identity_code = #{identityCode_where}
+            AND  identityCode = #{identityCode_where}
         </if>
         <if test="mobPhone_where != null" >
-            AND mob_phone = #{mobPhone_where}
+            AND mobPhone = #{mobPhone_where}
         </if>
         <if test="address_where != null" >
             AND address = #{address_where}
         </if>
         <if test="ostCode_where != null" >
-            AND  ost_code = #{ostCode_where}
+            AND  ostCode = #{ostCode_where}
         </if>
         <if test="email_where != null" >
             AND  email = #{email_where}
         </if>
 
         <if test="createTime_where != null" >
-            AND  create_time = #{createTime_where,jdbcType=TIMESTAMP}
+            AND  createTime = #{createTime_where,jdbcType=TIMESTAMP}
         </if>
         <if test="status_where != null" >
-            AND  status = #{status_where,jdbcType=BIT}
+            AND  isValid = #{isValid_where,jdbcType=BIT}
         </if>
         <if test="remark_where != null" >
             AND  remark = #{remark_where}
@@ -52,7 +70,7 @@
     </sql>
 
     <!--根据where条件查询系统用户信息-->
-    <select  id="getSysUser" resultType="SysUserEntity" parameterType="ParamDto" >
+    <select  id="getSysUser" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List"/>
         from sys_user
@@ -61,15 +79,15 @@
         </where>
     </select>
     <!--登录-->
-    <select  id="login" resultType="SysUserEntity" parameterType="ParamDto" >
+    <select  id="login" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List"/>
         from sys_user
         <where>
             1=1
-            and (name=#{name_where} or mob_phone=#{name_where} )
+            and (name=#{name_where} or mobPhone=#{name_where} )
              and pwd=#{pwd_where}
-            and status=#{status}
+            and isValid=#{isValid_where}
         </where>
     </select>
 </mapper>

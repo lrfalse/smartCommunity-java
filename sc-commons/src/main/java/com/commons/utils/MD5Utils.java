@@ -44,6 +44,6 @@ public class MD5Utils {
 	public static void main(String[] args){
 		System.out.println(md5("123456"));
 
-		System.out.println(md5(md5("123456")));
+		System.out.println(md5(md5("admin123321")));
 	}
 }

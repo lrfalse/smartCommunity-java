@@ -4,6 +4,8 @@ import com.commons.config.MyMapper;
 import com.commons.dto.dbDto.ParamDto;
 import com.commons.entity.sys.SysUserEntity;
 
+import java.util.List;
+
 /**
  * @Description(功能描述) :后台用户信息
  * @author(作者) :lrfalse<wangliyou>
@@ -25,4 +27,6 @@ public interface SysUserMapper extends MyMapper<SysUserEntity> {
      **/
     SysUserEntity getSysUser(ParamDto paramDto);
 
+
+	List<SysUserEntity> findSysUser(ParamDto paramDto);
 }

@@ -1,4 +1,4 @@
-package com.admin.controller.Housingestate;
+package com.admin.controller.housingestate;
 
 import com.commons.controller.BaseSysApi;
 import com.commons.dto.HttpResults;

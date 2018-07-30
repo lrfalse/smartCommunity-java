@@ -16,8 +16,11 @@ public enum SysCodeEnums {
 
 
 	//业务公司板块
+	LOGIN_ERROR("900","用户登录失败，用户名或密码错误"),
 	PROPERCOMPANY_EXIST("910","物业公司信息已存在，请忽重复添加"),
-	HOUSINGESTATE_EXIST("911","小区信息已存在，请忽重复添加");
+	HOUSINGESTATE_EXIST("911","小区信息已存在，请忽重复添加"),
+	ROOM_EXIST("912","小区房号信息已存在，请忽重复添加"),
+	GAT_DERVICE_ERROR("913","当前设备串号已添加，请忽重复添加");
 
 
 	private String code;

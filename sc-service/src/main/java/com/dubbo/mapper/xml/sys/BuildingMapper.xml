@@ -37,8 +37,21 @@
             AND  name = #{name_where}
         </if>
     </sql>
+    <update id="updateBuildingByParam" parameterType="ParamDto" >
+        update building a
+        <set >
+            <if test="housingEstateName != null" >
+                housingEstateName = #{housingEstateName,jdbcType=VARCHAR},
+            </if>
+            <if test="propertyName != null" >
+                propertyName = #{propertyName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </update>
 
-    <!--小区检索-->
     <select  id="findBuilding" resultMap="BaseResultMap" parameterType="ParamDto" >
         select
         <include refid="Base_Column_List" />

@@ -30,7 +30,7 @@
     </resultMap>
     <!--当前表列-->
     <sql id="Base_Column_List" >
-     a.id, a.propertyId,a.propertyName,a.provincesId, a.provincesName, a.cityId, a.cityName, a.areasId, a.areasName, a.name, a.baiLongitude,
+     a.id, a.propertyId,c.propertyName,a.provincesId, a.provincesName, a.cityId, a.cityName, a.areasId, a.areasName, a.name, a.baiLongitude,
     a.baiLatitude, a.gorLongitude, a.gorLatitude, a.account, a.passwords, a.userId, a.isValid, a.creater,
     a.createDate, a.updater, a.updateDate,a.phone,a.contacts,ifnull(b.counts,0) buildings
   </sql>
@@ -38,19 +38,19 @@
     <sql id="whereCondition">
         1=1
         <if test="id_where != null" >
-            AND id = #{id_where}
+            AND a.id = #{id_where}
         </if>
         <if test="areasId_where != null" >
-            AND  areasId = #{areasId_where}
+            AND  a.areasId = #{areasId_where}
         </if>
         <if test="name_where != null" >
-            AND name  LIKE CONCAT('%',#{name_where},'%')
+            AND a.name  LIKE CONCAT('%',#{name_where},'%')
         </if>
         <if test="propertyId_where != null" >
-            AND  propertyId = #{propertyId_where}
+            AND  a.propertyId = #{propertyId_where}
         </if>
         <if test="isValid_where != null" >
-            AND  isValid = #{isValid_where}
+            AND  a.isValid = #{isValid_where}
         </if>
     </sql>
 
@@ -60,9 +60,21 @@
         <include refid="Base_Column_List" />
         from housingestate a left JOIN
         (SELECT count(id) counts,housingEstateId from building GROUP BY housingEstateId) b on a.id=b.housingEstateId
+        left JOIN
+        propertycompany c on a.propertyId =c.id
         <where>
             <include refid="whereCondition"/>
         </where>
-
     </select>
+    <update id="updateHousingestateByParam" parameterType="ParamDto" >
+        update Housingestate a
+        <set >
+            <if test="propertyName != null" >
+                a.propertyName = #{propertyName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <where>
+            <include refid="whereCondition"/>
+        </where>
+    </update>
 </mapper>

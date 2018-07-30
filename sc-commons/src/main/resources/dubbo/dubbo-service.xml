@@ -22,5 +22,9 @@
     <dubbo:reference id="propertyCompanyService" interface="com.commons.service.sys.PropertyCompanyService"/>
     <dubbo:reference id="buildingService" interface="com.commons.service.sys.BuildingService"/>
     <dubbo:reference id="housingestateService" interface="com.commons.service.sys.HousingestateService"/>
+    <dubbo:reference id="roomService" interface="com.commons.service.sys.RoomService"/>
+    <dubbo:reference id="memberService" interface="com.commons.service.sys.MemberService" />
+    <dubbo:reference id="memberToRoomService" interface="com.commons.service.sys.MemberToRoomService"/>
+    <dubbo:reference id="gatDerviceInventoryService" interface="com.commons.service.sys.GatDerviceInventoryService"/>
 
 </beans>
