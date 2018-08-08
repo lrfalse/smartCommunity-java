@@ -67,7 +67,7 @@
         </where>
     </select>
     <update id="updateHousingestateByParam" parameterType="ParamDto" >
-        update Housingestate a
+        update housingestate a
         <set >
             <if test="propertyName != null" >
                 a.propertyName = #{propertyName,jdbcType=VARCHAR},
