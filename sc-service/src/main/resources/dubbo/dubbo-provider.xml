@@ -7,13 +7,4 @@
     <dubbo:protocol name="dubbo" port="20880"/>
     <dubbo:annotation package="com.dubbo.service.impl"/>
     <dubbo:annotation package="com.dubbo.service.impl.sys"/>
-
-    <!-- 声明暴露的服务接口 -->
-    <!--<dubbo:service interface="com.commons.service.DistrictService"  ref="districtService" timeout="10000" />-->
-    <!--<dubbo:service interface="com.commons.service.UserService"  ref="userService" timeout="10000" />-->
-
-    <!-- 声明暴露的服务接口的实现类 -->
-    <!--<bean id="districtService" class="com.dubbo.service.impl.DistrictServiceImpl" />-->
-    <!--<bean id="userService" class="com.dubbo.service.impl.UserServiceImpl" />-->
-
 </beans>
