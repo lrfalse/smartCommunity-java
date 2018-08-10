@@ -30,7 +30,7 @@
             AND a.id = #{id_where}
         </if>
         <if test="propertyId_where != null" >
-            AND  b.propertyId = #{propertyId_where}
+            AND  a.propertyId = #{propertyId_where}
         </if>
         <if test="housingEstateId_where != null" >
             AND a.housingEstateId  =#{housingEstateId_where}
